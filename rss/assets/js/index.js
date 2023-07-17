@@ -18,7 +18,7 @@ const app = createApp({
         watch(event) {
 
             $.ajax({
-              url: server +"/watch",
+              url: server +"watch",
               type: "POST",
               data: JSON.stringify({
                 "id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
@@ -72,7 +72,7 @@ function getBanners(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "/get?where=1",
+            url: server + "get?where=1",
             beforeSend: function() {
             },
             success: function(response) {
@@ -95,7 +95,7 @@ function getRanks(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "/get?order=1",
+            url: server + "get?order=1",
             beforeSend: function() {
             },
             success: function(response) {
@@ -118,7 +118,7 @@ function getDatas(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "/get?page_num="+ offset + "&page_size="+limit,
+            url: server + "get?page_num="+ offset + "&page_size="+limit,
             beforeSend: function() {
             },
             success: function(response) {
