@@ -43,38 +43,41 @@
     }
   </style>
         <style type="text/css">
+            [v-cloak] {
+                display:none !important;
+            }
                                                     
-                                                    .text-ellipsis{
+        .text-ellipsis{
 
-                                                            color: #545454 !important;
-                                                            line-height: 1.8;
-                                                            font-weight: 300;
-                                                          overflow:hidden;
-                                                          text-overflow: ellipsis;
-                                                          -webkit-line-clamp: 3;
-                                                          display: -webkit-box;
-                                                          -webkit-box-orient: vertical;
+                color: #545454 !important;
+                line-height: 1.8;
+                font-weight: 300;
+              overflow:hidden;
+              text-overflow: ellipsis;
+              -webkit-line-clamp: 3;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
 
 
-                                                             
-                                                           
-                                                        }
+                 
+               
+            }
 
-                                                        .text-ellipsis h5{
-                                                                font-size: 14px ;
-                                                                font-weight: 300 ;
-                                                            }
+            .text-ellipsis h5{
+                    font-size: 14px ;
+                    font-weight: 300 ;
+                }
 
-                                                 
+     
 
-                                                </style>
+    </style>
         
     </head>
     <body class="home blog">
         <style>
 /*            :root{--ds_background:url(https://pyq.cool/wp-content/uploads/2022/11/2022112916213283.svg)}*/
         </style>
-        <div id="app">
+        <div id="app"  v-cloak>
         <header class="header sticky-top">
             <div class="container">
                 <div class="top">
