@@ -166,7 +166,7 @@
                 <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-1" class="menu-zk">
                    
                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
-                        <a href="https://pyq.cool/lvxing">
+                        <a href="https://pyq.cool/">
                             <i class="bi bi-palette me-1">
                             </i>
                             Home
@@ -214,7 +214,7 @@
                                               <a class="banlist"  :href="item.link" >
                                         <img width="700" height="400" :src="item.cover" style="width: 700px;height: 400px;object-fit: cover;" 
                                         class="attachment-700x400x1 size-700x400x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy">
+                                        loading="lazy" onerror="this.src='/rss/assets/img/default.jpg';">
                                         <h2>
                                             {{item.title}}
                                         </h2>
@@ -228,7 +228,7 @@
                                               <a class="banlist"  :href="item.link" >
                                         <img width="700" height="400" :src="item.cover"  style="width: 700px;height: 400px;object-fit: cover;" 
                                         class="attachment-700x400x1 size-700x400x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy">
+                                        loading="lazy" onerror="this.src='/rss/assets/img/default.jpg';">
                                         <h2>
                                             {{item.title}}
                                         </h2>
@@ -256,7 +256,7 @@
                         <div class="index_banner_center">
                             <template  v-for="item,index in banners">
                             <a v-if="index == 2 || index == 3" class="zt_list"  :href="item.link" :title="item.title">
-                                <img :src="item.cover" style="object-fit:cover;width: 300px;height: 180px;" 
+                                <img :src="item.cover" style="object-fit:cover;width: 300px;height: 180px;"  onerror="this.src='/rss/assets/img/default.jpg';" 
                                 class="attachment-300x300x1 size-300x300x1 wp-post-image" alt="" decoding="async"
                                 loading="lazy" >
                                 <h3>
@@ -273,7 +273,7 @@
                     <div class="col-lg-3 none_992">
                          <template  v-for="item,index in banners">
                         <a v-if="index == 4"  class="gglb" :href="item.link" title="GPD P2 Max 2022升级N6000处理器，全球最小轻薄本">
-                            <img :src="item.cover"  style="object-fit:cover;width: 300px;height: 400px;" 
+                            <img :src="item.cover"  style="object-fit:cover;width: 300px;height: 400px;"  onerror="this.src='/rss/assets/img/default.jpg';" 
                             class="attachment-300x400x1 size-300x400x1 wp-post-image" alt="" decoding="async"
                             loading="lazy">
                             <div class="gg_txt">
