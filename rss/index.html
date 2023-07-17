@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://pyq.cool/ -->
+<html lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            const isDark = localStorage.getItem("isDarkMode");
+            if (isDark === "1") {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        </script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="renderer" content="webkit">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="email=no">
+        <meta name="format-detection" content="address=no">
+        <meta name="format-detection" content="date=no">
+        <title>
+           RssHub
+        </title>
+        <meta name="keywords" content="HUiTHEME">
+        <meta name="description" content="HUiTHEME - Once主题演示站">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="stylesheet" id="classic-theme-styles-css" href="./assets/css/classic-themes.min.css"
+        type="text/css" media="all">
+        <link rel="stylesheet" id="bootstrap-css" href="./assets/css/bootstrap.min.css"
+        type="text/css" media="all">
+        <link rel="stylesheet" id="bifont-css" href="./assets/css/bootstrap-icons.css"
+        type="text/css" media="all">
+        <link rel="stylesheet" id="stylecss-css" href="./assets/css/style.css"
+        type="text/css" media="all">
+         <script type="text/javascript" src="./assets/js/pkg/jquery.min.js" id="jquery-min-js">
+        </script>
+        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
+  <style>
+    body {
+      /* Screen version */
+      font-family: "LXGW WenKai Screen", sans-serif;
+    }
+  </style>
+        <style type="text/css">
+                                                    
+                                                    .text-ellipsis{
+
+                                                            color: #545454 !important;
+                                                            line-height: 1.8;
+                                                            font-weight: 300;
+                                                          overflow:hidden;
+                                                          text-overflow: ellipsis;
+                                                          -webkit-line-clamp: 3;
+                                                          display: -webkit-box;
+                                                          -webkit-box-orient: vertical;
+
+
+                                                             
+                                                           
+                                                        }
+
+                                                        .text-ellipsis h5{
+                                                                font-size: 14px ;
+                                                                font-weight: 300 ;
+                                                            }
+
+                                                 
+
+                                                </style>
+        
+    </head>
+    <body class="home blog">
+        <style>
+/*            :root{--ds_background:url(https://pyq.cool/wp-content/uploads/2022/11/2022112916213283.svg)}*/
+        </style>
+        <div id="app">
+        <header class="header sticky-top">
+            <div class="container">
+                <div class="top">
+                    <button class="mobile_an" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile_right_nav">
+                        <i class="bi bi-list">
+                        </i>
+                    </button>
+                    <div class="top_l">
+                        <h1 class="logo">
+                            <a href="/" title="朋友圈">
+                                <img src="./assets/img/2022101212033729.png" alt="">
+                                <b>
+                                    朋友圈
+                                </b>
+                            </a>
+                        </h1>
+                        <nav class="header-menu">
+                            <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa" class="header-menu-ul">
+                                <li id="menu-item-39" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
+                                    <a href="/">
+                                        <i class="bi bi-palette me-1">
+                                        </i>
+                                        Home
+                                    </a>
+                                </li>
+                               <!--  <li id="menu-item-34" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34">
+                                    <a href="https://pyq.cool/keji">
+                                        科技资讯
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-1306" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1306">
+                                            <a href="https://pyq.cool/jingwen">
+                                                今闻
+                                            </a>
+                                        </li>
+                                        <li id="menu-item-1307" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1307">
+                                            <a href="https://pyq.cool/lvxing">
+                                                旅行
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="top_r">
+                        <div class="top_r_an theme-switch me-4" onclick="switchDarkMode()">
+                            <i class="bi bi-lightbulb-fill">
+                            </i>
+                        </div>
+                        <!-- <button class="top_r_an" type="button" data-bs-toggle="offcanvas" data-bs-target="#c_sousuo">
+                            <i class="bi bi-search">
+                            </i>
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="offcanvas offcanvas-top" id="c_sousuo">
+            <div class="container">
+                <div class="row justify-content-center">
+                <!--     <div class="col-10 col-lg-6 search_box">
+                        <form action="https://pyq.cool/" class="ss_a clearfix" method="get">
+                            <input name="s" aria-label="Search" type="text" onblur="if(this.value==&#39;&#39;)this.value=&#39;搜索&#39;"
+                            onfocus="if(this.value==&#39;搜索&#39;)this.value=&#39;&#39;" value="搜索">
+                            <button type="submit" title="Search">
+                                <i class="bi bi-search">
+                                </i>
+                            </button>
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start" id="mobile_right_nav">
+            <div class="mobile_head">
+                <div class="mobile_head_logo">
+                    <img src="./assets/img/2022101212033729.png" alt="">
+                    <b>
+                        朋友圈
+                    </b>
+                </div>
+                <div class="theme-switch" onclick="switchDarkMode()">
+                    <i class="bi bi-lightbulb-fill">
+                    </i>
+                </div>
+            </div>
+            <div id="sjcldnav" class="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-container">
+                <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-1" class="menu-zk">
+                   
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
+                        <a href="https://pyq.cool/lvxing">
+                            <i class="bi bi-palette me-1">
+                            </i>
+                            Home
+                        </a>
+                    </li>
+                <!--     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34">
+                        <span class="czxjcdbs">
+                        </span>
+                        <a href="https://pyq.cool/keji">
+                            科技资讯
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1306">
+                                <a href="https://pyq.cool/jingwen">
+                                    今闻
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1307">
+                                <a href="https://pyq.cool/lvxing">
+                                    旅行
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+                   
+                </ul>
+            </div>
+        </div>
+        <section class="index_banner">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-lg-7">
+                        <div id="banner" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="">
+                                </button>
+                                <button type="button" data-bs-target="#banner" data-bs-slide-to="1" class="active"
+                                aria-current="true">
+                                </button>
+                            </div>
+                            <div class="carousel-inner">
+                                <template  v-for="item,index in banners">
+                                    <template v-if="index == 0">
+                                         <div class="carousel-item active">
+                                              <a class="banlist"  :href="item.link" >
+                                        <img width="700" height="400" :src="item.cover" style="width: 700px;height: 400px;object-fit: cover;" 
+                                        class="attachment-700x400x1 size-700x400x1 wp-post-image" alt="" decoding="async"
+                                        loading="lazy">
+                                        <h2>
+                                            {{item.title}}
+                                        </h2>
+                                        <i>
+                                            置顶精彩
+                                        </i>
+                                    </a></div>
+                                     </template>
+                                      <template v-if="index == 1">
+                                         <div class="carousel-item">
+                                              <a class="banlist"  :href="item.link" >
+                                        <img width="700" height="400" :src="item.cover"  style="width: 700px;height: 400px;object-fit: cover;" 
+                                        class="attachment-700x400x1 size-700x400x1 wp-post-image" alt="" decoding="async"
+                                        loading="lazy">
+                                        <h2>
+                                            {{item.title}}
+                                        </h2>
+                                        <i>
+                                            置顶精彩
+                                        </i>
+                                    </a>
+                                </div>
+                                     </template>
+                                </template>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#banner"
+                            data-bs-slide="prev">
+                                <i class="bi bi-chevron-left">
+                                </i>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#banner"
+                            data-bs-slide="next">
+                                <i class="bi bi-chevron-right">
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 none_992">
+                        <div class="index_banner_center">
+                            <template  v-for="item,index in banners">
+                            <a v-if="index == 2 || index == 3" class="zt_list"  :href="item.link" :title="item.title">
+                                <img :src="item.cover" style="object-fit:cover;width: 300px;height: 180px;" 
+                                class="attachment-300x300x1 size-300x300x1 wp-post-image" alt="" decoding="async"
+                                loading="lazy" >
+                                <h3>
+                                    {{ item.title }}
+                                </h3>
+                                <b>
+                                    <template v-for="tag in item.tags"> #{{ tag }}</template>
+                                 
+                                </b>
+                            </a>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 none_992">
+                         <template  v-for="item,index in banners">
+                        <a v-if="index == 4"  class="gglb" :href="item.link" title="GPD P2 Max 2022升级N6000处理器，全球最小轻薄本">
+                            <img :src="item.cover"  style="object-fit:cover;width: 300px;height: 400px;" 
+                            class="attachment-300x400x1 size-300x400x1 wp-post-image" alt="" decoding="async"
+                            loading="lazy">
+                            <div class="gg_txt">
+                                <h3>
+                                   {{ item.title }}
+                                </h3>
+                                <p>
+                                    <i class="bi bi-clock">
+                                    </i>
+                                   {{ item.pub_date_show }}
+                                </p>
+                            </div>
+                            <b>
+                                 <template v-for="tag in item.tags"> #{{ tag }}</template>
+                            </b>
+                        </a>
+                    </template>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="index_area">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-lg-9">
+                        <div class="post_box">
+                            <div class="post_def post_loop" v-for="item in datas">
+                                <div class="row g-3 g-sm-4" >
+                                    <div class="col-3">
+                                        <a class="post_def_left"  :href="item.link" :title="item.title" target="_blank">
+                                            <img  :src="item.cover" style="object-fit: cover;width: 145px;height:100%;min-height: 65px;" 
+                                            class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async" onerror="this.src='assets/img/default.jpg';">
+                                        </a>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="post_def_right">
+                                            <div class="post_def_title" style="padding-bottom: 10px;">
+                                                <h2>
+                                                    <a :href="item.link" target="_blank" :title="item.title" @click="watch" :dataid="item.id">
+                                                        {{ item.title }}
+                                                    </a>
+                                                </h2>
+                                                
+                                                <div v-html="item.summary" class="text-ellipsis">
+
+                                                </div>
+                                            </div>
+                                            <div class="post_info">
+                                                <div class="post_info_l"  style="width:80%;white-space:nowrap ;overflow: hidden;text-overflow:ellipsis ">
+                                                    <span>
+                                                        <i class="bi bi-text-left">
+                                                        </i>
+                                                        <a :href="item.link" rel="category tag">
+                                                           {{ item.username }}
+                                                        </a>
+                                                    </span>
+                                                    <span class="mobile_none">
+                                                        <i class="bi bi-clock">
+                                                        </i>
+                                                     {{ item.pub_date_show }}
+                                                    </span>
+                                                    <span class="">
+                                                        <i class="bi bi-eye">
+                                                        </i>
+                                                       {{ item.watch }}人浏览
+                                                    </span>
+                                                </div>
+                                                <div class="post_info_r" style="width:20%;white-space:nowrap ;overflow: hidden;text-overflow:ellipsis">
+                                                    <em v-for="tag in item.tags" style="margin: 0px;">
+                                                        <i class="bi bi-hash">
+                                                        </i>
+                                                        <a href="#!" rel="tag"  >
+                                                           {{ tag }} 
+                                                        </a>
+                                                    </em>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                          <!--   <div class="post_gallery post_loop">
+                                <div class="post_gallery_head">
+                                    <h2>
+                                        <a class="stretched-link" href="https://pyq.cool/1086.html" title="2022年索尼电视还值得买吗？索尼65X95J液晶电视体验分享">
+                                            2022年索尼电视还值得买吗？索尼65X95J液晶电视体验分享
+                                        </a>
+                                    </h2>
+                                    <div class="row row-cols-4 g-3 mb-3">
+                                        <div class="col">
+                                            <img width="400" height="240" src="./assets/d1fd4202201082115432660_1800_500-400x240-c.jpeg"
+                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
+                                        </div>
+                                        <div class="col">
+                                            <img width="400" height="240" src="./assets/8e5fc61a-b0b0-435d-8000-ff42a2533e6b-400x240-c.jpeg"
+                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
+                                        </div>
+                                        <div class="col">
+                                            <img width="400" height="240" src="./assets/44c37c44-266f-4cff-a9fb-ad35d41cd9d3-400x240-c.jpeg"
+                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
+                                        </div>
+                                        <div class="col">
+                                            <img width="400" height="240" src="./assets/113fca509b54239c292dc457aa0600c315c201a8-2880x1582-1-400x240-c.jpeg"
+                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post_info">
+                                    <div class="post_info_l">
+                                        <span>
+                                            <i class="bi bi-text-left">
+                                            </i>
+                                            <a href="https://pyq.cool/jingwen" rel="category tag">
+                                                今闻
+                                            </a>
+                                        </span>
+                                        <span class="mobile_none">
+                                            <i class="bi bi-clock">
+                                            </i>
+                                            2022.01.09
+                                        </span>
+                                        <span class="">
+                                            <i class="bi bi-eye">
+                                            </i>
+                                            851人浏览
+                                        </span>
+                                    </div>
+                                    <div class="post_info_r">
+                                        <em>
+                                            <i class="bi bi-hash">
+                                            </i>
+                                            <a href="https://pyq.cool/tag/%e6%96%b0%e9%97%bb" rel="tag">
+                                                新闻
+                                            </a>
+                                        </em>
+                                        <em>
+                                            <i class="bi bi-hash">
+                                            </i>
+                                            <a href="https://pyq.cool/tag/%e7%94%b5%e8%a7%86" rel="tag">
+                                                电视
+                                            </a>
+                                        </em>
+                                    </div>
+                                </div>
+                            </div> -->
+                   
+                     
+          
+              
+                    <!--         <div class="post_images post_loop">
+                                <img width="920" height="400" src="./assets/2022091904101562-920x400-c.jpg"
+                                class="attachment-920x400x1 size-920x400x1 wp-post-image" alt="" decoding="async"
+                                loading="lazy">
+                                <div class="post_images_foot">
+                                    <h2>
+                                        <a class="stretched-link" href="https://pyq.cool/563.html" title="NEX3 5G手机开箱视频">
+                                            NEX3 5G手机开箱视频
+                                        </a>
+                                    </h2>
+                                    <p>
+                                        从 15 年用上 iPhone6 ，就注定了我在苹果的道上下不来了，想想从毕业开始自己赚钱买手机还是 LG 的忠实粉丝，ku990 p970
+                                        g2 g3 g4 不过后来越做越差的体验.越来越差的品控，让我开始转眼看一下当时的 iOS 系统.。 壹．以前基本上都是半年换一次机的 用锤子比较多，从T1开…
+                                    </p>
+                                    <div class="post_info">
+                                        <div class="post_info_l">
+                                            <span>
+                                                <i class="bi bi-text-left">
+                                                </i>
+                                                <a href="https://pyq.cool/jingwen" rel="category tag">
+                                                    今闻
+                                                </a>
+                                            </span>
+                                            <span>
+                                                <i class="bi bi-clock">
+                                                </i>
+                                                2019.12.01
+                                            </span>
+                                            <span>
+                                                <i class="bi bi-eye">
+                                                </i>
+                                                278人浏览
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                 
+                        </div>
+                        <div class="post-read-more">
+                            <a @click="next" style="cursor: pointer;">
+                                {{ moreBtn }} 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="sidebar_sticky">
+                            <!-- <aside id="search-4" class="widget widget_search">
+                                <form role="search" method="get" id="searchform" class="searchform" action="https://pyq.cool/">
+                                    <div>
+                                        <label class="screen-reader-text" for="s">
+                                            搜索：
+                                        </label>
+                                        <input type="text" value="" name="s" id="s">
+                                        <input type="submit" id="searchsubmit" value="搜索">
+                                    </div>
+                                </form>
+                            </aside> -->
+                            <aside id="recent-posts-5" class="widget widget_recent_entries">
+                                <h3 class="widget-title">
+                                    近期观看排行
+                                </h3>
+                                <ul>
+                                    <li  v-for="item in ranks">
+                                        <a :href="item.link" target="_blank">
+                                            {{ item.title }} 
+                                        </a>
+                                        <span class="post-date">
+                                            
+                                                         <i class="bi bi-clock">
+                                                        </i> {{(item.pub_date_show || '').split(' ')[0]}} |  <i class="bi bi-eye">
+                                                        </i> {{ item.watch }} 
+                                                         
+                                        </span>
+                                       
+                                    </li>
+                            
+                                </ul>
+                            </aside>
+                           <!--  <aside id="hot_posts-2" class="widget widget_hot_posts">
+                                <h3 class="widget-title">
+                                    热评文章
+                                </h3>
+                                <ul class="widget_hot_post">
+                                    <li class="widget_hot_li">
+                                        <img width="400" height="280" src="./assets/2022090813431613-400x280-c.jpg"
+                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
+                                        loading="lazy">
+                                        <div class="hot_post_info">
+                                            <h4>
+                                                <a class="stretched-link" href="https://pyq.cool/1121.html">
+                                                    一个时代的落幕
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                5条留言
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="widget_hot_li">
+                                        <img width="400" height="280" src="./assets/666e4202112301601297854_1800_500-400x280-c.jpg"
+                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
+                                        loading="lazy">
+                                        <div class="hot_post_info">
+                                            <h4>
+                                                <a class="stretched-link" href="https://pyq.cool/560.html">
+                                                    华为手机最危险的设置，学会这招，手机再用3年
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                3条留言
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="widget_hot_li">
+                                        <img width="400" height="280" src="./assets/2022091904101562-400x280-c.jpg"
+                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
+                                        loading="lazy">
+                                        <div class="hot_post_info">
+                                            <h4>
+                                                <a class="stretched-link" href="https://pyq.cool/563.html">
+                                                    NEX3 5G手机开箱视频
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                2条留言
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="widget_hot_li">
+                                        <img width="400" height="280" src="./assets/d1fd4202201082115432660_1800_500-400x280-c.jpeg"
+                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
+                                        loading="lazy">
+                                        <div class="hot_post_info">
+                                            <h4>
+                                                <a class="stretched-link" href="https://pyq.cool/1086.html">
+                                                    2022年索尼电视还值得买吗？索尼65X95J液晶电视体验分享
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                2条留言
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="widget_hot_li">
+                                        <img width="400" height="280" src="./assets/ad6d4766aec09a24424161cab6801266-400x280-c.png"
+                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
+                                        loading="lazy">
+                                        <div class="hot_post_info">
+                                            <h4>
+                                                <a class="stretched-link" href="https://pyq.cool/585.html">
+                                                    为了一滩水大打出手，这就是摄影的魅力
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                1条留言
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </aside> -->
+                           <!--  <aside id="hot_tags-2" class="widget widget_hot_tags">
+                                <h3 class="widget-title">
+                                    标签云
+                                </h3>
+                                <div class="tagcloud">
+                                    <a href="https://pyq.cool/tag/%e9%bb%91%e8%8e%93" class="tag-item"
+                                    title="浏览和黑莓有关的文章">
+                                        <span>
+                                            黑莓
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e8%b4%a8%e4%bf%9d" class="tag-item"
+                                    title="浏览和质保有关的文章">
+                                        <span>
+                                            质保
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e8%8d%a3%e8%aa%89" class="tag-item"
+                                    title="浏览和荣誉有关的文章">
+                                        <span>
+                                            荣誉
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e8%8b%b9%e6%9e%9c" class="tag-item"
+                                    title="浏览和苹果有关的文章">
+                                        <span>
+                                            苹果
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e7%a1%ac%e7%9b%98" class="tag-item"
+                                    title="浏览和硬盘有关的文章">
+                                        <span>
+                                            硬盘
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e7%94%b5%e8%a7%86" class="tag-item"
+                                    title="浏览和电视有关的文章">
+                                        <span>
+                                            电视
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e7%94%b5%e8%84%91" class="tag-item"
+                                    title="浏览和电脑有关的文章">
+                                        <span>
+                                            电脑
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e7%94%b5%e5%95%86" class="tag-item"
+                                    title="浏览和电商有关的文章">
+                                        <span>
+                                            电商
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e6%a1%88%e4%be%8b" class="tag-item hot"
+                                    title="浏览和案例有关的文章">
+                                        <span>
+                                            案例
+                                        </span>
+                                    </a>
+                                    <a href="https://pyq.cool/tag/%e6%96%b0%e9%97%bb" class="tag-item hot"
+                                    title="浏览和新闻有关的文章">
+                                        <span>
+                                            新闻
+                                        </span>
+                                    </a>
+                                </div>
+                            </aside> -->
+                           <!--  <aside id="comments-4" class="widget widget_comments">
+                                <h3 class="widget-title">
+                                    最近评论
+                                </h3>
+                                <ul class="widget_comment_ul">
+                                    <li>
+                                        <img alt="" src="./assets/52024c2dbe3951ca4d7186fbae628bb7.png"
+                                        srcset="https://gravatar.loli.net/avatar/52024c2dbe3951ca4d7186fbae628bb7?s=80&amp;d=mm&amp;r=g 2x"
+                                        class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">
+                                        <div class="widget_comment_info">
+                                            <a rel="nofollow" href="https://pyq.cool/1076.html#comment-18">
+                                                感谢
+                                            </a>
+                                            <span>
+                                                <em>
+                                                    W
+                                                </em>
+                                                <em>
+                                                    发布于4月前
+                                                </em>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img alt="" src="./assets/7d7915cf1650157c60f34ca211733473.jpeg"
+                                        srcset="https://gravatar.loli.net/avatar/7d7915cf1650157c60f34ca211733473?s=80&amp;d=mm&amp;r=g 2x"
+                                        class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">
+                                        <div class="widget_comment_info">
+                                            <a rel="nofollow" href="https://pyq.cool/1086.html#comment-14">
+                                                感谢分享，很棒。
+                                            </a>
+                                            <span>
+                                                <em>
+                                                    小雨啊
+                                                </em>
+                                                <em>
+                                                    发布于10月前
+                                                </em>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img alt="" src="./assets/35de170fc7836ea645e1a7d7b307ff6e"
+                                        srcset="https://gravatar.loli.net/avatar/35de170fc7836ea645e1a7d7b307ff6e?s=80&amp;d=mm&amp;r=g 2x"
+                                        class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">
+                                        <div class="widget_comment_info">
+                                            <a rel="nofollow" href="https://pyq.cool/585.html#comment-13">
+                                                我草
+                                            </a>
+                                            <span>
+                                                <em>
+                                                    222
+                                                </em>
+                                                <em>
+                                                    发布于10月前
+                                                </em>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </aside> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="links mobile_none">
+            <div class="container">
+                <span>
+                    友情链接：
+                </span>
+                <a href="http://www.2zzt.com/" rel="noopener" target="_blank">
+                    WordPress
+                </a>
+                <a href="http://www.2zzt.com/" rel="noopener" target="_blank">
+                    WordPress Theme
+                </a>
+                <a href="https://www.huitheme.com/" rel="noopener" target="_blank">
+                    WordPress模版
+                </a>
+                <a href="https://www.huitheme.com/" rel="noopener" title="绘主题" target="_blank">
+                    绘主题
+                </a>
+            </div>
+        </section> -->
+
+     <!--    <footer class="footer">
+            <section class="footbox">
+                <div class="container">
+                    <div class="foot">
+                        <div class="copyright">
+                            <p>
+                                ©️ 2022 Once All Rights Reserved. Powered by
+                                <a href="https://www.huitheme.com/" target="_blank">
+                                    WordPress
+                                </a>
+                            </p>
+                        </div>
+                        <div class="foot_nav">
+                            <nav class="dbdh">
+                                <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-2" class="menu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30">
+                                        <a href="https://pyq.cool/page">
+                                            演示页面
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35">
+                                        <a href="https://pyq.cool/jingwen">
+                                            今闻
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
+                                        <a href="https://pyq.cool/lvxing">
+                                            <i class="bi bi-palette me-1">
+                                            </i>
+                                            旅行
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34">
+                                        <a href="https://pyq.cool/keji">
+                                            科技资讯
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1315">
+                                        <a href="https://www.huitheme.com/once.html">
+                                            主题下载
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <a class="beian" href="https://beian.miit.gov.cn/" rel="external nofollow"
+                            target="_blank" title="备案号">
+                                <i class="bi bi-shield-check me-1">
+                                </i>
+                                苏ICP备123456号
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <button class="scrollToTopBtn" title="返回顶部">
+                <i class="bi bi-chevron-up">
+                </i>
+            </button>
+        </footer> -->
+
+    </div>
+        <script type="text/javascript" src="./assets/js/pkg/bootstrap.min.js"
+        id="bootstrap-js">
+        </script>
+        <script type="text/javascript" src="./assets/js/pkg/js.js"
+        id="dsjs-js">
+        </script>
+        <script type="text/javascript" src="./assets/js/pkg/fancybox.js" id="fancybox-js">
+        </script>
+        <script type="text/javascript" src="./assets/js/pkg/vue.global.js">
+        </script>
+        <script type="text/javascript" src="https://js.cybozu.com/markedjs/v0.3.5/marked.min.js">
+        </script>
+        <script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js">
+        </script>
+        <script type="text/javascript" src="./config.js">
+        </script>
+        <script type="text/javascript" src="./assets/js/global.js">
+        </script>
+        <script type="text/javascript" src="./assets/js/index.js">
+        </script>
+    </body>
+
+</html>
