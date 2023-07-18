@@ -1,867 +1,896 @@
-<!DOCTYPE html>
-<!-- saved from url=(0025)https://pyq.cool/ -->
-<html lang="zh-CN">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script>
-            const isDark = localStorage.getItem("isDarkMode");
-            if (isDark === "1") {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        </script>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="renderer" content="webkit">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="format-detection" content="email=no">
-        <meta name="format-detection" content="address=no">
-        <meta name="format-detection" content="date=no">
-        <title>
-           RSS - 朋友圈
-        </title>
-        <meta name="keywords" content="RSS朋友圈">
-        <meta name="description" content="RSS朋友圈">
-        <meta name="robots" content="noindex, nofollow">
-        <link rel="stylesheet" id="classic-theme-styles-css" href="/rss/assets/css/classic-themes.min.css"
-        type="text/css" media="all">
-        <link rel="stylesheet" id="bootstrap-css" href="/rss/assets/css/bootstrap.min.css"
-        type="text/css" media="all">
-        <link rel="stylesheet" id="bifont-css" href="/rss/assets/css/bootstrap-icons.css"
-        type="text/css" media="all">
-        <link rel="stylesheet" id="stylecss-css" href="/rss/assets/css/style.css"
-        type="text/css" media="all">
-         <script type="text/javascript" src="/rss/assets/js/pkg/jquery.min.js" id="jquery-min-js">
-        </script>
-        <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
-  <style>
-    body {
-      /* Screen version */
-      font-family: "LXGW WenKai Screen", sans-serif;
-    }
-  </style>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>广场</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--Custom CSS-->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <!--Plugin CSS-->
+    <link href="assets/css/plugin.css" rel="stylesheet" type="text/css">
+    <!--Flaticons CSS-->
+    <link href="assets/fonts/flaticon.css" rel="stylesheet" type="text/css">
+    <!--Font Awesome-->
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> -->
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+<link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/fonts/line-icons.css" type="text/css">
         <style type="text/css">
-            [v-cloak] {
-                display:none !important;
-            }
-                                                    
-        .text-ellipsis{
-
-                color: #545454 !important;
-                line-height: 1.8;
-                font-weight: 300;
-              overflow:hidden;
-              text-overflow: ellipsis;
-              -webkit-line-clamp: 3;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-
-
-                 
-               
-            }
-
-            .text-ellipsis h5{
-                    font-size: 14px ;
-                    font-weight: 300 ;
-                }
-
-     
+        
+        .break {
+         overflow: hidden; text-overflow: ellipsis;height: 100px;
+        }
 
     </style>
-        
-    </head>
-    <body class="home blog">
-        <style>
-/*            :root{--ds_background:url(https://pyq.cool/wp-content/uploads/2022/11/2022112916213283.svg)}*/
-        </style>
-        <div id="app"  v-cloak>
-        <header class="header sticky-top">
-            <div class="container">
-                <div class="top">
-                    <button class="mobile_an" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile_right_nav">
-                        <i class="bi bi-list">
-                        </i>
-                    </button>
-                    <div class="top_l">
-                        <h1 class="logo">
-                            <a href="/rss" title="朋友圈">
-                                <img src="/rss/assets/img/2022101212033729.png" alt="">
-                                <b>
-                                    朋友圈
-                                </b>
-                            </a>
-                        </h1>
-                        <nav class="header-menu">
-                            <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa" class="header-menu-ul">
-                                <li id="menu-item-39" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
-                                    <a href="/rss">
-                                        <i class="bi bi-palette me-1">
-                                        </i>
-                                        RSS朋友圈
-                                    </a>
-                                </li>
-                                 <li id="menu-item-39" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
-                                    <a href="/memos">
-                                        <i class="bi bi-palette me-1">
-                                        </i>
-                                        Memos朋友圈
-                                    </a>
-                                </li>
-                                  <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
-                                    <a>
-                                        联系我/想加入
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-1290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-                                            <a  href="https://zuofei.net/about.html" target="_blank">
-                                              今是昨非
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                               <!--  <li id="menu-item-34" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34">
-                                    <a href="https://pyq.cool/keji">
-                                        科技资讯
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-1306" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1306">
-                                            <a href="https://pyq.cool/jingwen">
-                                                今闻
-                                            </a>
-                                        </li>
-                                        <li id="menu-item-1307" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1307">
-                                            <a href="https://pyq.cool/lvxing">
-                                                旅行
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li> -->
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="top_r">
-                        <div class="top_r_an theme-switch me-4" onclick="switchDarkMode()">
-                            <i class="bi bi-lightbulb-fill">
-                            </i>
-                        </div>
-                        <!-- <button class="top_r_an" type="button" data-bs-toggle="offcanvas" data-bs-target="#c_sousuo">
-                            <i class="bi bi-search">
-                            </i>
-                        </button> -->
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="offcanvas offcanvas-top" id="c_sousuo">
-            <div class="container">
-                <div class="row justify-content-center">
-                <!--     <div class="col-10 col-lg-6 search_box">
-                        <form action="https://pyq.cool/" class="ss_a clearfix" method="get">
-                            <input name="s" aria-label="Search" type="text" onblur="if(this.value==&#39;&#39;)this.value=&#39;搜索&#39;"
-                            onfocus="if(this.value==&#39;搜索&#39;)this.value=&#39;&#39;" value="搜索">
-                            <button type="submit" title="Search">
-                                <i class="bi bi-search">
-                                </i>
-                            </button>
-                        </form>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-start" id="mobile_right_nav">
-            <div class="mobile_head">
-                <div class="mobile_head_logo">
-                    <img src="/rss/assets/img/2022101212033729.png" alt="">
-                    <b>
-                        朋友圈
-                    </b>
-                </div>
-                <div class="theme-switch" onclick="switchDarkMode()">
-                    <i class="bi bi-lightbulb-fill">
-                    </i>
-                </div>
-            </div>
-            <div id="sjcldnav" class="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-container">
-                <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-1" class="menu-zk">
-                   
-                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
-                        <a href="/rss">
-                            <i class="bi bi-palette me-1">
-                            </i>
-                            RSS朋友圈
-                        </a>
-                    </li>
-                     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
-                        <a href="/memos">
-                            <i class="bi bi-palette me-1">
-                            </i>
-                            Memos朋友圈
-                        </a>
-                    </li>
-                      <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
-                                    <a>
-                                        联系我/想加入
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-1290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-                                            <a  href="https://zuofei.net/about.html" target="_blank">
-                                              今是昨非
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                <!--     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34">
-                        <span class="czxjcdbs">
-                        </span>
-                        <a href="https://pyq.cool/keji">
-                            科技资讯
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1306">
-                                <a href="https://pyq.cool/jingwen">
-                                    今闻
-                                </a>
-                            </li>
-                            <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1307">
-                                <a href="https://pyq.cool/lvxing">
-                                    旅行
-                                </a>
-                            </li>
-                        </ul>
-                    </li> -->
-                   
-                </ul>
-            </div>
-        </div>
-        <section class="index_banner">
-            <div class="container">
-                <div class="row g-3">
-                    <div class="col-lg-7">
-                        <div id="banner" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="">
-                                </button>
-                                <button type="button" data-bs-target="#banner" data-bs-slide-to="1" class="active"
-                                aria-current="true">
-                                </button>
-                            </div>
-                            <div class="carousel-inner">
-                                <template  v-for="item,index in banners">
-                                    <template v-if="index == 0">
-                                         <div class="carousel-item active">
-                                              <a class="banlist"  :href="item.link" >
-                                        <img width="700" height="400" :src="item.cover" style="width: 700px;height: 400px;object-fit: cover;" 
-                                        class="attachment-700x400x1 size-700x400x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy" onerror="this.src='/rss/assets/img/default.jpg';">
-                                        <h2>
-                                            {{item.title}}
-                                        </h2>
-                                        <i>
-                                            置顶精彩
-                                        </i>
-                                    </a></div>
-                                     </template>
-                                      <template v-if="index == 1">
-                                         <div class="carousel-item">
-                                              <a class="banlist"  :href="item.link" >
-                                        <img width="700" height="400" :src="item.cover"  style="width: 700px;height: 400px;object-fit: cover;" 
-                                        class="attachment-700x400x1 size-700x400x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy" onerror="this.src='/rss/assets/img/default.jpg';">
-                                        <h2>
-                                            {{item.title}}
-                                        </h2>
-                                        <i>
-                                            置顶精彩
-                                        </i>
-                                    </a>
-                                </div>
-                                     </template>
-                                </template>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#banner"
-                            data-bs-slide="prev">
-                                <i class="bi bi-chevron-left">
-                                </i>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#banner"
-                            data-bs-slide="next">
-                                <i class="bi bi-chevron-right">
-                                </i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 none_992">
-                        <div class="index_banner_center">
-                            <template  v-for="item,index in banners">
-                            <a v-if="index == 2 || index == 3" class="zt_list"  :href="item.link" :title="item.title">
-                                <img :src="item.cover" style="object-fit:cover;width: 300px;height: 180px;"  onerror="this.src='/rss/assets/img/default.jpg';" 
-                                class="attachment-300x300x1 size-300x300x1 wp-post-image" alt="" decoding="async"
-                                loading="lazy" >
-                                <h3>
-                                    {{ item.title }}
-                                </h3>
-                                <b>
-                                    <template v-for="tag in item.tags"> #{{ tag }}</template>
-                                 
-                                </b>
-                            </a>
-                            </template>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 none_992">
-                         <template  v-for="item,index in banners">
-                        <a v-if="index == 4"  class="gglb" :href="item.link" title="GPD P2 Max 2022升级N6000处理器，全球最小轻薄本">
-                            <img :src="item.cover"  style="object-fit:cover;width: 300px;height: 400px;"  onerror="this.src='/rss/assets/img/default.jpg';" 
-                            class="attachment-300x400x1 size-300x400x1 wp-post-image" alt="" decoding="async"
-                            loading="lazy">
-                            <div class="gg_txt">
-                                <h3>
-                                   {{ item.title }}
-                                </h3>
-                                <p>
-                                    <i class="bi bi-clock">
-                                    </i>
-                                   {{ item.pub_date_show }}
-                                </p>
-                            </div>
-                            <b>
-                                 <template v-for="tag in item.tags"> #{{ tag }}</template>
-                            </b>
-                        </a>
-                    </template>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="index_area">
-            <div class="container">
-                <div class="row g-3">
-                    <div class="col-lg-9">
-                        <div class="post_box">
-                            <div class="post_def post_loop" v-for="item in datas">
-                                <div class="row g-3 g-sm-4" >
-                                    <div class="col-3">
-                                        <a class="post_def_left"  :href="item.link" :title="item.title" target="_blank">
-                                            <img  :src="item.cover" style="object-fit: cover;width: 145px;height:100%;min-height: 65px;" 
-                                            class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async" onerror="this.src='/rss/assets/img/default.jpg';">
-                                        </a>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="post_def_right">
-                                            <div class="post_def_title" style="padding-bottom: 10px;">
-                                                <h2>
-                                                    <a :href="item.link" target="_blank" :title="item.title" @click="watch" :dataid="item.id">
-                                                        {{ item.title }}
-                                                    </a>
-                                                </h2>
-                                                
-                                                <div v-html="item.summary" class="text-ellipsis">
-
-                                                </div>
-                                            </div>
-                                            <div class="post_info">
-                                                <div class="post_info_l"  style="width:80%;white-space:nowrap ;overflow: hidden;text-overflow:ellipsis ">
-                                                    <span>
-                                                        <i class="bi bi-text-left">
-                                                        </i>
-                                                        <a :href="item.link" rel="category tag">
-                                                           {{ item.username }}
-                                                        </a>
-                                                    </span>
-                                                    <span class="mobile_none">
-                                                        <i class="bi bi-clock">
-                                                        </i>
-                                                     {{ item.pub_date_show }}
-                                                    </span>
-                                                    <span class="">
-                                                        <i class="bi bi-eye">
-                                                        </i>
-                                                       {{ item.watch }}人浏览
-                                                    </span>
-                                                </div>
-                                                <div class="post_info_r" style="width:20%;white-space:nowrap ;overflow: hidden;text-overflow:ellipsis">
-                                                    <em v-for="tag in item.tags" style="margin: 0px;">
-                                                        <i class="bi bi-hash">
-                                                        </i>
-                                                        <a href="#!" rel="tag"  >
-                                                           {{ tag }} 
-                                                        </a>
-                                                    </em>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                          <!--   <div class="post_gallery post_loop">
-                                <div class="post_gallery_head">
-                                    <h2>
-                                        <a class="stretched-link" href="https://pyq.cool/1086.html" title="2022年索尼电视还值得买吗？索尼65X95J液晶电视体验分享">
-                                            2022年索尼电视还值得买吗？索尼65X95J液晶电视体验分享
-                                        </a>
-                                    </h2>
-                                    <div class="row row-cols-4 g-3 mb-3">
-                                        <div class="col">
-                                            <img width="400" height="240" src="/rss/assets/d1fd4202201082115432660_1800_500-400x240-c.jpeg"
-                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
-                                        </div>
-                                        <div class="col">
-                                            <img width="400" height="240" src="/rss/assets/8e5fc61a-b0b0-435d-8000-ff42a2533e6b-400x240-c.jpeg"
-                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
-                                        </div>
-                                        <div class="col">
-                                            <img width="400" height="240" src="/rss/assets/44c37c44-266f-4cff-a9fb-ad35d41cd9d3-400x240-c.jpeg"
-                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
-                                        </div>
-                                        <div class="col">
-                                            <img width="400" height="240" src="/rss/assets/113fca509b54239c292dc457aa0600c315c201a8-2880x1582-1-400x240-c.jpeg"
-                                            class="attachment-400x240x1 size-400x240x1" alt="" decoding="async" loading="lazy">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post_info">
-                                    <div class="post_info_l">
-                                        <span>
-                                            <i class="bi bi-text-left">
-                                            </i>
-                                            <a href="https://pyq.cool/jingwen" rel="category tag">
-                                                今闻
-                                            </a>
-                                        </span>
-                                        <span class="mobile_none">
-                                            <i class="bi bi-clock">
-                                            </i>
-                                            2022.01.09
-                                        </span>
-                                        <span class="">
-                                            <i class="bi bi-eye">
-                                            </i>
-                                            851人浏览
-                                        </span>
-                                    </div>
-                                    <div class="post_info_r">
-                                        <em>
-                                            <i class="bi bi-hash">
-                                            </i>
-                                            <a href="https://pyq.cool/tag/%e6%96%b0%e9%97%bb" rel="tag">
-                                                新闻
-                                            </a>
-                                        </em>
-                                        <em>
-                                            <i class="bi bi-hash">
-                                            </i>
-                                            <a href="https://pyq.cool/tag/%e7%94%b5%e8%a7%86" rel="tag">
-                                                电视
-                                            </a>
-                                        </em>
-                                    </div>
-                                </div>
-                            </div> -->
-                   
-                     
-          
-              
-                    <!--         <div class="post_images post_loop">
-                                <img width="920" height="400" src="/rss/assets/2022091904101562-920x400-c.jpg"
-                                class="attachment-920x400x1 size-920x400x1 wp-post-image" alt="" decoding="async"
-                                loading="lazy">
-                                <div class="post_images_foot">
-                                    <h2>
-                                        <a class="stretched-link" href="https://pyq.cool/563.html" title="NEX3 5G手机开箱视频">
-                                            NEX3 5G手机开箱视频
-                                        </a>
-                                    </h2>
-                                    <p>
-                                        从 15 年用上 iPhone6 ，就注定了我在苹果的道上下不来了，想想从毕业开始自己赚钱买手机还是 LG 的忠实粉丝，ku990 p970
-                                        g2 g3 g4 不过后来越做越差的体验.越来越差的品控，让我开始转眼看一下当时的 iOS 系统.。 壹．以前基本上都是半年换一次机的 用锤子比较多，从T1开…
-                                    </p>
-                                    <div class="post_info">
-                                        <div class="post_info_l">
-                                            <span>
-                                                <i class="bi bi-text-left">
-                                                </i>
-                                                <a href="https://pyq.cool/jingwen" rel="category tag">
-                                                    今闻
-                                                </a>
-                                            </span>
-                                            <span>
-                                                <i class="bi bi-clock">
-                                                </i>
-                                                2019.12.01
-                                            </span>
-                                            <span>
-                                                <i class="bi bi-eye">
-                                                </i>
-                                                278人浏览
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                 
-                        </div>
-                        <div class="post-read-more">
-                            <a @click="next" style="cursor: pointer;">
-                                {{ moreBtn }} 
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="sidebar_sticky">
-                            <!-- <aside id="search-4" class="widget widget_search">
-                                <form role="search" method="get" id="searchform" class="searchform" action="https://pyq.cool/">
-                                    <div>
-                                        <label class="screen-reader-text" for="s">
-                                            搜索：
-                                        </label>
-                                        <input type="text" value="" name="s" id="s">
-                                        <input type="submit" id="searchsubmit" value="搜索">
-                                    </div>
-                                </form>
-                            </aside> -->
-                            <aside id="recent-posts-5" class="widget widget_recent_entries">
-                                <h3 class="widget-title">
-                                    近期观看排行
-                                </h3>
-                                <ul>
-                                    <li  v-for="item in ranks">
-                                        <a :href="item.link" target="_blank"  @click="watch" :dataid="item.id">
-                                            {{ item.title }} 
-                                        </a>
-                                        <span class="post-date">
-                                            
-                                                         <i class="bi bi-clock">
-                                                        </i> {{(item.pub_date_show || '').split(' ')[0]}} |  <i class="bi bi-eye">
-                                                        </i> {{ item.watch }} 
-                                                         
-                                        </span>
-                                       
-                                    </li>
-                            
-                                </ul>
-                            </aside>
-                           <!--  <aside id="hot_posts-2" class="widget widget_hot_posts">
-                                <h3 class="widget-title">
-                                    热评文章
-                                </h3>
-                                <ul class="widget_hot_post">
-                                    <li class="widget_hot_li">
-                                        <img width="400" height="280" src="/rss/assets/2022090813431613-400x280-c.jpg"
-                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy">
-                                        <div class="hot_post_info">
-                                            <h4>
-                                                <a class="stretched-link" href="https://pyq.cool/1121.html">
-                                                    一个时代的落幕
-                                                </a>
-                                            </h4>
-                                            <p>
-                                                5条留言
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="widget_hot_li">
-                                        <img width="400" height="280" src="/rss/assets/666e4202112301601297854_1800_500-400x280-c.jpg"
-                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy">
-                                        <div class="hot_post_info">
-                                            <h4>
-                                                <a class="stretched-link" href="https://pyq.cool/560.html">
-                                                    华为手机最危险的设置，学会这招，手机再用3年
-                                                </a>
-                                            </h4>
-                                            <p>
-                                                3条留言
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="widget_hot_li">
-                                        <img width="400" height="280" src="/rss/assets/2022091904101562-400x280-c.jpg"
-                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy">
-                                        <div class="hot_post_info">
-                                            <h4>
-                                                <a class="stretched-link" href="https://pyq.cool/563.html">
-                                                    NEX3 5G手机开箱视频
-                                                </a>
-                                            </h4>
-                                            <p>
-                                                2条留言
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="widget_hot_li">
-                                        <img width="400" height="280" src="/rss/assets/d1fd4202201082115432660_1800_500-400x280-c.jpeg"
-                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy">
-                                        <div class="hot_post_info">
-                                            <h4>
-                                                <a class="stretched-link" href="https://pyq.cool/1086.html">
-                                                    2022年索尼电视还值得买吗？索尼65X95J液晶电视体验分享
-                                                </a>
-                                            </h4>
-                                            <p>
-                                                2条留言
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="widget_hot_li">
-                                        <img width="400" height="280" src="/rss/assets/ad6d4766aec09a24424161cab6801266-400x280-c.png"
-                                        class="attachment-400x280x1 size-400x280x1 wp-post-image" alt="" decoding="async"
-                                        loading="lazy">
-                                        <div class="hot_post_info">
-                                            <h4>
-                                                <a class="stretched-link" href="https://pyq.cool/585.html">
-                                                    为了一滩水大打出手，这就是摄影的魅力
-                                                </a>
-                                            </h4>
-                                            <p>
-                                                1条留言
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </aside> -->
-                           <!--  <aside id="hot_tags-2" class="widget widget_hot_tags">
-                                <h3 class="widget-title">
-                                    标签云
-                                </h3>
-                                <div class="tagcloud">
-                                    <a href="https://pyq.cool/tag/%e9%bb%91%e8%8e%93" class="tag-item"
-                                    title="浏览和黑莓有关的文章">
-                                        <span>
-                                            黑莓
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e8%b4%a8%e4%bf%9d" class="tag-item"
-                                    title="浏览和质保有关的文章">
-                                        <span>
-                                            质保
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e8%8d%a3%e8%aa%89" class="tag-item"
-                                    title="浏览和荣誉有关的文章">
-                                        <span>
-                                            荣誉
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e8%8b%b9%e6%9e%9c" class="tag-item"
-                                    title="浏览和苹果有关的文章">
-                                        <span>
-                                            苹果
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e7%a1%ac%e7%9b%98" class="tag-item"
-                                    title="浏览和硬盘有关的文章">
-                                        <span>
-                                            硬盘
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e7%94%b5%e8%a7%86" class="tag-item"
-                                    title="浏览和电视有关的文章">
-                                        <span>
-                                            电视
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e7%94%b5%e8%84%91" class="tag-item"
-                                    title="浏览和电脑有关的文章">
-                                        <span>
-                                            电脑
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e7%94%b5%e5%95%86" class="tag-item"
-                                    title="浏览和电商有关的文章">
-                                        <span>
-                                            电商
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e6%a1%88%e4%be%8b" class="tag-item hot"
-                                    title="浏览和案例有关的文章">
-                                        <span>
-                                            案例
-                                        </span>
-                                    </a>
-                                    <a href="https://pyq.cool/tag/%e6%96%b0%e9%97%bb" class="tag-item hot"
-                                    title="浏览和新闻有关的文章">
-                                        <span>
-                                            新闻
-                                        </span>
-                                    </a>
-                                </div>
-                            </aside> -->
-                           <!--  <aside id="comments-4" class="widget widget_comments">
-                                <h3 class="widget-title">
-                                    最近评论
-                                </h3>
-                                <ul class="widget_comment_ul">
-                                    <li>
-                                        <img alt="" src="/rss/assets/52024c2dbe3951ca4d7186fbae628bb7.png"
-                                        srcset="https://gravatar.loli.net/avatar/52024c2dbe3951ca4d7186fbae628bb7?s=80&amp;d=mm&amp;r=g 2x"
-                                        class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">
-                                        <div class="widget_comment_info">
-                                            <a rel="nofollow" href="https://pyq.cool/1076.html#comment-18">
-                                                感谢
-                                            </a>
-                                            <span>
-                                                <em>
-                                                    W
-                                                </em>
-                                                <em>
-                                                    发布于4月前
-                                                </em>
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img alt="" src="/rss/assets/7d7915cf1650157c60f34ca211733473.jpeg"
-                                        srcset="https://gravatar.loli.net/avatar/7d7915cf1650157c60f34ca211733473?s=80&amp;d=mm&amp;r=g 2x"
-                                        class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">
-                                        <div class="widget_comment_info">
-                                            <a rel="nofollow" href="https://pyq.cool/1086.html#comment-14">
-                                                感谢分享，很棒。
-                                            </a>
-                                            <span>
-                                                <em>
-                                                    小雨啊
-                                                </em>
-                                                <em>
-                                                    发布于10月前
-                                                </em>
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img alt="" src="/rss/assets/35de170fc7836ea645e1a7d7b307ff6e"
-                                        srcset="https://gravatar.loli.net/avatar/35de170fc7836ea645e1a7d7b307ff6e?s=80&amp;d=mm&amp;r=g 2x"
-                                        class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">
-                                        <div class="widget_comment_info">
-                                            <a rel="nofollow" href="https://pyq.cool/585.html#comment-13">
-                                                我草
-                                            </a>
-                                            <span>
-                                                <em>
-                                                    222
-                                                </em>
-                                                <em>
-                                                    发布于10月前
-                                                </em>
-                                            </span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </aside> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- <section class="links mobile_none">
-            <div class="container">
-                <span>
-                    友情链接：
-                </span>
-                <a href="http://www.2zzt.com/" rel="noopener" target="_blank">
-                    WordPress
-                </a>
-                <a href="http://www.2zzt.com/" rel="noopener" target="_blank">
-                    WordPress Theme
-                </a>
-                <a href="https://www.huitheme.com/" rel="noopener" target="_blank">
-                    WordPress模版
-                </a>
-                <a href="https://www.huitheme.com/" rel="noopener" title="绘主题" target="_blank">
-                    绘主题
-                </a>
-            </div>
-        </section> -->
-
-     <!--    <footer class="footer">
-            <section class="footbox">
-                <div class="container">
-                    <div class="foot">
-                        <div class="copyright">
-                            <p>
-                                ©️ 2022 Once All Rights Reserved. Powered by
-                                <a href="https://www.huitheme.com/" target="_blank">
-                                    WordPress
-                                </a>
-                            </p>
-                        </div>
-                        <div class="foot_nav">
-                            <nav class="dbdh">
-                                <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa-2" class="menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30">
-                                        <a href="https://pyq.cool/page">
-                                            演示页面
-                                        </a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35">
-                                        <a href="https://pyq.cool/jingwen">
-                                            今闻
-                                        </a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39">
-                                        <a href="https://pyq.cool/lvxing">
-                                            <i class="bi bi-palette me-1">
-                                            </i>
-                                            旅行
-                                        </a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34">
-                                        <a href="https://pyq.cool/keji">
-                                            科技资讯
-                                        </a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1315">
-                                        <a href="https://www.huitheme.com/once.html">
-                                            主题下载
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <a class="beian" href="https://beian.miit.gov.cn/" rel="external nofollow"
-                            target="_blank" title="备案号">
-                                <i class="bi bi-shield-check me-1">
-                                </i>
-                                苏ICP备123456号
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <button class="scrollToTopBtn" title="返回顶部">
-                <i class="bi bi-chevron-up">
-                </i>
-            </button>
-        </footer> -->
-
+</head>
+<body>
+<div id="app">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
     </div>
-        <script type="text/javascript" src="/rss/assets/js/pkg/bootstrap.min.js"
-        id="bootstrap-js">
+    <!-- Preloader Ends -->
+
+    <!-- header starts -->
+    <header class="main_header_area" >
+        <div class="header-content py-1 bg-lgrey">
+            <div class="container d-flex align-items-center justify-content-between">
+                <!-- <h4 class="theme mb-0 w-25 fw-normal text-center me-2"><i class="fas fa-bolt"></i> Trending News</h4> -->
+                <div class="links float-right">
+                    <marquee scrolldelay="50" behavior="scroll" onmouseover="this.stop();" onmouseleave="this.start();">
+                        <li><a href="#"><i class="fa fa-star"></i> 嗨 </a></li>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <div class="header_menu" id="header_menu">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-2 pt-2">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#!">
+                            <!--     <img src="assets/images/logo.png" alt="image">
+                                <img src="assets/images/logo-white.png" alt="image"> -->
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav" id="responsive-menu">
+                                <li class="dropdown submenu active">
+                                    <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a href="/rss"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/memos" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="">
+                                            <a href="https://zuofei.net/about.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                
+                            </ul>
+                        </div><!-- /.navbar-collapse -->   
+               <!--          <div class="register-login d-flex align-items-center">
+                            <div class="header_sidemenu me-2">
+                                <div class="mhead">
+                                    <span class="menu-ham">
+                                        <a href="#" class="cart-icon d-flex align-items-center ml-1"><i class="fa fa-th-large theme"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></div>
+                        </div>  -->
+
+                        <div id="slicknav-mobile"></div>
+                    </div>
+                </div><!-- /.container-fluid --> 
+            </nav>
+        </div>
+        <!-- Navigation Bar Ends -->
+    </header>
+    <!-- header ends -->
+
+
+
+    <!-- trending-topic starts -->
+  <!--   <section class="trending-topic pb-6">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Trending <span>Topics</span></h2>
+            </div>  
+            <div class="trending-topic-main">
+                <div class="row shop-slider">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="trending-topic-item box-shadow">
+                            <div class="trending-topic-image overflow-hidden">
+                                <img src="assets/images/trending/trending1.jpg" alt="">
+                                <div class="trending-topic-content">
+                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Lifestyle</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="trending-topic-item box-shadow">
+                            <div class="trending-topic-image">
+                                <img src="assets/images/trending/trending2.jpg" alt="">
+                                <div class="trending-topic-content">
+                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Technology</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="trending-topic-item  box-shadow">
+                            <div class="trending-topic-image">
+                                <img src="assets/images/trending/trending3.jpg" alt="">
+                                <div class="trending-topic-content">
+                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Travel Tips</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="trending-topic-item  box-shadow">
+                            <div class="trending-topic-image">
+                                <img src="assets/images/trending/trending4.jpg" alt="">
+                                <div class="trending-topic-content">
+                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Healthy</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="trending-topic-item  box-shadow">
+                            <div class="trending-topic-image">
+                                <img src="assets/images/trending/trending5.jpg" alt="">
+                                <div class="trending-topic-content">
+                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Public</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--trending-topic ends -->
+    <p></p><p></p><p></p><p></p>
+    <!-- about-us starts -->
+    <template  v-for="item,index in ranks">
+        <!-- <section class="about-us pb-6 pt-0 ptop" v-if="index == 0"> -->
+        <section class="pb-6 pt-0 ptop" v-if="index == 0">
+            <div class="container">
+                <div class="section-title mb-4 pb-1 w-50">
+                    <h2 class="m-0">Recommend & <span>Posts</span></h2>
+                </div> 
+                <div class="about-image-box">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-lg-7 col-sm-12 mb-4">
+                            <div class="about-content">
+                                <h4 class="bg-theme white px-4 py-1 d-inline-block"> 
+                                    <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                      <template v-for="tag,index in item.tags" >
+                                        <span  v-if="index == 0">{{tag}}</span>
+                                    </template>
+                                    </span>
+                                     <span  v-else>
+                                         综合
+                                     </span>
+                                </h4>
+                                <h2 class="border-b mb-2 pb-2"><a :href="item.link" @click="watch" target="_blank" :dataid="item.id">{{ item.title }}</a></h2>
+                                <p class="border-b mb-2 pb-2" v-html="item.summary"></p>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author">
+                                        <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width:20px !important;height:20px !important; display: inline !important;margin-bottom: 4px"> &nbsp;
+                                        <span>{{ item.username }}</span>&nbsp; &nbsp;
+                                        <span style="color: rgb(148, 147, 147);"><i class="fa fa-eye"  style="color: rgb(148, 147, 147);" ></i> {{ item.watch }} </span>
+                                    </div>
+                                    <!--<div class="entry-metalist d-flex align-items-center">
+                                        <ul>
+                                            <li class="me-2"></li>
+                                             <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
+                                            <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li> 
+                                        </ul>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-12 mb-4">
+                            <div class="about-image p-3 box-shadow position-relative">
+                                  <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="object-fit: cover;max-height: 300px;" class="w-100">
+                               <!--  <div class="video-button text-center">
+                                      <div class="call-button text-center">
+                                        <button type="button" class="play-btn js-video-button" data-video-id="152879427" data-channel="vimeo">
+                                            <i class="fa fa-play bg-blue"></i>
+                                        </button>
+                                    </div>
+                                    <div class="video-figure"></div> 
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </template>
+    <!-- about-us ends -->
+
+    <!-- Trending Starts -->
+    <section class="trending pt-0 ptop">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Trending & <span>Posts</span></h2>
+            </div>  
+            <div class="trend-box">
+                <div class="row">
+                    <template  v-for="item,itemIndex in ranks">
+                    <div class="col-lg-4 mb-4"  v-if="itemIndex > 0">
+
+                     <!-- <div  v-if="itemIndex % 2 == 1"> -->
+                     <div>
+                        <div class="trend-item d-flex align-items-center box-shadow p-4">
+                            <div class="trend-content-main me-4 w-75">
+                                <div class="trend-content">
+                                    <h4><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ item.title }}</a></h4>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <div class="entry-author" >
+                                             <h5 class="theme"  style="display: inline;"> 
+                                                <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
+                                                </span>
+                                                 <span  v-else>
+                                                     综合
+                                                 </span>
+                                             </h5>
+
+                                            &nbsp; 
+                                             <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width: 20px  !important;height: 20px !important;margin-bottom: 4px;">
+                                              
+                                              &nbsp;<span style="color: #949393">{{ item.username }}</span>&nbsp;
+                                              <span style="color: #949393"><i class="fa fa-eye" style="color: #949393"></i> {{item.watch}}</span>
+                                        </div>
+                                        <!-- <div class="entry-metalist d-flex align-items-center">
+                                            <ul>
+                                                <li class="me-2"><a href="#"><i class="fa fa-eye"></i> 5k</a></li>
+                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
+                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                           <!--  <div class="trend-image w-25">
+                                   <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100px;height: 100px;object-fit: cover;">
+                            </div> -->
+                        </div>
+                    </div>
+
+                 <!--    <div v-else>
+                        
+                        <div class="trend-item d-flex align-items-center box-shadow p-4 flex-row-reverse">
+                            <div class="trend-content-main mx-4 w-75">
+                                <div class="trend-content">
+                                    <h5 class="theme">
+                                       <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                          <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
+                                        </span>
+                                         <span  v-else>
+                                             综合
+                                         </span>
+                                     </h5>
+                                    <h4><a href="#">{{ item.title }}</a></h4>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <div class="entry-author">
+                                            <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1">
+                                            <span>{{ item.username }}</span>
+                                        </div>
+                                        <div class="entry-metalist d-flex align-items-center">
+                                            <ul>
+                                                <li class="me-2"><a href="#"><i class="fa fa-eye"></i> 5k</a></li>
+                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
+                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="trend-image w-25">
+                                  <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100px;height: 100px;object-fit: cover;">
+                            </div>
+                        </div>
+
+                    </div>
+
+ -->
+
+
+                    </div>
+                    </template>
+
+
+
+
+                
+                </div>
+            </div>    
+        </div>
+    </section>
+    <!-- Trending Ends -->
+
+    <!-- top destination starts -->
+<!--     <section class="featured-video bg-grey pb-5">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">More Highlighted <span>Posts</span></h2>
+            </div>
+
+            <div class="featured-video-main">
+                <div class="row d-flex align-items-center" style="height:650px">
+                    <template  v-for="item,index in banners">
+                    <div class="col-lg-6 mb-4" v-if="index == 0">
+                        <div class="trend-item box-shadow bg-white">
+                            <div class="trend-image overflow-hidden">
+                                <div class="video-banner w-100">
+                                   <img :src="item.cover" style="width:100%;height:100%;object-fit:cover;">
+                                </div>
+                            </div>
+                            <div class="trend-content-main">
+                                <div class="trend-content p-4">
+                                    <h5 class="theme mb-1">Public</h5>
+                                    <h4><a href="#">{{ item.title }}</a></h4>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <div class="entry-author">
+                                            <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1">
+                                            <span>Rosalina D.</span>
+                                        </div>
+                                        <div class="entry-metalist d-flex align-items-center">
+                                            <ul>
+                                                <li class="me-2"><a href="#"><i class="fa fa-eye"></i> 5k</a></li>
+                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
+                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </template>
+                   
+                    <div class="col-lg-6" >
+                        <div class="row" style="height:650px">
+                              <template  v-for="item,index in banners">
+                            <div class="col-lg-6 col-md-6 mb-4" v-if="index != 0" >
+                                <div class="trend-item box-shadow bg-white" >
+                                    <div class="trend-image" >
+                                        <img :src="item.cover" alt="image" style="width:100%;height:210px;object-fit:cover;">
+                                    </div>
+                                    <div class="trend-content-main">
+                                        <div class="trend-content p-4">
+                                            <h5 class="theme mb-1">{{Design}}</h5>
+                                            <h4 class="mb-0"><a href="#">{{ item.title }}</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section> -->
+    <!-- top destination ends -->
+
+    <!-- Discount action starts -->
+  <!--   <section class="discount-action pt-0 bg-grey">
+        <div class="container">
+            <div class="call-banner" style="background-image: url(images/bg/bg1.jpg);">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6 col-md-7 p-0">
+                        <div class="call-banner-inner bg-theme">
+                            <div class="trend-content-main">
+                                <div class="trend-content p-4">
+                                    <h5 class="px-0 mb-1 white">Women</h5>
+                                    <h2 class="mb-2"><a href="#" class="white">Runner with Autism Graces the Latest Cover of Women's Running</a></h2>
+                                    <a href="#" class="main-btn">View Details <i class="fa fa-arrow-right white pl-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-6 col-md-5 p-0"></div> 
+                </div> 
+            </div> 
+            <div class="social-wrapper bg-white p-4">
+                <ul class="social-with-text d-md-flex align-items-center justify-content-between">
+                    <li class="twitter"><a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+                    <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+                    <li class="instagram"><a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+                    <li class="youtube"><a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+                    <li class="pinterest"><a href="#"><i class="fab fa-pinterest"></i><span>Pinterest</span></a></li>
+                    <li class="discord"><a href="#"><i class="fab fa-discord"></i><span>Discord</span></a></li>
+                </ul>
+            </div>    
+        </div>    
+    </section> -->
+    <!-- Discount action Ends -->
+
+    <!-- top deal starts -->
+    <section class="trending recent-articles pb-4">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Recent & <span>Posts</span></h2>
+            </div>
+            <div class="recent-articles-inner">
+                <div class="row">
+                    <div class="col-lg-4 mb-4"  v-for="item in datas">
+                        <div class="trend-item box-shadow bg-white p-4 mb-2">
+                            <div class="trend-image">
+                                     <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100%;height: 158px;object-fit: cover;">
+
+                                      
+                            </div>
+                            <div class="trend-content-main pt-3">
+                                <div class="trend-content">
+                                    <h5 class="theme">
+                                       <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
+                                                </span>
+                                                 <span  v-else>
+                                                     综合
+                                                 </span>
+                                    </h5>
+                                    <h4><a :href="item.link" target="_blank" :dataid="item.id" @click="watch" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ item.title }}</a></h4>
+                                    <div class="mb-3 break" v-html="item.summary.slice(0, 500)">
+                                    </div>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <div class="entry-author">
+                                            <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
+                                            <span>{{ item.username }}</span>&nbsp;&nbsp;
+                                            <i class="fa fa-eye" style="color: rgb(148, 147, 147);"></i> {{ item.watch }}</li>
+                                        </div>
+                                        <!-- <div class="entry-metalist d-flex align-items-center">
+                                            <ul>
+                                                <li class="me-2" style="color: rgb(148, 147, 147);"><i class="fa fa-eye" style="color: rgb(148, 147, 147);"></i> {{ item.watch }}</li>
+                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
+                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--                         <div class="trend-item d-flex align-items-center box-shadow p-3 mb-2 bg-white">
+                            <div class="trend-image w-25 me-4">
+                                <img src="assets/images/trending/trending2.jpg" alt="image">
+                            </div>
+                            <div class="trend-content-main me-3 w-75">
+                                <div class="trend-content">
+                                    <h4 class="mb-1"><a href="#">3 Easy Ways To Make Your iPhone Faster</a></h4>
+                                    <div class="entry-meta">
+                                        <div class="entry-metalist d-flex align-items-center">
+                                            <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 29 Mar 2021</a></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-item d-flex align-items-center box-shadow p-3 mb-2 bg-white">
+                            <div class="trend-image w-25 me-3">
+                                <img src="assets/images/trending/trending3.jpg" alt="image">
+                            </div>
+                            <div class="trend-content-main w-75">
+                                <div class="trend-content">
+                                    <h4 class="mb-1"><a href="#">5 Kinds of Food-Shamers You Will Encounter</a></h4>
+                                    <div class="entry-meta">
+                                        <div class="entry-metalist d-flex align-items-center">
+                                            <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-lg-12">
+                        <div class="trend-btn text-center"><a @click="next" class="nir-btn">{{ moreBtn }}</a></div>
+                    </div>
+    </section>
+
+    <!-- top deal starts -->
+<!--     <section class="top-post pt-0">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Today's <span>Top Posts</span></h2>
+            </div> 
+            <div class="row team-slider">
+                <div class="col-lg-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending1.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending2.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending3.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                   <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending4.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+    <!-- top deal ends -->
+
+    <!-- Instagram starts -->
+<!--     <section class="insta-main pt-0">
+        <div class="container">
+            <div class="insta-inner">
+            <div class="follow-button">
+                <p class="m-0"><a href="#" title=""><i class="fab fa-instagram"></i> Follow on Instagram</a></p>
+            </div>
+            <div class="row attract-slider">
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-3.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-4.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-5.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-1.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-7.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-8.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-2.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-6.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-9.jpg" alt="insta"></a>
+                    </div>
+                </div>
+            </div>
+            </div>    
+        </div>
+    </section> -->
+    <!-- Instagram ends -->
+
+    <!-- cta-horizon starts -->
+<!--     <section class="cta-horizon pt-7 pb-7" style="background-color:#fff5ef;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6 col-offset-lg-2">
+                    <div class="section-title mb-4 pb-1">
+                        <h2 class="mb-0">Subscribe To <span>Our Newsletter</span></h2>
+                    </div>
+                    <p>Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.</p>
+                    <div class="newsletter-form">
+                        <form class="d-flex align-items-center">
+                            <input type="email" placeholder="Enter your email">
+                            <input type="submit" class="nir-btn" value="Subscribe">
+                        </form>
+                    </div> 
+                </div>
+                <div class="col-lg-4">
+                    <div class="newsletter-image float-right">
+                        <img src="assets/images/newsletter1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- cta-horizon Ends -->
+
+    <!-- footer starts -->
+<!--     <footer class="pt-10 footermain">
+        <div class="footer-upper pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-about">
+                            <img src="assets/images/logo-white.png" alt="">
+                            <p class="mt-3 mb-3 white">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio suspendisse leo neque iaculis molestie sagittis maecenas aenean eget molestie sagittis.
+                            </p>
+                            <ul>
+                                <li class="white"><strong>PO Box:</strong> +47-252-254-2542</li>
+                                <li class="white"><strong>Location:</strong> Collins Street, sydney, Australia</li>
+                                <li class="white"><strong>Email:</strong> info@magberg.com</li>
+                                <li class="white"><strong>Website:</strong> www.magberg.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Quick link</h3>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Popular Tags</h3>
+                            <div class="tagcloud">
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Beautiful</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Public</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Technology</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Travel</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Entertainment</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Blog</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Sports </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Popular Posts</h3>
+                            <div class="trend-main">
+                                <div class="trend-item d-flex align-items-center mb-2">
+                                    <div class="trend-image w-25 me-4">
+                                        <img src="assets/images/trending/trending4.jpg" alt="image">
+                                    </div>
+                                    <div class="trend-content-main me-3 w-75">
+                                        <div class="trend-content">
+                                            <h4 class="mb-1"><a href="#">3 Easy Ways To Make Your iPhone Faster</a></h4>
+                                            <div class="entry-meta">
+                                                <div class="entry-metalist d-flex align-items-center">
+                                                    <small><a href="#" class="white"><i class="fa fa-calendar"></i> 29 Mar 2021</a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="trend-item d-flex align-items-center mb-2">
+                                    <div class="trend-image w-25 me-4">
+                                        <img src="assets/images/trending/trending5.jpg" alt="image">
+                                    </div>
+                                    <div class="trend-content-main me-3 w-75">
+                                        <div class="trend-content">
+                                            <h4 class="mb-1"><a href="#">Facts About Business That Will Help You Success</a></h4>
+                                            <div class="entry-meta">
+                                                <div class="entry-metalist d-flex align-items-center">
+                                                    <small><a href="#" class="white"><i class="fa fa-calendar"></i> 05 Apr 2021</a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="trend-item d-flex align-items-center mb-2">
+                                    <div class="trend-image w-25 me-4">
+                                        <img src="assets/images/trending/trending6.jpg" alt="image">
+                                    </div>
+                                    <div class="trend-content-main me-3 w-75">
+                                        <div class="trend-content">
+                                            <h4 class="mb-1"><a href="#">Your Light Is About To Stop Being Relevant</a></h4>
+                                            <div class="entry-meta">
+                                                <div class="entry-metalist d-flex align-items-center">
+                                                    <small><a href="#" class="white"><i class="fa fa-calendar"></i> 22 Mar 2021</a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright pt-2 pb-2">
+            <div class="container">
+                <div class="copyright-inner d-md-flex align-items-center justify-content-between">
+                    <div class="copyright-text">
+                        <p class="m-0 white">2020 Magberg. All rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.</p>
+                    </div>
+                    <div class="social-links">
+                        <ul>  
+                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </footer> -->
+    <!-- footer ends -->
+    
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+
+    <div class="view-port">
+        <div class="dark-mode"><a href="#"><i class="fa fa-moon"></i> Night</a></div>
+        <div class="light-mode"><a href="#"><i class="fa fa-sun"></i> Day</a></div>
+    </div>
+
+    <!-- search popup -->
+    <div id="search1">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+    <!-- header side menu --> 
+<!--     <div class="header_sidemenu">
+        <div class="header_sidemenu_in">
+            <div class="menu bg-navy py-5 px-4">
+                <div class="close-menu">
+                    <i class="fa fa-times white"></i>
+                </div>
+                 <div class="m-contentmain">
+                    <div class="m-contentmain">
+                        <div class="m-logo mb-5">
+                            <img src="assets/images/logo-white.png" alt="m-logo">
+                        </div>
+
+                        <div class="content-box mb-5">
+                            <h3 class="white">Get In Touch</h3>
+                            <p class="white mb-2">We must explain to you how all seds this mistakens idea off denouncing pleasures and praising pain was born and I will give you a completed accounts..</p>
+                            <a href="#" class="nir-btn">Consultation</a>
+                        </div>
+
+                        <div class="contact-info">
+                            <h3 class="white">Contact Info</h3>
+                            <ul>
+                                <li class="white d-block mb-1"><i class="fa fa-map-marker-alt me-1"></i> Brozon Mall 26, Newyrok NY 10005</li>
+                                <li class="white d-block mb-1"><i class="fa fa-phone-alt me-1"></i>555 626-0234</li>
+                                <li class="white d-block mb-1"><i class="fa fa-envelope-open me-1"></i>support@magberg.com</li>
+                                <li class="white d-block"><i class="fa fa-clock me-1"></i> Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="overlay hide"></div>
+        </div>
+    </div> -->
+</div>
+    <!-- *Scripts* -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugin.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/custom-swiper.js"></script>
+    <script src="assets/js/custom-nav.js"></script>
+            <script type="text/javascript" src="assets/js/pkg/fancybox.js" id="fancybox-js">
         </script>
-        <script type="text/javascript" src="/rss/assets/js/pkg/js.js"
-        id="dsjs-js">
-        </script>
-        <script type="text/javascript" src="/rss/assets/js/pkg/fancybox.js" id="fancybox-js">
-        </script>
-        <script type="text/javascript" src="/rss/assets/js/pkg/vue.global.js">
+        <script type="text/javascript" src="assets/js/pkg/vue.global.js">
         </script>
         <script type="text/javascript" src="https://js.cybozu.com/markedjs/v0.3.5/marked.min.js">
         </script>
         <script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js">
         </script>
-        <script type="text/javascript" src="/rss/config.js">
+        <script type="text/javascript" src="config.js">
         </script>
-        <script type="text/javascript" src="/rss/assets/js/global.js">
+        <script type="text/javascript" src="assets/js/global.js">
         </script>
-        <script type="text/javascript" src="/rss/assets/js/index.js">
+        <script type="text/javascript" src="assets/js/index.js">
         </script>
-    </body>
-
+</body>
 </html>

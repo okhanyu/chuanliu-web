@@ -72,7 +72,7 @@ function getBanners(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "get?where=1",
+            url: server + "get?where=1&page_num="+ offset + "&page_size=5",
             beforeSend: function() {
             },
             success: function(response) {
@@ -95,11 +95,11 @@ function getRanks(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "get?order=1",
+            url: server + "get?order=1&page_num="+ offset + "&page_size=7",
             beforeSend: function() {
             },
             success: function(response) {
-               
+                
                 getDataSuccess(response, callback);
             },
             error: function(e) {
