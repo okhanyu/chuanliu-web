@@ -248,7 +248,7 @@
                         <div class="trend-item d-flex align-items-center box-shadow p-4">
                             <div class="trend-content-main me-4 w-75">
                                 <div class="trend-content">
-                                    <h4><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ item.title }}</a></h4>
+                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" >{{ item.title }}</a></h4>
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
                                         <div class="entry-author" >
                                              <h5 class="theme"  style="display: inline;"> 
@@ -459,7 +459,7 @@
                                                      综合
                                                  </span>
                                     </h5>
-                                    <h4><a :href="item.link" target="_blank" :dataid="item.id" @click="watch" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ item.title }}</a></h4>
+                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a :href="item.link" target="_blank" :dataid="item.id" @click="watch" >{{ item.title }}</a></h4>
                                     <div class="mb-3 break" v-html="item.summary.slice(0, 500)">
                                     </div>
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
