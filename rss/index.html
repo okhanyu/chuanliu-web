@@ -29,6 +29,10 @@
          overflow: hidden; text-overflow: ellipsis;height: 100px;
         }
 
+        body.night-mode .whitechange a {
+            color: #fff !important;
+        }
+
     </style>
 </head>
 <body>
@@ -192,7 +196,7 @@
                                          综合
                                      </span>
                                 </h4>
-                                <h2 class="border-b mb-2 pb-2"><a :href="item.link" @click="watch" target="_blank" :dataid="item.id">{{ item.title }}</a></h2>
+                                <h3 class="border-b mb-2 pb-2 whitechange"><a :href="item.link" @click="watch" target="_blank" :dataid="item.id">{{ item.title }}</a></h3>
                                 <p class="border-b mb-2 pb-2" v-html="item.summary"></p>
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
                                     <div class="entry-author">
@@ -257,7 +261,7 @@
                                                      综合
                                                  </span>
                                              </h5>
-                                    <h3 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin:12px 0px 12px 0px;"><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" >{{ item.title }}</a></h3>
+                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin:12px 0px 12px 0px;"><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" >{{ item.title }}</a></h4>
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
                                         <div class="entry-author" >
                                             
