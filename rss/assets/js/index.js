@@ -9,7 +9,6 @@ const app = createApp({
         return {
             datas: [],
             ranks: [],
-            banners: [],
             server:server,
             moreBtn:"加载更多"
         }
@@ -57,9 +56,7 @@ const app = createApp({
         getRanks(function(data) {
             that.ranks = data.data
         });
-        getBanners(function(data) {
-            that.banners = data.data
-        });
+     
     }
 });
 
@@ -67,35 +64,13 @@ const vm = app.mount('#app');
 
 /*** 初始化 vue end***/
 
-function getBanners(callback) {
-    // $.ajaxSetup({ async: false });
-
-        $.ajax({
-            type: "GET",
-            url: server + "get?where=1&page_num="+ offset + "&page_size=5",
-            beforeSend: function() {
-            },
-            success: function(response) {
-               
-                getDataSuccess(response, callback);
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    //getDataSuccess(sort(allData), callback);
-
-};
-
 
 function getRanks(callback) {
     // $.ajaxSetup({ async: false });
 
-
         $.ajax({
             type: "GET",
-            url: server + "get?order=1&page_num="+ offset + "&page_size=7",
+            url: server + "get?order=1&where=2&page_num="+ offset + "&page_size=7",
             beforeSend: function() {
             },
             success: function(response) {
@@ -115,10 +90,9 @@ function getRanks(callback) {
 function getDatas(callback) {
     // $.ajaxSetup({ async: false });
 
-
         $.ajax({
             type: "GET",
-            url: server + "get?page_num="+ offset + "&page_size="+limit,
+            url: server + "get?where=1&page_num="+ offset + "&page_size="+limit,
             beforeSend: function() {
             },
             success: function(response) {

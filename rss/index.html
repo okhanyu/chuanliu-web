@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>广场</title>
+    <title>广场(Demo)</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
     <!-- Bootstrap core CSS -->
@@ -176,7 +176,7 @@
         <section class="pb-6 pt-0 ptop" v-if="index == 0">
             <div class="container">
                 <div class="section-title mb-4 pb-1 w-50">
-                    <h2 class="m-0">Recommend & <span>Posts</span></h2>
+                    <h2 class="m-0">Recommend & <span>48 hours</span></h2>
                 </div> 
                 <div class="about-image-box">
                     <div class="row d-flex align-items-center justify-content-between">
@@ -197,7 +197,7 @@
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
                                     <div class="entry-author">
                                         <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width:20px !important;height:20px !important; display: inline !important;margin-bottom: 4px"> &nbsp;
-                                        <span style="font-size:12px;color: #949393;margin-top:3px">{{ item.username }}</span>&nbsp; &nbsp;
+                                        <span style="font-size:12px;color: #949393;margin-top:3px">{{ item.user_name }}</span>&nbsp; &nbsp;
                                         <span style="font-size:12px;color: #949393;margin-top:3px"><i class="fa fa-eye" style="font-size:12px;color: #949393;margin-top:3px" ></i> {{ item.watch }} </span>
                                     </div>
                                     <!--<div class="entry-metalist d-flex align-items-center">
@@ -236,7 +236,7 @@
     <section class="trending pt-0 ptop">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-50">
-                <h2 class="m-0">Trending & <span>Posts</span></h2>
+                <h2 class="m-0">Trending & <span>48 hours</span></h2>
             </div>  
             <div class="trend-box">
                 <div class="row">
@@ -263,7 +263,7 @@
                                             &nbsp; 
                                              <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width: 20px  !important;height: 20px !important;margin-bottom: 4px;">
                                               
-                                              &nbsp;<span style="font-size:12px;color: #949393">{{ item.username }}</span>&nbsp;
+                                              &nbsp;<span style="font-size:12px;color: #949393">{{ item.user_name }}</span>&nbsp;
                                               <span style="font-size:12px;color: #949393"><i class="fa fa-eye" style="font-size:12px;color: #949393"></i> {{item.watch}} </span>
                                         </div>
 
@@ -301,7 +301,7 @@
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
                                         <div class="entry-author">
                                             <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1">
-                                            <span>{{ item.username }}</span>
+                                            <span>{{ item.user_name }}</span>
                                         </div>
                                         <div class="entry-metalist d-flex align-items-center">
                                             <ul>
@@ -465,7 +465,7 @@
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
                                         <div class="entry-author">
                                             <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
-                                            <span style="font-size:12px;color: #949393;">{{ item.username }}</span>&nbsp;&nbsp;
+                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
                                             <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>                                        </div>
                                         <!-- <div class="entry-metalist d-flex align-items-center">
                                             <ul>
