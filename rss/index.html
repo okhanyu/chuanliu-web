@@ -70,10 +70,10 @@
                                     <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <i class="icon-arrow-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
                                         <li class="">
-                                            <a href="/rss"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <a href="/rss/"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </li>
                                         <li class="">
-                                            <a href="/memos" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <a href="/memos/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </li>
                                         <li class="">
                                             <a href="https://zuofei.net/about.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于<i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -197,8 +197,8 @@
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
                                     <div class="entry-author">
                                         <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width:20px !important;height:20px !important; display: inline !important;margin-bottom: 4px"> &nbsp;
-                                        <span>{{ item.username }}</span>&nbsp; &nbsp;
-                                        <span style="color: rgb(148, 147, 147);"><i class="fa fa-eye"  style="color: rgb(148, 147, 147);" ></i> {{ item.watch }} </span>
+                                        <span style="font-size:12px;color: #949393;margin-top:3px">{{ item.username }}</span>&nbsp; &nbsp;
+                                        <span style="font-size:12px;color: #949393;margin-top:3px"><i class="fa fa-eye" style="font-size:12px;color: #949393;margin-top:3px" ></i> {{ item.watch }} </span>
                                     </div>
                                     <!--<div class="entry-metalist d-flex align-items-center">
                                         <ul>
@@ -208,6 +208,7 @@
                                         </ul>
                                     </div>-->
                                 </div>
+                                 <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
                             </div>
                         </div>
                         <div class="col-lg-5 col-sm-12 mb-4">
@@ -262,9 +263,10 @@
                                             &nbsp; 
                                              <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width: 20px  !important;height: 20px !important;margin-bottom: 4px;">
                                               
-                                              &nbsp;<span style="color: #949393">{{ item.username }}</span>&nbsp;
-                                              <span style="color: #949393"><i class="fa fa-eye" style="color: #949393"></i> {{item.watch}}</span>
+                                              &nbsp;<span style="font-size:12px;color: #949393">{{ item.username }}</span>&nbsp;
+                                              <span style="font-size:12px;color: #949393"><i class="fa fa-eye" style="font-size:12px;color: #949393"></i> {{item.watch}} </span>
                                         </div>
+
                                         <!-- <div class="entry-metalist d-flex align-items-center">
                                             <ul>
                                                 <li class="me-2"><a href="#"><i class="fa fa-eye"></i> 5k</a></li>
@@ -273,6 +275,7 @@
                                             </ul>
                                         </div> -->
                                     </div>
+                                    <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
                                 </div>
                             </div>
                            <!--  <div class="trend-image w-25">
@@ -462,9 +465,8 @@
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
                                         <div class="entry-author">
                                             <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
-                                            <span>{{ item.username }}</span>&nbsp;&nbsp;
-                                            <i class="fa fa-eye" style="color: rgb(148, 147, 147);"></i> {{ item.watch }}</li>
-                                        </div>
+                                            <span style="font-size:12px;color: #949393;">{{ item.username }}</span>&nbsp;&nbsp;
+                                            <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>                                        </div>
                                         <!-- <div class="entry-metalist d-flex align-items-center">
                                             <ul>
                                                 <li class="me-2" style="color: rgb(148, 147, 147);"><i class="fa fa-eye" style="color: rgb(148, 147, 147);"></i> {{ item.watch }}</li>
@@ -472,6 +474,7 @@
                                                 <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
                                             </ul>
                                         </div> -->
+                                         <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
                                     </div>
                                 </div>
                             </div>
