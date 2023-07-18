@@ -246,25 +246,27 @@
                      <!-- <div  v-if="itemIndex % 2 == 1"> -->
                      <div>
                         <div class="trend-item d-flex align-items-center box-shadow p-4">
-                            <div class="trend-content-main me-4 w-75">
+                            <!-- <div class="trend-content-main me-4 w-75"> -->
+                                <div class="trend-content-main me-4 w-100">
                                 <div class="trend-content">
-                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" >{{ item.title }}</a></h4>
-                                    <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author" >
-                                             <h5 class="theme"  style="display: inline;"> 
-                                                <span  v-if="item.tags!= undefined && item.tags.length != 0">
-                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
+                                     <h5 class="theme"  style="display: inline;font-size:12px!important;" > 
+                                                <span  v-if="item.tags!= undefined && item.tags.length != 0" style="font-size:12px!important;">
+                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">{{tag}}&nbsp;</span></template>
                                                 </span>
-                                                 <span  v-else>
+                                                 <span  v-else style="font-size:12px!important;">
                                                      综合
                                                  </span>
                                              </h5>
-
-                                            &nbsp; 
+                                    <h3 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin:12px 0px 12px 0px;"><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" >{{ item.title }}</a></h3>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <div class="entry-author" >
+                                            
+                                           
                                              <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width: 20px  !important;height: 20px !important;margin-bottom: 4px;">
                                               
                                               &nbsp;<span style="font-size:12px;color: #949393">{{ item.user_name }}</span>&nbsp;
-                                              <span style="font-size:12px;color: #949393"><i class="fa fa-eye" style="font-size:12px;color: #949393"></i> {{item.watch}} </span>
+                                              <span style="font-size:12px;color: #949393"><i class="fa fa-eye" style="font-size:12px;color: #949393"></i> {{item.watch}}</span>
+
                                         </div>
 
                                         <!-- <div class="entry-metalist d-flex align-items-center">
@@ -279,7 +281,7 @@
                                 </div>
                             </div>
                            <!--  <div class="trend-image w-25">
-                                   <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100px;height: 100px;object-fit: cover;">
+                                   <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100px;height: 100px;object-fit: cover;border-radius: 5px; box-shadow: 1px 1px 10px #c0bebe37;">
                             </div> -->
                         </div>
                     </div>
