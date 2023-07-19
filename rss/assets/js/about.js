@@ -9,13 +9,14 @@ const app = createApp({
         return {
             datas: [],
             ranks: [],
+            aTotal: 0,
+            aWatch: 0,
             server:server,
             moreBtn:"加载更多"
         }
     },
     methods: {
         watch(event) {
-
             $.ajax({
               url: server +"rss/watch",
               type: "POST",
@@ -38,25 +39,31 @@ const app = createApp({
 
             });
         },
-        nextSort(event) {
-            offset++;
-            const that = this;
-            getDatas(function(data) {
-                data.push(...that.datas);
-                that.datas = sort(data);
-            });
+        handle(param){
+            s = param.rss_link.split('://')
+            return s[0]+"://"+s[1].split("/")[0]
         }
+        // nextSort(event) {
+        //     offset++;
+        //     const that = this;
+        //     getDatas(function(data) {
+        //         data.push(...that.datas);
+        //         that.datas = sort(data);
+        //     });
+        // }
     },
     mounted: function() {
         const that = this;
-        getDatas(function(data) {
+      
+        getUsers(function(data) {
             // data.push(...that.datas);
             that.datas = data.data
-        });
-        getRanks(function(data) {
-            that.ranks = data.data
-        });
-        getUsers(function(data) {
+            for (var i = 0; i < that.datas.length; i++) {
+               that.aTotal +=  that.datas[i].total
+               that.aWatch +=  that.datas[i].watch
+            }
+            console.log(that.aTotal)
+            console.log(that.aWatch)
         });
      
     }
@@ -67,52 +74,6 @@ const vm = app.mount('#app');
 /*** 初始化 vue end***/
 
 
-function getRanks(callback) {
-    // $.ajaxSetup({ async: false });
-
-        $.ajax({
-            type: "GET",
-            url: server + "rss/list?order=1&where=2&page_num="+ offset + "&page_size=7",
-            beforeSend: function() {
-            },
-            success: function(response) {
-                
-                getDataSuccess(response, callback);
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    //getDataSuccess(sort(allData), callback);
-
-};
-
-
-function getDatas(callback) {
-    // $.ajaxSetup({ async: false });
-
-        $.ajax({
-            type: "GET",
-            url: server + "rss/list?where=1&page_num="+ offset + "&page_size="+limit,
-            beforeSend: function() {
-            },
-            success: function(response) {
-                if (response.code == 0 && response.data != null  && response.data != undefined ){
-                    getDataSuccess(response, callback);
-                }else{
-                    vm.$data.moreBtn = "无"
-                }
-                
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    // getDataSuccess(sort(allData), callback);
-
-};
 
 function getUsers(callback) {
     // $.ajaxSetup({ async: false });
@@ -123,7 +84,11 @@ function getUsers(callback) {
             beforeSend: function() {
             },
             success: function(response) {
-                console.log(response);
+                if (response.code == 0 && response.data != null  && response.data != undefined ){
+                    getDataSuccess(response, callback);
+                }else{
+                    vm.$data.moreBtn = "无"
+                }
             },
             error: function(e) {
                 console.log(e);

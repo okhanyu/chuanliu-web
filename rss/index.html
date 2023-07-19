@@ -21,7 +21,7 @@
     <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> -->
     <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
-<link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/fonts/line-icons.css" type="text/css">
         <style type="text/css">
         
@@ -80,7 +80,7 @@
                                             <a href="/memos/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </li>
                                         <li class="">
-                                            <a href="https://zuofei.net/about.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <a href="about.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -109,75 +109,11 @@
     <!-- header ends -->
 
 
-
-    <!-- trending-topic starts -->
-  <!--   <section class="trending-topic pb-6">
-        <div class="container">
-            <div class="section-title mb-4 pb-1 w-50">
-                <h2 class="m-0">Trending <span>Topics</span></h2>
-            </div>  
-            <div class="trending-topic-main">
-                <div class="row shop-slider">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="trending-topic-item box-shadow">
-                            <div class="trending-topic-image overflow-hidden">
-                                <img src="assets/images/trending/trending1.jpg" alt="">
-                                <div class="trending-topic-content">
-                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Lifestyle</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="trending-topic-item box-shadow">
-                            <div class="trending-topic-image">
-                                <img src="assets/images/trending/trending2.jpg" alt="">
-                                <div class="trending-topic-content">
-                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Technology</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="trending-topic-item  box-shadow">
-                            <div class="trending-topic-image">
-                                <img src="assets/images/trending/trending3.jpg" alt="">
-                                <div class="trending-topic-content">
-                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Travel Tips</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="trending-topic-item  box-shadow">
-                            <div class="trending-topic-image">
-                                <img src="assets/images/trending/trending4.jpg" alt="">
-                                <div class="trending-topic-content">
-                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Healthy</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="trending-topic-item  box-shadow">
-                            <div class="trending-topic-image">
-                                <img src="assets/images/trending/trending5.jpg" alt="">
-                                <div class="trending-topic-content">
-                                    <h4 class="mb-0 text-center py-1 px-3 bg-white position-absolute"><a href="#">Public</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!--trending-topic ends -->
     <p></p><p></p><p></p><p></p>
     <!-- about-us starts -->
     <template  v-for="item,index in ranks">
         <!-- <section class="about-us pb-6 pt-0 ptop" v-if="index == 0"> -->
-        <section class="pb-6 pt-0 ptop" v-if="index == 0">
+        <section class="pb-6 pt-5 ptop" v-if="index == 0">
             <div class="container">
                 <div class="section-title mb-4 pb-1 w-50">
                     <h2 class="m-0">Recommend & <span>48 hours</span></h2>
@@ -237,7 +173,7 @@
     <!-- about-us ends -->
 
     <!-- Trending Starts -->
-    <section class="trending pt-0 ptop">
+<!--     <section class="trending pt-0 ptop">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-50">
                 <h2 class="m-0">Trending & <span>48 hours</span></h2>
@@ -247,10 +183,8 @@
                     <template  v-for="item,itemIndex in ranks">
                     <div class="col-lg-4 mb-4"  v-if="itemIndex > 0">
 
-                     <!-- <div  v-if="itemIndex % 2 == 1"> -->
                      <div>
                         <div class="trend-item d-flex align-items-center box-shadow p-4">
-                            <!-- <div class="trend-content-main me-4 w-75"> -->
                                 <div class="trend-content-main me-4 w-100">
                                 <div class="trend-content">
                                      <h5 class="theme"  style="display: inline;font-size:12px!important;" > 
@@ -273,175 +207,143 @@
 
                                         </div>
 
-                                        <!-- <div class="entry-metalist d-flex align-items-center">
-                                            <ul>
-                                                <li class="me-2"><a href="#"><i class="fa fa-eye"></i> 5k</a></li>
-                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
-                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
-                                            </ul>
-                                        </div> -->
+                                      
                                     </div>
                                     <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
                                 </div>
                             </div>
-                           <!--  <div class="trend-image w-25">
-                                   <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100px;height: 100px;object-fit: cover;border-radius: 5px; box-shadow: 1px 1px 10px #c0bebe37;">
-                            </div> -->
+                   
                         </div>
                     </div>
+                    </div>
+                    </template>
+                </div>
+            </div>    
+        </div>
+    </section> -->
+    <!-- Trending Ends -->
 
-                 <!--    <div v-else>
-                        
-                        <div class="trend-item d-flex align-items-center box-shadow p-4 flex-row-reverse">
-                            <div class="trend-content-main mx-4 w-75">
-                                <div class="trend-content">
-                                    <h5 class="theme">
-                                       <span  v-if="item.tags!= undefined && item.tags.length != 0">
-                                          <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
-                                        </span>
-                                         <span  v-else>
-                                             综合
-                                         </span>
-                                     </h5>
-                                    <h4><a href="#">{{ item.title }}</a></h4>
-                                    <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author">
-                                            <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1">
-                                            <span>{{ item.user_name }}</span>
+
+        <!-- Trending Starts -->
+    <section class="trending more-top pb-6 pt-5 ptop">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-100">
+                <h2 class="m-0">More Top <span>Posts</span></h2>
+            </div>  
+            <div class="trend-box">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <template  v-for="item,index in ranks">
+                            <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0 && index%2 == 1 && item.cover != undefined &&  item.cover != '' ">
+                                <div class="row">
+                                    <div class="col-lg-4 pe-0">
+                                        <div class="trend-image1">
+                                             <!-- <a href="blog-single.html"  :style="'background-image: url('+item.cover+');'" ></a> -->
+                                             <img :src="item.cover" onerror="this.src='assets/images/back.jpg'" style="width:100%;height: auto;max-height:190px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;">
                                         </div>
-                                        <div class="entry-metalist d-flex align-items-center">
-                                            <ul>
-                                                <li class="me-2"><a href="#"><i class="fa fa-eye"></i> 5k</a></li>
-                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
-                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
-                                            </ul>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="trend-content-main">
+                                            <div class="trend-content">
+                                                <h5 class="theme"><span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
+                                                </span>
+                                                 <span  v-else>
+                                                     综合
+                                                 </span></h5>
+                                                <h4><a :href="item.link" target="_blank" @click="watch" :dataid="item.id" >{{ item.title }}</a></h4>
+                                                <div class="mb-2" style="overflow:hidden;text-overflow: ellipsis;height:50px;" v-html="item.summary"></div>
+                                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                                    <div class="entry-author">
+                                                       <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
+                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                       <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
+                                                       <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
+                                                    </div>
+                                                   <!--  <div class="entry-metalist d-flex align-items-center">
+                                                        <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
+                                                    </div> -->
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                             <div class="trend-image w-25">
-                                  <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100px;height: 100px;object-fit: cover;">
+                            <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0 && (item.cover == undefined ||  item.cover == '' ||  item.cover == null) ">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="trend-content-main">
+                                            <div class="trend-content">
+                                                <h5 class="theme"><span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
+                                                </span>
+                                                 <span  v-else>
+                                                     综合
+                                                 </span></h5>
+                                                <h4><a :href="item.link" target="_blank" @click="watch" :dataid="item.id">{{ item.title }}</a></h4>
+                                                <div class="mb-2" style="overflow:hidden;text-overflow: ellipsis;height:50px;" v-html="item.summary" ></div>
+                                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                                    <div class="entry-author">
+                                                       <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
+                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                       <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
+                                                       <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
+                                                    </div>
+                                                    <!-- <div class="entry-metalist d-flex align-items-center">
+                                                       <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
+                            <div class="trend-item box-shadow p-4 mb-4"  v-if="index != 0 && index%2 == 0 && item.cover != undefined &&  item.cover != '' ">
+                                <div class="row flex-row-reverse">
+                                    <div class="col-lg-4 ps-0">
+                                        <div class="trend-image1">
+                                             <!-- <a href="blog-single.html"  :style="'background-image: url('+item.cover+');'" ></a> -->
+                                             <img :src="item.cover" onerror="this.src='assets/images/back.jpg'" style="width:100%;height: auto;max-height:190px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="trend-content-main">
+                                            <div class="trend-content">
+                                                <h5 class="theme"><span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
+                                                </span>
+                                                 <span  v-else>
+                                                     综合
+                                                 </span></h5>
+                                                <h4><a :href="item.link" target="_blank" @click="watch" :dataid="item.id">{{ item.title }}</a></h4>
+                                               <div class="mb-2" style="overflow:hidden;text-overflow: ellipsis;height:50px;" v-html="item.summary"></div>
+                                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                                    <div class="entry-author">
+                                                        <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
+                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                        <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
+                                                        <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
+                                                    </div>
+                                                    <!-- <div class="entry-metalist d-flex align-items-center">
+                                                        <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
                     </div>
-
- -->
-
-
-                    </div>
-                    </template>
-
-
-
-
-                
                 </div>
             </div>    
         </div>
     </section>
     <!-- Trending Ends -->
 
-    <!-- top destination starts -->
-<!--     <section class="featured-video bg-grey pb-5">
-        <div class="container">
-            <div class="section-title mb-4 pb-1 w-50">
-                <h2 class="m-0">More Highlighted <span>Posts</span></h2>
-            </div>
-
-            <div class="featured-video-main">
-                <div class="row d-flex align-items-center" style="height:650px">
-                    <template  v-for="item,index in banners">
-                    <div class="col-lg-6 mb-4" v-if="index == 0">
-                        <div class="trend-item box-shadow bg-white">
-                            <div class="trend-image overflow-hidden">
-                                <div class="video-banner w-100">
-                                   <img :src="item.cover" style="width:100%;height:100%;object-fit:cover;">
-                                </div>
-                            </div>
-                            <div class="trend-content-main">
-                                <div class="trend-content p-4">
-                                    <h5 class="theme mb-1">Public</h5>
-                                    <h4><a href="#">{{ item.title }}</a></h4>
-                                    <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author">
-                                            <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1">
-                                            <span>Rosalina D.</span>
-                                        </div>
-                                        <div class="entry-metalist d-flex align-items-center">
-                                            <ul>
-                                                <li class="me-2"><a href="#"><i class="fa fa-eye"></i> 5k</a></li>
-                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
-                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </template>
-                   
-                    <div class="col-lg-6" >
-                        <div class="row" style="height:650px">
-                              <template  v-for="item,index in banners">
-                            <div class="col-lg-6 col-md-6 mb-4" v-if="index != 0" >
-                                <div class="trend-item box-shadow bg-white" >
-                                    <div class="trend-image" >
-                                        <img :src="item.cover" alt="image" style="width:100%;height:210px;object-fit:cover;">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content p-4">
-                                            <h5 class="theme mb-1">{{Design}}</h5>
-                                            <h4 class="mb-0"><a href="#">{{ item.title }}</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </template>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>   
-    </section> -->
-    <!-- top destination ends -->
-
-    <!-- Discount action starts -->
-  <!--   <section class="discount-action pt-0 bg-grey">
-        <div class="container">
-            <div class="call-banner" style="background-image: url(images/bg/bg1.jpg);">
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg-6 col-md-7 p-0">
-                        <div class="call-banner-inner bg-theme">
-                            <div class="trend-content-main">
-                                <div class="trend-content p-4">
-                                    <h5 class="px-0 mb-1 white">Women</h5>
-                                    <h2 class="mb-2"><a href="#" class="white">Runner with Autism Graces the Latest Cover of Women's Running</a></h2>
-                                    <a href="#" class="main-btn">View Details <i class="fa fa-arrow-right white pl-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="col-lg-6 col-md-5 p-0"></div> 
-                </div> 
-            </div> 
-            <div class="social-wrapper bg-white p-4">
-                <ul class="social-with-text d-md-flex align-items-center justify-content-between">
-                    <li class="twitter"><a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
-                    <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-                    <li class="instagram"><a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-                    <li class="youtube"><a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
-                    <li class="pinterest"><a href="#"><i class="fab fa-pinterest"></i><span>Pinterest</span></a></li>
-                    <li class="discord"><a href="#"><i class="fab fa-discord"></i><span>Discord</span></a></li>
-                </ul>
-            </div>    
-        </div>    
-    </section> -->
-    <!-- Discount action Ends -->
 
     <!-- top deal starts -->
-    <section class="trending recent-articles pb-4">
+    <section class="trending recent-articles pb-6 pt-5 ptop">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-50">
                 <h2 class="m-0">Recent & <span>Posts</span></h2>
@@ -845,49 +747,16 @@
         </form>
     </div>
 
-    <!-- header side menu --> 
-<!--     <div class="header_sidemenu">
-        <div class="header_sidemenu_in">
-            <div class="menu bg-navy py-5 px-4">
-                <div class="close-menu">
-                    <i class="fa fa-times white"></i>
-                </div>
-                 <div class="m-contentmain">
-                    <div class="m-contentmain">
-                        <div class="m-logo mb-5">
-                            <img src="assets/images/logo-white.png" alt="m-logo">
-                        </div>
 
-                        <div class="content-box mb-5">
-                            <h3 class="white">Get In Touch</h3>
-                            <p class="white mb-2">We must explain to you how all seds this mistakens idea off denouncing pleasures and praising pain was born and I will give you a completed accounts..</p>
-                            <a href="#" class="nir-btn">Consultation</a>
-                        </div>
-
-                        <div class="contact-info">
-                            <h3 class="white">Contact Info</h3>
-                            <ul>
-                                <li class="white d-block mb-1"><i class="fa fa-map-marker-alt me-1"></i> Brozon Mall 26, Newyrok NY 10005</li>
-                                <li class="white d-block mb-1"><i class="fa fa-phone-alt me-1"></i>555 626-0234</li>
-                                <li class="white d-block mb-1"><i class="fa fa-envelope-open me-1"></i>support@magberg.com</li>
-                                <li class="white d-block"><i class="fa fa-clock me-1"></i> Week Days: 09.00 to 18.00 Sunday: Closed</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-            <div class="overlay hide"></div>
-        </div>
-    </div> -->
 </div>
-    <!-- *Scripts* -->
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/plugin.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/custom-swiper.js"></script>
-    <script src="assets/js/custom-nav.js"></script>
-            <script type="text/javascript" src="assets/js/pkg/fancybox.js" id="fancybox-js">
+        <!-- *Scripts* -->
+        <script src="assets/js/pkg/jquery-3.5.1.min.js"></script>
+        <script src="assets/js/pkg/bootstrap.min.js"></script>
+        <script src="assets/js/pkg/plugin.js"></script>
+        <script src="assets/js/pkg/main.js"></script>
+        <script src="assets/js/pkg/custom-swiper.js"></script>
+        <script src="assets/js/pkg/custom-nav.js"></script>
+        <script type="text/javascript" src="assets/js/pkg/fancybox.js" id="fancybox-js">
         </script>
         <script type="text/javascript" src="assets/js/pkg/vue.global.js">
         </script>
