@@ -2547,7 +2547,7 @@ nav.navbar.navbar-default.navbar-sticky-in .logo-black {
       width: 100%; }
     .trending .trend-item:hover .trend-image, .trending .trend-item:hover .trend-image1 {
       transition: all ease-in-out 0.5s;
-      filter: grayscale(10); }
+      filter: grayscale(0); }
 .trending .trend-image1 {
   position: relative;
   height: 100%;
@@ -2768,7 +2768,7 @@ nav.navbar.navbar-default.navbar-sticky-in .logo-black {
       transition: all ease-in-out 0.5s; }
     .featured-video .featured-item:hover .recent-image > img, .featured-video .recent-item:hover .recent-image > img, .recent-post .featured-item:hover .recent-image > img, .recent-post .recent-item:hover .recent-image > img {
       transition: all ease-in-out 0.5s;
-      filter: grayscale(10);
+      filter: grayscale(0);
       transform: scale(1.1); }
     .featured-video .featured-item:hover .color-overlay, .featured-video .recent-item:hover .color-overlay, .recent-post .featured-item:hover .color-overlay, .recent-post .recent-item:hover .color-overlay {
       height: 100%;
