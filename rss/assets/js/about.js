@@ -16,21 +16,6 @@ const app = createApp({
         }
     },
     methods: {
-        watch(event) {
-            $.ajax({
-              url: server +"rss/watch",
-              type: "POST",
-              data: JSON.stringify({
-                "id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
-              }),
-              success: function(response) {
-                console.log(response)
-              },
-              error: function(xhr, status, error) {
-                console.log(e);
-              }
-            });
-        },
         next(event) {
             offset++;
             const that = this;
@@ -40,8 +25,10 @@ const app = createApp({
             });
         },
         handle(param){
-            s = param.rss_link.split('://')
-            return s[0]+"://"+s[1].split("/")[0]
+            if (param != undefined && param != "" && param.rss_link != undefined && param.rss_link != ""){
+                s = param.rss_link.split('://')
+                return s[0]+"://"+s[1].split("/")[0]
+            }
         }
         // nextSort(event) {
         //     offset++;
@@ -80,7 +67,7 @@ function getUsers(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "user/list?where=1&page_num="+ offset + "&page_size="+limit,
+            url: server + "user/list/group?where=1&page_num="+ offset + "&page_size="+limit,
             beforeSend: function() {
             },
             success: function(response) {

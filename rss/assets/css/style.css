@@ -93,7 +93,7 @@ h4 {
 h5 {
   font-size: 16px;
   border-left: 2px solid #ff1949;
-  padding-left: 10px; }
+  padding-left: 3px; }
 
 h6 {
   font-size: 14px; }
@@ -2562,9 +2562,11 @@ nav.navbar.navbar-default.navbar-sticky-in .logo-black {
     transition: all ease-in-out 0.5s; }
 
 .entry-author img {
-  width: 36px !important;
-  height: 36px !important;
-  display: inline-block !important; }
+  width: 36px ;
+  height: 36px ;
+  display: inline-block; 
+  
+}
 
 .sidebar-sticky {
   position: sticky;

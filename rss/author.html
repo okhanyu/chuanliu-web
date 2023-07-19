@@ -30,10 +30,10 @@
             font-size: 22px;
             color: #8690ea;
         }
-     /*   section {
+       /* section {
            font-family: "Playfair Display", serif;color: #949393;
-        }
-*/
+        }*/
+
     </style>
 </head>
 <body>
@@ -125,49 +125,86 @@
     </section> -->
     <!-- BreadCrumb Ends --> 
 
-   
 
-    <!-- form starts -->
-    <!-- <section class="about-us"> -->
-      <section >
+ <!-- Counter --> 
+    <!-- <section class="counter-main pb-6" style="background-image: url(assets/images/bg/bg4.jpg)"> -->
+     <section class="counter-main pb-6" >
+
         <div class="container">
-            <div class="about-image-box">
-                <div class="row d-flex align-items-center justify-content-between">
-                    <div class="col-lg-12 col-sm-12">
-                        <div class="about-content" style="color:black">
-                            <h4 class="mb-1 theme font-weight-normal">About Us</h4>
-                            <h2>不断进化中</h2>
-                            <p class="mb-3">>>></p>
-                            <p class="mb-3"> 欢迎你，我们不会设置那么多无聊的准入门槛和规矩，因为“美式”和“拿铁”一样好喝。</p>
-                            <p class="mb-3"> 不要在乎更新频率、不要在乎你写的内容是深是浅、或错或对，你就是完整的、独一无二的个体。</p>
-                            <p class="mb-3"> 这里，<span style="color:red">你说了算！</span> 如果我们已经逃到了博客，还要让别人说了算，就背离了初衷。</p>
-                            <p class="mb-3"> 给我们一点时间，我们在进化。</p>
-
-                            <p>待办功能：<ul><li style="color:black;"> * 作者文章列表页</li></ul></p>
-                            <br>
-                            <p  >联系方式： <ul>
-                                <li style="color:gray;"> *   韩宇 Email: hi#hanyu.life</li>
-                                <br>
-                                <li style="color:gray;"> *  韩宇 Wechat: okhanyu</li>
-                                <br>
-                                <li style="color:gray;"> *  小胡 Email: huhexian0206#gmail.com</li>
-                                <br>
-                                <li style="color:gray;"> *  小胡 Twitter: @huhexian</li>
-                                <br>
-                                <li style="color:gray;"> *  小胡 Telegram: @huhexian</li>
-                            </ul>
-                            </p>
-                            <hr style="border:0px;border-bottom: 1px dashed gray;">
-                        </div>
+            <div class="counter text-center">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-users white bg-theme mb-1"></i>
+                            <h3 class=" mb-0 theme"> <span> {{ datas.length }} </span></h3>
+                            <h4 class="m-0"> Author </h4>
+                        </div>    
                     </div>
-                   
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-plane mb-1 white bg-theme"></i>
+                            <h3 class=" mb-0 theme"> <span> {{ aTotal }}  </span> </h3>
+                            <h4 class="m-0"> Posts </h4>
+                        </div>    
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-chart-bar  white bg-theme mb-1"></i>
+                            <h3 class=" mb-0 theme">  <span>  {{ aWatch }} </span> </h3>
+                            <h4 class="m-0"> Watch </h4>
+                        </div>    
+                    </div>
+<!-- 
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-support  white bg-theme mb-1"></i>
+                            <h3 class="value mb-0 theme">523</h3>
+                            <h4 class="m-0">Support Cases </h4>
+                        </div>    
+                    </div>
+ -->
                 </div>
+            </div> 
+        </div>
+        <!-- <div class="overlay"></div> -->
+    </section>
+    <!-- End Counter -->
+
+    
+        <!-- testomonial start -->
+    <section class="testimonial pb-6">
+        <div class="container"> 
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Author & <span>Blogger</span></h2>
+            </div> 
+             <!-- <div class="row review-slider"> -->
+            <div class="row">
+
+                <div class="col-sm-4 item" v-for="item in datas">
+                    <div class="testimonial-item1 text-center">
+                        <div class="details">
+                            <p class="m-0" style="height:50px;overflow: hidden;text-overflow: ellipsis;">{{ item.description }}</p>
+                        </div>
+                        <div class="author-info mt-2">
+
+                            <a :href="handle(item)" target="_blank"><img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default-about-avatar.webp' : item.avatar  "  alt="" style="object-fit: cover;"></a>
+                            <div class="author-title">
+                               <h4 class="m-0 avatar" > <a :href="handle(item)" target="_blank" class="avatar">{{ item.user_name }}</a></h4>
+                                <div style="font-size:12px;color: #949393;"><a :href="handle(item)" target="_blank" class="avatar"> {{  handle(item).split("://")[1] }}</a></div>
+                                <div style="font-size:12px;color: #949393;"> {{ item.create_time.substring(0, 10) }} </div>
+                                <div style="font-size:12px;color: #949393;"> 观看 {{ item.watch }} | 文章 {{ item.total }} </div>
+                            </div>
+                        </div>
+                        <i class="fa fa-quote-left mb-2"></i>
+                    </div>
+                </div>
+     
             </div>
-            
         </div>
     </section>
-    <!-- form ends -->
-
+    <!-- testimonial ends --> 
 
 
     <!-- our teams starts -->
@@ -253,51 +290,7 @@
     </section> -->
     <!-- our teams Ends -->
 
-    <!-- Counter --> 
-    <!-- <section class="counter-main pb-6" style="background-image: url(assets/images/bg/bg4.jpg)"> -->
-     <section class="counter-main pb-6" >
-
-        <div class="container">
-            <div class="counter text-center">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="counter-item bg-lgrey">
-                            <i class="fa fa-users white bg-theme mb-1"></i>
-                            <h3 class=" mb-0 theme"> <span> {{ datas.length }} </span></h3>
-                            <h4 class="m-0"> Author </h4>
-                        </div>    
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="counter-item bg-lgrey">
-                            <i class="fa fa-plane mb-1 white bg-theme"></i>
-                            <h3 class=" mb-0 theme"> <span> {{ aTotal }}  </span> </h3>
-                            <h4 class="m-0"> Posts </h4>
-                        </div>    
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="counter-item bg-lgrey">
-                            <i class="fa fa-chart-bar  white bg-theme mb-1"></i>
-                            <h3 class=" mb-0 theme">  <span>  {{ aWatch }} </span> </h3>
-                            <h4 class="m-0"> Watch </h4>
-                        </div>    
-                    </div>
-<!-- 
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div class="counter-item bg-lgrey">
-                            <i class="fa fa-support  white bg-theme mb-1"></i>
-                            <h3 class="value mb-0 theme">523</h3>
-                            <h4 class="m-0">Support Cases </h4>
-                        </div>    
-                    </div>
- -->
-                </div>
-            </div> 
-        </div>
-        <!-- <div class="overlay"></div> -->
-    </section>
-    <!-- End Counter -->
+   
 
 
 

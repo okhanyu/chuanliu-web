@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>广场(Demo)</title>
+    <title> 广场 (Demo) </title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
     <!-- Bootstrap core CSS -->
@@ -23,15 +23,76 @@
     <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
     <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/fonts/line-icons.css" type="text/css">
-        <style type="text/css">
+    <style type="text/css">
+
+    /*   section {
+           font-family: "Playfair Display", serif;color: #949393;
+        }*/
         
         .break {
-         overflow: hidden; text-overflow: ellipsis;height: 100px;
+            overflow: hidden; text-overflow: ellipsis;height: 90px;font-size: 0.95rem;font-family: "Playfair Display", serif;color: #949393;
         }
+        .break p {
+          height: 100px;
+        }
+        .break a {
+          color: #949393;
+          text-decoration: underline;
+        }
+
 
         body.night-mode .whitechange a {
             color: #fff !important;
         }
+
+        .entry-author {
+            margin-top:10px;
+        }
+        /*        .entry-author img{
+              background-size: cover;
+              background-attachment: fixed;
+        }*/
+
+        .small-font {
+            font-size: 12px;
+        }
+
+        .small-font-color-top {
+            font-size:12px;color: #949393; margin-top:10px;
+        }
+        .small-font-color {
+            font-size:12px;color: #949393; 
+        }
+
+        .img-cover-h158 {
+            width:100%;height: 158px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;
+        }
+         .img-cover-h190 {
+            width:100%;height: auto;max-height:190px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;
+        }
+        .summary-h60{
+            overflow:hidden;text-overflow: ellipsis;height:70px;
+        }
+        .avatar-round {
+            width:20px !important;;height:20px !important;display: inline-block !important;object-fit: cover;
+        }
+        .summary-nowrap {
+            overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+        }
+        .tags-nowrap {
+            overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+        }
+
+        .author-link span:hover {
+                 color: #ae7618;
+        }
+        .author-link i:hover {
+                 color: #ae7618;
+        }
+        .avatar-round{
+            width:20px !important;height:20px !important; display: inline !important;margin-bottom: 4px
+        }
+        
 
     </style>
 </head>
@@ -71,21 +132,23 @@
                         <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav" id="responsive-menu">
                                 <li class="dropdown submenu active">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<i class="icon-arrow-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
                                         <li class="">
-                                            <a href="/rss/"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <a href="index.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </li>
                                         <li class="">
-                                            <a href="/memos/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        <a href="author.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场成员（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </li>
                                         <li class="">
-                                            <a href="about.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <a href="about.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </li>
+                                        <li class="">
+                                            <a href="/memos/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                        
                                     </ul>
                                 </li>
-
-                                
                             </ul>
                         </div><!-- /.navbar-collapse -->   
                <!--          <div class="register-login d-flex align-items-center">
@@ -116,30 +179,33 @@
         <section class="pb-6 pt-5 ptop" v-if="index == 0">
             <div class="container">
                 <div class="section-title mb-4 pb-1 w-50">
-                    <h2 class="m-0">Recommend & <span>48 hours</span></h2>
+                    <h2 class="m-0">Top 1 & <span>48 hours</span></h2>
                 </div> 
                 <div class="about-image-box">
                     <div class="row d-flex align-items-center justify-content-between">
                         <div class="col-lg-7 col-sm-12 mb-4">
                             <div class="about-content">
-                                <h4 class="bg-theme white px-4 py-1 d-inline-block"> 
-                                    <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                
+                                <h3 class="border-b mb-2 pb-2 whitechange"><a :href="item.link" @click="watch(item.id)" target="_blank" :dataid="item.id" >{{ item.title }}</a></h3>
+                                <h4 class="bg-theme white px-4 py-1 d-inline-block small-font tags-nowrap" > 
+                                    <span  v-if="item.tags!= undefined && item.tags.length != 0" >
                                       <template v-for="tag,index in item.tags" >
-                                        <span  v-if="index == 0">{{tag}}</span>
+                                        <span  v-if="index < 10">&nbsp;#{{tag}}</span>
                                     </template>
                                     </span>
-                                     <span  v-else>
-                                         综合
+                                     <span  v-else >
+                                         #综合
                                      </span>
                                 </h4>
-                                <h3 class="border-b mb-2 pb-2 whitechange"><a :href="item.link" @click="watch" target="_blank" :dataid="item.id">{{ item.title }}</a></h3>
-                                <p class="border-b mb-2 pb-2" v-html="item.summary"></p>
+                                <p class="border-b mb-2 pb-2 break" v-html="item.summary"></p>
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
-                                    <div class="entry-author">
-                                        <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width:20px !important;height:20px !important; display: inline !important;margin-bottom: 4px"> &nbsp;
-                                        <span style="font-size:12px;color: #949393;margin-top:3px">{{ item.user_name }}</span>&nbsp; &nbsp;
-                                        <span style="font-size:12px;color: #949393;margin-top:3px"><i class="fa fa-eye" style="font-size:12px;color: #949393;margin-top:3px" ></i> {{ item.watch }} </span>
-                                    </div>
+                                    <a :href="handle(item)" target="_blank" class="author-link">
+                                        <div class="entry-author" >
+                                            <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1" > &nbsp;
+                                            <span class="small-font-color">{{ item.user_name }}</span>&nbsp; &nbsp;
+                                            <span class="small-font-color"><i class="fa fa-eye small-font-color" ></i> {{ item.watch }} </span>
+                                        </div>
+                                    </a>
                                     <!--<div class="entry-metalist d-flex align-items-center">
                                         <ul>
                                             <li class="me-2"></li>
@@ -148,7 +214,7 @@
                                         </ul>
                                     </div>-->
                                 </div>
-                                 <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
+                                 <div class="small-font-color">{{item.pub_date_show}}</div>
                             </div>
                         </div>
                         <div class="col-lg-5 col-sm-12 mb-4">
@@ -195,12 +261,12 @@
                                                      综合
                                                  </span>
                                              </h5>
-                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin:12px 0px 12px 0px;"><a :href="item.link" @click="watch" :dataid="item.id" target="_blank" >{{ item.title }}</a></h4>
+                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin:12px 0px 12px 0px;"><a :href="item.link" @click="watch(item.id)" :dataid="item.id" target="_blank" >{{ item.title }}</a></h4>
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
                                         <div class="entry-author" >
                                             
                                            
-                                             <img src="assets/images/reviewer/1.jpg" alt="" class="rounded-circle me-1" style="width: 20px  !important;height: 20px !important;margin-bottom: 4px;">
+                                             <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1" style="width: 20px  !important;height: 20px !important;margin-bottom: 4px;">
                                               
                                               &nbsp;<span style="font-size:12px;color: #949393">{{ item.user_name }}</span>&nbsp;
                                               <span style="font-size:12px;color: #949393"><i class="fa fa-eye" style="font-size:12px;color: #949393"></i> {{item.watch}}</span>
@@ -209,7 +275,7 @@
 
                                       
                                     </div>
-                                    <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
+                                    <div class="small-font-color">{{item.pub_date_show}}</div>
                                 </div>
                             </div>
                    
@@ -224,109 +290,47 @@
     <!-- Trending Ends -->
 
 
-        <!-- Trending Starts -->
+    <!-- Trending Starts -->
     <section class="trending more-top pb-6 pt-5 ptop" v-if="ranks.length > 1">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-100">
-                <h2 class="m-0">More Top  &  <span>48 hours</span></h2>
+                <h2 class="m-0">More Top 6 &  <span>48 hours</span></h2>
             </div>  
             <div class="trend-box">
                 <div class="row">
                     <div class="col-lg-12">
                         <template  v-for="item,index in ranks">
-                            <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0 && index%2 == 1 && item.cover != undefined &&  item.cover != '' ">
-                                <div class="row">
-                                    <div class="col-lg-4 pe-0">
+                            <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0">
+                                <div :class=" index%2 == 1 ? 'row' : 'row flex-row-reverse' ">
+                                    <div class="col-lg-4 pe-0" v-if="item.cover != undefined &&  item.cover != ''">
                                         <div class="trend-image1">
-                                             <!-- <a href="blog-single.html"  :style="'background-image: url('+item.cover+');'" ></a> -->
-                                             <img :src="item.cover" onerror="this.src='assets/images/back.jpg'" style="width:100%;height: auto;max-height:190px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;">
+                                             <img :src="item.cover" onerror="this.src='assets/images/back.jpg'" class="img-cover-h190">
                                         </div>
                                     </div>
-                                    <div class="col-lg-8">
+                                    <div :class="item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12' ">
                                         <div class="trend-content-main">
                                             <div class="trend-content">
-                                                <h5 class="theme"><span  v-if="item.tags!= undefined && item.tags.length != 0">
-                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
-                                                </span>
-                                                 <span  v-else>
-                                                     综合
-                                                 </span></h5>
-                                                <h4><a :href="item.link" target="_blank" @click="watch" :dataid="item.id" >{{ item.title }}</a></h4>
-                                                <div class="mb-2" style="overflow:hidden;text-overflow: ellipsis;height:50px;" v-html="item.summary"></div>
+                                                <h4><a :href="item.link" target="_blank" @click="watch(item.id)" :dataid="item.id" >{{ item.title }}</a></h4>
+                                                <h5 class="theme small-font tags-nowrap">
+                                                  <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                                      <template v-for="tag,index in item.tags" > 
+                                                        <span  v-if="index < 10">&nbsp;&nbsp;#{{tag}}</span>
+                                                      </template>
+                                                  </span>
+                                                  <span  v-else >
+                                                     #综合
+                                                  </span>
+                                                </h5>
+                                                <div class="summary-h60 break" v-html="item.summary"><p></div>
                                                 <div class="entry-meta d-flex align-items-center justify-content-between">
-                                                    <div class="entry-author">
-                                                       <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
-                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
-                                                       <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
-                                                       <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
-                                                    </div>
-                                                   <!--  <div class="entry-metalist d-flex align-items-center">
-                                                        <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0 && (item.cover == undefined ||  item.cover == '' ||  item.cover == null) ">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="trend-content-main">
-                                            <div class="trend-content">
-                                                <h5 class="theme"><span  v-if="item.tags!= undefined && item.tags.length != 0">
-                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
-                                                </span>
-                                                 <span  v-else>
-                                                     综合
-                                                 </span></h5>
-                                                <h4><a :href="item.link" target="_blank" @click="watch" :dataid="item.id">{{ item.title }}</a></h4>
-                                                <div class="mb-2" style="overflow:hidden;text-overflow: ellipsis;height:50px;" v-html="item.summary" ></div>
-                                                <div class="entry-meta d-flex align-items-center justify-content-between">
-                                                    <div class="entry-author">
-                                                       <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
-                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
-                                                       <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
-                                                       <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
-                                                    </div>
-                                                    <!-- <div class="entry-metalist d-flex align-items-center">
-                                                       <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="trend-item box-shadow p-4 mb-4"  v-if="index != 0 && index%2 == 0 && item.cover != undefined &&  item.cover != '' ">
-                                <div class="row flex-row-reverse">
-                                    <div class="col-lg-4 ps-0">
-                                        <div class="trend-image1">
-                                             <!-- <a href="blog-single.html"  :style="'background-image: url('+item.cover+');'" ></a> -->
-                                             <img :src="item.cover" onerror="this.src='assets/images/back.jpg'" style="width:100%;height: auto;max-height:190px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="trend-content-main">
-                                            <div class="trend-content">
-                                                <h5 class="theme"><span  v-if="item.tags!= undefined && item.tags.length != 0">
-                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
-                                                </span>
-                                                 <span  v-else>
-                                                     综合
-                                                 </span></h5>
-                                                <h4><a :href="item.link" target="_blank" @click="watch" :dataid="item.id">{{ item.title }}</a></h4>
-                                               <div class="mb-2" style="overflow:hidden;text-overflow: ellipsis;height:50px;" v-html="item.summary"></div>
-                                                <div class="entry-meta d-flex align-items-center justify-content-between">
-                                                    <div class="entry-author">
-                                                        <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
-                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
-                                                        <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
-                                                        <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
-                                                    </div>
-                                                    <!-- <div class="entry-metalist d-flex align-items-center">
-                                                        <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>
-                                                    </div> -->
+                                                    <a :href="handle(item)" target="_blank">
+                                                        <div class="entry-author">
+                                                           <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1">&nbsp;
+                                                            <span class="small-font-color">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                           <span class="small-font-color"><i class="fa fa-eye small-font-color"></i> {{ item.watch }}</span>
+                                                           <div class="small-font-color">{{item.pub_date_show}}</div>
+                                                        </div>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -355,77 +359,42 @@
                     <div class="col-lg-4 mb-4"  v-for="item in datas">
                         <div class="trend-item box-shadow bg-white p-4 mb-2">
                             <div class="trend-image">
-                                     <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="width:100%;height: 158px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;">
-
-                                      
+                                 <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? 'assets/images/back.jpg' : item.cover " alt="image"  onerror="this.src='assets/images/back.jpg'" class="img-cover-h158">
                             </div>
                             <div class="trend-content-main pt-3">
                                 <div class="trend-content">
-                                    <h5 class="theme">
+                                    <h4 class="summary-nowrap"><a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" >{{ item.title }}</a></h4>
+                                    <h5 class="theme small-font tags-nowrap">
                                        <span  v-if="item.tags!= undefined && item.tags.length != 0">
-                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">&nbsp;{{tag}}</span></template>
-                                                </span>
-                                                 <span  v-else>
-                                                     综合
-                                                 </span>
+                                            <template v-for="tag,index in item.tags" > 
+                                                <span  v-if="index < 10">&nbsp;&nbsp;#{{tag.trim()}}</span>
+                                            </template>
+                                        </span>
+                                        <span  v-else>
+                                          &nbsp;&nbsp;#综合
+                                        </span>
                                     </h5>
-                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><a :href="item.link" target="_blank" :dataid="item.id" @click="watch" >{{ item.title }}</a></h4>
                                     <div class="mb-3 break" v-html="item.summary.slice(0, 500)">
                                     </div>
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author">
-                                            <img src="assets/images/reviewer/2.jpg" alt="" class="rounded-circle me-1" style="width:20px!important;;height:20px!important;display: inline-block !important;">&nbsp;
-                                            <span style="font-size:12px;color: #949393;">{{ item.user_name }}</span>&nbsp;&nbsp;
-                                            <span style="font-size:12px;color: #949393;"><i class="fa fa-eye" style="font-size:12px;color: #949393;"></i> {{ item.watch }}</span>                                        </div>
-                                        <!-- <div class="entry-metalist d-flex align-items-center">
-                                            <ul>
-                                                <li class="me-2" style="color: rgb(148, 147, 147);"><i class="fa fa-eye" style="color: rgb(148, 147, 147);"></i> {{ item.watch }}</li>
-                                                <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
-                                                <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li>
-                                            </ul>
-                                        </div> -->
-                                         <div style="font-size:12px;color: #949393;margin-top:3px">{{item.pub_date_show}}</div>
+                                        <a :href="handle(item)" target="_blank">
+                                            <div class="entry-author">
+                                                <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1">&nbsp;
+                                                <span class="small-font-color-top">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                <span class="small-font-color-top"><i class="fa fa-eye small-font-color-top"></i> {{ item.watch }}</span>                                        </div>
+                                             <div class="small-font-color-top">{{item.pub_date_show}}</div>
+                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-<!--                         <div class="trend-item d-flex align-items-center box-shadow p-3 mb-2 bg-white">
-                            <div class="trend-image w-25 me-4">
-                                <img src="assets/images/trending/trending2.jpg" alt="image">
-                            </div>
-                            <div class="trend-content-main me-3 w-75">
-                                <div class="trend-content">
-                                    <h4 class="mb-1"><a href="#">3 Easy Ways To Make Your iPhone Faster</a></h4>
-                                    <div class="entry-meta">
-                                        <div class="entry-metalist d-flex align-items-center">
-                                            <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 29 Mar 2021</a></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="trend-item d-flex align-items-center box-shadow p-3 mb-2 bg-white">
-                            <div class="trend-image w-25 me-3">
-                                <img src="assets/images/trending/trending3.jpg" alt="image">
-                            </div>
-                            <div class="trend-content-main w-75">
-                                <div class="trend-content">
-                                    <h4 class="mb-1"><a href="#">5 Kinds of Food-Shamers You Will Encounter</a></h4>
-                                    <div class="entry-meta">
-                                        <div class="entry-metalist d-flex align-items-center">
-                                            <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
-            <div class="col-lg-12">
-                        <div class="trend-btn text-center"><a @click="next" class="nir-btn">{{ moreBtn }}</a></div>
-                    </div>
+        <div class="col-lg-12">
+            <div class="trend-btn text-center"><a @click="next" class="nir-btn">{{ moreBtn }}</a></div>
+        </div>
     </section>
 
     <!-- top deal starts -->
@@ -444,7 +413,7 @@
                                 <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
                                     <div class="entry-author d-flex align-items-center">
-                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
                                         <span>John Bolden</span>
                                     </div>
                                     <div class="entry-metalist">
@@ -464,7 +433,7 @@
                                 <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
                                     <div class="entry-author d-flex align-items-center">
-                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
                                         <span>John Bolden</span>
                                     </div>
                                     <div class="entry-metalist">
@@ -484,7 +453,7 @@
                                 <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
                                     <div class="entry-author d-flex align-items-center">
-                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
                                         <span>John Bolden</span>
                                     </div>
                                     <div class="entry-metalist">
@@ -504,7 +473,7 @@
                                 <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
                                 <div class="entry-meta d-flex align-items-center justify-content-between">
                                     <div class="entry-author d-flex align-items-center">
-                                        <img src="assets/images/reviewer/3.jpg" alt="" class="rounded-circle me-1">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
                                         <span>John Bolden</span>
                                     </div>
                                     <div class="entry-metalist">
