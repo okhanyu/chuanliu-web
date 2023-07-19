@@ -10,7 +10,9 @@ const app = createApp({
             datas: [],
             ranks: [],
             server:server,
-            moreBtn:"加载更多"
+            moreBtn:"加载更多",
+            sortBtn:"点击浏览量降序",
+            sort:true
         }
     },
     methods: {
@@ -33,18 +35,41 @@ const app = createApp({
         next(event) {
             offset++;
             const that = this;
-            getDatas(function(data) {
-               that.datas.push(...data.data);
-
-            });
+            if (this.sort){
+                getDatas(function(data) {
+                     that.datas.push(...data.data);
+                });
+            } else {
+                 getSorts(function(data) {
+                  that.datas.push(...data.data);
+                    //data.push(...that.datas);
+                    //that.datas = sort(data);
+                });
+            }
+          
         },
-        nextSort(event) {
-            offset++;
+        sortChange(event) {
+            this.sort= !this.sort
+            offset = 0;
+            if (this.sortBtn == "点击时间倒序"){
+                this.sortBtn = "点击浏览量降序"
+            }else{
+                this.sortBtn = "点击时间倒序"
+            }
             const that = this;
-            getDatas(function(data) {
-                data.push(...that.datas);
-                that.datas = sort(data);
+             if (this.sort){
+                 getDatas(function(data) {
+                    // data.push(...that.datas);
+                    that.datas = data.data
+                });
+             }else{
+                getSorts(function(data) {
+                 that.datas = data.data
+                //data.push(...that.datas);
+                //that.datas = sort(data);
             });
+             }
+            
         }
     },
     mounted: function() {
@@ -65,6 +90,28 @@ const app = createApp({
 const vm = app.mount('#app');
 
 /*** 初始化 vue end***/
+
+
+function getSorts(callback) {
+    // $.ajaxSetup({ async: false });
+
+        $.ajax({
+            type: "GET",
+            url: server + "rss/list?order=1&where=1&page_num="+ offset + "&page_size="+limit,
+            beforeSend: function() {
+            },
+            success: function(response) {
+                
+                getDataSuccess(response, callback);
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    // $.ajaxSetup({ async: true });
+    //getDataSuccess(sort(allData), callback);
+
+};
 
 
 function getRanks(callback) {

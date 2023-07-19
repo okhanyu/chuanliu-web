@@ -228,7 +228,7 @@
     <section class="trending more-top pb-6 pt-5 ptop" v-if="ranks.length > 1">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-100">
-                <h2 class="m-0">More Top <span>48 hours</span></h2>
+                <h2 class="m-0">More Top  &  <span>48 hours</span></h2>
             </div>  
             <div class="trend-box">
                 <div class="row">
@@ -347,7 +347,9 @@
         <div class="container">
             <div class="section-title mb-4 pb-1 w-50">
                 <h2 class="m-0">Recent & <span>Posts</span></h2>
+                <button @click="sortChange" style="padding:5px;color: gray"> {{sortBtn}} </button>
             </div>
+
             <div class="recent-articles-inner">
                 <div class="row">
                     <div class="col-lg-4 mb-4"  v-for="item in datas">
@@ -734,8 +736,8 @@
     <!-- Back to top ends -->
 
     <div class="view-port">
-        <div class="dark-mode"><a href="#"><i class="fa fa-moon"></i> Night</a></div>
-        <div class="light-mode"><a href="#"><i class="fa fa-sun"></i> Day</a></div>
+        <div class="dark-mode"><a><i class="fa fa-moon"></i> Night</a></div>
+        <div class="light-mode"><a><i class="fa fa-sun"></i> Day</a></div>
     </div>
 
     <!-- search popup -->
