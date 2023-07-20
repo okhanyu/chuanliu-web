@@ -1,6 +1,745 @@
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-   <meta http-equiv="refresh" content="0;url=/rss/">
-  </head>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> 广场 (Demo) </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--Custom CSS-->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <!--Plugin CSS-->
+    <link href="assets/css/plugin.css" rel="stylesheet" type="text/css">
+    <!--Flaticons CSS-->
+    <link href="assets/fonts/flaticon.css" rel="stylesheet" type="text/css">
+    <!--Font Awesome-->
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> -->
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/fonts/line-icons.css" type="text/css">
+    <style type="text/css">
+
+    /*   section {
+           font-family: "Playfair Display", serif;color: #949393;
+        }*/
+        
+        .break {
+            overflow: hidden; text-overflow: ellipsis;height: 90px;font-size: 0.95rem;font-family: "Playfair Display", serif;color: #949393;
+        }
+        .break p {
+          height: 100px;
+        }
+        .break a {
+          color: #949393;
+          text-decoration: underline;
+        }
+
+
+        body.night-mode .whitechange a {
+            color: #fff !important;
+        }
+
+        .entry-author {
+            margin-top:10px;
+        }
+        /*        .entry-author img{
+              background-size: cover;
+              background-attachment: fixed;
+        }*/
+
+        .small-font {
+            font-size: 12px;
+        }
+
+        .small-font-color-top {
+            font-size:12px;color: #949393; margin-top:10px;
+        }
+        .small-font-color {
+            font-size:12px;color: #949393; 
+        }
+
+        .img-cover-h158 {
+            width:100%;height: 158px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;
+        }
+         .img-cover-h190 {
+            width:100%;height: auto;max-height:190px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;
+        }
+        .summary-h60{
+            overflow:hidden;text-overflow: ellipsis;height:70px;
+        }
+        .avatar-round {
+            width:20px !important;;height:20px !important;display: inline-block !important;object-fit: cover;
+        }
+        .summary-nowrap {
+            overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+        }
+        .tags-nowrap {
+            overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+        }
+
+        .author-link span:hover {
+                 color: #ae7618;
+        }
+        .author-link i:hover {
+                 color: #ae7618;
+        }
+        .avatar-round{
+            width:20px !important;height:20px !important; display: inline !important;margin-bottom: 4px
+        }
+        
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    <!-- Preloader Ends -->
+
+    <!-- header starts -->
+    <header class="main_header_area" >
+        <div class="header-content py-1 bg-lgrey">
+            <div class="container d-flex align-items-center justify-content-between">
+                <!-- <h4 class="theme mb-0 w-25 fw-normal text-center me-2"><i class="fas fa-bolt"></i> Trending News</h4> -->
+                <div class="links float-right">
+                    <marquee scrolldelay="50" behavior="scroll" onmouseover="this.stop();" onmouseleave="this.start();">
+                        <li><a href="#"><i class="fa fa-star"></i> 嗨 </a></li>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <div class="header_menu" id="header_menu">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-2 pt-2">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#!">
+                            <!--     <img src="assets/images/logo.png" alt="image">
+                                <img src="assets/images/logo-white.png" alt="image"> -->
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav" id="responsive-menu">
+                                <li class="dropdown submenu active">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Menu <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a href="index.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="">
+                                        <a href="author.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSS广场成员（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="">
+                                            <a href="about.html"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/memos/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->   
+               <!--          <div class="register-login d-flex align-items-center">
+                            <div class="header_sidemenu me-2">
+                                <div class="mhead">
+                                    <span class="menu-ham">
+                                        <a href="#" class="cart-icon d-flex align-items-center ml-1"><i class="fa fa-th-large theme"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></div>
+                        </div>  -->
+
+                        <div id="slicknav-mobile"></div>
+                    </div>
+                </div><!-- /.container-fluid --> 
+            </nav>
+        </div>
+        <!-- Navigation Bar Ends -->
+    </header>
+    <!-- header ends -->
+
+
+    <p></p><p></p><p></p><p></p>
+    <!-- about-us starts -->
+    <template  v-for="item,index in ranks">
+        <!-- <section class="about-us pb-6 pt-0 ptop" v-if="index == 0"> -->
+        <section class="pb-6 pt-5 ptop" v-if="index == 0">
+            <div class="container">
+                <div class="section-title mb-4 pb-1 w-50">
+                    <h2 class="m-0">Top 1 & <span>48 hours</span></h2>
+                </div> 
+                <div class="about-image-box">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-lg-7 col-sm-12 mb-4">
+                            <div class="about-content">
+                                
+                                <h3 class="border-b mb-2 pb-2 whitechange"><a :href="item.link" @click="watch(item.id)" target="_blank" :dataid="item.id" >{{ item.title }}</a></h3>
+                                <h4 class="bg-theme white px-4 py-1 d-inline-block small-font tags-nowrap" > 
+                                    <span  v-if="item.tags!= undefined && item.tags.length != 0" >
+                                      <template v-for="tag,index in item.tags" >
+                                        <span  v-if="index < 10">&nbsp;#{{tag}}</span>
+                                    </template>
+                                    </span>
+                                     <span  v-else >
+                                         #综合
+                                     </span>
+                                </h4>
+                                <p class="border-b mb-2 pb-2 break" v-html="item.summary"></p>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <a :href="handle(item)" target="_blank" class="author-link">
+                                        <div class="entry-author" >
+                                            <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1" > &nbsp;
+                                            <span class="small-font-color">{{ item.user_name }}</span>&nbsp; &nbsp;
+                                            <span class="small-font-color"><i class="fa fa-eye small-font-color" ></i> {{ item.watch }} </span>
+                                        </div>
+                                    </a>
+                                    <!--<div class="entry-metalist d-flex align-items-center">
+                                        <ul>
+                                            <li class="me-2"></li>
+                                             <li class="me-2"><a href="#"><i class="fa fa-heart"></i> 5k</a></li>
+                                            <li><a href="#"><i class="fa fa-comments"></i> 5k</a></li> 
+                                        </ul>
+                                    </div>-->
+                                </div>
+                                 <div class="small-font-color">{{item.pub_date_show}}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-12 mb-4">
+                            <div class="about-image p-3 box-shadow position-relative">
+                                  <img :src="item.cover" alt="image"  onerror="this.src='assets/images/back.jpg'" style="object-fit: cover;max-height: 300px;" class="w-100">
+                               <!--  <div class="video-button text-center">
+                                      <div class="call-button text-center">
+                                        <button type="button" class="play-btn js-video-button" data-video-id="152879427" data-channel="vimeo">
+                                            <i class="fa fa-play bg-blue"></i>
+                                        </button>
+                                    </div>
+                                    <div class="video-figure"></div> 
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </template>
+    <!-- about-us ends -->
+
+    <!-- Trending Starts -->
+<!--     <section class="trending pt-0 ptop">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Trending & <span>48 hours</span></h2>
+            </div>  
+            <div class="trend-box">
+                <div class="row">
+                    <template  v-for="item,itemIndex in ranks">
+                    <div class="col-lg-4 mb-4"  v-if="itemIndex > 0">
+
+                     <div>
+                        <div class="trend-item d-flex align-items-center box-shadow p-4">
+                                <div class="trend-content-main me-4 w-100">
+                                <div class="trend-content">
+                                     <h5 class="theme"  style="display: inline;font-size:12px!important;" > 
+                                                <span  v-if="item.tags!= undefined && item.tags.length != 0" style="font-size:12px!important;">
+                                                  <template v-for="tag,index in item.tags" > <span  v-if="index == 0">{{tag}}&nbsp;</span></template>
+                                                </span>
+                                                 <span  v-else style="font-size:12px!important;">
+                                                     综合
+                                                 </span>
+                                             </h5>
+                                    <h4 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin:12px 0px 12px 0px;"><a :href="item.link" @click="watch(item.id)" :dataid="item.id" target="_blank" >{{ item.title }}</a></h4>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <div class="entry-author" >
+                                            
+                                           
+                                             <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1" style="width: 20px  !important;height: 20px !important;margin-bottom: 4px;">
+                                              
+                                              &nbsp;<span style="font-size:12px;color: #949393">{{ item.user_name }}</span>&nbsp;
+                                              <span style="font-size:12px;color: #949393"><i class="fa fa-eye" style="font-size:12px;color: #949393"></i> {{item.watch}}</span>
+
+                                        </div>
+
+                                      
+                                    </div>
+                                    <div class="small-font-color">{{item.pub_date_show}}</div>
+                                </div>
+                            </div>
+                   
+                        </div>
+                    </div>
+                    </div>
+                    </template>
+                </div>
+            </div>    
+        </div>
+    </section> -->
+    <!-- Trending Ends -->
+
+
+    <!-- Trending Starts -->
+    <section class="trending more-top pb-6 pt-5 ptop" v-if="ranks.length > 1">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-100">
+                <h2 class="m-0">More Top 2 &  <span>48 hours</span></h2>
+            </div>  
+            <div class="trend-box">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <template  v-for="item,index in ranks">
+                            <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0">
+                                <div :class=" index%2 == 1 ? 'row' : 'row flex-row-reverse' ">
+                                    <div class="col-lg-4 pe-0" v-if="item.cover != undefined &&  item.cover != ''">
+                                        <div class="trend-image1">
+                                             <img :src="item.cover" onerror="this.src='assets/images/back.jpg'" class="img-cover-h190">
+                                        </div>
+                                    </div>
+                                    <div :class="item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12' ">
+                                        <div class="trend-content-main">
+                                            <div class="trend-content">
+                                                <h4><a :href="item.link" target="_blank" @click="watch(item.id)" :dataid="item.id" >{{ item.title }}</a></h4>
+                                                <h5 class="theme small-font tags-nowrap">
+                                                  <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                                      <template v-for="tag,index in item.tags" > 
+                                                        <span  v-if="index < 10">&nbsp;&nbsp;#{{tag}}</span>
+                                                      </template>
+                                                  </span>
+                                                  <span  v-else >
+                                                     #综合
+                                                  </span>
+                                                </h5>
+                                                <div class="summary-h60 break" v-html="item.summary"><p></div>
+                                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                                    <a :href="handle(item)" target="_blank">
+                                                        <div class="entry-author">
+                                                           <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1">&nbsp;
+                                                            <span class="small-font-color">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                           <span class="small-font-color"><i class="fa fa-eye small-font-color"></i> {{ item.watch }}</span>
+                                                           <div class="small-font-color">{{item.pub_date_show}}</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </section>
+    <!-- Trending Ends -->
+
+
+    <!-- top deal starts -->
+    <section class="trending recent-articles pb-6 pt-5 ptop">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Recent & <span>Posts</span></h2>
+                <button @click="sortChange" style="padding:5px;color: gray"> {{sortBtn}} </button>
+            </div>
+
+            <div class="recent-articles-inner">
+                <div class="row">
+                    <div class="col-lg-4 mb-4"  v-for="item in datas">
+                        <div class="trend-item box-shadow bg-white p-4 mb-2">
+                            <div class="trend-image">
+                                 <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? 'assets/images/back.jpg' : item.cover " alt="image"  onerror="this.src='assets/images/back.jpg'" class="img-cover-h158">
+                            </div>
+                            <div class="trend-content-main pt-3">
+                                <div class="trend-content">
+                                    <h4 class="summary-nowrap"><a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" >{{ item.title }}</a></h4>
+                                    <h5 class="theme small-font tags-nowrap">
+                                       <span  v-if="item.tags!= undefined && item.tags.length != 0">
+                                            <template v-for="tag,index in item.tags" > 
+                                                <span  v-if="index < 10">&nbsp;&nbsp;#{{tag.trim()}}</span>
+                                            </template>
+                                        </span>
+                                        <span  v-else>
+                                          &nbsp;&nbsp;#综合
+                                        </span>
+                                    </h5>
+                                    <div class="mb-3 break" v-html="item.summary.slice(0, 500)">
+                                    </div>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <a :href="handle(item)" target="_blank">
+                                            <div class="entry-author">
+                                                <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1">&nbsp;
+                                                <span class="small-font-color-top">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                <span class="small-font-color-top"><i class="fa fa-eye small-font-color-top"></i> {{ item.watch }}</span>                                        </div>
+                                             <div class="small-font-color-top">{{item.pub_date_show}}</div>
+                                         </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="trend-btn text-center"><a @click="next" class="nir-btn">{{ moreBtn }}</a></div>
+        </div>
+    </section>
+
+    <!-- top deal starts -->
+<!--     <section class="top-post pt-0">
+        <div class="container">
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">Today's <span>Top Posts</span></h2>
+            </div> 
+            <div class="row team-slider">
+                <div class="col-lg-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending1.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending2.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending3.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                   <div class="trend-item">
+                        <div class="trend-image">
+                            <img src="assets/images/trending/trending4.jpg" alt="image">
+                            <div class="trend-content">
+                                <h5 class="theme">Inspiration</h5>
+                                <h4><a href="#">Inspire Runner with Autism Graces the Latest Cover of Women's Running</a></h4>
+                                <div class="entry-meta d-flex align-items-center justify-content-between">
+                                    <div class="entry-author d-flex align-items-center">
+                                        <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="rounded-circle me-1">
+                                        <span>John Bolden</span>
+                                    </div>
+                                    <div class="entry-metalist">
+                                        <small><a href="#" class="grey"><i class="fa fa-calendar"></i> 10 Apr 2021</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+    <!-- top deal ends -->
+
+    <!-- Instagram starts -->
+<!--     <section class="insta-main pt-0">
+        <div class="container">
+            <div class="insta-inner">
+            <div class="follow-button">
+                <p class="m-0"><a href="#" title=""><i class="fab fa-instagram"></i> Follow on Instagram</a></p>
+            </div>
+            <div class="row attract-slider">
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-3.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-4.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-5.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-1.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-7.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-8.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-2.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-6.jpg" alt="insta"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="insta-image">
+                        <a href="#"><img src="assets/images/insta/ins-9.jpg" alt="insta"></a>
+                    </div>
+                </div>
+            </div>
+            </div>    
+        </div>
+    </section> -->
+    <!-- Instagram ends -->
+
+    <!-- cta-horizon starts -->
+<!--     <section class="cta-horizon pt-7 pb-7" style="background-color:#fff5ef;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6 col-offset-lg-2">
+                    <div class="section-title mb-4 pb-1">
+                        <h2 class="mb-0">Subscribe To <span>Our Newsletter</span></h2>
+                    </div>
+                    <p>Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.</p>
+                    <div class="newsletter-form">
+                        <form class="d-flex align-items-center">
+                            <input type="email" placeholder="Enter your email">
+                            <input type="submit" class="nir-btn" value="Subscribe">
+                        </form>
+                    </div> 
+                </div>
+                <div class="col-lg-4">
+                    <div class="newsletter-image float-right">
+                        <img src="assets/images/newsletter1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- cta-horizon Ends -->
+
+    <!-- footer starts -->
+<!--     <footer class="pt-10 footermain">
+        <div class="footer-upper pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-about">
+                            <img src="assets/images/logo-white.png" alt="">
+                            <p class="mt-3 mb-3 white">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio suspendisse leo neque iaculis molestie sagittis maecenas aenean eget molestie sagittis.
+                            </p>
+                            <ul>
+                                <li class="white"><strong>PO Box:</strong> +47-252-254-2542</li>
+                                <li class="white"><strong>Location:</strong> Collins Street, sydney, Australia</li>
+                                <li class="white"><strong>Email:</strong> info@magberg.com</li>
+                                <li class="white"><strong>Website:</strong> www.magberg.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Quick link</h3>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Popular Tags</h3>
+                            <div class="tagcloud">
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Beautiful</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Public</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Technology</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Travel</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Entertainment</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Blog</a>
+                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Sports </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Popular Posts</h3>
+                            <div class="trend-main">
+                                <div class="trend-item d-flex align-items-center mb-2">
+                                    <div class="trend-image w-25 me-4">
+                                        <img src="assets/images/trending/trending4.jpg" alt="image">
+                                    </div>
+                                    <div class="trend-content-main me-3 w-75">
+                                        <div class="trend-content">
+                                            <h4 class="mb-1"><a href="#">3 Easy Ways To Make Your iPhone Faster</a></h4>
+                                            <div class="entry-meta">
+                                                <div class="entry-metalist d-flex align-items-center">
+                                                    <small><a href="#" class="white"><i class="fa fa-calendar"></i> 29 Mar 2021</a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="trend-item d-flex align-items-center mb-2">
+                                    <div class="trend-image w-25 me-4">
+                                        <img src="assets/images/trending/trending5.jpg" alt="image">
+                                    </div>
+                                    <div class="trend-content-main me-3 w-75">
+                                        <div class="trend-content">
+                                            <h4 class="mb-1"><a href="#">Facts About Business That Will Help You Success</a></h4>
+                                            <div class="entry-meta">
+                                                <div class="entry-metalist d-flex align-items-center">
+                                                    <small><a href="#" class="white"><i class="fa fa-calendar"></i> 05 Apr 2021</a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="trend-item d-flex align-items-center mb-2">
+                                    <div class="trend-image w-25 me-4">
+                                        <img src="assets/images/trending/trending6.jpg" alt="image">
+                                    </div>
+                                    <div class="trend-content-main me-3 w-75">
+                                        <div class="trend-content">
+                                            <h4 class="mb-1"><a href="#">Your Light Is About To Stop Being Relevant</a></h4>
+                                            <div class="entry-meta">
+                                                <div class="entry-metalist d-flex align-items-center">
+                                                    <small><a href="#" class="white"><i class="fa fa-calendar"></i> 22 Mar 2021</a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright pt-2 pb-2">
+            <div class="container">
+                <div class="copyright-inner d-md-flex align-items-center justify-content-between">
+                    <div class="copyright-text">
+                        <p class="m-0 white">2020 Magberg. All rights By <a href="http://www.bootstrapmb.com/">bootstrapmb</a>.</p>
+                    </div>
+                    <div class="social-links">
+                        <ul>  
+                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </footer> -->
+    <!-- footer ends -->
+    
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+
+    <div class="view-port">
+        <div class="dark-mode"><a><i class="fa fa-moon"></i> Night</a></div>
+        <div class="light-mode"><a><i class="fa fa-sun"></i> Day</a></div>
+    </div>
+
+    <!-- search popup -->
+    <div id="search1">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+
+</div>
+        <!-- *Scripts* -->
+        <script src="assets/js/pkg/jquery-3.5.1.min.js"></script>
+        <script src="assets/js/pkg/bootstrap.min.js"></script>
+        <script src="assets/js/pkg/plugin.js"></script>
+        <script src="assets/js/pkg/main.js"></script>
+        <script src="assets/js/pkg/custom-swiper.js"></script>
+        <script src="assets/js/pkg/custom-nav.js"></script>
+        <script type="text/javascript" src="assets/js/pkg/fancybox.js" id="fancybox-js">
+        </script>
+        <script type="text/javascript" src="assets/js/pkg/vue.global.js">
+        </script>
+        <script type="text/javascript" src="https://js.cybozu.com/markedjs/v0.3.5/marked.min.js">
+        </script>
+        <script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js">
+        </script>
+        <script type="text/javascript" src="config.js">
+        </script>
+        <script type="text/javascript" src="assets/js/global.js">
+        </script>
+        <script type="text/javascript" src="assets/js/index.js">
+        </script>
+</body>
 </html>
