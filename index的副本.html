@@ -30,10 +30,10 @@
         }*/
         
         .break {
-            overflow: hidden; text-overflow: ellipsis;font-size: 0.9rem;font-family: "Playfair Display", serif;color: #949393;line-height: 1.45rem;
+            overflow: hidden; text-overflow: ellipsis;height: 90px;font-size: 0.95rem;font-family: "Playfair Display", serif;color: #949393;
         }
         .break p {
-/*          height: 100px;*/
+          height: 100px;
         }
         .break a {
           color: #949393;
@@ -46,37 +46,26 @@
         }
 
         .entry-author {
-/*            margin-top:10px;*/
+            margin-top:10px;
         }
+        /*        .entry-author img{
+              background-size: cover;
+              background-attachment: fixed;
+        }*/
 
         .small-font {
             font-size: 12px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
         }
 
         .small-font-color-top {
             font-size:12px;color: #949393; margin-top:10px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
         }
         .small-font-color {
             font-size:12px;color: #949393; 
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
         }
 
-        .small-font-color-i{
-            font-size:12px;color: #949393; 
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-
-        .img-cover-h153 {
-            width:100%;height: 153px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;
+        .img-cover-h158 {
+            width:100%;height: 158px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;
         }
          .img-cover-h190 {
             width:100%;height: auto;max-height:190px;object-fit: cover;border-radius: 5px; box-shadow: 2px 2px 10px #c0bebe37;
@@ -103,106 +92,7 @@
         .avatar-round{
             width:20px !important;height:20px !important; display: inline !important;margin-bottom: 4px
         }
-
-        .trend-item-cus {
-            height: 100%;overflow: hidden;max-height: 459px;
-        }
-
-        .trend-image-cus {
-            height: 153px;
-            margin-bottom:5px;
-        }
-
-        .summary-h{
-           max-height:250px;
-        }
-
-            .trend-content-cus-a {
-                max-height:253px;overflow: hidden;text-overflow: ellipsis;height:100%;
-            }
-              .trend-content-cus-b {
-               max-height:411px;overflow: hidden;text-overflow: ellipsis;height:100%;
-            }
-            .trend-meta-cus{
-                width: 100%;max-height:42px;height:100%;position: absolute;bottom: 24px;right:24px;padding-top:10px
-            }
-
-
-
-            
-
-       @media screen and (max-width: 566px) {
-          /* 在屏幕宽度小于等于 768px 时应用的样式 */
-            .trend-item {
-                height: 100%;overflow: hidden;max-height: 200px;padding: 0.5rem!important;max-height: 200px;
-            }
-
-
-            .summary-h{
-               max-height:25px;
-               white-space: nowrap;
-               overflow: hidden;
-               text-overflow: ellipsis;
-            }
-
-            .break p {
-              max-height:25px;
-                white-space: nowrap;
-               overflow: hidden;
-               text-overflow: ellipsis;
-            }
-
-            .trend-content-main {
-                height: 100%;display: flex;flex-wrap: nowrap;align-items: center;justify-content: space-between;width: 100%;
-            }
-    
-            .trending .trend-item .trend-image{
-                width: 35% !important;
-            }
-
-            .trending .trend-item .trend-content {
-                height: 100%;width: 61%;overflow: hidden;text-overflow: ellipsis;padding:10px 0;
-            }
-
-            .trend-meta-cus{
-                width: 100%;max-height:42px;height:100%;position: absolute;bottom: 24px;right:24px;padding-top:15px
-            }
-
-               .summary-h60{
-                    overflow:hidden;text-overflow: ellipsis;max-height:25px;white-space: nowrap;
-                }
-                .entry-meta-cus-mobi{
-                    position: absolute;
-                    right:24px;
-                    bottom: 0px;
-                    text-align: right;
-                }
-                
-
-                .img-cover-h190{
-                     height: 100%;
-                }
-
-                .col-lg-8 .trend-content-main .trend-content-cus-a {
-                    width: 100%;
-                }
-
-                   .row-cus {
-                        display: flex;flex-direction: row;
-                    }
-                    .row-cus .col-lg-4{
-                        width:35%;
-
-                    }
-                    .row-cus .col-lg-8{
-                        width:65%;
-
-                    }
-                    
-             
-        }
-
-     
+        
 
     </style>
 </head>
@@ -309,7 +199,7 @@
                                         <div class="entry-author" >
                                             <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1" > &nbsp;
                                             <span class="small-font-color">{{ item.user_name }}</span>&nbsp; &nbsp;
-                                            <span class="small-font-color"><i class="fa fa-eye small-font-color-i"></i> {{ item.watch }} </span>
+                                            <span class="small-font-color"><i class="fa fa-eye small-font-color" ></i> {{ item.watch }} </span>
                                         </div>
                                     </a>
                                     <!--<div class="entry-metalist d-flex align-items-center">
@@ -407,7 +297,7 @@
                     <div class="col-lg-12">
                         <template  v-for="item,index in ranks">
                             <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0">
-                                <div :class=" index%2 == 1 ? (isMobile ? 'row-cus' :'row' ) : (isMobile ? 'row-cus' : 'row flex-row-reverse' ) ">
+                                <div :class=" index%2 == 1 ? 'row' : 'row flex-row-reverse' ">
                                     <div class="col-lg-4 pe-0" v-if="item.cover != undefined &&  item.cover != ''">
                                         <div class="trend-image1">
                                              <img :src="item.cover" onerror="this.src='assets/images/back.jpg'" class="img-cover-h190">
@@ -415,9 +305,7 @@
                                     </div>
                                     <div :class="item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12' ">
                                         <div class="trend-content-main">
-                                            <!-- <div class="trend-content"> -->
-                                                 <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')" :style="(item.cover == '' || item.cover == undefined || item.cover == null) && isMobile ? 'width:100%': '' ">
-                                                
+                                            <div class="trend-content">
                                                 <h4><a :href="item.link" target="_blank" @click="watch(item.id)" :dataid="item.id" >{{ item.title }}</a></h4>
                                                 <h5 class="theme small-font tags-nowrap">
                                                   <span  v-if="item.tags!= undefined && item.tags.length != 0">
@@ -430,12 +318,12 @@
                                                   </span>
                                                 </h5>
                                                 <div class="summary-h60 break" v-html="item.summary"><p></div>
-                                                <div class="entry-meta d-flex align-items-center justify-content-between entry-meta-cus-mobi">
+                                                <div class="entry-meta d-flex align-items-center justify-content-between">
                                                     <a :href="handle(item)" target="_blank">
                                                         <div class="entry-author">
                                                            <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1">&nbsp;
                                                             <span class="small-font-color">{{ item.user_name }}</span>&nbsp;&nbsp;
-                                                           <span class="small-font-color"><i class="fa fa-eye small-font-color-i"></i> {{ item.watch }}</span>
+                                                           <span class="small-font-color"><i class="fa fa-eye small-font-color"></i> {{ item.watch }}</span>
                                                            <div class="small-font-color">{{item.pub_date_show}}</div>
                                                         </div>
                                                     </a>
@@ -465,17 +353,14 @@
             <div class="recent-articles-inner">
                 <div class="row">
                     <div class="col-lg-4 mb-4"  v-for="item in datas">
-                        <div class="trend-item box-shadow bg-white p-4 mb-2 trend-item-cus">
-                            <!-- <div class="trend-content-main pt-3" style="height: 100%;overflow: hidden;"> -->
-                            <div class="trend-content-main" style="height: 100%;">
-                                <div class="trend-image trend-image-cus"  v-if="item.cover != '' && item.cover != undefined && item.cover != null">
-                                         <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? 'assets/images/back.jpg' : item.cover " alt="image"  onerror="this.src='assets/images/back.jpg'" class="img-cover-h153">
-                                </div>
-                                <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')" :style="(item.cover == '' || item.cover == undefined || item.cover == null) && isMobile ? 'width:100%': '' ">
-                                   
-                                    <h4 class="summary-nowrap" style="max-height:25.2px;"><a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" >{{ item.title }}</a>
-                                    </h4>
-                                    <h5 class="theme small-font tags-nowrap" style="max-height:16.8px;">
+                        <div class="trend-item box-shadow bg-white p-4 mb-2">
+                            <div class="trend-image">
+                                 <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? 'assets/images/back.jpg' : item.cover " alt="image"  onerror="this.src='assets/images/back.jpg'" class="img-cover-h158">
+                            </div>
+                            <div class="trend-content-main pt-3">
+                                <div class="trend-content">
+                                    <h4 class="summary-nowrap"><a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" >{{ item.title }}</a></h4>
+                                    <h5 class="theme small-font tags-nowrap">
                                        <span  v-if="item.tags!= undefined && item.tags.length != 0">
                                             <template v-for="tag,index in item.tags" > 
                                                 <span  v-if="index < 10">&nbsp;&nbsp;#{{tag.trim()}}</span>
@@ -485,18 +370,16 @@
                                           &nbsp;&nbsp;#综合
                                         </span>
                                     </h5>
-                               
-                                    <div class="mb-3 break summary-h"  v-html=" (item.cover != '' && item.cover != undefined && item.cover != null) ? item.summary.slice(0, 100) : item.summary.slice(0, 200)">
+                                    <div class="mb-3 break" v-html="item.summary.slice(0, 500)">
                                     </div>
-                                    <div class="trend-meta-cus">
-                                      <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <a :href="handle(item)" target="_blank" style="width: 100%;text-align: right;">
-                                            <div class="small-font-color"><img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1">
-                                                      <span class="small-font-color">{{ item.user_name }}</span>&nbsp;<span class="small-font-color"><i class="fa fa-eye small-font-color-i"></i> {{ item.watch }}</span>
-                                            </div>
-                                            <div class="small-font-color" style="float:right;text-align: right;"> {{item.pub_date_show}}</div>
+                                    <div class="entry-meta d-flex align-items-center justify-content-between">
+                                        <a :href="handle(item)" target="_blank">
+                                            <div class="entry-author">
+                                                <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  " alt="" class="avatar-round rounded-circle me-1">&nbsp;
+                                                <span class="small-font-color-top">{{ item.user_name }}</span>&nbsp;&nbsp;
+                                                <span class="small-font-color-top"><i class="fa fa-eye small-font-color-top"></i> {{ item.watch }}</span>                                        </div>
+                                             <div class="small-font-color-top">{{item.pub_date_show}}</div>
                                          </a>
-                                      </div>
                                     </div>
                                 </div>
                             </div>

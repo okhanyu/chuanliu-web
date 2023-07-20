@@ -16,7 +16,15 @@ const app = createApp({
             userMap:{}
         }
     },
+     computed: {
+        isMobile() {
+            return window.innerWidth <= 768; // 根据实际需求调整阈值
+        }
+    },
     methods: {
+        // isMobile() {  alert(1);
+        //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
+        // },
         watch(id) {
             $.ajax({
               url: server +"rss/watch",
