@@ -5,6 +5,6 @@ var server = "https://api.hanyu.life/api/rss-hub/";
 
 
 // 每次加载每个人多少条
-var limit = 51;
+var limit = 15;
 
 
