@@ -136,7 +136,7 @@ function getRanks(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "rss/list?order=1&where=2&page_num="+ offset + "&page_size=7",
+            url: server + "rss/list?order=1&where=2&page_num="+ offset + "&page_size=3",
             beforeSend: function() {
             },
             success: function(response) {
