@@ -2,8 +2,7 @@
 /**************** ↓以下为需要自定义修改的部分 ↓ ******************/
 
 var memosUserApi = "https://api.hanyu.life/api/rss-hub/memos/user/list";
-
-// var infos = [];
+ 
 
 // 人员列表
 // var infos = [
