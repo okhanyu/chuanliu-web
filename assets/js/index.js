@@ -16,15 +16,27 @@ const app = createApp({
             userMap:{}
         }
     },
-     computed: {
+    computed: {
         isMobile() {
             return window.innerWidth <= 768; // 根据实际需求调整阈值
+        },
+        generateRandomImg() {
+            if (imgRand != undefined && imgRand != null) {
+                return imgRandDomain+imgRand[Math.floor(Math.random() * 100)%imgRand.length];
+            }
+            return backImg;
         }
     },
     methods: {
         // isMobile() {  alert(1);
         //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
         // },
+         generateRandomImgFunc() {
+            if (imgRand != undefined && imgRand != null) {
+                return imgRandDomain+imgRand[Math.floor(Math.random() * 100)%imgRand.length];
+            }
+            return backImg;
+        },
         watch(id) {
             $.ajax({
               url: server +"rss/watch",
@@ -116,6 +128,15 @@ const vm = app.mount('#app');
 
 /*** 初始化 vue end***/
 
+
+
+function generateRandomImgFuncForError(node) {
+            if (imgRand != undefined && imgRand != null) {
+                node.src= imgRandDomain+imgRand[Math.floor(Math.random() * 100)%imgRand.length];
+                return 
+            }
+            node.src='assets/images/back.jpg'
+        }
 
 function getSorts(callback) {
     // $.ajaxSetup({ async: false });
