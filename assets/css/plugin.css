@@ -3909,12 +3909,12 @@ Change the following styles to modify the appearance of the menu.
 }
 .slicknav_nav{
     position: absolute;
-    top: 85px;
+    top: 55px;
     left: 0;
     right: 0;
     background: #1F1D26;
-    height: 200px;
-    overflow-y: scroll;
+/*    height: 200px;*/
+/*    overflow-y: scroll;*/
 }
 
 .mag-slicknav .slicknav_nav{
