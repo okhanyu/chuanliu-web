@@ -2559,6 +2559,7 @@ nav.navbar.navbar-default.navbar-sticky-in .logo-black {
 /*          Trending  CSS        */
 /* ======================================== */
 .trending .trend-item {
+    border-radius: 8px;
   position: relative;
   transition: all ease-in-out 0.5s;
   overflow: hidden; }
