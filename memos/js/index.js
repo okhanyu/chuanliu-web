@@ -89,7 +89,11 @@ const app = createApp({
         this.imgUri = imgUriPrefix;
         this.banlist = banlist;
         getMemosUserDatas(function(data){
-            that.infos = data;
+            var tmp = [];
+            for (var i = data.length - 1; i >= 0; i--) {
+               tmp.push(data[i]);
+            }
+            that.infos = tmp;
         },function(data) {
             data.push(...that.datas);
             that.datas = sort(data);
