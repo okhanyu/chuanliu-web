@@ -81,44 +81,45 @@
                             <a  href="/memos/" title="">
                                 <img src="/memos/img/202209211355582.png" alt="">
                                 <b>
-                                    Memos
+                                   川流 - 朋友圈(Memos)
                                 </b>
                             </a>
                         </h1>
                         <nav class="header-menu">
                             <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa" class="header-menu-ul">
-                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35">
+                               <!--  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35">
                                     <a  href="/memos/">
                                         <i class="bi bi-palette me-1">
                                         </i>
-                                        Memos 朋友圈
+                                         川流 - 朋友圈(Memos)
+                                    </a>
+                                </li> -->
+                                <li  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
+                                    <a href="/">
+                                         <i class="bi bi-palette me-1">
+                                        </i>
+                                       进入川流
                                     </a>
                                 </li>
                                 <li  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-                                     
-                                    <a href="/rss/">
+                                    <a href="/about.html">
                                          <i class="bi bi-palette me-1">
                                         </i>
-                                      RSS 朋友圈
+                                      加入川流
                                     </a>
                                 </li>
-                                <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
+                              <!--   <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
                                     <a>
-                                        联系我/想加入
+                                        想加入
                                     </a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-1290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-                                            <a  href="https://zuofei.net/about.html" target="_blank">
-                                              今是昨非
-                                            </a>
-                                        </li>
-                                        <li id="menu-item-1290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-                                            <a  href="https://hanyu.life/blog/about/" target="_blank">
-                                              Yu
+                                            <a  href="https://chuanliu.org/about.html" target="_blank">
+                                              加入川流
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div>
@@ -156,7 +157,7 @@
                 <div class="mobile_head_logo">
                     <img src="/memos/img/202209211355582.png" alt="">
                     <b>
-                        Memos 朋友圈
+                       川流 - 朋友圈(Memos)
                     </b>
                 </div>
                 <div class="theme-switch" onclick="switchDarkMode()">
@@ -170,29 +171,35 @@
                         <a  href="/memos/">
                             <i class="bi bi-palette me-1">
                             </i>
-                               Memos 朋友圈
+                               川流 - 朋友圈(Memos)
                         </a>
                     </li>
-                               <li  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-
-                                    <a href="/rss/">
+                              <li  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
+                                    <a href="/">
                                          <i class="bi bi-palette me-1">
                                         </i>
-                                      RSS 朋友圈
+                                      进入川流
                                     </a>
-                                </li>
-                                <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
+                                </li> 
+                                                              <li  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
+                                    <a href="/about.html">
+                                         <i class="bi bi-palette me-1">
+                                        </i>
+                                      加入川流
+                                    </a>
+                                </li> 
+<!--                                 <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
                                     <a>
-                                        联系我/想加入
+                                        想加入
                                     </a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-1290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-                                            <a  href="https://zuofei.net/about.html" target="_blank">
-                                              今是昨非
+                                            <a  href="https://chuanliu.org/about.html" target="_blank">
+                                               加入川流
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                   <!--   <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
                         <span class="czxjcdbs">
                         </span>
@@ -269,7 +276,7 @@
                   
                     <div class="carousel-inner">
                         <div style="display:flex;flex-wrap: wrap;justify-content: left">
-                             <a :href="info.site" v-for="info in infos" target="_blank"><img width="45" height="45" style="margin: 6px;border-radius: 50%;" :src="info.avatar"
+                             <a :href="getLink(info)" v-for="info in infos" target="_blank"><img width="45" height="45" style="margin: 6px;border-radius: 50%;" :src="info.avatar"
                                 class="attachment-900x350x1 size-900x350x1 wp-post-image" /></a>
 
                         </div>
@@ -316,11 +323,11 @@
                                                 <a v-if="img.externalLink != '' " data-fancybox="post-1437" :href="img.externalLink ">
                                                     <img :src="img.externalLink" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
                                                 </a>
-                                                <a v-else-if="(img.publicId == undefined || img.publicId == '') && img.externalLink == '' " data-fancybox="post-1437" :href="item.api + imgUri + img.id + '/' + img.filename" >
-                                                    <img :src="item.api + imgUri + img.id + '/' + img.filename" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
+                                                <a v-else-if="(img.publicId == undefined || img.publicId == '') && img.externalLink == '' " data-fancybox="post-1437" :href="item.site + imgUri + img.id + '/' + img.filename" >
+                                                    <img :src="item.site + imgUri + img.id + '/' + img.filename" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
                                                 </a>
-                                                <a v-else="img.publicId != '' && img.externalLink == '' " data-fancybox="post-1437" :href="item.api + imgUri + img.id + '/' + img.publicId + '/'+img.filename" >
-                                                    <img :src="item.api + imgUri + img.id + '/' + img.publicId + '/'+ img.filename" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
+                                                <a v-else="img.publicId != '' && img.externalLink == '' " data-fancybox="post-1437" :href="item.site + imgUri + img.id + '/' + img.publicId + '/'+img.filename" >
+                                                    <img :src="item.site + imgUri + img.id + '/' + img.publicId + '/'+ img.filename" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
                                                 </a>
                                          </template>
                                         
@@ -339,11 +346,11 @@
                                             <i class="bi bi-chat-square-text-fill">
                                             </i>
                                             <!-- <a :href="'detail.html?id='+item.id+'&site='+item.site.split('://')[1]"> -->
-                                                <!-- :href="'detail.html?id='+item.id+'&site='+item.api" -->
+                                                <!-- :href="'detail.html?id='+item.id+'&site='+item.site" -->
                                              <!--    <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-if="item.comment_server_adress == '' || item.comment_server_adress == undefined || item.comment_server_adress == null">平台评论
                                             </a> -->
-                                             <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-else>自有评论
-                                            </a>
+                                             <!-- <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-else>自有评论
+                                            </a> -->
                                         </span>
                                         <span v-else>
                                             <i class="bi bi-chat-square-text-fill">
@@ -362,12 +369,12 @@
                     </div>
                     
                 </div>
-                 <button @click="nextSort" style="border: 0px solid gray;padding:10px 6px;border-radius:5px;background: white;cursor: pointer;"> <div>加载更多严格有序</div></button>
-                  <button @click="next" style="float:right;border: 0px solid gray;padding:10px 6px;border-radius:5px;background: white;cursor: pointer;"> <div>加载更多局部有序</div></button>
+                 <button @click="nextSort" style="margin-bottom: 10px;border: 0px solid gray;padding:10px 6px;border-radius:5px;background: white;cursor: pointer;"> <div>加载更多严格有序</div></button>
+                  <button @click="next" style="margin-bottom: 10px;float:right;border: 0px solid gray;padding:10px 6px;border-radius:5px;background: white;cursor: pointer;"> <div>加载更多局部有序</div></button>
             </div>
 
         </section>
-        <footer class="footbox">
+<!--         <footer class="footbox">
             <div class="container">
                 <div class="copyright">
                     <p>
@@ -381,7 +388,7 @@
                     </p>
                 </div>
             </div>
-        </footer>
+        </footer> -->
          </div>
         <button class="scrollToTopBtn showBtn" title="返回顶部">
             <i class="bi bi-chevron-up">

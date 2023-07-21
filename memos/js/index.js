@@ -3,18 +3,26 @@
 const {
     createApp
 } = Vue;
-
+var infos = [];
 const app = createApp({
     data() {
         return {
             datas: [],
             imgUri: "",
             banlist: [],
-            infos: infos,
+            infos: [],
             tempCommentCache: {}
         }
     },
+    computed: {
+       
+    },
     methods: {
+         getLink(item) {
+             var links  = item.memos_link.split("://");
+                var site = links[0] + "://" + (links[1].split("/"))[0];
+                return site;
+        },
         formatDate(value, args) {
             return format(value, args);
         },
@@ -80,7 +88,9 @@ const app = createApp({
         const that = this;
         this.imgUri = imgUriPrefix;
         this.banlist = banlist;
-        getDatas(function(data) {
+        getMemosUserDatas(function(data){
+            that.infos = data;
+        },function(data) {
             data.push(...that.datas);
             that.datas = sort(data);
         });
@@ -91,6 +101,30 @@ const vm = app.mount('#app');
 
 /*** 初始化 vue end***/
 
+function getMemosUserDatas(userCall,callback) {
+    // $.ajaxSetup({ async: false });
+
+        $.ajax({
+            type: "GET",
+            url: memosUserApi,
+            beforeSend: function() {
+            },
+            success: function(response) {
+                //getDataSuccess(response.data, callback);
+                 infos = response.data;
+                 userCall(response.data);
+                 getDatas(callback);
+                 
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    // $.ajaxSetup({ async: true });
+    //getDataSuccess(sort(allData), callback);
+
+};
+
 function getDatas(callback) {
     // $.ajaxSetup({ async: false });
     var tmpMap = {};
@@ -99,29 +133,38 @@ function getDatas(callback) {
 
         $.ajax({
             type: "GET",
-            url: infos[i].api + memosGetsApi + offset * limit,
+            //url: infos[i].memos_link + memosGetsApi + offset * limit,
+            url: infos[i].memos_link + offset * limit,
             beforeSend: function() {
                 tmpMap[this.url] = i;
             },
             success: function(response) {
                 var current = tmpMap[this.url];
-                var name = infos[current].name,
-                site = infos[current].site,
-                avatar = infos[current].avatar,
-                api = infos[current].api,
-                serveradress = infos[current].comment_server_adress,
-                commentsitename = infos[current].comment_site_name;
-                comment = infos[current].comment;
-                for (var j = 0; j < response.data.length; j++) {
-                    response.data[j]["name"] = name;
-                    response.data[j]["api"] = api;
-                    response.data[j]["site"] = site;
-                    response.data[j]["avatar"] = avatar;
-                    response.data[j]["comment_server_adress"] = serveradress;
-                    response.data[j]["comment_site_name"] = commentsitename;
-                    response.data[j]["comment"] = comment;
+                var name = infos[current].user_name;
+                var links  = infos[current].memos_link.split("://");
+                var site = links[0] + "://" + (links[1].split("/"))[0];
+                var  avatar = infos[current].avatar;
+                 var api = infos[current].memos_link;
+                // serveradress = infos[current].comment_server_adress;
+                // commentsitename = infos[current].comment_site_name;
+                // comment = infos[current].comment;
+
+                 var items;
+                 if (response.data == undefined ){
+                  items =   response;
+                 }else{
+                    items = response.data;
+                 }
+                for (var j = 0; j < items.length; j++) {
+                    items[j]["name"] = name;
+                    items[j]["api"] = api;
+                    items[j]["site"] = site;
+                    items[j]["avatar"] = avatar;
+                    // response.data[j]["comment_server_adress"] = serveradress;
+                    // response.data[j]["comment_site_name"] = commentsitename;
+                    // response.data[j]["comment"] = comment;
                 }
-                getDataSuccess(response.data, callback);
+                getDataSuccess(items, callback);
             },
             error: function(e) {
                 console.log(e);
@@ -132,6 +175,51 @@ function getDatas(callback) {
     //getDataSuccess(sort(allData), callback);
 
 };
+
+
+
+
+// function getDatas(callback) {
+//     // $.ajaxSetup({ async: false });
+//     var tmpMap = {};
+
+//     for (var i = 0; i < infos.length; i++) {
+
+//         $.ajax({
+//             type: "GET",
+//             url: infos[i].api + memosGetsApi + offset * limit,
+//             beforeSend: function() {
+//                 tmpMap[this.url] = i;
+//             },
+//             success: function(response) {
+//                 var current = tmpMap[this.url];
+//                 var name = infos[current].name,
+//                 site = infos[current].site,
+//                 avatar = infos[current].avatar,
+//                 api = infos[current].api,
+//                 serveradress = infos[current].comment_server_adress,
+//                 commentsitename = infos[current].comment_site_name;
+//                 comment = infos[current].comment;
+//                 for (var j = 0; j < response.data.length; j++) {
+//                     response.data[j]["name"] = name;
+//                     response.data[j]["api"] = api;
+//                     response.data[j]["site"] = site;
+//                     response.data[j]["avatar"] = avatar;
+//                     response.data[j]["comment_server_adress"] = serveradress;
+//                     response.data[j]["comment_site_name"] = commentsitename;
+//                     response.data[j]["comment"] = comment;
+//                 }
+//                 getDataSuccess(response.data, callback);
+//             },
+//             error: function(e) {
+//                 console.log(e);
+//             }
+//         });
+//     }
+//     // $.ajaxSetup({ async: true });
+//     //getDataSuccess(sort(allData), callback);
+
+// };
 
 function getDataSuccess(data, callback) {
     var d = data;
