@@ -106,7 +106,7 @@
      text-overflow: ellipsis;
      font-size: 0.9rem;
      color: #949393;
-     line-height: 1.45rem;
+/*     line-height: 1.45rem;*/
 }
  .break p {
     /* height: 100px;
@@ -177,7 +177,7 @@
  .summary-h60{
      overflow:hidden;
      text-overflow: ellipsis;
-     height:70px;
+     height:90px;
 }
  .avatar-round {
      width:20px !important;
@@ -251,6 +251,15 @@
      padding-top:10px 
 }
 
+     .entry-meta-cus-mobi{
+         position: relative;
+        /* right:24px;
+         bottom: 12px;*/
+         text-align: right;
+         white-space: nowrap;
+         margin-top: 5px;
+    }
+
 /****/
 
  @media screen and (max-width: 400px) {
@@ -308,7 +317,7 @@
          width: 61%;
          overflow: hidden;
          text-overflow: ellipsis;
-         padding: 15px 0px 0px 0px;
+         padding: 9px 0px 0px 0px;
     }
      .trend-meta-cus{
         /*         width: 55%;*/
@@ -330,13 +339,16 @@
          white-space: nowrap;
     }
      .entry-meta-cus-mobi{
-         position: absolute;
-         right:24px;
-         bottom: 12px;
+         position: relative;
+        /* right:24px;
+         bottom: 12px;*/
          text-align: right;
+         white-space: nowrap;
+         margin-top: 5px;
     }
      .img-cover-h190{
-         height: 80%;
+/*         height: 80%;*/
+height: 160px;
     }
      .col-lg-8 .trend-content-main .trend-content-cus-a {
          width: 100%;
@@ -349,7 +361,7 @@
          width:35%;
     }
      .row-cus .col-lg-8{
-         width:65%;
+         width:61%;
     }
      .col-lg-12 .trend-content-main .trend-content {
          width: 100%;
@@ -363,12 +375,14 @@
      .image-text-out-cus{
          width: 35%;height:140px;max-height:140px;
     }
+    .more-top .trend-image1 {
+        height:160px;
+    }
 }
 
-
-
 @media screen and (max-width: 500px) {
-       .image-text-cus{
+
+    .image-text-cus{
         height: 140px;
          max-height: 140px;
     }
@@ -421,7 +435,7 @@
          width: 61%;
          overflow: hidden;
          text-overflow: ellipsis;
-         padding: 15px 0px 0px 0px;
+         padding: 9px 0px 0px 0px;
     }
      .trend-meta-cus{
         /*         width: 55%;*/
@@ -443,13 +457,16 @@
          white-space: nowrap;
     }
      .entry-meta-cus-mobi{
-         position: absolute;
-         right:24px;
-         bottom: 12px;
+         position: relative;
+        /* right:24px;
+         bottom: 12px;*/
          text-align: right;
+         white-space: nowrap;
+         margin-top: 5px;
     }
      .img-cover-h190{
-         height: 80%;
+/*         height: 80%;*/
+height: 160px;
     }
      .col-lg-8 .trend-content-main .trend-content-cus-a {
          width: 100%;
@@ -462,7 +479,7 @@
          width:35%;
     }
      .row-cus .col-lg-8{
-         width:65%;
+         width:61%;
     }
      .col-lg-12 .trend-content-main .trend-content {
          width: 100%;
@@ -475,13 +492,15 @@
     }
      .image-text-out-cus{
          width: 35%;height:140px;max-height:140px;
+    }
+    .more-top .trend-image1 {
+        height:160px;
     }
 }
 
 @media screen and (max-width: 600px) {
 
-
-       .image-text-cus{
+    .image-text-cus{
         height: 140px;
          max-height: 140px;
     }
@@ -534,7 +553,7 @@
          width: 61%;
          overflow: hidden;
          text-overflow: ellipsis;
-         padding: 15px 0px 0px 0px;
+         padding: 9px 0px 0px 0px;
     }
      .trend-meta-cus{
         /*         width: 55%;*/
@@ -556,13 +575,16 @@
          white-space: nowrap;
     }
      .entry-meta-cus-mobi{
-         position: absolute;
-         right:24px;
-         bottom: 12px;
+         position: relative;
+        /* right:24px;
+         bottom: 12px;*/
          text-align: right;
+         white-space: nowrap;
+         margin-top: 5px;
     }
      .img-cover-h190{
-         height: 80%;
+/*         height: 80%;*/
+height: 160px;
     }
      .col-lg-8 .trend-content-main .trend-content-cus-a {
          width: 100%;
@@ -575,7 +597,7 @@
          width:35%;
     }
      .row-cus .col-lg-8{
-         width:65%;
+         width:61%;
     }
      .col-lg-12 .trend-content-main .trend-content {
          width: 100%;
@@ -588,13 +610,16 @@
     }
      .image-text-out-cus{
          width: 35%;height:140px;max-height:140px;
+    }
+    .more-top .trend-image1 {
+        height:160px;
     }
 }
 
 
 @media screen and (max-width: 700px) {
 
-       .image-text-cus{
+    .image-text-cus{
         height: 140px;
          max-height: 140px;
     }
@@ -647,7 +672,7 @@
          width: 61%;
          overflow: hidden;
          text-overflow: ellipsis;
-         padding: 15px 0px 0px 0px;
+         padding: 9px 0px 0px 0px;
     }
      .trend-meta-cus{
         /*         width: 55%;*/
@@ -669,13 +694,16 @@
          white-space: nowrap;
     }
      .entry-meta-cus-mobi{
-         position: absolute;
-         right:24px;
-         bottom: 12px;
+         position: relative;
+        /* right:24px;
+         bottom: 12px;*/
          text-align: right;
+         white-space: nowrap;
+         margin-top: 5px;
     }
      .img-cover-h190{
-         height: 80%;
+/*         height: 80%;*/
+height: 160px;
     }
      .col-lg-8 .trend-content-main .trend-content-cus-a {
          width: 100%;
@@ -688,7 +716,7 @@
          width:35%;
     }
      .row-cus .col-lg-8{
-         width:65%;
+         width:61%;
     }
      .col-lg-12 .trend-content-main .trend-content {
          width: 100%;
@@ -702,5 +730,142 @@
      .image-text-out-cus{
          width: 35%;height:140px;max-height:140px;
     }
+    .more-top .trend-image1 {
+        height:160px;
+    }
 }
+
+
+@media screen and (max-width: 300px) {
+
+    .image-text-cus{
+        height: 140px;
+         max-height: 140px;
+    }
+    .image-text-cus-b{
+        height: 140px;
+         max-height: 140px;
+    }
+  
+     .img-cover-h153 {
+         width:100%;
+         height: 140px;
+         max-height: 140px;
+         object-fit: cover;
+         border-radius: 5px;
+        /* box-shadow: 2px 2px 10px #c0bebe37;
+         */
+    }
+     .trend-item {
+         height: 100%;
+         overflow: hidden;
+         max-height: 200px;
+         padding: 0.5rem!important;
+         max-height: 200px;
+    }
+     .summary-h{
+         max-height:25px;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+    }
+     .break p {
+         max-height:25px;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+    }
+     .trend-content-main {
+         height: 100%;
+         display: flex;
+         flex-wrap: nowrap;
+         align-items: center;
+         justify-content: space-between;
+         width: 100%;
+    }
+     .trending .trend-item .trend-image{
+         width: 35% !important;
+    }
+     .trending .trend-item .trend-content {
+         height: 100%;
+         width: 61%;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         padding: 9px 0px 0px 0px;
+    }
+     .trend-meta-cus{
+        /*         width: 55%;*/
+        width: 100%;
+         max-height:42px;
+         height:100%;
+        /*         position: absolute;*/
+        position: relative;
+        /*     bottom: 24px;
+         right:24px;*/
+         padding-top:2px; 
+         bottom:0px;
+         right: 0px;
+    }
+     .summary-h60{
+         overflow:hidden;
+         text-overflow: ellipsis;
+         max-height:30px;
+         white-space: nowrap;
+    }
+     .entry-meta-cus-mobi{
+         position: relative;
+        /* right:24px;
+         bottom: 12px;*/
+         text-align: right;
+         white-space: nowrap;
+         margin-top: 5px;
+    }
+     .img-cover-h190{
+/*         height: 80%;*/
+height: 160px;
+    }
+     .col-lg-8 .trend-content-main .trend-content-cus-a {
+         width: 100%;
+    }
+     .row-cus {
+         display: flex;
+         flex-direction: row;
+    }
+     .row-cus .col-lg-4{
+         width:35%;
+    }
+     .row-cus .col-lg-8{
+         width:61%;
+    }
+     .col-lg-12 .trend-content-main .trend-content {
+         width: 100%;
+    }
+     .border-b {
+         border-bottom: 0px !important;
+    }
+     .section-title::before, .section-title-w::before{
+         width: 90%;
+    }
+     .image-text-out-cus{
+         width: 35%;height:140px;max-height:140px;
+    }
+    .more-top .trend-image1 {
+        height:160px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
