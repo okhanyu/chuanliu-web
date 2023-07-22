@@ -302,8 +302,11 @@ body.night-mode .main_header_area .header_menu .navbar.navbar-default.navbar-sti
  body.night-mode section.trending .trend-item span{
      color: #949393!important;
 }
+ body .about-content h5 {
+     color: #393939 !important;
+}
  body.night-mode .about-content p {
-     color: #949393!important;
+     color: #ffffff!important;
 }
 /****/
  @media screen and (max-width: 400px) {
