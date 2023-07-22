@@ -1,5 +1,11 @@
 /*** 初始化 vue begin***/
 
+if (localStorage.getItem("mode") == "dark"){
+    document.body.className = "night-mode";
+}else{
+      document.body.className = "";
+}
+
 const {
     createApp
 } = Vue;
@@ -31,6 +37,9 @@ const app = createApp({
         // isMobile() {  alert(1);
         //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
         // },
+        modeSave(mode){
+             localStorage.setItem("mode",mode);
+        },
          generateRandomImgFunc() {
             if (imgRand != undefined && imgRand != null) {
                 return imgRandDomain+imgRand[Math.floor(Math.random() * 100)%imgRand.length];
