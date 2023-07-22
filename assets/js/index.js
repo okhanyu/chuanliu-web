@@ -18,6 +18,7 @@ const app = createApp({
             server:server,
             moreBtn:"加载更多",
             sortBtn:"点击按观看量降序 ↓",
+            cleanBtn:"净化模式关闭",
             sort:true,
             imgShow:true
         }
@@ -39,6 +40,7 @@ const app = createApp({
         // },
         imgShowSwitch(){
              this.imgShow = !this.imgShow
+             this.cleanBtn = (this.cleanBtn == "净化模式关闭") ? "净化模式开启":"净化模式关闭"
 
         },
         modeSave(mode){
@@ -89,13 +91,15 @@ const app = createApp({
           
         },
         sortChange(event) {
-            this.sort= !this.sort
+            
             offset = 0;
-            if (this.sortBtn == "点击按时间倒序 ↓"){
-                this.sortBtn = "点击按观看量降序 ↓"
-            }else{
-                this.sortBtn = "点击按时间倒序 ↓"
-            }
+            this.sort= !this.sort
+            this.sortBtn = (this.sortBtn == "点击按时间倒序 ↓") ? "点击按观看量降序 ↓" : "点击按时间倒序 ↓"
+            // if (this.sortBtn == "点击按时间倒序 ↓"){
+            //     this.sortBtn = "点击按观看量降序 ↓"
+            // }else{
+            //     this.sortBtn = "点击按时间倒序 ↓"
+            // }
             const that = this;
              if (this.sort){
                  getDatas(function(data) {
@@ -121,7 +125,7 @@ const app = createApp({
         getRanks(function(data) {
             that.ranks = data.data
         });
-        
+
         //getUsers(function(data) {
             // var map = {};
             // for (var i = 0; i < data.data.length; i++) {
