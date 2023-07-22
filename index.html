@@ -12,6 +12,11 @@
     <title> 川流 </title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <style type="text/css">
+        [v-cloak] {
+            display:none !important;
+        }
+    </style>
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!--Custom CSS-->
@@ -28,9 +33,10 @@
     <link rel="stylesheet" href="assets/fonts/line-icons.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style2.css" type="text/css">
 
+
 </head>
 <body>
-<div id="app" style="max-width: 1260px;margin: auto;">
+<div id="app" style="max-width: 1260px;margin: auto;" v-cloak>
     <!-- Preloader -->
     <div id="preloader">
         <div id="status"></div>

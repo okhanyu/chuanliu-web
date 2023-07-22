@@ -12,6 +12,11 @@
     <title> 川流成员 </title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <style type="text/css">
+        [v-cloak] {
+            display:none !important;
+        }
+    </style>
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!--Custom CSS-->
@@ -41,7 +46,7 @@
     <link rel="stylesheet" href="assets/css/style2.css" type="text/css">
 </head>
 <body>
- <div id="app">
+ <div id="app" v-cloak>
     <!-- Preloader -->
     <div id="preloader">
         <div id="status"></div>
