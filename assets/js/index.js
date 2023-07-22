@@ -128,10 +128,10 @@ const app = createApp({
 
         if (localStorage.getItem("cleanMode") == true) {
               this.cleanBtn  = "净化模式开启";
-              this.imgShow  = true;
+              this.imgShow  = false;
         }else{
               this.cleanBtn  = "净化模式关闭";
-              this.imgShow  = false;
+              this.imgShow  = true;
         }
 
         //getUsers(function(data) {
