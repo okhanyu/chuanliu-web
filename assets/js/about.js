@@ -75,7 +75,7 @@ const vm = app.mount('#app');
 
 function getUsers(callback) {
     // $.ajaxSetup({ async: false });
-
+        limit = 1000;
         $.ajax({
             type: "GET",
             url: server + "user/list/group?page_num="+ offset + "&page_size="+limit,
