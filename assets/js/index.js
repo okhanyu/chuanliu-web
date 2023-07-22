@@ -126,7 +126,7 @@ const app = createApp({
             that.ranks = data.data
         });
 
-        if (localStorage.getItem("cleanMode") == true) {
+        if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
               this.cleanBtn  = "净化模式开启";
               this.imgShow  = false;
         }else{
