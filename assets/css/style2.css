@@ -323,7 +323,9 @@ table > tbody tr td, table > tbody tr th, table > tfoot tr td, table > tfoot tr 
 /****/
 
  @media screen and (max-width: 400px) {
-
+    .widthmax{
+        width: 100%;
+    }
 
     .image-text-cus{
         height: 140px;
@@ -376,6 +378,14 @@ table > tbody tr td, table > tbody tr th, table > tfoot tr td, table > tfoot tr 
      .trending .trend-item .trend-content {
          height: 100%;
          width: 61%;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         padding: 9px 0px 0px 0px;
+    }
+
+    .trending .trend-item .trend-content-clean-nav {
+         height: 100%;
+         width: 98%;
          overflow: hidden;
          text-overflow: ellipsis;
          padding: 9px 0px 0px 0px;

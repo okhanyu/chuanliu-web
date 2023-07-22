@@ -258,12 +258,12 @@
                                           <div class="trend-image1 image-text-cus" v-else ><span class="image-text-cus-span">{{ item.title }} </span> </div>
                                     </div>
                                     
-                                    <div :class="imgShow ?  (item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12' ) : 'col-lg-12' ">
+                                    <div :class="imgShow ?  (item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12 widthmax' ) : 'col-lg-12 widthmax' ">
                                         <div class="trend-content-main">
                                                 <!-- <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')" :style="(item.cover == '' || item.cover == undefined || item.cover == null) && isMobile ? 'width:100%': '' "> -->
                                                  <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">
                                                 
-                                                <h4><a :href="item.link" target="_blank" @click="watch(item.id)" :dataid="item.id" >{{ item.title }}</a></h4>
+                                                <h4><a :href="item.link" target="_blank" @click="watch(item.id)" :dataid="item.id" style="overflow: hidden;width: 100%;white-space: nowrap;text-overflow: ellipsis;">{{ item.title }}</a></h4>
                                                 <h5 class="theme small-font tags-nowrap">
                                                   <span  v-if="item.tags!= undefined && item.tags.length != 0">
                                                       <template v-for="tag,index in item.tags" > 
@@ -325,7 +325,7 @@
                                 <div v-show="imgShow" class="image-text-out-cus" v-else ><span class="image-text-cus-span">{{ item.title }} </span> </div>
                            
                                 <!-- <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')" :style="(item.cover == '' || item.cover == undefined || item.cover == null) && isMobile ? 'width:100%': '' "> -->
-                                     <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">
+                                     <div :class="(!imgShow && isMobile ? 'trend-content-clean-nav ' : 'trend-content ' )+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">
                                    
                                     <h4 class="summary-nowrap" style="max-height:25.2px;"><a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" >{{ item.title }}</a>
                                     </h4>
