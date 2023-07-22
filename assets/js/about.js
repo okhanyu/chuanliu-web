@@ -1,5 +1,13 @@
 /*** 初始化 vue begin***/
 
+
+if (localStorage.getItem("mode") == "dark"){
+    document.body.className = "night-mode";
+}else{
+      document.body.className = "";
+}
+
+
 const {
     createApp
 } = Vue;
@@ -16,6 +24,9 @@ const app = createApp({
         }
     },
     methods: {
+        modeSave(mode){
+             localStorage.setItem("mode",mode);
+        },
         next(event) {
             offset++;
             const that = this;

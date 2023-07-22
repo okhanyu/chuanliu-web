@@ -1,3 +1,19 @@
+body.night-mode .main_header_area .header_menu .navbar.navbar-default.navbar-sticky-in .nav.navbar-nav li a {
+    color:white !important;
+}
+body.night-mode .main_header_area .header_menu .navbar.navbar-default.navbar-sticky-in .nav.navbar-nav li.active a {
+    color:red !important;
+}
+
+body.night-mode .author-title a.avatar {
+    color:white; !important;
+}
+
+body.night-mode .author-title a.avatar:hover {
+    color:red; !important;
+}
+
+
 
 
 .image-text-cus-b{

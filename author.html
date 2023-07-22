@@ -35,6 +35,7 @@
         }*/
 
     </style>
+    <link rel="stylesheet" href="assets/css/style2.css" type="text/css">
 </head>
 <body>
  <div id="app">
@@ -84,8 +85,8 @@
                                     </li>
                                 </ul>
                              </li> -->
-                            <li> <div class="dark-mode" ><a><i class="fa fa-moon"></i></a></div></li>
-                            <li> <div class="light-mode" ><a><i class="fa fa-sun"></i></a></div> </li>
+                            <li> <div class="dark-mode" @click="modeSave('dark')"><a><i class="fa fa-moon"></i></a></div></li>
+                            <li> <div class="light-mode" @click="modeSave('light')"><a><i class="fa fa-sun"></i></a></div> </li>
                           </ul>
                         </div><!-- /.navbar-collapse -->   
                <!--          <div class="register-login d-flex align-items-center">
