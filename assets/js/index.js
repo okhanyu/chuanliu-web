@@ -40,7 +40,7 @@ const app = createApp({
         imgShowSwitch(){
              this.imgShow = !this.imgShow;
              this.cleanBtn = (this.cleanBtn == "净化模式关闭") ? "净化模式开启":"净化模式关闭";
-             localStorage.setItem("cleanMode",this.imgShow);
+             localStorage.setItem("cleanMode",!this.imgShow);
 
         },
         modeSave(mode){
