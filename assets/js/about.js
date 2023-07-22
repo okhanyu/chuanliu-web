@@ -78,7 +78,7 @@ function getUsers(callback) {
 
         $.ajax({
             type: "GET",
-            url: server + "user/list/group?where=1&page_num="+ offset + "&page_size="+limit,
+            url: server + "user/list/group?page_num="+ offset + "&page_size="+limit,
             beforeSend: function() {
             },
             success: function(response) {
