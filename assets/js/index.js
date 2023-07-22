@@ -1,10 +1,9 @@
 /*** 初始化 vue begin***/
 
-if (localStorage.getItem("mode") == "dark"){
-    document.body.className = "night-mode";
-}else{
-      document.body.className = "";
-}
+
+ document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mode" : "";
+
+
 
 const {
     createApp
@@ -39,8 +38,9 @@ const app = createApp({
         //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
         // },
         imgShowSwitch(){
-             this.imgShow = !this.imgShow
-             this.cleanBtn = (this.cleanBtn == "净化模式关闭") ? "净化模式开启":"净化模式关闭"
+             this.imgShow = !this.imgShow;
+             this.cleanBtn = (this.cleanBtn == "净化模式关闭") ? "净化模式开启":"净化模式关闭";
+             localStorage.setItem("cleanMode",this.imgShow);
 
         },
         modeSave(mode){
@@ -125,6 +125,14 @@ const app = createApp({
         getRanks(function(data) {
             that.ranks = data.data
         });
+
+        if (localStorage.getItem("cleanMode") == true) {
+              this.cleanBtn  = "净化模式开启";
+              this.imgShow  = true;
+        }else{
+              this.cleanBtn  = "净化模式关闭";
+              this.imgShow  = false;
+        }
 
         //getUsers(function(data) {
             // var map = {};
