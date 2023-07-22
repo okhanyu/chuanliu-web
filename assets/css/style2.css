@@ -13,8 +13,31 @@ body.night-mode .author-title a.avatar:hover {
     color:red; !important;
 }
 
+body.night-mode .bg-lgrey{
+    background: transparent !important;
+}
+body.night-mode h1, h2, h3, h4, h5, h6{
+    color: #ffffff2e;
+}
+
+body.night-mode a{
+    color: white;
+}
 
 
+body .main_header_area .header_menu.fixed-top{
+    background: white;
+}
+
+
+body.night-mode .main_header_area .header_menu.fixed-top{
+    background: #0d0c0c;
+}
+
+
+table > tbody tr td, table > tbody tr th, table > tfoot tr td, table > tfoot tr th, table > thead tr td, table > thead tr th {
+      border: 0px solid #f1f1f1;
+}
 
 .image-text-cus-b{
      height: 153px;
