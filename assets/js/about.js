@@ -1,12 +1,12 @@
 /*** 初始化 vue begin***/
 
 
-if (localStorage.getItem("mode") == "dark"){
-    document.body.className = "night-mode";
-}else{
-      document.body.className = "";
-}
+ document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mode" : "";
 
+
+function setModeProto(mode){
+      localStorage.setItem("mode",mode);
+}
 
 const {
     createApp
