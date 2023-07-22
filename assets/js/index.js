@@ -11,7 +11,7 @@ const app = createApp({
             ranks: [],
             server:server,
             moreBtn:"加载更多",
-            sortBtn:"点击浏览量降序",
+            sortBtn:"点击按观看量降序 ↓",
             sort:true,
             userMap:{}
         }
@@ -78,10 +78,10 @@ const app = createApp({
         sortChange(event) {
             this.sort= !this.sort
             offset = 0;
-            if (this.sortBtn == "点击时间倒序"){
-                this.sortBtn = "点击浏览量降序"
+            if (this.sortBtn == "点击按时间倒序 ↓"){
+                this.sortBtn = "点击按观看量降序 ↓"
             }else{
-                this.sortBtn = "点击时间倒序"
+                this.sortBtn = "点击按时间倒序 ↓"
             }
             const that = this;
              if (this.sort){

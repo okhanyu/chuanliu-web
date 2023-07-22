@@ -235,7 +235,7 @@
     <section class="trending more-top pb-6 pt-5 ptop" v-if="ranks.length > 1">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-100">
-                <h2 class="m-0" lang="en">More Trending &<span>48 hours</span></h2>
+                <h2 class="m-0" lang="en">Trending More & <span>48 hours</span></h2>
             </div>  
             <div class="trend-box">
                  <template  v-for="item,index in ranks">
@@ -300,9 +300,10 @@
     <section class="trending recent-articles pb-6 pt-5 ptop">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-50">
-                <h2 class="m-0" lang="en">Recent &<span> Posts</span></h2>
+                <h2 class="m-0" lang="en">Posts &<span> Recent</span></h2>
                 <h4 style="border-radius: 5px;cursor: pointer;" @click="sortChange"  class="bg-theme white px-4 py-1 d-inline-block small-font tags-nowrap" > {{sortBtn}}
-            </h4></div>
+                </h4>
+            </div>
 
             <div class="recent-articles-inner">
                 <div class="row">
@@ -356,7 +357,7 @@
             </div>
         </div>
         <div class="col-lg-12">
-            <div class="trend-btn text-center"><a @click="next" class="nir-btn">{{ moreBtn }}</a></div>
+            <div  class="trend-btn text-center"><a @click="next" class="nir-btn" style="border-radius: 5px;cursor: pointer;">{{ moreBtn }}</a></div>
         </div>
     </section>
 
@@ -662,8 +663,8 @@
     <!-- footer ends -->
     
     <!-- Back to top start -->
-    <div id="back-to-top">
-        <a href="#"></a>
+    <div id="back-to-top" >
+        <a href="#" style="border-radius: 5px;cursor: pointer;"></a>
     </div>
     <!-- Back to top ends -->
 
