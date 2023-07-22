@@ -3,7 +3,9 @@
 
  document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mode" : "";
 
-
+function setModeProto(mode){
+      localStorage.setItem("mode",mode);
+}
 
 const {
     createApp
@@ -117,6 +119,7 @@ const app = createApp({
         }
     },
     mounted: function() {
+
         const that = this;
         getDatas(function(data) {
             // data.push(...that.datas);
