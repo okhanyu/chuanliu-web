@@ -16,8 +16,8 @@ const app = createApp({
             ranks: [],
             server:server,
             moreBtn:"加载更多",
-            sortBtn:"点击按观看量降序 ↓",
-            cleanBtn:"净化模式关闭",
+            sortBtn:"点击观看量降序 ↓",
+            cleanBtn:"净化关闭",
             sort:true,
             imgShow:true
         }
@@ -39,7 +39,7 @@ const app = createApp({
         // },
         imgShowSwitch(){
              this.imgShow = !this.imgShow;
-             this.cleanBtn = (this.cleanBtn == "净化模式关闭") ? "净化模式开启":"净化模式关闭";
+             this.cleanBtn = (this.cleanBtn == "净化关闭") ? "净化开启":"净化关闭";
              localStorage.setItem("cleanMode",!this.imgShow);
 
         },
@@ -94,7 +94,7 @@ const app = createApp({
             
             offset = 0;
             this.sort= !this.sort
-            this.sortBtn = (this.sortBtn == "点击按时间倒序 ↓") ? "点击按观看量降序 ↓" : "点击按时间倒序 ↓"
+            this.sortBtn = (this.sortBtn == "点击时间倒序 ↓") ? "点击观看量降序 ↓" : "点击时间倒序 ↓"
             // if (this.sortBtn == "点击按时间倒序 ↓"){
             //     this.sortBtn = "点击按观看量降序 ↓"
             // }else{
