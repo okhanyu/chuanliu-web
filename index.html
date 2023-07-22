@@ -106,7 +106,7 @@
         <section class="pb-6 pt-5 ptop" v-if="index == 0">
             <div class="container">
                 <div class="section-title mb-4 pb-1 w-50">
-                    <h2 class="m-0" lang="en">Top 1 & <span>48 hours</span></h2>
+                    <h2 class="m-0" lang="en">Trending & <span>48 hours</span></h2>
                 </div> 
                 <div class="about-image-box">
                     <div class="row d-flex align-items-center justify-content-between">
@@ -235,7 +235,7 @@
     <section class="trending more-top pb-6 pt-5 ptop" v-if="ranks.length > 1">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-100">
-                <h2 class="m-0" lang="en">More Top 2 &  <span>48 hours</span></h2>
+                <h2 class="m-0" lang="en">More Trending &<span>48 hours</span></h2>
             </div>  
             <div class="trend-box">
                  <template  v-for="item,index in ranks">
@@ -300,9 +300,9 @@
     <section class="trending recent-articles pb-6 pt-5 ptop">
         <div class="container">
             <div class="section-title mb-4 pb-1 w-50">
-                <h2 class="m-0" lang="en">Recent & <span>Posts</span></h2>
-                <button @click="sortChange" style="padding:5px;color: #eb5151;border-radius: 5px"> {{sortBtn}} </button>
-            </div>
+                <h2 class="m-0" lang="en">Recent &<span> Posts</span></h2>
+                <h4 style="border-radius: 5px;cursor: pointer;" @click="sortChange"  class="bg-theme white px-4 py-1 d-inline-block small-font tags-nowrap" > {{sortBtn}}
+            </h4></div>
 
             <div class="recent-articles-inner">
                 <div class="row">
