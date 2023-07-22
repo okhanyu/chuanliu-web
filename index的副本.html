@@ -77,12 +77,7 @@
                             <li> <div class="dark-mode" @click="modeSave('dark')"><a><i class="fa fa-moon"></i></a></div></li>
                             <li> <div class="light-mode" @click="modeSave('light')"><a><i class="fa fa-sun"></i></a></div> </li>
                           </ul>
-                          <div style="margin: 0px 12px 0px 12px;">
-                            <a @click="imgShowSwitch" style="font-size: 12px;cursor: pointer;">切换无图状态</i>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- /.navbar-collapse -->   
+                        </div><!-- /.navbar-collapse -->   
                <!--          <div class="register-login d-flex align-items-center">
                             <div class="header_sidemenu me-2">
                                 <div class="mhead">
@@ -115,7 +110,7 @@
                 </div> 
                 <div class="about-image-box">
                     <div class="row d-flex align-items-center justify-content-between">
-                        <div :class="imgShow ?  'col-lg-7 col-sm-12 mb-4' : 'col-lg-12 col-sm-12 mb-4' ">
+                        <div class="col-lg-7 col-sm-12 mb-4">
                             <div class="about-content">
                                 
                                 <h3 class="border-b mb-2 pb-2 whitechange"><a :href="item.link" @click="watch(item.id)" target="_blank" :dataid="item.id" >{{ item.title }}</a></h3>
@@ -150,7 +145,7 @@
                                  <div class="small-font-color">{{item.pub_date_show}}</div>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-sm-12 mb-4" v-show="imgShow">
+                        <div class="col-lg-5 col-sm-12 mb-4">
                             <!-- class="box-shadow" -->
                             <div class="about-image p-3  position-relative">
                                   <!-- <img :src="item.cover" alt="image"  onerror="generateRandomImgFuncForError(this)" style="object-fit: cover;max-height: 250px;border-radius: 5px;" class="w-100"> -->
@@ -249,7 +244,7 @@
                        
                             <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0">
                                 <div :class=" index%2 == 1 ? (isMobile ? 'row-cus' :'row' ) : (isMobile ? 'row-cus' : 'row flex-row-reverse' ) ">
-                                    <div class="col-lg-4 pe-0" v-if="item.cover != undefined &&  item.cover != ''" v-show="imgShow">
+                                    <div class="col-lg-4 pe-0" v-if="item.cover != undefined &&  item.cover != ''">
                                         <div class="trend-image1" v-if="item.cover != '' && item.cover != undefined && item.cover != null">
                                              <!-- <img :src="item.cover" onerror="generateRandomImgFuncForError(this)" class="img-cover-h190"> -->
                                                  <img :src="item.cover" alt="image"  onerror="this.style.display='none';this.nextSibling.style.display='block'" class="img-cover-h190">
@@ -258,7 +253,7 @@
                                           <div class="trend-image1 image-text-cus" v-else ><span class="image-text-cus-span">{{ item.title }} </span> </div>
                                     </div>
                                     
-                                    <div :class="imgShow ?  (item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12' ) : 'col-lg-12' ">
+                                    <div :class="item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12' ">
                                         <div class="trend-content-main">
                                                 <!-- <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')" :style="(item.cover == '' || item.cover == undefined || item.cover == null) && isMobile ? 'width:100%': '' "> -->
                                                  <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">
@@ -315,14 +310,14 @@
                     <div class="col-lg-4 mb-4"  v-for="item in datas">
                         <div class="trend-item box-shadow bg-white p-4 mb-2 trend-item-cus">
                             <div class="trend-content-main" style="height: 100%;">
-                                <div v-show="imgShow"class="trend-image trend-image-cus "  v-if="item.cover != '' && item.cover != undefined && item.cover != null">
+                                <div class="trend-image trend-image-cus "  v-if="item.cover != '' && item.cover != undefined && item.cover != null">
                                 <!-- <div class="trend-image trend-image-cus" > -->
                                          <!-- <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? 'assets/images/back.jpg' : item.cover " alt="image"  onerror="generateRandomImgFuncForError(this)" class="img-cover-h153"> -->
                                          <!-- <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? generateRandomImgFunc() : item.cover " alt="image"  onerror="generateRandomImgFuncForError(this)" class="img-cover-h153"> -->
                                          <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? generateRandomImgFunc() : item.cover " alt="image"  onerror="this.style.display='none';this.nextSibling.style.display='block'" class="img-cover-h153">
                                          <div class="image-text-cus" style="display: none"><span class="image-text-cus-span">{{ item.title }} </span> </div>
                                 </div>
-                                <div v-show="imgShow" class="image-text-out-cus" v-else ><span class="image-text-cus-span">{{ item.title }} </span> </div>
+                                  <div class="image-text-out-cus" v-else ><span class="image-text-cus-span">{{ item.title }} </span> </div>
                            
                                 <!-- <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')" :style="(item.cover == '' || item.cover == undefined || item.cover == null) && isMobile ? 'width:100%': '' "> -->
                                      <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">

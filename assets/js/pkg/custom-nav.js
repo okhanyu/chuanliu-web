@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
      */
     var $slicknav_label;
     $('.responsive-menu').slicknav({
-      duration: 500,
+      duration: 10,
       easingOpen: 'easeInExpo',
       easingClose: 'easeOutExpo',
       closedSymbol: '<i class="fa fa-plus"></i>',
@@ -33,7 +33,7 @@ jQuery(document).ready(function () {
 
     var $slicknav_label;
     $('#responsive-menu').slicknav({
-      duration: 500,
+      duration: 10,
       easingOpen: 'easeInExpo',
       easingClose: 'easeOutExpo',
       closedSymbol: '<i class="fa fa-plus"></i>',

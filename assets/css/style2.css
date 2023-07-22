@@ -34,6 +34,14 @@ body.night-mode .main_header_area .header_menu.fixed-top{
     background: #0d0c0c;
 }
 
+body .navbar-collapse1 div a {
+    color: #081430 !important;
+}
+
+body.night-mode .navbar-collapse1 div a {
+  color:white !important;
+}
+
 
 table > tbody tr td, table > tbody tr th, table > tfoot tr td, table > tfoot tr th, table > thead tr td, table > thead tr th {
       border: 0px solid #f1f1f1;
@@ -299,9 +307,23 @@ table > tbody tr td, table > tbody tr th, table > tfoot tr td, table > tfoot tr 
          margin-top: 5px;
     }
 
+        body.night-mode section.trending .trend-item p {
+        color: #949393!important;
+    }
+
+    body.night-mode section.trending .trend-item span{
+        color: #949393!important;
+    }
+
+    body.night-mode .about-content p {
+          color: #949393!important;
+    }
+
+
 /****/
 
  @media screen and (max-width: 400px) {
+
 
     .image-text-cus{
         height: 140px;

@@ -19,7 +19,7 @@ const app = createApp({
             moreBtn:"加载更多",
             sortBtn:"点击按观看量降序 ↓",
             sort:true,
-            userMap:{}
+            imgShow:true
         }
     },
     computed: {
@@ -37,6 +37,10 @@ const app = createApp({
         // isMobile() {  alert(1);
         //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
         // },
+        imgShowSwitch(){
+             this.imgShow = !this.imgShow
+
+        },
         modeSave(mode){
              localStorage.setItem("mode",mode);
         },
@@ -117,6 +121,7 @@ const app = createApp({
         getRanks(function(data) {
             that.ranks = data.data
         });
+        
         //getUsers(function(data) {
             // var map = {};
             // for (var i = 0; i < data.data.length; i++) {
