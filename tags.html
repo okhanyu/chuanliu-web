@@ -214,10 +214,11 @@
 
 
     <!-- blog starts -->
-    <section class="blog blog-left" v-show="listByTag.length != 0">
+    <section class="blog blog-left" v-show="listByTag.length != 0  && !tagList">
         <div class="container">
               <div class="section-title mb-4 pb-1 w-50">
                 <h2 class="m-0" lang="en">List &<span> By Tag</span></h2>
+                  <div  class="trend-btn text-left"><a @click="this.tagList = !this.tagList ; moreListBtn ='加载更多'" class="nir-btn" style="border-radius: 5px;cursor: pointer;">再次打开标签</a></div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -251,7 +252,7 @@
                             </div>
                         </div>
 
-                    <div class="col-lg-12" style="margin-top:50px">
+                    <div class="col-lg-12" style="margin-top:50px;margin-bottom:50px">
                         <div  class="trend-btn text-center"><a @click="nextList" class="nir-btn" style="border-radius: 5px;cursor: pointer;">{{ moreListBtn }}</a></div>
                     </div>
 
@@ -271,6 +272,12 @@
         </div>
     </section>
     <!-- blog Ends -->  
+
+        <!-- Back to top start -->
+    <div id="back-to-top" >
+        <a href="#" style="border-radius: 5px;cursor: pointer;"></a>
+    </div>
+    <!-- Back to top ends -->
 
 </div>
         <!-- *Scripts* -->
