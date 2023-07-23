@@ -26,14 +26,16 @@
 
 </head>
 <body>
+
+<div id="app" style="display:flex;justify-content: space-evenly;align-content: center;flex-wrap: wrap" >
  
-<div class="leaderboard" id="app" v-cloak>
+<div class="leaderboard" v-cloak>
   <h1>
     <div style="display: flex;flex-wrap: nowrap;justify-content: space-between;align-items: baseline;">
         <div style="margin:8px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><svg class="ico-cup">
           <use xlink:href="#cup"></use>
         </svg>
-        <span style="font-weight: bold;">近30天 更新频率排行榜 前十名</span></div>
+        <span style="font-weight: bold;">近30天 更新率 前十名</span></div>
    
     <button style="border:1px dashed gray;background: transparent;color: white;border-radius: 3px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><a style="color:inherit;text-decoration: none;" href="../">返回</a></button> 
 </div>
@@ -43,6 +45,29 @@
           <a :href="item.rss_link.split('://')[0]+'://'+((item.rss_link.split('://')[1]).split('/')[0])" style="color:inherit;text-decoration: none;" target="_blank">
               <mark style="color:inherit">{{ item.user_name }} </mark>
               <small>{{ item.total }} 篇 </small>
+         </a>
+    </li>
+    
+  </ol>
+</div>
+
+ 
+<div class="leaderboard" v-cloak>
+  <h1>
+    <div style="display: flex;flex-wrap: nowrap;justify-content: space-between;align-items: baseline;">
+        <div style="margin:8px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><svg class="ico-cup">
+          <use xlink:href="#cup"></use>
+        </svg>
+        <span style="font-weight: bold;">近30天 观看量 前十名</span></div>
+   
+    <button style="border:1px dashed gray;background: transparent;color: white;border-radius: 3px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><a style="color:inherit;text-decoration: none;" href="../">返回</a></button> 
+</div>
+  </h1>
+  <ol>
+    <li v-for="item in watchRanks">
+          <a :href="item.rss_link.split('://')[0]+'://'+((item.rss_link.split('://')[1]).split('/')[0])" style="color:inherit;text-decoration: none;" target="_blank">
+              <mark style="color:inherit">{{ item.user_name }} </mark>
+              <small>{{ item.watch }} 次 </small>
          </a>
     </li>
     
@@ -79,7 +104,7 @@
 
 var server = "https://api.hanyu.life/api/rss-hub/";
 // var server = "http://127.0.0.1:8899/api/rss-hub/";
-var api= server + "user/list/group?where=1&page_num=0&page_size=10";
+var api = server + "user/list/group?where=1&page_num=0&page_size=10";
 
 
 const {
@@ -89,7 +114,8 @@ const {
 const app = createApp({
     data() {
         return {
-            ranks: []
+            ranks: [],
+            watchRanks: []
         }
     },
     computed: {
@@ -111,7 +137,13 @@ const app = createApp({
             },
             success: function(response) {
                 console.log(response);
-                that.ranks = response.data;
+                that.ranks.push(...response.data) ;
+                //     var tmp = [];
+                // for (var i = 0; i < response.data.length; i++) {
+                //     tmp.push(response.data[i]);
+                // }
+
+                that.watchRanks.push(...response.data.sort((a, b) => b.watch - a.watch));
             },
             error: function(e) {
                 console.log(e);
