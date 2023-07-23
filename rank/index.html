@@ -14,6 +14,15 @@
      <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="reset.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <style type="text/css">
+     
+         li {
+            color: white;
+        }
+        li:hover {
+            color: black;
+        }
+    </style>
 
 </head>
 <body>
@@ -27,8 +36,10 @@
   </h1>
   <ol>
     <li v-for="item in ranks">
-      <mark>{{ item.user_name }} </mark>
-      <small>{{ item.total }} 篇 </small>
+          <a :href="item.rss_link.split('://')[0]+'://'+((item.rss_link.split('://')[1]).split('/')[0])" style="color:inherit;text-decoration: none;" target="_blank">
+              <mark style="color:inherit">{{ item.user_name }} </mark>
+              <small>{{ item.total }} 篇 </small>
+         </a>
     </li>
     
   </ol>
