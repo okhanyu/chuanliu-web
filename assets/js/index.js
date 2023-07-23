@@ -19,7 +19,7 @@ const app = createApp({
             server:server,
             moreBtn:"加载更多",
             sortBtn:"点击观看量降序 ↓",
-            cleanBtn:"净化关闭",
+            cleanBtn:"去图模式关闭",
             sort:true,
             imgShow:true
         }
@@ -41,7 +41,7 @@ const app = createApp({
         // },
         imgShowSwitch(){
              this.imgShow = !this.imgShow;
-             this.cleanBtn = (this.cleanBtn == "净化关闭") ? "净化开启":"净化关闭";
+             this.cleanBtn = (this.cleanBtn == "去图模式关闭") ? "去图模式开启":"去图模式关闭";
              localStorage.setItem("cleanMode",!this.imgShow);
 
         },
@@ -130,10 +130,10 @@ const app = createApp({
         });
 
         if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
-              this.cleanBtn  = "净化模式开启";
+              this.cleanBtn  = "去图模式开启";
               this.imgShow  = false;
         }else{
-              this.cleanBtn  = "净化模式关闭";
+              this.cleanBtn  = "去图模式关闭";
               this.imgShow  = true;
         }
 
