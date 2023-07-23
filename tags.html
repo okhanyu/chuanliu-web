@@ -239,7 +239,7 @@
 
                                         <!-- <h5 class="theme mb-2">Travel</h5> -->
                                         
-                                        <h3 class="mb-2" ><a :href="item.link" target="_blank" class=""  style="width:100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"> {{ item.title }} </a></h3>
+                                        <h3 class="mb-2" ><a :href="item.link"  @click="watch(item.id)" target="_blank" class=""  style="width:100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"> {{ item.title }} </a></h3>
                                         <p class="date-cats mb-2" style="display:flex;flex-wrap: wrap;">
                                             <!-- <a class="me-2" ><i class="fa fa-file"></i><span v-for="itag,index in item.tags" > #{{ itag }} </span></a>  -->
                                             <a class="me-2" style="width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><i class="fa fa-calendar-alt"></i> {{ item.pub_date_show }}</a>

@@ -57,6 +57,22 @@ const app = createApp({
                     that.tagList = false;
                     that.currentTag = tag;
                });
+        },
+          watch(id) {
+            $.ajax({
+              url: server +"rss/watch",
+              type: "POST",
+              data: JSON.stringify({
+                //"id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
+                "id": id
+              }),
+              success: function(response) {
+                console.log(response)
+              },
+              error: function(xhr, status, error) {
+                console.log(e);
+              }
+            });
         }
     },
     mounted: function() {
