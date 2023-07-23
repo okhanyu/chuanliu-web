@@ -49,6 +49,7 @@ const app = createApp({
                });
         },
         getListByTagExcute(tag){
+              offset = 0;
               const that = this;
                 getListByTag(tag,function(data) {
                     // data.push(...that.datas);
