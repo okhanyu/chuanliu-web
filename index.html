@@ -73,6 +73,7 @@
                             <li   class="active"><a href="/"  style="font-weight: bold;" >川流广场</a></li>
                             <li><a href="author.html" style="font-weight: bold;">成员</a></li>
                             <li><a href="about.html" style="font-weight: bold;">加入</a></li>
+                             <li><a href="tags.html"  style="font-weight: bold;">标签</a></li>
                             <li><a href="/memos/" style="font-weight: bold;">友圈</a></li>
                             <li><a href="/rank/" style="font-weight: bold;">排行榜</a></li>
        <!--                       <li class="dropdown submenu">
@@ -169,7 +170,7 @@
                                         <img :src=" item.cover "  alt="image"  onerror="this.style.display='none';this.nextSibling.style.display='block'" class="img-cover-h153 w-100"  style="object-fit: cover;max-height: 250px;border-radius: 5px;height: 250px;">
 
                                         <div class="image-text-cus img-cover-h153 w-100" style="display: none;object-fit: cover;max-height: 250px;height: 250px;border-radius: 5px;">
-                                            <span class="image-text-cus-span ">{{ item.title }} </span> 
+                                            <span class="image-text-cus-span " style="width:95%;overflow: hidden;text-overflow: ellipsis;">{{ item.title }} </span> 
                                         </div>
                                       </div>
 
@@ -263,9 +264,9 @@
                                         <div class="trend-image1" v-if="item.cover != '' && item.cover != undefined && item.cover != null">
                                              <!-- <img :src="item.cover" onerror="generateRandomImgFuncForError(this)" class="img-cover-h190"> -->
                                                  <img :src="item.cover" alt="image"  onerror="this.style.display='none';this.nextSibling.style.display='block'" class="img-cover-h190">
-                                              <div class="image-text-cus" style="display: none"><span class="image-text-cus-span">{{ item.title }} </span> </div>
+                                              <div class="image-text-cus" style="display: none"><span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">{{ item.title }} </span> </div>
                                         </div>
-                                          <div class="trend-image1 image-text-cus" v-else ><span class="image-text-cus-span">{{ item.title }} </span> </div>
+                                          <div class="trend-image1 image-text-cus" v-else ><span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">{{ item.title }} </span> </div>
                                     </div>
                                     
                                     <div :class="imgShow ?  (item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12 widthmax' ) : 'col-lg-12 widthmax' ">
@@ -330,9 +331,9 @@
                                          <!-- <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? 'assets/images/back.jpg' : item.cover " alt="image"  onerror="generateRandomImgFuncForError(this)" class="img-cover-h153"> -->
                                          <!-- <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? generateRandomImgFunc() : item.cover " alt="image"  onerror="generateRandomImgFuncForError(this)" class="img-cover-h153"> -->
                                          <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? generateRandomImgFunc() : item.cover " alt="image"  onerror="this.style.display='none';this.nextSibling.style.display='block'" class="img-cover-h153">
-                                         <div class="image-text-cus" style="display: none"><span class="image-text-cus-span">{{ item.title }} </span> </div>
+                                         <div class="image-text-cus" style="display: none"><span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">{{ item.title }} </span> </div>
                                 </div>
-                                <div v-show="imgShow" class="image-text-out-cus" v-else ><span class="image-text-cus-span">{{ item.title }} </span> </div>
+                                <div v-show="imgShow" class="image-text-out-cus" v-else ><span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">{{ item.title }} </span> </div>
                            
                                 <!-- <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')" :style="(item.cover == '' || item.cover == undefined || item.cover == null) && isMobile ? 'width:100%': '' "> -->
                                      <div :class="(!imgShow && isMobile ? 'trend-content-clean-nav ' : 'trend-content ' )+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">

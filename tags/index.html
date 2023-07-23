@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="strict-origin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
+    <title>
+      Tags
+    </title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700'>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h3>
+        Tags
+      </h3>
+<!--       <ul class="tags">
+        <li :class="'tag tag-round ' + randColor()" v-for="item in tags">
+          <span>
+            {{ item }}
+          </span>
+          <span class="num">
+           1
+          </span>
+        </li>
+      </ul>
+ -->
+
+  <!--      <ul >
+        <li  v-for="item in tags" style="color: #0d6efd; list-style-type: none; font-weight: bold;">
+          <a style="">
+           #{{ item }}
+          </a>
+       
+        </li>
+      </ul> -->
+
+      <div style="display: flex;flex-wrap: wrap;justify-content: space-between">
+         <a v-for="item in tags" style="color: #0d6efd; font-weight: bold; margin: 10px;">
+           #{{ item }}
+          </a>
+      </div>
+
+
+
+    </div>
+    <script type="text/javascript" src="jquery-3.5.1.min.js">
+    </script>
+    <script type="text/javascript" src="vue.global.js">
+    </script>
+    <script type="text/javascript">
+
+      //var server = "https://api.hanyu.life/api/rss-hub/";
+      var server = "http://127.0.0.1:8899/api/rss-hub/";
+      var api = server + "rss/tag/list?page_size=1000&?page_num=0";
+
+      const colors = [
+          "tag-aqua","tag-blue","tag-orange","tag-red","tag-yellow"
+        ];
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      const {
+        createApp
+      } = Vue;
+
+      const app = createApp({
+        data() {
+          return {
+            tags: []
+          }
+        },
+        computed: {
+          isMobile() {
+            return window.innerWidth <= 768; // 根据实际需求调整阈值
+          }
+        },
+        methods: {
+          randColor(){
+              //var i = Math.floor(Math.random() * (5 - 1 + 1)) + min;
+             var i =  getRandomInt(1,5)
+              console.log(i);
+              return colors[i];
+          },
+          modeSave(mode) {
+            localStorage.setItem("mode", mode);
+          }
+        },
+        mounted: function() {
+          const that = this;
+          $.ajax({
+            type: "GET",
+            url: api,
+            beforeSend: function() {},
+            success: function(response) {
+              console.log(response);
+              that.tags.push(...response.data);
+            },
+            error: function(e) {
+              console.log(e);
+            }
+          });
+
+        }
+      });
+      const vm = app.mount('#app');
+    </script>
+  </body>
+
+</html>
