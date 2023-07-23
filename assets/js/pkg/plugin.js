@@ -1,8 +1,4 @@
 /*------------------------------------------------------------------
-* Project:        Magberg
-* Author:         CN-InfoTech
-* URL:            https://themeforest.net/user/cyclone_themes
-* Created:        06/13/2021
 -------------------------------------------------------------------
 
  TABLE OF CONTENT
