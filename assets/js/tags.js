@@ -21,7 +21,8 @@ const app = createApp({
             sortBtn:"点击观看量降序 ↓",
             cleanBtn:"去图模式关闭",
             tagList : true,
-            currentTag : ""
+            currentTag : "",
+            mode:localStorage.getItem("mode")
         }
     },
     computed: {

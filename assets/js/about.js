@@ -20,7 +20,9 @@ const app = createApp({
             aTotal: 0,
             aWatch: 0,
             server:server,
-            moreBtn:"加载更多"
+            moreBtn:"加载更多",
+            mode:localStorage.getItem("mode")
+
         }
     },
     methods: {

@@ -41,7 +41,7 @@
 <div id="app" style="max-width: 1260px;margin: auto;" v-cloak>
     <!-- Preloader -->
     <div id="preloader">
-        <div id="status"></div>
+        <div id="status" :style="(mode == 'dark' ?  'background: url(assets/images/loader-black.gif);' :'') +  'background-size: cover;background-position: center;opacity: 1;transform: translate(-50%, -50%);visibility: visible;transition: all ease-in-out 0.5s;z-index: 9999999999; '"></div>
     </div>
     <!-- Preloader Ends -->
 
