@@ -53,16 +53,16 @@ const app = createApp({
     mounted: function() {
         const that = this;
       
-        // getUsers(function(data) {
-        //     // data.push(...that.datas);
-        //     that.datas = data.data
-        //     for (var i = 0; i < that.datas.length; i++) {
-        //        that.aTotal +=  that.datas[i].total
-        //        that.aWatch +=  that.datas[i].watch
-        //     }
-        //     console.log(that.aTotal)
-        //     console.log(that.aWatch)
-        // });
+        getUsers(function(data) {
+            // data.push(...that.datas);
+            that.datas = data.data
+            for (var i = 0; i < that.datas.length; i++) {
+               that.aTotal +=  that.datas[i].total
+               that.aWatch +=  that.datas[i].watch
+            }
+            console.log(that.aTotal)
+            console.log(that.aWatch)
+        });
      
     }
 });
