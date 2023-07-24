@@ -1,6 +1,6 @@
 
 body.night-mode #preloader{
-    background: black;
+    background: rgb(4,4,4);
 }
 body.night-mode #status{
     background: black;
