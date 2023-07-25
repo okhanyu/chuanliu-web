@@ -68,8 +68,8 @@
                 text-decoration: underline;
                 color: blue !important;
                 cursor: pointer;
-                text-decoration: none;
-                border-bottom: 1px dotted blue;
+               /* text-decoration: none;
+                border-bottom: 1px dotted blue;*/
             }
 
             nav {
@@ -123,8 +123,7 @@
 
             .section{
                 font-weight: bold;
-                border-bottom: 1px dotted black;
-                border-top: 1px dotted black;
+                margin-top: 60px;
             }
 
             .watch{
@@ -235,17 +234,12 @@
                             </b>
                         </a>
                         / 
-                        <a @click="sortChange">
-                            <b>
-                                SortChange
-                            </b>
-                        </a>
-                         / 
+                       
                     </nav>
                 </p>
             </header>
              <div  class="waterfall-container" >
-                <p class="section">48小时内观看Top3 >  </p>
+                <p class="section">| 48小时内观看Top3 </p>
             </div>
             <div  class="waterfall-container" >
                 <div class="waterfall-column" v-for="item in ranks">
@@ -267,7 +261,15 @@
             </div>
 
              <div  class="waterfall-container" >
-               <p class="section">按照时间倒序展示 >  </p>
+               <p class="section">| <span >时间或观看倒序展示 </span>  
+                    <a @click="sortChange"> 
+                            <b>
+                                Sort Change
+                            </b>
+                    </a>  &nbsp;
+                </p>
+               
+                         
             </div>
             <div  class="waterfall-container" >
                 <div class="waterfall-column" v-for="item in datas">
