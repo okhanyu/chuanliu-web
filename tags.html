@@ -163,8 +163,8 @@
                                     </li>
                                 </ul>
                              </li> -->
-                            <li> <div class="dark-mode" @click="modeSave('dark')" onclick="setModeProto('dark')"><a><i class="fa fa-moon"></i></a></div></li>
-                            <li> <div class="light-mode" @click="modeSave('light')"  onclick="setModeProto('light')"><a><i class="fa fa-sun"></i></a></div> </li>
+                            <li v-show="mode != 'dark'"> <div class="dark-mode" @click="modeSave('dark')" onclick="setModeProto('dark')" ><a><i class="fa fa-moon" style="width:22.45px;height: 18px;"></i></a></div></li>
+                            <li v-show="mode == 'dark'"> <div class="light-mode" @click="modeSave('light')"  onclick="setModeProto('light')"><a><i class="fa fa-sun"  style="width:22.45px;height: 18px;"></i></a></div> </li>
                           </ul>
          <!--                  <div style="margin: 0px 12px 0px 12px;">
                             <a @click="imgShowSwitch" style="font-size: 12px;cursor: pointer;height: 30px;background: #ff1949 ;display: inline-block;line-height: 30px;border-radius: 3px;padding: 0px 5px 0px 5px !important;color: white!important;font-weight: bold;">{{ cleanBtn }} </i>

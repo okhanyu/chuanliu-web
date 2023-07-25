@@ -5,6 +5,7 @@ document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mod
 
 function setModeProto(mode){
       localStorage.setItem("mode",mode);
+      vm.$data.mode = mode;
 }
 
 const {

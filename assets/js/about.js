@@ -6,6 +6,7 @@
 
 function setModeProto(mode){
       localStorage.setItem("mode",mode);
+      vm.$data.mode = mode;
 }
 
 const {
