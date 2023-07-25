@@ -363,6 +363,13 @@ word-break: break-word;
 }
 /****/
  @media screen and (max-width: 400px) {
+    footer {
+        text-align: center;
+        }
+footer h3::after{
+    background: transparent;
+}
+
     .summary-h-line {
   -webkit-box-orient: vertical;
   line-height: 24px;
