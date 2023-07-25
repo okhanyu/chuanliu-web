@@ -149,6 +149,7 @@ body.night-mode .main_header_area .header_menu .navbar.navbar-default.navbar-sti
      text-overflow: ellipsis;
      font-size: 0.9rem;
      color: #949393;
+     max-height: 145px;
     /* line-height: 1.45rem;
     */
 }
