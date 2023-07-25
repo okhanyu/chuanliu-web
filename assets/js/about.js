@@ -7,6 +7,15 @@
 function setModeProto(mode){
       localStorage.setItem("mode",mode);
       vm.$data.mode = mode;
+       if(window.innerWidth <= 768){
+        if (mode == "dark"){
+             $(".dark-mode").hide();
+              $(".light-mode").show();
+        }else{
+            $(".light-mode").hide();
+             $(".dark-mode").show();
+        }
+      }
 }
 
 const {

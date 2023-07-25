@@ -97,8 +97,8 @@
                                     </li>
                                 </ul>
                              </li> -->
-                           <li v-show="mode != 'dark'"> <div class="dark-mode" @click="modeSave('dark')" onclick="setModeProto('dark')" ><a><i class="fa fa-moon" style="width:22.45px;height: 18px;"></i></a></div></li>
-                            <li v-show="mode == 'dark'"> <div class="light-mode" @click="modeSave('light')"  onclick="setModeProto('light')"><a><i class="fa fa-sun"  style="width:22.45px;height: 18px;"></i></a></div> </li>
+                           <li > <div v-show="mode != 'dark'"  class="dark-mode" @click="modeSave('dark')" onclick="setModeProto('dark')" ><a><i class="fa fa-moon" style="width:22.45px;height: 18px;"></i></a></div></li>
+                            <li > <div  v-show="mode == 'dark'" class="light-mode" @click="modeSave('light')"  onclick="setModeProto('light')"><a><i class="fa fa-sun"  style="width:22.45px;height: 18px;"></i></a></div> </li>
                           </ul>
                         </div><!-- /.navbar-collapse -->   
                <!--          <div class="register-login d-flex align-items-center">

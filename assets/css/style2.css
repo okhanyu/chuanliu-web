@@ -54,6 +54,14 @@ body.night-mode .main_header_area .header_menu .navbar.navbar-default.navbar-sti
      border: 0px solid #f1f1f1;
 }
 
+body.night-mode .slicknav_nav{
+    background: black;
+}
+
+.slicknav_nav{
+    background: #F4F4F4;
+}
+
 footer *,.white {
             background: white;
             color: black!important;
