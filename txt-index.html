@@ -85,6 +85,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 word-break:break-word;
+                margin-bottom: 6px;
             }
 
             .title{
@@ -107,26 +108,10 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 word-break:break-word;
+                width: 90%;
             }
 
-            @media (max-width: 600px) {
-                .waterfall-column {
-                  width: 48%; /* 调整列的宽度 */
-                }
-
-                .time{
-                   display: -webkit-box;
-                    -webkit-line-clamp: 2; /* 超出3行显示省略号 */
-                    -webkit-box-orient: vertical;
-                    max-height: 130px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    word-break:break-word;
-                }
-
-            }
-
-            header {
+             header {
                 margin: auto;
                 width: 90%;
             }
@@ -140,8 +125,59 @@
                 font-weight: bold;
                 border-bottom: 1px dotted black;
                 border-top: 1px dotted black;
-/*                font-size: 16px;*/
             }
+
+            .watch{
+                text-align: right;
+                width: 10%;
+                 overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                justify-content: space-between
+            }
+
+            .subinfo{
+                display: flex;flex-wrap: nowrap;justify-content: space-between
+            }
+
+            .watch-bottom{
+                  display: none;
+            }
+
+
+
+
+
+
+            @media (max-width: 600px) {
+                .waterfall-column {
+                  width: 96%; /* 调整列的宽度 */
+                }
+
+                .time{
+                   display: -webkit-box;
+                    -webkit-line-clamp: 2; /* 超出3行显示省略号 */
+                    -webkit-box-orient: vertical;
+                    max-height: 130px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-break:break-word;
+                    width: 100%;
+                }
+                .watch{
+                    width: 0%;
+                    display: none;
+                }
+
+                .watch-bottom {
+                     display: block;
+                    width: 100%;
+                      text-align: right;
+                }
+
+            }
+
+           
 
      </style>
       
@@ -216,11 +252,17 @@
                     <h4 class="title">
                        <a :href="item.link" target="_blank"> {{ item.title }}</a>
                     </h4>
-                    <div class="time">
-                        {{ item.pub_date_show }} / {{ item.user_name }}
+                    <div class="subinfo">
+                        <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
+                        <div class="watch">
+                         {{ item.watch }}
+                        </div>
                     </div>
                     <div class="summary" v-html="item.summary">
                     </div>
+                    <div class="watch-bottom">
+                         watch  {{ item.watch }}
+                     </div>
                 </div>
             </div>
 
@@ -230,13 +272,19 @@
             <div  class="waterfall-container" >
                 <div class="waterfall-column" v-for="item in datas">
                     <h4 class="title">
-                       <a :href="item.link" target="_blank"> {{ item.title }}</a>
+                       <a :href="item.link" target="_blank" @click="watch(item.id)"> {{ item.title }}</a>
                     </h4>
-                    <div class="time">
-                        {{ item.pub_date_show }} / {{ item.user_name }}
+                    <div class="subinfo">
+                        <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
+                        <div class="watch">
+                         {{ item.watch }}
+                        </div>
                     </div>
                     <div class="summary" v-html="item.summary">
                     </div>
+                    <div class="watch-bottom">
+                         watch  {{ item.watch }}
+                     </div>
                 </div>
             </div>
            <!-- <div class="button-center"><button @click="next">{{ moreBtn }}</button></div> -->
