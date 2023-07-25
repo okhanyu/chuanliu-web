@@ -141,13 +141,13 @@ const app = createApp({
             that.ranks = data.data
         });
 
-        if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
-              this.cleanBtn  = "去图模式开启";
-              this.imgShow  = false;
-        }else{
-              this.cleanBtn  = "去图模式关闭";
-              this.imgShow  = true;
-        }
+        // if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
+        //       this.cleanBtn  = "去图模式开启";
+        //       this.imgShow  = false;
+        // }else{
+        //       this.cleanBtn  = "去图模式关闭";
+        //       this.imgShow  = true;
+        // }
 
         //getUsers(function(data) {
             // var map = {};
