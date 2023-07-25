@@ -106,8 +106,8 @@
 
 var server = "https://api.hanyu.life/api/rss-hub/";
 // var server = "http://127.0.0.1:8899/api/rss-hub/";
-var api = server + "user/list/group?where=1&page_num=0&page_size=10";
-
+var api = server + "user/list/group?where=1&order=1&page_num=0&page_size=10";
+var api2 = server + "user/list/group?where=1&order=2&page_num=0&page_size=10";
 
 const {
     createApp
@@ -139,13 +139,22 @@ const app = createApp({
             },
             success: function(response) {
                 console.log(response);
-                that.ranks.push(...response.data) ;
-                //     var tmp = [];
-                // for (var i = 0; i < response.data.length; i++) {
-                //     tmp.push(response.data[i]);
-                // }
-
-                that.watchRanks.push(...response.data.sort((a, b) => b.watch - a.watch));
+                that.ranks = response.data;
+                // that.ranks.push(...response.data) ;
+                // that.watchRanks.push(...response.data.sort((a, b) => b.watch - a.watch));
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: api2,
+            beforeSend: function() {
+            },
+            success: function(response) {
+                console.log(response);
+                that.watchRanks = response.data
             },
             error: function(e) {
                 console.log(e);
