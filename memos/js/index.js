@@ -134,11 +134,15 @@ function getDatas(callback) {
     var tmpMap = {};
 
     for (var i = 0; i < infos.length; i++) {
-
+        if (infos[i].memos_link.indexOf("?") == -1){
+            infos[i].memos_link += "?"
+        }else{
+            
+        }
         $.ajax({
             type: "GET",
             //url: infos[i].memos_link + memosGetsApi + offset * limit,
-            url: infos[i].memos_link + "?limit="+limit+"&offset="+offset * limit,
+            url: infos[i].memos_link + "limit="+limit+"&offset=" + offset * limit,
             beforeSend: function() {
                 tmpMap[this.url] = i;
             },
