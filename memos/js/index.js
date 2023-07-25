@@ -137,7 +137,7 @@ function getDatas(callback) {
         if (infos[i].memos_link.indexOf("?") == -1){
             infos[i].memos_link += "?"
         }else{
-            
+             infos[i].memos_link += "&"
         }
         $.ajax({
             type: "GET",
