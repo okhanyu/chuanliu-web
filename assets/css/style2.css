@@ -1,4 +1,14 @@
 
+
+body.night-mode footer *,.white{
+     background: #14181b;
+    color: white !important;
+}
+
+body.night-mode footer.footermain::before{
+   background: #14181b;
+}
+
 body.night-mode #preloader{
     background: rgb(4,4,4);
 }
@@ -42,6 +52,14 @@ body.night-mode .main_header_area .header_menu .navbar.navbar-default.navbar-sti
 }
  table > tbody tr td, table > tbody tr th, table > tfoot tr td, table > tfoot tr th, table > thead tr td, table > thead tr th {
      border: 0px solid #f1f1f1;
+}
+
+footer *,.white {
+            background: white;
+            color: black!important;
+        }
+footer.footermain::before{
+    background: white;
 }
 
 .summary-h-line-banner {  
