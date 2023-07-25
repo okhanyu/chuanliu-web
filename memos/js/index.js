@@ -138,7 +138,7 @@ function getDatas(callback) {
         $.ajax({
             type: "GET",
             //url: infos[i].memos_link + memosGetsApi + offset * limit,
-            url: infos[i].memos_link + offset * limit,
+            url: infos[i].memos_link + "?limit="+limit+"&offset="+offset * limit,
             beforeSend: function() {
                 tmpMap[this.url] = i;
             },
