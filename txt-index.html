@@ -244,7 +244,7 @@
             <div  class="waterfall-container" >
                 <div class="waterfall-column" v-for="item in ranks">
                     <h4 class="title">
-                       <a :href="item.link" target="_blank"> {{ item.title }}</a>
+                       <a :href="item.link" target="_blank"  @click="watch(item.id)"> {{ item.title }}</a>
                     </h4>
                     <div class="subinfo">
                         <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
