@@ -46,22 +46,6 @@ const app = createApp({
 
             });
         },
-          watch(id) {
-            $.ajax({
-              url: server +"rss/watch",
-              type: "POST",
-              data: JSON.stringify({
-                //"id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
-                "id": id
-              }),
-              success: function(response) {
-                console.log(response)
-              },
-              error: function(xhr, status, error) {
-                console.log(e);
-              }
-            });
-        },
         handle(param){
             if (param != undefined && param != "" && param.rss_link != undefined && param.rss_link != ""){
                 s = param.rss_link.split('://')
@@ -80,14 +64,15 @@ const app = createApp({
     mounted: function() {
         const that = this;
       
-        getUsers(function(data) {
+        getDatas(function(data) {
             // data.push(...that.datas);
             that.datas = data.data
             for (var i = 0; i < that.datas.length; i++) {
                that.aTotal +=  that.datas[i].total
                that.aWatch +=  that.datas[i].watch
             }
-            getUsersRecent(that);
+            console.log(that.aTotal)
+            console.log(that.aWatch)
         });
      
     }
@@ -98,36 +83,8 @@ const vm = app.mount('#app');
 /*** 初始化 vue end***/
 
 
-function getUsersRecent(appglobal) {
-    // $.ajaxSetup({ async: false });
-        $.ajax({
-            type: "GET",
-            url: server + "rss/user/list/recent",
-            beforeSend: function() {
-            },
-            success: function(response) {
-                   console.log(response);
-                   var map = {};
-                   for (var i = 0; i < response.data.length; i++) {
-                        if (map[response.data[i].user_id] == undefined){
-                            map[response.data[i].user_id] = [];
-                        }
-                        map[response.data[i].user_id].push(response.data[i]);
-                   }
-                   console.log(map)
-                   for (var i = 0; i < appglobal.datas.length; i++) {
-                       appglobal.datas[i]["recent"] = map[appglobal.datas[i].id];
-                   }
-                    console.log(appglobal.datas)
 
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-};
-
-function getUsers(callback) {
+function getDatas(callback) {
     // $.ajaxSetup({ async: false });
         var limitTemp = 1000;
         $.ajax({
@@ -141,8 +98,6 @@ function getUsers(callback) {
                 }else{
                     vm.$data.moreBtn = "无"
                 }
-
-                
             },
             error: function(e) {
                 console.log(e);
