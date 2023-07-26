@@ -69,7 +69,7 @@
     <li v-for="item in watchRanks">
           <a :href="item.rss_link.split('://')[0]+'://'+((item.rss_link.split('://')[1]).split('/')[0])" style="color:inherit;text-decoration: none;" target="_blank">
               <mark style="color:inherit">{{ item.user_name }} </mark>
-              <small>{{ item.watch }} 次 </small>
+              <small>{{ item.watch }} 观看 </small>
          </a>
     </li>
     
