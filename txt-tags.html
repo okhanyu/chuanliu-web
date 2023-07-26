@@ -127,12 +127,12 @@
             }
 
             .watch{
-                text-align: right;
-                width: 10%;
+/*                text-align: right;*/
+                width: 100%;
                  overflow: hidden;
                 text-overflow: ellipsis;
-                white-space: nowrap;
-                justify-content: space-between
+/*                white-space: nowrap;*/
+               display: flex;justify-content: space-between
             }
 
             .subinfo{
@@ -144,8 +144,19 @@
             }
 
 
+             .watch-list{
+                text-align: right;
+                width: 10%;
+                 overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                justify-content: space-between
+            }
 
-
+           
+            .watch-list-bottom{
+                  display: none;
+            }
 
 
             @media (max-width: 600px) {
@@ -164,8 +175,7 @@
                     width: 100%;
                 }
                 .watch{
-                    width: 0%;
-                    display: none;
+                  display: flex;justify-content: space-between
                 }
 
                 .watch-bottom {
@@ -174,6 +184,27 @@
                       text-align: right;
                 }
 
+                 .watch-list-bottom {
+                     display: block;
+                    width: 100%;
+                      text-align: right;
+                }
+
+                  .watch-list{
+                    width: 0%;
+                    display: none;
+                }
+           
+
+            }
+
+            .link{
+                  overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .avatar{
+                width: 30px;height: 30px;border-radius: 50%;
             }
 
            
@@ -183,7 +214,7 @@
     </head>
     <body>
         <div id="app"  v-cloak >
-            <header>
+                       <header>
                 ====================
                 <br>
                 ==
@@ -222,14 +253,14 @@
                             </b>
                         </a>
                           / 
-                        
+                       
                         <a href="txt-about.html">
                             <b>
                                 About
                             </b>
                         </a>
                         / 
-                        <a href="/memos/">
+                         <a href="/memos/">
                             <b>
                                 Memos
                             </b>
@@ -245,59 +276,43 @@
                     </nav>
                 </p>
             </header>
-             <div  class="waterfall-container" >
-                <p class="section">| 48小时内观看Top3 </p>
+             <div  class="waterfall-container" v-show="tagList">
+                <p class="section">| Tags  </p>
             </div>
-            <div  class="waterfall-container" >
-                <div class="waterfall-column" v-for="item in ranks">
+            <div  class="waterfall-container" v-show="tagList">
+                <div class="waterfall-column" v-for="item in datas">
                     <h4 class="title">
-                       <a :href="item.link" target="_blank"  @click="watch(item.id)"> {{ item.title }}</a>
+                       <a @click="getListByTagExcute(item)"> #{{ item }}</a>
                     </h4>
-                    <div class="subinfo">
-                        <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
-                        <div class="watch">
-                         {{ item.watch }}
-                        </div>
-                    </div>
-                    <div class="summary" v-html="item.summary">
-                    </div>
-                    <div class="watch-bottom">
-                         watch  {{ item.watch }}
-                     </div>
                 </div>
             </div>
 
-             <div  class="waterfall-container" >
-               <p class="section">| <span >时间或观看倒序展示 </span>  
-                    <a @click="sortChange"> 
-                            <b>
-                                Sort Change
-                            </b>
-                    </a>  &nbsp;
-                </p>
-               
-                         
-            </div>
+
+
             <div  class="waterfall-container" >
-                <div class="waterfall-column" v-for="item in datas">
-                    <h4 class="title">
+                <p class="section">| List  <a @click="this.tagList = !this.tagList ; moreListBtn ='加载更多'" class="nir-btn" style="border-radius: 5px;cursor: pointer;">再次打开标签</a></p>
+            </div>
+
+            <div  class="waterfall-container" v-show="listByTag.length != 0  && !tagList">
+                <div class="waterfall-column" v-for="item in listByTag">
+                     <h4 class="title">
                        <a :href="item.link" target="_blank" @click="watch(item.id)"> {{ item.title }}</a>
                     </h4>
                     <div class="subinfo">
                         <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
-                        <div class="watch">
+                        <div class="watch-list">
                          {{ item.watch }}
                         </div>
                     </div>
                     <div class="summary" v-html="item.summary">
                     </div>
-                    <div class="watch-bottom">
+                    <div class="watch-list-bottom">
                          watch  {{ item.watch }}
                      </div>
                 </div>
             </div>
            <!-- <div class="button-center"><button @click="next">{{ moreBtn }}</button></div> -->
-                      <div class="button-center"><a @click="next"><h4>{{ moreBtn }}</h4></a></div>
+                      <div class="button-center"><a @click="nextList"><h4>{{ moreListBtn }}</h4></a></div>
 
         </div>
         <!-- *Scripts* -->
@@ -309,7 +324,7 @@
         </script>
         <script type="text/javascript" src="assets/js/global.js">
         </script>
-        <script type="text/javascript" src="assets/js/txt.js">
+        <script type="text/javascript" src="assets/js/txt-tags.js">
         </script>
     </body>
 
