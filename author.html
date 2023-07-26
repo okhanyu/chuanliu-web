@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
 
-    <title> 川流成员 </title>
+    <title> 川流伙伴 </title>
     <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
       <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -183,6 +183,45 @@
     </section>
     <!-- End Counter -->
 
+        <!-- testomonial start -->
+    <section class="testimonial pb-6">
+        <div class="container"> 
+            <div class="section-title mb-4 pb-1 w-50">
+                <h2 class="m-0">成员列表 & <span>博友朋友</span></h2>
+            </div> 
+             <!-- <div class="row review-slider"> -->
+            <div class="row">
+
+                <div class="col-sm-4 item" v-for="item in datas" >
+                    <div class="testimonial-item1 text-center">
+                        <div class="details">
+                            <p class="m-0" style="height:50px;overflow: hidden;text-overflow: ellipsis;">{{ item.description }}</p>
+                        </div>
+                        <div class="author-info mt-2">
+
+                            <a :href="handle(item)" target="_blank"><img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default-about-avatar.webp' : item.avatar  "  alt="" style="object-fit: cover;"></a>
+                            <div class="author-title">
+                               <h4 class="m-0 avatar" > <a :href="handle(item)" target="_blank" class="avatar">{{ item.user_name }}</a></h4>
+                                <div style="font-size:12px;color: #949393;"><a :href="handle(item)" target="_blank" class="avatar"> {{  handle(item).split("://")[1] }}</a></div>
+                                <div style="font-size:12px;color: #949393;"> {{ item.create_time.substring(0, 10) }} </div>
+                                <div style="font-size:12px;color: #949393;"> 观看 {{ item.watch }} | 文章 {{ item.total }} </div><br>
+                                <div style="font-size:12px;color: #949393;height: 23px;">最近👇🏻</div>
+                                <div v-if="item.recent != undefined" v-for="re in item.recent" @click="watch(re.id)" style="margin:auto;width:90%;height: 23px;"><a style="font-size:12px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: 100%;"  :href="re.link" target="_blank">《{{re.title}}》</a></div>
+                                <div v-else  style="margin:auto;width:90%;height: 69px;"><a style="font-size:12px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: 100%;"   target="_blank">暂无更新或无法拉取</a></div>
+
+                            </div>
+                        </div>
+                        <i class="fa fa-quote-left mb-2"></i>
+                    </div>
+                </div>
+     
+            </div>
+        </div>
+    </section>
+    <!-- testimonial ends --> 
+
+
+
         <section class="testimonial pb-6">
              <div class="container"> 
                 <div class="section-title mb-4 pb-1 w-50">
@@ -200,38 +239,6 @@
                             </table>
                         </div>
         </section>
-        <!-- testomonial start -->
-    <section class="testimonial pb-6">
-        <div class="container"> 
-            <div class="section-title mb-4 pb-1 w-50">
-                <h2 class="m-0">成员列表 & <span>博友朋友</span></h2>
-            </div> 
-             <!-- <div class="row review-slider"> -->
-            <div class="row">
-
-                <div class="col-sm-4 item" v-for="item in datas">
-                    <div class="testimonial-item1 text-center">
-                        <div class="details">
-                            <p class="m-0" style="height:50px;overflow: hidden;text-overflow: ellipsis;">{{ item.description }}</p>
-                        </div>
-                        <div class="author-info mt-2">
-
-                            <a :href="handle(item)" target="_blank"><img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default-about-avatar.webp' : item.avatar  "  alt="" style="object-fit: cover;"></a>
-                            <div class="author-title">
-                               <h4 class="m-0 avatar" > <a :href="handle(item)" target="_blank" class="avatar">{{ item.user_name }}</a></h4>
-                                <div style="font-size:12px;color: #949393;"><a :href="handle(item)" target="_blank" class="avatar"> {{  handle(item).split("://")[1] }}</a></div>
-                                <div style="font-size:12px;color: #949393;"> {{ item.create_time.substring(0, 10) }} </div>
-                                <div style="font-size:12px;color: #949393;"> 观看 {{ item.watch }} | 文章 {{ item.total }} </div>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-left mb-2"></i>
-                    </div>
-                </div>
-     
-            </div>
-        </div>
-    </section>
-    <!-- testimonial ends --> 
 
 
     <!-- our teams starts -->
