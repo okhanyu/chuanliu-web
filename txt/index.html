@@ -254,9 +254,9 @@
                        <a :href="item.link" target="_blank"  @click="watch(item.id)"> {{ item.title }}</a>
                     </h4>
                     <div class="subinfo">
-                        <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
+                        <div class="time" >{{ item.pub_date_show.substr(0,10) }}  / {{ item.user_name }}</div>
                         <div class="watch">
-                         {{ item.watch }}
+                         {{ item.watch }}<span style="font-size: 0.5rem;">观看</span>
                         </div>
                     </div>
                     <div class="summary" v-html="item.summary">
@@ -284,9 +284,9 @@
                        <a :href="item.link" target="_blank" @click="watch(item.id)"> {{ item.title }}</a>
                     </h4>
                     <div class="subinfo">
-                        <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
+                        <div class="time" >{{ item.pub_date_show.substr(0,10) }} / {{ item.user_name }}</div>
                         <div class="watch">
-                         {{ item.watch }}
+                         {{ item.watch }}<span style="font-size: 0.5rem;">观看</span>
                         </div>
                     </div>
                     <div class="summary" v-html="item.summary">
