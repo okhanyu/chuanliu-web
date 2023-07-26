@@ -108,7 +108,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 word-break:break-word;
-                width: 90%;
+                width: 85%;
             }
 
              header {
@@ -128,7 +128,7 @@
 
             .watch{
                 text-align: right;
-                width: 10%;
+                width: 15%;
                  overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -286,7 +286,7 @@
                     <div class="subinfo">
                         <div class="time" >{{ item.pub_date_show }} / {{ item.user_name }}</div>
                         <div class="watch">
-                         watch {{ item.watch }}
+                         {{ item.watch }}
                         </div>
                     </div>
                     <div class="summary" v-html="item.summary">
