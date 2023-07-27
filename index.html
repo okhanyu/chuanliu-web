@@ -206,22 +206,29 @@
                     <p class="border-b mb-2 pb-2 break summary-h-line-banner" v-html="item.summary">
                     </p>
                     <div class="entry-meta d-flex align-items-center justify-content-between">
-                      <a :href="handle(item)" target="_blank" class="author-link">
+                      
                         <div class="entry-author">
-                          <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
-                          alt="" class="avatar-round rounded-circle me-1">
-                          &nbsp;
-                          <span class="small-font-color">
-                            {[ item.user_name ]}
-                          </span>
+                          <a :href="handle(item)" target="_blank" class="author-link small-font-color">
+                            <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
+                            alt="" class="avatar-round rounded-circle me-1">
+                            &nbsp;
+                            <span class="small-font-color">
+                              {[ item.user_name ]}
+                            </span>
+                           </a>
                           &nbsp; &nbsp;
                           <span class="small-font-color">
                             <i class="fa fa-eye small-font-color-i">
                             </i>
                             {[ item.watch ]}
+                            <a  @click="like(item.id)" class="author-link small-font-color">
+                               &nbsp;<i class="fa fa-heart small-font-color-i">
+                                    </i>
+                                   {[ item.like ]}
+                            </a>
                           </span>
                         </div>
-                      </a>
+                      
                     </div>
                     <div class="small-font-color">
                       {[item.pub_date_show]}
@@ -312,26 +319,33 @@
                               <p>
                             </div>
                             <div class="entry-meta d-flex align-items-center justify-content-between entry-meta-cus-mobi">
-                              <a :href="handle(item)" target="_blank">
+                             
                                 <div class="entry-author">
-                                  <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
-                                  alt="" class="avatar-round rounded-circle me-1">
-                                  &nbsp;
-                                  <span class="small-font-color">
-                                    {[ item.user_name ]}
-                                  </span>
-                                  &nbsp;&nbsp;
-                                  <span class="small-font-color">
-                                    {[ isMobile ? item.pub_date_show.substr(0,10) : item.pub_date_show ]}
-                                  </span>
-                                  &nbsp;&nbsp;
-                                  <span class="small-font-color">
-                                    <i class="fa fa-eye small-font-color-i">
-                                    </i>
-                                    {[ item.watch ]}
-                                  </span>
+                                   <a :href="handle(item)" target="_blank">
+                                    <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
+                                    alt="" class="avatar-round rounded-circle me-1">
+                                    &nbsp;
+                                    <span class="small-font-color">
+                                      {[ item.user_name ]}
+                                    </span>
+                                    </a>
+                                    &nbsp;&nbsp;
+                                    <span class="small-font-color">
+                                      {[ isMobile ? item.pub_date_show.substr(0,10) : item.pub_date_show ]}
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span class="small-font-color">
+                                      <i class="fa fa-eye small-font-color-i">
+                                      </i>
+                                      {[ item.watch ]}
+                                     <a  @click="like(item.id)" class="author-link small-font-color">
+                                       &nbsp;<i class="fa fa-heart small-font-color-i">
+                                            </i>
+                                           {[ item.like ]}
+                                    </a>
+                                     </span>
                                 </div>
-                              </a>
+                              
                             </div>
                           </div>
                         </div>
@@ -402,13 +416,15 @@
                       </div>
                       <div class="trend-meta-cus">
                         <div class="entry-meta d-flex align-items-center justify-content-between">
-                          <a :href="handle(item)" target="_blank" style="width: 100%;text-align: right;">
+                          
                             <div class="small-font-color">
-                              <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
-                              alt="" class="avatar-round rounded-circle me-1">
-                              <span class="small-font-color">
-                                {[ item.user_name ]}
-                              </span>
+                              <a :href="handle(item)" target="_blank" style="width: 100%;text-align: right;">
+                                <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
+                                alt="" class="avatar-round rounded-circle me-1">
+                                <span class="small-font-color">
+                                  {[ item.user_name ]}
+                                </span>
+                               </a>
                               &nbsp;&nbsp;
                               <span class="small-font-color">
                                 {[ isMobile ? item.pub_date_show.substr(0,10) : item.pub_date_show ]}
@@ -418,9 +434,14 @@
                                 <i class="fa fa-eye small-font-color-i">
                                 </i>
                                 {[ item.watch ]}
+                                <a  @click="like(item.id)" class="author-link small-font-color">
+                                       &nbsp;<i class="fa fa-heart small-font-color-i">
+                                            </i>
+                                           {[ item.like ]}
+                                </a>
                               </span>
                             </div>
-                          </a>
+                         
                         </div>
                       </div>
                     </div>

@@ -90,6 +90,23 @@ const app = createApp({
               }
             });
         },
+        like(id) {
+            $.ajax({
+              url: server +"rss/like",
+              type: "POST",
+              data: JSON.stringify({
+                //"id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
+                "id": id
+              }),
+              success: function(response) {
+                alert("点赞成功")
+                console.log(response)
+              },
+              error: function(xhr, status, error) {
+                console.log(e);
+              }
+            });
+        },
          handle(param){
             if (param != undefined && param != "" && param.link != undefined && param.link != ""){
                 s = param.link.split('://')
