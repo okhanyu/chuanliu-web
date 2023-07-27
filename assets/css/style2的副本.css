@@ -4,7 +4,7 @@
 }
  body .footer-about img {
      display: block;
-     height: 40px; object-fit: cover; width: 80px;
+}
 }
  body .footer-about img + img {
      display: none;
@@ -17,11 +17,9 @@
 }
  body.night-mode .footer-about img {
      display: none;
-
 }
  body.night-mode .footer-about img + img {
      display: block;
-     height: 40px; object-fit: cover; width: 80px;
 }
  body.night-mode .main_header_area .header_menu .navbar.navbar-default.navbar-sticky-in img {
      display: none;

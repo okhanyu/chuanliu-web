@@ -1,23 +1,20 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-
- 
+  
+  <head>
     <meta charset="utf-8" />
     <meta name="referrer" content="strict-origin" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
-
-    <title> 关于川流 </title>
+    <title>
+      关于川流
+    </title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
     <style type="text/css">
-        [v-cloak] {
-            display:none !important;
-        }
+      [v-cloak] { display:none !important; }
     </style>
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -28,388 +25,402 @@
     <!--Flaticons CSS-->
     <link href="assets/fonts/flaticon.css" rel="stylesheet" type="text/css">
     <!--Font Awesome-->
-    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
-    <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css" type="text/css" rel="stylesheet" />
-
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css" rel="stylesheet" />
+    <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css"
+    type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/fonts/line-icons.css" type="text/css">
-    <style>
-        .avatar {
-            color: black;
-        }
-        .avatar :hover{
-            font-size: 22px;
-            color: #8690ea;
-        }
-    </style>
     <link rel="stylesheet" href="assets/css/style2.css" type="text/css">
-
-</head>
-<body>
- <div id="app" v-cloak>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div id="status" :style="(mode == 'dark' ?  'background: url(assets/images/loader-black.gif);' :'') +  'background-size: cover;background-position: center;opacity: 1;transform: translate(-50%, -50%);visibility: visible;transition: all ease-in-out 0.5s;z-index: 9999999999; '"></div>
-    </div>
-    <!-- Preloader Ends -->
-
-    <!-- header starts -->
-    <header class="main_header_area" >
+    <style>
+      .avatar { color: black; } .avatar :hover{ font-size: 22px; color: #8690ea;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="app" v-cloak>
+      <!-- Preloader -->
+      <div id="preloader">
+        <div id="status" :style="(mode == 'dark' ?  'background: url(assets/images/loader-black.gif);' :'') +  'background-size: cover;background-position: center;opacity: 1;transform: translate(-50%, -50%);visibility: visible;transition: all ease-in-out 0.5s;z-index: 9999999999; '">
+        </div>
+      </div>
+      <!-- Preloader Ends -->
+      <!-- header starts -->
+      <header class="main_header_area">
         <div class="header-content py-1 bg-lgrey">
-            <div class="container d-flex align-items-center justify-content-between">
-                <!-- <h4 class="theme mb-0 w-25 fw-normal text-center me-2"><i class="fas fa-bolt"></i> Trending News</h4> -->
-                <div class="links float-right">
-                    <marquee scrolldelay="50" behavior="scroll" onmouseover="this.stop();" onmouseleave="this.start();">
-                        <li><a href="#"><i class="fa fa-star"></i> 嗨 </a></li>
-                    </marquee>
-                </div>
+          <div class="container d-flex align-items-center justify-content-between">
+            <!-- <h4 class="theme mb-0 w-25 fw-normal text-center me-2"><i class="fas fa-bolt"></i> Trending News</h4> -->
+            <div class="links float-right">
+              <marquee scrolldelay="50" behavior="scroll" onmouseover="this.stop();"
+              onmouseleave="this.start();">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-star">
+                    </i>
+                    嗨
+                  </a>
+                </li>
+              </marquee>
             </div>
+          </div>
         </div>
         <!-- Navigation Bar -->
         <div class="header_menu" id="header_menu">
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-2 pt-2">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="#!">
-                            <!--     <img src="assets/images/logo.png" alt="image">
-                                <img src="assets/images/logo-white.png" alt="image"> -->
-                            </a>
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
-                          <ul class="nav navbar-nav" id="responsive-menu">
-                            <li ><a href="/" style="font-weight: bold;">川流广场</a></li>
-                            <li ><a href="author.html" target="_blank"  style="font-weight: bold;">伙伴</a></li>
-                            <li><a href="tags.html" target="_blank"   style="font-weight: bold;">标签</a></li>
-                            <li><a href="/memos/" target="_blank"  style="font-weight: bold;">友圈</a></li>
-                            <li><a href="/rank/" target="_blank"  style="font-weight: bold;">排行榜</a></li>
-                            <li class="active" target="_blank"  style="font-weight: bold;"><a href="about.html" style="font-weight: bold;">关于</a></li>
-                             <li><a href="txt/about.html" style="font-weight: bold;">txt</a></li>
-       <!--                       <li class="dropdown submenu">
-                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 更多 <i class="icon-arrow-down" aria-hidden="true"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="">
-                                        <a href="/memos/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                             </li> -->
-                           <li > <div v-show="mode != 'dark'"  class="dark-mode" @click="modeSave('dark')" onclick="setModeProto('dark')" ><a><i class="fa fa-moon" style="width:22.45px;height: 18px;"></i></a></div></li>
-                            <li > <div  v-show="mode == 'dark'" class="light-mode" @click="modeSave('light')"  onclick="setModeProto('light')"><a><i class="fa fa-sun"  style="width:22.45px;height: 18px;"></i></a></div> </li>
-                          </ul>
-                        </div><!-- /.navbar-collapse -->   
-               <!--          <div class="register-login d-flex align-items-center">
-                            <div class="header_sidemenu me-2">
-                                <div class="mhead">
-                                    <span class="menu-ham">
-                                        <a href="#" class="cart-icon d-flex align-items-center ml-1"><i class="fa fa-th-large theme"></i></a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></div>
-                        </div>  -->
-
-                        <div id="slicknav-mobile"></div>
-                    </div>
-                </div><!-- /.container-fluid --> 
-            </nav>
+          <nav class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-2 pt-2">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#!">
+                    <img src="assets/images/logo.png" alt="image">
+                    <img src="assets/images/logo-white.png" alt="image">
+                  </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav" id="responsive-menu">
+                    <li>
+                      <a href="/" style="font-weight: bold;">
+                        川流广场
+                      </a>
+                    </li>
+                    <li>
+                      <a href="author.html" target="_blank" style="font-weight: bold;">
+                        伙伴
+                      </a>
+                    </li>
+                    <li>
+                      <a href="tags.html" target="_blank" style="font-weight: bold;">
+                        标签
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/memos/" target="_blank" style="font-weight: bold;">
+                        友圈
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/rank/" target="_blank" style="font-weight: bold;">
+                        排行榜
+                      </a>
+                    </li>
+                    <li class="active" target="_blank" style="font-weight: bold;">
+                      <a href="about.html" style="font-weight: bold;">
+                        关于
+                      </a>
+                    </li>
+                    <li>
+                      <a href="txt/about.html" style="font-weight: bold;">
+                        txt
+                      </a>
+                    </li>
+                    <!-- <li class="dropdown submenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 更多 <i class="icon-arrow-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li class="">
+                    <a href="/memos/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memos广场（Demo）<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </li>
+                    </ul>
+                    </li> -->
+                    <li>
+                      <div v-show="mode != 'dark'" class="dark-mode" @click="modeSave('dark')"
+                      onclick="setModeProto('dark')">
+                        <a>
+                          <i class="fa fa-moon" style="width:22.45px;height: 18px;">
+                          </i>
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <div v-show="mode == 'dark'" class="light-mode" @click="modeSave('light')"
+                      onclick="setModeProto('light')">
+                        <a>
+                          <i class="fa fa-sun" style="width:22.45px;height: 18px;">
+                          </i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div id="slicknav-mobile">
+                </div>
+              </div>
+            </div>
+            <!-- /.container-fluid -->
+          </nav>
         </div>
         <!-- Navigation Bar Ends -->
-    </header>
-    <!-- header ends -->
-
-    <!-- BreadCrumb Starts -->  
-<!--     <section class="breadcrumb-main pb-0 pt-6" style="background-image: url(assets/images/bg/bg2.jpg);">
-        <div class="breadcrumb-outer">
-            <div class="container">
-                <div class="breadcrumb-content d-md-flex align-items-center pt-6">
-                    <h2 class="mb-0">About Us</h2>
-                  
-                </div>
-            </div>
-        </div>
-        <div class="dot-overlay"></div>
-    </section> -->
-    <!-- BreadCrumb Ends --> 
-
-   
-
-    <!-- form starts -->
-    <!-- <section class="about-us"> -->
-      <section >
+      </header>
+      <!-- header ends -->
+      <!-- form starts -->
+      <section>
         <div class="container">
-            <div class="about-image-box">
-                <div class="row d-flex align-items-center justify-content-between">
-                    <div class="col-lg-12 col-sm-12">
-                        <div class="about-content">
-                            <h4 class="mb-1 theme font-weight-normal">About Us</h4>
-                            <h2 class="theme">不断进化中</h2>
-                            <p class="mb-3">>>></p>
-                            <h5><p class="mb-3">想对你说：</p></h5>
-                            <p class="mb-3"><a href="https://chuanliu.org" style="font-weight:bold;">川流 </a>是一个中文独立博客聚合站实验项目，发起自“中文博客圈微信群”，旨在集广大博友智慧发扬<span style="font-weight:bold;"> 中文独立博主 </span>这个圈子。目前由<a href="https://hanyu.life"  style="font-weight:bold;">韩宇</a>和<a href="https://zuofei.net"   style="font-weight:bold;">胡鹤仙</a>进行技术、运营支持。</p>
-                            <p class="mb-3">我们还没想好怎么去诉说这里，所以，以下内容碎片又粗糙，请你谅解。</p>
-                            <p class="mb-3"> 欢迎你，我们不会设置那么多无聊的准入门槛和规矩，因为“美式”和“拿铁”一样好喝。</p>
-                            <p class="mb-3"> 不要在乎更新频率、不要在乎你写的内容是深是浅、或错或对，你就是完整的、独一无二的个体。</p>
-                            <p class="mb-3"> 这里，你说了算！如果我们已经逃到了博客，就不要被主宰。</p>
-                            <p class="mb-3"> 给我们一点时间，我们在进化。</p>
-                            <p class="mb-3"> 文字、图像、影像，都可以成为你生活中美好内容的展示载体，书籍、博客、抖音、小红书，也都是你索取快乐和知识的方式，所以，是不是可以不必比较，都爱就好。</p>
-                            <p class="mb-3"> 这绝不是“我”的地方，一定是“我们”的地方。</p>
-                          <p class="mb-3"> 以下，是使用AI对“川流”二字的释义：   <!-- ，<span style="color:red">除此之外，我们不会在任何含有你博客内容的地方使用AI。</span>  -->
-                     
-<br><br>
-1、 川流代表着信息的流动和传播。博客导航站作为一个集合了众多博客链接的平台，扮演着将信息传递给用户的角色。川流象征着信息的源源不断地流动，博客导航站通过整理和分类博客链接，使用户能够更便捷地获取他们感兴趣的信息。
-<br><br>
-2、 川流象征着思想和知识的碰撞与交流。博客导航站作为一个集结了不同博主的平台，为他们提供了一个展示自己思想和知识的空间。博客导航站的存在促进了博主们之间的交流和互动，使得不同思想和观点得以碰撞和交流，从而推动了思想的进步和知识的共享。
-<br><br>
-3、 川流代表着持续的发展和进步。博客导航站作为一个在线平台，不断吸纳新的博客链接，更新和扩充自己的内容。川流的水流不断向前，象征着博客导航站不断追求进步和发展的精神。通过不断更新和改进，博客导航站能够为用户提供更好的服务和体验。
-<br><br>
-综上所述，川流做博客导航站的美好寓意体现了信息传递、思想交流、知识共享和持续发展等方面的意义，使得博客导航站成为一个有价值和意义的平台。
-</p>
-                            <h5><p class="mb-3">待办功能：</p></h5><ul><li> * 作者文章列表页</li> <br></ul></p>
-
-                             <br>
-                               <h5><p class="mb-3">其他推荐：</p></h5>
-                                  <p class="mb-3"> <a href="https://storeweb.cn/" target="_blank" style="text-decoration: underline;">个站商店</a> 、&nbsp;&nbsp;<a href="https://bf.zzxworld.com/" style="text-decoration: underline;" target="_blank">BlogFinder</a>、&nbsp;&nbsp;<a href="https://www.dochub.wiki/" style="text-decoration: underline;" target="_blank">优质文档分享</a>
-                                  </p>
-                            <!-- <hr style="border:0px;border-bottom: 1px dashed gray;"> -->
-                        </div>
-                    </div>
-                   
+          <div class="about-image-box">
+            <div class="row d-flex align-items-center justify-content-between">
+              <div class="col-lg-12 col-sm-12">
+                <div class="about-content">
+                  <h4 class="mb-1 theme font-weight-normal">
+                    About Us
+                  </h4>
+                  <h2 class="theme">
+                    不断进化中
+                  </h2>
+                  <p class="mb-3">
+                    >>>
+                  </p>
+                  <h5>
+                    <p class="mb-3">
+                      想对你说：
+                    </p>
+                  </h5>
+                  <p class="mb-3">
+                    <a href="https://chuanliu.org" style="font-weight:bold;">
+                      川流
+                    </a>
+                    是一个中文独立博客聚合站实验项目，发起自“中文博客圈微信群”，旨在集广大博友智慧发扬
+                    <span style="font-weight:bold;">
+                      中文独立博主
+                    </span>
+                    这个圈子。目前由
+                    <a href="https://hanyu.life" style="font-weight:bold;">
+                      韩宇
+                    </a>
+                    和
+                    <a href="https://zuofei.net" style="font-weight:bold;">
+                      胡鹤仙
+                    </a>
+                    进行技术、运营支持。
+                  </p>
+                  <p class="mb-3">
+                    我们还没想好怎么去诉说这里，所以，以下内容碎片又粗糙，请你谅解。
+                  </p>
+                  <p class="mb-3">
+                    欢迎你，我们不会设置那么多无聊的准入门槛和规矩，因为“美式”和“拿铁”一样好喝。
+                  </p>
+                  <p class="mb-3">
+                    不要在乎更新频率、不要在乎你写的内容是深是浅、或错或对，你就是完整的、独一无二的个体。
+                  </p>
+                  <p class="mb-3">
+                    这里，你说了算！如果我们已经逃到了博客，就不要被主宰。
+                  </p>
+                  <p class="mb-3">
+                    给我们一点时间，我们在进化。
+                  </p>
+                  <p class="mb-3">
+                    文字、图像、影像，都可以成为你生活中美好内容的展示载体，书籍、博客、抖音、小红书，也都是你索取快乐和知识的方式，所以，是不是可以不必比较，都爱就好。
+                  </p>
+                  <p class="mb-3">
+                    这绝不是“我”的地方，一定是“我们”的地方。
+                  </p>
+                  <p class="mb-3">
+                    以下，是使用AI对“川流”二字的释义：
+                    <!-- ，<span style="color:red">除此之外，我们不会在任何含有你博客内容的地方使用AI。</span>  -->
+                    <br>
+                    <br>
+                    1、 川流代表着信息的流动和传播。博客导航站作为一个集合了众多博客链接的平台，扮演着将信息传递给用户的角色。川流象征着信息的源源不断地流动，博客导航站通过整理和分类博客链接，使用户能够更便捷地获取他们感兴趣的信息。
+                    <br>
+                    <br>
+                    2、 川流象征着思想和知识的碰撞与交流。博客导航站作为一个集结了不同博主的平台，为他们提供了一个展示自己思想和知识的空间。博客导航站的存在促进了博主们之间的交流和互动，使得不同思想和观点得以碰撞和交流，从而推动了思想的进步和知识的共享。
+                    <br>
+                    <br>
+                    3、 川流代表着持续的发展和进步。博客导航站作为一个在线平台，不断吸纳新的博客链接，更新和扩充自己的内容。川流的水流不断向前，象征着博客导航站不断追求进步和发展的精神。通过不断更新和改进，博客导航站能够为用户提供更好的服务和体验。
+                    <br>
+                    <br>
+                    综上所述，川流做博客导航站的美好寓意体现了信息传递、思想交流、知识共享和持续发展等方面的意义，使得博客导航站成为一个有价值和意义的平台。
+                  </p>
+                  <h5>
+                    <p class="mb-3">
+                      待办功能：
+                    </p>
+                  </h5>
+                  <ul>
+                    <li>
+                      * 作者文章列表页
+                    </li>
+                    <br>
+                  </ul>
+                  </p>
+                  <br>
+                  <h5>
+                    <p class="mb-3">
+                      其他推荐：
+                    </p>
+                  </h5>
+                  <p class="mb-3">
+                    <a href="https://storeweb.cn/" target="_blank" style="text-decoration: underline;">
+                      个站商店
+                    </a>
+                    、&nbsp;&nbsp;
+                    <a href="https://bf.zzxworld.com/" style="text-decoration: underline;"
+                    target="_blank">
+                      BlogFinder
+                    </a>
+                    、&nbsp;&nbsp;
+                    <a href="https://www.dochub.wiki/" style="text-decoration: underline;"
+                    target="_blank">
+                      优质文档分享
+                    </a>
+                  </p>
                 </div>
+              </div>
             </div>
-            
+          </div>
         </div>
-    </section>
-    <!-- form ends -->
-
-
-
-    <!-- our teams starts -->
-<!--     <section class="our-team pb-4">
-        <div class="container">
-            <div class="section-title mb-4 pb-1 w-50">
-                <h2 class="m-0">Our <span>Team & Guide</span></h2>
-            </div>   
-            <div class="team-main">
-                <div class="row shop-slider">
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div class="team-list">
-                            <div class="team-image">
-                                <img src="assets/images/team/img1.jpg" alt="team">
-                            </div>
-                            <div class="team-content text-center p-3 bg-theme">
-                               <h4 class="mb-0 white">Salmon Thuir</h4>
-                                <p class="mb-0 white">Cheif Officer</p>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div class="team-list">
-                            <div class="team-image">
-                                <img src="assets/images/team/img2.jpg" alt="team">
-                            </div>
-                            <div class="team-content text-center p-3 bg-theme">
-                               <h4 class="mb-0 white">Horke Pels</h4>
-                                <p class="mb-0 white">Head Chef</p>
-                                
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div class="team-list">
-                            <div class="team-image">
-                                <img src="assets/images/team/img4.jpg" alt="team">
-                            </div>
-                            <div class="team-content text-center p-3 bg-theme">
-                               <h4 class="mb-0 white">Solden kalos</h4>
-                                <p class="mb-0 white">Supervisor</p>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div class="team-list">
-                            <div class="team-image">
-                                <img src="assets/images/team/img3.jpg" alt="team">
-                            </div>
-                            <div class="team-content text-center p-3 bg-theme">
-                               <h4 class="mb-0 white">Nelson Bam</h4>
-                                <p class="mb-0 white">Quality Assurance</p>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div class="team-list">
-                            <div class="team-image">
-                                <img src="assets/images/team/img5.jpg" alt="team">
-                            </div>
-                            <div class="team-content text-center bg-theme p-3">
-                               <h4 class="mb-0 white">Cacics Coold</h4>
-                                <p class="mb-0 white">Asst. Chef</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- our teams Ends -->
-
-
-
-
-  <!-- footer starts -->
-    <footer class="pt-10 footermain">
+      </section>
+      <!-- form ends -->
+      <!-- footer starts -->
+      <footer class="pt-10 footermain">
         <div class="footer-upper pb-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-4 col-sm-12 mb-4">
-                        <div class="footer-about">
-                            <img src="assets/images/favicon.png" alt="" style="height: 45px;object-fit: cover;width: 80px;">
-                                <!--  <h3 class="mt-3 mb-3 white">
-                                 <strong>川流</strong>
-                                </h3> -->
-                                <p class="mt-3 mb-3 white">
-                                 <strong>我们在不断进化</strong>
-                                </p>
-                      
-                         
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-12 mb-4 align-items-right">
-                        <div class="footer-links">
-                            <h3 class="white">快捷</h3>
-                            <ul>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="/memos/">Friends</a></li>
-                                 <li><a href="/rank/">Rank</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-               <!--      <div class="col-lg-2 col-md-6 col-sm-12 mb-4">
-                        <div class="footer-links">
-                            <h3 class="white">Popular Tags</h3>
-                            <div class="tagcloud">
-                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Beautiful</a>
-                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Public</a>
-                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Technology</a>
-                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Travel</a>
-                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Entertainment</a>
-                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Blog</a>
-                                <a class="tag-cloud-link bg-white black p-2 mb-1" href="#">Sports </a>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
-                        <div class="footer-links">
-                            <h3 class="white">推荐</h3>
-                            <div class="trend-main">
-                                <div class="trend-item d-flex align-items-center mb-2">
-                                    <div class="trend-image w-25 me-4">
-                                        <img src="https://storeweb.cn/static/favicon.ico" alt="个站商店" style="max-width: 40px;">
-                                    </div>
-                                    <div class="trend-content-main me-3 w-75">
-                                        <div class="trend-content">
-                                            <h4 class="mb-1"><a href="https://storeweb.cn/"  target="_blank" >个站商店</a></h4>
-                                            <div class="entry-meta">
-                                                <div class="entry-metalist d-flex align-items-center">
-                                                    <small><a href="https://storeweb.cn/"   target="_blank"  class="white"><i class="fa fa-calendar"></i> 精致的博客导航</a></small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                 <div class="trend-item d-flex align-items-center mb-2">
-                                    <div class="trend-image w-25 me-4">
-                                        <img src="https://bf.zzxworld.com/images/favicon.png" alt="BlogFinder" style="max-width: 40px;">
-                                    </div>
-                                    <div class="trend-content-main me-3 w-75">
-                                        <div class="trend-content">
-                                            <h4 class="mb-1"><a href="https://bf.zzxworld.com" target="_blank" >BlogFinder</a></h4>
-                                            <div class="entry-meta">
-                                                <div class="entry-metalist d-flex align-items-center">
-                                                    <small><a href="https://bf.zzxworld.com" target="_blank" class="white"><i class="fa fa-calendar"></i> 可爱的博客导航</a></small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>     
-                    </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-4 col-sm-12 mb-4">
+                <div class="footer-about">
+                  <img src="assets/images/favicon.png" alt="" style="height: 45px;object-fit: cover;width: 80px;">
+                  <!-- <h3 class="mt-3 mb-3 white">
+                  <strong>川流</strong>
+                  </h3> -->
+                  <p class="mt-3 mb-3 white">
+                    <strong>
+                      我们在不断进化
+                    </strong>
+                  </p>
                 </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-12 mb-4 align-items-right">
+                <div class="footer-links">
+                  <h3 class="white">
+                    快捷
+                  </h3>
+                  <ul>
+                    <li>
+                      <a href="about.html">
+                        About
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/memos/">
+                        Friends
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/rank/">
+                        Rank
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="footer-links">
+                  <h3 class="white">
+                    推荐
+                  </h3>
+                  <div class="trend-main">
+                    <div class="trend-item d-flex align-items-center mb-2">
+                      <div class="trend-image w-25 me-4">
+                        <img src="https://storeweb.cn/static/favicon.ico" alt="个站商店" style="max-width: 40px;">
+                      </div>
+                      <div class="trend-content-main me-3 w-75">
+                        <div class="trend-content">
+                          <h4 class="mb-1">
+                            <a href="https://storeweb.cn/" target="_blank">
+                              个站商店
+                            </a>
+                          </h4>
+                          <div class="entry-meta">
+                            <div class="entry-metalist d-flex align-items-center">
+                              <small>
+                                <a href="https://storeweb.cn/" target="_blank" class="white">
+                                  <i class="fa fa-calendar">
+                                  </i>
+                                  精致的博客导航
+                                </a>
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="trend-item d-flex align-items-center mb-2">
+                      <div class="trend-image w-25 me-4">
+                        <img src="https://bf.zzxworld.com/images/favicon.png" alt="BlogFinder"
+                        style="max-width: 40px;">
+                      </div>
+                      <div class="trend-content-main me-3 w-75">
+                        <div class="trend-content">
+                          <h4 class="mb-1">
+                            <a href="https://bf.zzxworld.com" target="_blank">
+                              BlogFinder
+                            </a>
+                          </h4>
+                          <div class="entry-meta">
+                            <div class="entry-metalist d-flex align-items-center">
+                              <small>
+                                <a href="https://bf.zzxworld.com" target="_blank" class="white">
+                                  <i class="fa fa-calendar">
+                                  </i>
+                                  可爱的博客导航
+                                </a>
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
         <div class="footer-copyright pt-2 pb-2">
-            <div class="container">
-                <div class="copyright-inner d-md-flex align-items-center justify-content-between">
-                    <div class="copyright-text">
-                        <p class="m-0 white">©2023 Chuanliu.org </a>.</p>
-                    </div>
-                    <!-- <div class="social-links">
-                        <ul>  
-                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div> -->
-                </div>    
+          <div class="container">
+            <div class="copyright-inner d-md-flex align-items-center justify-content-between">
+              <div class="copyright-text">
+                <p class="m-0 white">
+                  ©2023 Chuanliu.org
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
+          </div>
         </div>
-    </footer>
-    <!-- footer ends -->
-    
-    
-    <!-- Back to top start -->
-    <div id="back-to-top" >
-        <a href="#" style="border-radius: 5px;cursor: pointer;"></a>
+      </footer>
+      <!-- footer ends -->
+      <!-- Back to top start -->
+      <div id="back-to-top">
+        <a href="#" style="border-radius: 5px;cursor: pointer;">
+        </a>
+      </div>
+      <!-- Back to top ends -->
     </div>
-    <!-- Back to top ends -->
-
-<!--     <div class="view-port">
-        <div class="dark-mode"><a><i class="fa fa-moon"></i> Night</a></div>
-        <div class="light-mode"><a><i class="fa fa-sun"></i> Day</a></div>
-    </div>
- -->
-
-
-
-</div>
     <!-- *Scripts* -->
-    <script src="assets/js/pkg/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/pkg/bootstrap.min.js"></script>
-    <script src="assets/js/pkg/plugin.js"></script>
-    <script src="assets/js/pkg/main.js"></script>
-    <script src="assets/js/pkg/custom-nav.js"></script>
+    <script src="assets/js/pkg/jquery-3.5.1.min.js">
+    </script>
+    <script src="assets/js/pkg/bootstrap.min.js">
+    </script>
+    <script src="assets/js/pkg/plugin.js">
+    </script>
+    <script src="assets/js/pkg/main.js">
+    </script>
+    <script src="assets/js/pkg/custom-nav.js">
+    </script>
+    <script type="text/javascript" src="assets/js/pkg/fancybox.js" id="fancybox-js">
+    </script>
+    <script type="text/javascript" src="assets/js/pkg/vue.global.js">
+    </script>
+    <script type="text/javascript" src="https://js.cybozu.com/markedjs/v0.3.5/marked.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js">
+    </script>
+    <script type="text/javascript" src="config.js">
+    </script>
+    <script type="text/javascript" src="assets/js/global.js">
+    </script>
+    <script type="text/javascript" src="assets/js/about.js">
+    </script>
+  </body>
 
-        <script type="text/javascript" src="assets/js/pkg/fancybox.js" id="fancybox-js">
-        </script>
-        <script type="text/javascript" src="assets/js/pkg/vue.global.js">
-        </script>
-        <script type="text/javascript" src="https://js.cybozu.com/markedjs/v0.3.5/marked.min.js">
-        </script>
-        <script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js">
-        </script>
-        <script type="text/javascript" src="config.js">
-        </script>
-        <script type="text/javascript" src="assets/js/global.js">
-        </script>
-        <script type="text/javascript" src="assets/js/about.js">
-        </script>
-</body>
 </html>
