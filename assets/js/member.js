@@ -30,6 +30,7 @@ const app = createApp({
             ranks: [],
             aTotal: 0,
             aWatch: 0,
+            aLike: 0,
             server:server,
             moreBtn:"加载更多",
             mode:localStorage.getItem("mode"),
@@ -95,6 +96,8 @@ const app = createApp({
             for (var i = 0; i < that.datas.length; i++) {
                that.aTotal +=  that.datas[i].total
                that.aWatch +=  that.datas[i].watch
+               that.aLike +=  that.datas[i].like
+               
             }
             getUsersRecent(that);
         });
