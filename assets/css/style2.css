@@ -1,4 +1,9 @@
-
+  input[type="color"] {
+      width: 15px;
+      height: 15px;
+      border: none;
+      padding: 0;
+    }
 .navbar-brand{
     height: 35px;width: 35px;
 }

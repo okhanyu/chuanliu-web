@@ -35,10 +35,18 @@
     type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/fonts/line-icons.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style2.css" type="text/css">
+
+    <script type="text/javascript">
+      
+//    var root = document.documentElement;
+// root.style.setProperty('--primary-color', '#000');
+    </script>
+
   </head>
   
   <body>
     <div id="app" style="max-width: 1260px;margin: auto;" v-cloak>
+
       <!-- Preloader -->
       <div id="preloader">
         <div id="status" :style="(mode == 'dark' ?  'background: url(assets/images/loader-black.gif);' :'') +  'background-size: cover;background-position: center;opacity: 1;transform: translate(-50%, -50%);visibility: visible;transition: all ease-in-out 0.5s;z-index: 9999999999; '">
@@ -147,6 +155,8 @@
                       </i>
                     </a>
                   </div>
+                  <input type="color" v-model="selectedColor" @change="changeColor" />
+
                 </div>
                 <div id="slicknav-mobile">
                 </div>
@@ -561,6 +571,7 @@
       <!-- Back to top ends -->
     </div>
     <!-- *Scripts* -->
+   
     <script src="assets/js/pkg/jquery-3.5.1.min.js">
     </script>
     <script src="assets/js/pkg/bootstrap.min.js">

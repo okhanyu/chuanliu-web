@@ -35,7 +35,7 @@
 @import url("https://font.sec.miui.com/font/css?family=MiSans:400,500,700:Chinese_Simplify,Latin&display=swap");
 
 :root {
-  --primary-color: #6789db; /* 定义主要颜色变量为红色 */
+  --primary-color: #357c6c; /* 定义主要颜色变量为红色 */
   --secondary-color: #00ff00; /* 定义次要颜色变量为绿色 */
 }
 

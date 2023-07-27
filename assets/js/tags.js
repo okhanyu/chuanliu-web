@@ -32,13 +32,21 @@ const app = createApp({
             cleanBtn:"去图模式关闭",
             tagList : true,
             currentTag : "",
-            mode:localStorage.getItem("mode")
+            mode:localStorage.getItem("mode"),
+            selectedColor: localStorage.getItem("color") == undefined || localStorage.getItem("color") == null || localStorage.getItem("color") == '' ? '#357c6c' : localStorage.getItem("color")
+
         }
     },
     computed: {
       
     },
     methods: {
+                changeColor() {
+          // 在这里可以对颜色进行处理或执行其他操作
+          console.log('Selected Color:', this.selectedColor);
+           document.documentElement.style.setProperty('--primary-color', this.selectedColor);
+           localStorage.setItem("color",this.selectedColor) 
+        },
         modeSave(mode){
              localStorage.setItem("mode",mode);
         },
@@ -88,8 +96,8 @@ const app = createApp({
     },
     mounted: function() {
 
-        const that = this;
-  
+           const that = this;
+             this.changeColor();
 
         if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
               this.cleanBtn  = "去图模式开启";

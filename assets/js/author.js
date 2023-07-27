@@ -31,10 +31,18 @@ const app = createApp({
             aWatch: 0,
             server:server,
             moreBtn:"加载更多",
-            mode:localStorage.getItem("mode")
+            mode:localStorage.getItem("mode"),
+            selectedColor: localStorage.getItem("color") == undefined || localStorage.getItem("color") == null || localStorage.getItem("color") == '' ? '#357c6c' : localStorage.getItem("color")
+
         }
     },
     methods: {
+                changeColor() {
+          // 在这里可以对颜色进行处理或执行其他操作
+          console.log('Selected Color:', this.selectedColor);
+           document.documentElement.style.setProperty('--primary-color', this.selectedColor);
+           localStorage.setItem("color",this.selectedColor) 
+        },
         modeSave(mode){
              localStorage.setItem("mode",mode);
         },
@@ -79,7 +87,7 @@ const app = createApp({
     },
     mounted: function() {
         const that = this;
-      
+       this.changeColor();
         getUsers(function(data) {
             // data.push(...that.datas);
             that.datas = data.data
@@ -89,6 +97,7 @@ const app = createApp({
             }
             getUsersRecent(that);
         });
+
      
     }
 });

@@ -33,7 +33,8 @@ const app = createApp({
             cleanBtn:"去图模式关闭",
             sort:true,
             imgShow:true,
-            mode:localStorage.getItem("mode")
+            mode:localStorage.getItem("mode"),
+            selectedColor: localStorage.getItem("color") == undefined || localStorage.getItem("color") == null || localStorage.getItem("color") == '' ? '#357c6c' : localStorage.getItem("color")
         }
     },
     computed: {
@@ -51,6 +52,12 @@ const app = createApp({
         // isMobile() {  alert(1);
         //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
         // },
+        changeColor() {
+          // 在这里可以对颜色进行处理或执行其他操作
+          console.log('Selected Color:', this.selectedColor);
+           document.documentElement.style.setProperty('--primary-color', this.selectedColor);
+           localStorage.setItem("color",this.selectedColor) 
+        },
         imgShowSwitch(){
              this.imgShow = !this.imgShow;
              this.cleanBtn = (this.cleanBtn == "去图模式关闭") ? "去图模式开启":"去图模式关闭";
@@ -133,6 +140,7 @@ const app = createApp({
     mounted: function() {
 
         const that = this;
+        this.changeColor();
         getDatas(function(data) {
             // data.push(...that.datas);
             that.datas = data.data
