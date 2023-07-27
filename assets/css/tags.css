@@ -17,7 +17,7 @@
 }
  .row{
      width:100%;
-    height: 180px;
+/*    height: 180px;*/
 }
  .summary {
      max-height:70px;
@@ -48,7 +48,7 @@
     }
      .row{
          width:100%;
-        height: 180px;
+/*        height: 180px;*/
     }
      .row [class*="col-"] {
          padding: 0px 0px 0px 12px;
