@@ -22,6 +22,7 @@ const {
 } = Vue;
 
 const app = createApp({
+    delimiters: ['{[', ']}'],
     data() {
         return {
             datas: [],

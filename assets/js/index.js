@@ -23,6 +23,7 @@ const {
 } = Vue;
 
 const app = createApp({
+    delimiters: ['{[', ']}'],
     data() {
         return {
             datas: [],
@@ -30,7 +31,7 @@ const app = createApp({
             server:server,
             moreBtn:"加载更多",
             sortBtn:"点击观看量降序 ↓",
-            cleanBtn:"去图模式关闭",
+            cleanBtn:"无图模式",
             sort:true,
             imgShow:true,
             mode:localStorage.getItem("mode"),
@@ -60,7 +61,7 @@ const app = createApp({
         },
         imgShowSwitch(){
              this.imgShow = !this.imgShow;
-             this.cleanBtn = (this.cleanBtn == "去图模式关闭") ? "去图模式开启":"去图模式关闭";
+             // this.cleanBtn = (this.cleanBtn == "去图已关闭") ? "去图已开启":"去图已关闭";
              localStorage.setItem("cleanMode",!this.imgShow);
 
         },
@@ -150,10 +151,10 @@ const app = createApp({
         });
 
         if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
-              this.cleanBtn  = "去图模式开启";
+              // this.cleanBtn  = "去图模式开启";
               this.imgShow  = false;
         }else{
-              this.cleanBtn  = "去图模式关闭";
+              // this.cleanBtn  = "去图模式关闭";
               this.imgShow  = true;
         }
 
