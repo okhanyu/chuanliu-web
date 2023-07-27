@@ -133,10 +133,7 @@
                         txt模式
                       </a>
                     </li>
-                    <li><a @click="imgShowSwitch" >
-                        {[ cleanBtn ]}
-                      </a></li>
-                        
+          
                     
                     <li class="dark-mode-li">
                       <div  class="dark-mode" @click="modeSave('dark')"
@@ -156,7 +153,13 @@
                       </div>
                     </li>
                   </ul>
-                
+                     <div style="margin: 0px 12px 0px 12px;">
+                      <a @click="imgShowSwitch" class="bg-theme" style="font-size: 12px;cursor: pointer;height: 24px;display: inline-block;line-height: 24px;border-radius: 3px;padding: 0px 5px 0px 5px !important;color: white!important;font-weight: bold;">
+                        {[ cleanBtn ]}
+                      </a>
+                    </div>
+                        
+                  
                    <div style="display: flex;margin: 0px 6px 0px 6px;"> <input type="color" v-model="selectedColor" @change="changeColor" /> </div>
                 </div>
                 <div id="slicknav-mobile">
@@ -221,10 +224,10 @@
                             <i class="fa fa-eye small-font-color-i">
                             </i>
                             {[ item.watch ]}
-                            <a  @click="like(item.id)" class="author-link small-font-color">
+                            <a  @click="like(item)" class="author-link small-font-color">
                                &nbsp;<i class="fa fa-heart small-font-color-i">
                                     </i>
-                                   {[ item.like ]}
+                                {[ item.like ]}
                             </a>
                           </span>
                         </div>
@@ -338,7 +341,7 @@
                                       <i class="fa fa-eye small-font-color-i">
                                       </i>
                                       {[ item.watch ]}
-                                     <a  @click="like(item.id)" class="author-link small-font-color">
+                                     <a  @click="like(item)" class="author-link small-font-color">
                                        &nbsp;<i class="fa fa-heart small-font-color-i">
                                             </i>
                                            {[ item.like ]}
@@ -416,9 +419,9 @@
                       </div>
                       <div class="trend-meta-cus">
                         <div class="entry-meta d-flex align-items-center justify-content-between">
-                          
+                            <a style="text-align: right;"  class="author-link">
                             <div class="small-font-color">
-                              <a :href="handle(item)" target="_blank" style="width: 100%;text-align: right;">
+                              <a :href="handle(item)" target="_blank" >
                                 <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
                                 alt="" class="avatar-round rounded-circle me-1">
                                 <span class="small-font-color">
@@ -434,14 +437,14 @@
                                 <i class="fa fa-eye small-font-color-i">
                                 </i>
                                 {[ item.watch ]}
-                                <a  @click="like(item.id)" class="author-link small-font-color">
+                                <a  @click="like(item)" class="author-link small-font-color">
                                        &nbsp;<i class="fa fa-heart small-font-color-i">
                                             </i>
-                                           {[ item.like ]}
+                                 {[ item.like ]}
                                 </a>
                               </span>
                             </div>
-                         
+                          </a>
                         </div>
                       </div>
                     </div>

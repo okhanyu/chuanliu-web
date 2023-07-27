@@ -90,16 +90,17 @@ const app = createApp({
               }
             });
         },
-        like(id) {
+        like(item) {
             $.ajax({
               url: server +"rss/like",
               type: "POST",
               data: JSON.stringify({
                 //"id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
-                "id": id
+                "id": item.id
               }),
               success: function(response) {
-                alert("点赞成功")
+                alert("点赞成功");
+                item.like +=1;
                 console.log(response)
               },
               error: function(xhr, status, error) {

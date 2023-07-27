@@ -134,7 +134,7 @@
                         txt模式
                       </a>
                     </li>
-                   
+          
                     
                     <li class="dark-mode-li">
                       <div  class="dark-mode" @click="modeSave('dark')"
@@ -154,7 +154,8 @@
                       </div>
                     </li>
                   </ul>
-                
+                    
+                  
                    <div style="display: flex;margin: 0px 6px 0px 6px;"> <input type="color" v-model="selectedColor" @change="changeColor" /> </div>
                 </div>
                 <div id="slicknav-mobile">
@@ -264,7 +265,7 @@
                       {[ item.create_time.substring(0, 10) ]}
                     </div>
                     <div style="font-size:12px;color: #949393;">
-                      观看 {[ item.watch ]} | 文章 {[ item.total ]}
+                    文章 {[ item.total ]} |  观看 {[ item.watch ]} |  喜欢 {[ item.like ]} 
                     </div>
                     <br>
                     <div style="font-size:12px;color: #949393;height: 23px;">
