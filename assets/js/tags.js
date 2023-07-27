@@ -33,7 +33,7 @@ const app = createApp({
             tagList : true,
             currentTag : "",
             mode:localStorage.getItem("mode"),
-            selectedColor: localStorage.getItem("color") == undefined || localStorage.getItem("color") == null || localStorage.getItem("color") == '' ? '#357c6c' : localStorage.getItem("color")
+            selectedColor: localStorage.getItem("color") == undefined || localStorage.getItem("color") == null || localStorage.getItem("color") == '' ? '#4659a0' : localStorage.getItem("color")
 
         }
     },
