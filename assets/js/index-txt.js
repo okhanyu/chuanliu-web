@@ -1,4 +1,3 @@
-/*** 初始化 vue begin***/
 
 
  document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mode" : "";
@@ -23,6 +22,7 @@ const {
 } = Vue;
 
 const app = createApp({
+    delimiters: ['{[', ']}'],
     data() {
         return {
             datas: [],

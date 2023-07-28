@@ -1,7 +1,8 @@
 /*** 初始化 vue begin***/
 
 
-document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mode" : "";
+ document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mode" : "";
+
 
 function setModeProto(mode){
       localStorage.setItem("mode",mode);
@@ -22,21 +23,18 @@ const {
 } = Vue;
 
 const app = createApp({
+    delimiters: ['{[', ']}'],
     data() {
         return {
             datas: [],
-            listByTag:[],
+            ranks: [],
+            aTotal: 0,
+            aWatch: 0,
+             aLike: 0,
+            server:server,
             moreBtn:"加载更多",
-            moreListBtn:"加载更多",
-            sortBtn:"点击观看量降序 ↓",
-            cleanBtn:"去图模式关闭",
-            tagList : true,
-            currentTag : "",
             mode:localStorage.getItem("mode")
         }
-    },
-    computed: {
-      
     },
     methods: {
         modeSave(mode){
@@ -45,29 +43,10 @@ const app = createApp({
         next(event) {
             offset++;
             const that = this;
-                getDatas(function(data) {
-                     that.datas.push(...data.data);
-                });
-            },
-        nextList(){
-            offset++;
-              const that = this;
-                getListByTag(that.currentTag,function(data) {
-                    // data.push(...that.datas);
-                    // that.listByTag = data.data;
-                    // that.tagList = false;
-                     that.listByTag.push(...data.data);
-               });
-        },
-        getListByTagExcute(tag){
-              offset = 0;
-              const that = this;
-                getListByTag(tag,function(data) {
-                    // data.push(...that.datas);
-                    that.listByTag = data.data;
-                    that.tagList = false;
-                    that.currentTag = tag;
-               });
+            getDatas(function(data) {
+               that.datas.push(...data.data);
+
+            });
         },
           watch(id) {
             $.ajax({
@@ -84,28 +63,35 @@ const app = createApp({
                 console.log(e);
               }
             });
+        },
+        handle(param){
+            if (param != undefined && param != "" && param.rss_link != undefined && param.rss_link != ""){
+                s = param.rss_link.split('://')
+                return s[0]+"://"+s[1].split("/")[0]
+            }
         }
+        // nextSort(event) {
+        //     offset++;
+        //     const that = this;
+        //     getDatas(function(data) {
+        //         data.push(...that.datas);
+        //         that.datas = sort(data);
+        //     });
+        // }
     },
     mounted: function() {
-
         const that = this;
-  
-
-        if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
-              this.cleanBtn  = "去图模式开启";
-              this.imgShow  = false;
-        }else{
-              this.cleanBtn  = "去图模式关闭";
-              this.imgShow  = true;
-        }
-
-
-         getDatas(function(data) {
+      
+        getUsers(function(data) {
             // data.push(...that.datas);
             that.datas = data.data
+            for (var i = 0; i < that.datas.length; i++) {
+               that.aTotal +=  that.datas[i].total
+               that.aWatch +=  that.datas[i].watch
+               that.aLike +=  that.datas[i].like
+            }
+            getUsersRecent(that);
         });
-
-      
      
     }
 });
@@ -114,20 +100,51 @@ const vm = app.mount('#app');
 
 /*** 初始化 vue end***/
 
-function getDatas(callback) {
+
+function getUsersRecent(appglobal) {
     // $.ajaxSetup({ async: false });
-        var limitSize  = 1000;
         $.ajax({
             type: "GET",
-            url: server + "rss/tag/list?page_num="+ offset + "&page_size="+limitSize,
+            url: server + "rss/user/list/recent",
+            beforeSend: function() {
+            },
+            success: function(response) {
+                   console.log(response);
+                   var map = {};
+                   for (var i = 0; i < response.data.length; i++) {
+                        if (map[response.data[i].user_id] == undefined){
+                            map[response.data[i].user_id] = [];
+                        }
+                        map[response.data[i].user_id].push(response.data[i]);
+                   }
+                   console.log(map)
+                   for (var i = 0; i < appglobal.datas.length; i++) {
+                       appglobal.datas[i]["recent"] = map[appglobal.datas[i].id];
+                   }
+                    console.log(appglobal.datas)
+
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+};
+
+function getUsers(callback) {
+    // $.ajaxSetup({ async: false });
+        var limitTemp = 1000;
+        $.ajax({
+            type: "GET",
+            url: server + "user/list/group?page_num="+ offset + "&page_size="+limitTemp,
             beforeSend: function() {
             },
             success: function(response) {
                 if (response.code == 0 && response.data != null  && response.data != undefined ){
                     getDataSuccess(response, callback);
-                } else {
+                }else{
                     vm.$data.moreBtn = "无"
                 }
+
                 
             },
             error: function(e) {
@@ -138,32 +155,6 @@ function getDatas(callback) {
     // getDataSuccess(sort(allData), callback);
 
 };
-
-function getListByTag(tag, callback) {
-    // $.ajaxSetup({ async: false });
-        $.ajax({
-            type: "GET",
-            url: server + "rss/list?tag="+tag+"&page_num="+ offset + "&page_size="+limit,
-            beforeSend: function() {
-            },
-            success: function(response) {
-                if (response.code == 0 && response.data != null  && response.data != undefined ){
-                    getDataSuccess(response, callback);
-                } else {
-                    vm.$data.moreListBtn = "无"
-                }
-                
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    // getDataSuccess(sort(allData), callback);
-
-};
-
-
 
 function getDataSuccess(data, callback) {
     console.log(data)
