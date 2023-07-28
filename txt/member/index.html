@@ -140,7 +140,7 @@
                     </h4>
                     <div class="subinfo">
                         <div class="time">
-                            <img :src="item.avatar" class="avatar">
+                            <img :src="item.avatar" class="avatar" onerror="this.src='https:\/\/chuanliu.org\/assets/images/default-about-avatar.webp'" style="object-fit: cover;"> 
                             {[ item.create_time.substr(0,10) ]}
                         </div>
                     </div>
