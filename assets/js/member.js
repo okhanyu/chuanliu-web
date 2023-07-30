@@ -92,12 +92,11 @@ const app = createApp({
        this.changeColor();
         getUsers(function(data) {
             // data.push(...that.datas);
-            that.datas = data.data
-            for (var i = 0; i < that.datas.length; i++) {
-               that.aTotal +=  that.datas[i].total
-               that.aWatch +=  that.datas[i].watch
-               that.aLike +=  that.datas[i].like
-               
+            for (var i = data.data.length - 1; i >= 0; i--) {
+                that.aTotal +=  data.data[i].total;
+                that.aWatch +=  data.data[i].watch;
+                that.aLike +=   data.data[i].like;
+                that.datas.push(data.data[i]);
             }
             getUsersRecent(that);
         });
