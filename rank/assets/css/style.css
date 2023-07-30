@@ -9,7 +9,8 @@ Body
 
 body {
   min-height: 450px;
-  height: 100vh;
+/*  height: 100vh;*/
+height: 100%;
   margin: 0;
   background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
   color: #fff;
@@ -19,6 +20,8 @@ body {
 /*--------------------
 Leaderboard
 --------------------*/
+
+
 .leaderboard {
   position: relative;
 /*  top: 50%;
@@ -28,8 +31,8 @@ Leaderboard
   margin-bottom:25px;
   
 
-  max-width: 500px;
-  width: 90%;
+/*  max-width: 500px;*/
+  width: 45%;
 /*  height: 562px;*/
 
   background: linear-gradient(to bottom, #3a404d, #181c26);
@@ -207,4 +210,11 @@ Leaderboard
 }
 .the-most img {
   max-width: 100%;
+}
+
+
+ @media screen and (max-width: 700px) {
+  .leaderboard {
+     width: 90%;
+  }
 }
