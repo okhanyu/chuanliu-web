@@ -44,8 +44,8 @@
 </div>
   </h1>
   <ol>
-    <li v-for="item in watchArticleRanks">
-          <a :href="item.link.split('://')[0]+'://'+((item.link.split('://')[1]).split('/')[0])" style="color:inherit;text-decoration: none;" target="_blank">
+    <li v-for="item in watchArticleRanks" @click="watch(item.id)" >
+          <a :href="item.link" style="color:inherit;text-decoration: none;" target="_blank">
               <mark style="color:inherit">{{ item.title }} </mark>
               <small>{{ item.watch }} 观看 </small>
          </a>
@@ -67,8 +67,8 @@
 </div>
   </h1>
   <ol>
-    <li v-for="item in likeArticleRanks">
-          <a :href="item.link.split('://')[0]+'://'+((item.link.split('://')[1]).split('/')[0])" style="color:inherit;text-decoration: none;" target="_blank">
+    <li v-for="item in likeArticleRanks" @click="watch(item.id)" >
+          <a :href="item.link" style="color:inherit;text-decoration: none;" target="_blank">
               <mark style="color:inherit">{{ item.title }} </mark>
               <small>{{ item.like }} 喜欢 </small>
          </a>
@@ -180,6 +180,22 @@ const app = createApp({
     methods: {
         modeSave(mode){
              localStorage.setItem("mode",mode);
+        },
+        watch(id) {
+            $.ajax({
+              url: server +"rss/watch",
+              type: "POST",
+              data: JSON.stringify({
+                //"id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
+                "id": id
+              }),
+              success: function(response) {
+                console.log(response)
+              },
+              error: function(xhr, status, error) {
+                console.log(e);
+              }
+            });
         }
     },
     mounted: function() {
