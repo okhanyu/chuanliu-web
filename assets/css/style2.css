@@ -1,3 +1,18 @@
+.rainbow-text {
+  background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: blink 2.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
 .listing-inner .row .blog-content .colorcus{
     color: var(--primary-color) !important;
 }
@@ -273,7 +288,7 @@ input[type="color"] {
      overflow: hidden;
      text-overflow: ellipsis;
      font-size: 0.9rem;
-     color: #949393;
+     color: #1a1a1b;
      max-height: 145px;
     /* line-height: 1.45rem;
      */
