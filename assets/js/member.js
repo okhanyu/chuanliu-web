@@ -126,11 +126,11 @@ function getUsersRecent(appglobal) {
                         }
                         map[response.data[i].user_id].push(response.data[i]);
                    }
-                   console.log(map)
+                   console.log(map);
                    for (var i = 0; i < appglobal.datas.length; i++) {
                        appglobal.datas[i]["recent"] = map[appglobal.datas[i].id];
                    }
-                    console.log(appglobal.datas)
+                    console.log(appglobal.datas);
 
             },
             error: function(e) {
