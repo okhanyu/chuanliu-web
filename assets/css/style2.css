@@ -353,6 +353,7 @@ input[type="color"] {
      height: 153px;
      object-fit: cover;
      border-radius: 5px;
+     box-shadow: 0px 0px 15px 1px rgba(123, 123, 123, 0.3);
     /* box-shadow: 2px 2px 10px #c0bebe37;
      */
 }
@@ -518,6 +519,7 @@ input[type="color"] {
          max-height: 140px;
          object-fit: cover;
          border-radius: 5px;
+         box-shadow: 0px 0px 15px 1px rgba(123, 123, 123, 0.3);
         /* box-shadow: 2px 2px 10px #c0bebe37;
          */
     }
@@ -675,6 +677,7 @@ input[type="color"] {
          max-height: 140px;
          object-fit: cover;
          border-radius: 5px;
+         box-shadow: 0px 0px 15px 1px rgba(123, 123, 123, 0.3);
         /* box-shadow: 2px 2px 10px #c0bebe37;
          */
     }
