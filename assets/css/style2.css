@@ -1,15 +1,20 @@
 .rainbow-text {
-  background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff);
+/*  background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  animation: blink 2.5s infinite;*/
+  background: linear-gradient(to right, #ff0000, #0000ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: blink 2.5s infinite;
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+   0% { color: red; opacity: 1;}
+  50% { color: blue; opacity: 0;}
+  100% { color: red;  opacity: 1;}
 }
 
 

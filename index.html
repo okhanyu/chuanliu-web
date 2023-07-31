@@ -399,7 +399,7 @@
                     </div>
                     <div :class="(!imgShow && isMobile ? 'trend-content-clean-nav ' : 'trend-content ' )+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">
                       <h4 class="summary-nowrap" style="max-height:25.2px;">
-                        <a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" :class="(item.watch >= 18 ? 'rainbow-text' : '')">
+                        <a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" :class="(item.watch >= 15 ? 'rainbow-text' : '')">
                           {[ item.title ]}
                         </a>
                       </h4>
