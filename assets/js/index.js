@@ -91,6 +91,10 @@ const app = createApp({
             });
         },
         like(item) {
+            if (localStorage.getItem("like"+item.id)){
+                alert("您已点过赞");
+                return
+            }
             $.ajax({
               url: server +"rss/like",
               type: "POST",
@@ -101,6 +105,7 @@ const app = createApp({
               success: function(response) {
                 alert("点赞成功");
                 item.like +=1;
+                localStorage.setItem("like"+item.id,true)
                 console.log(response)
               },
               error: function(xhr, status, error) {

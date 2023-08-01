@@ -48,7 +48,8 @@
     
     <link href="https://chuanliu.org/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://chuanliu.org/assets/css/style2.css" rel="stylesheet" type="text/css">
-    
+        <link href="https://chuanliu.org/assets/css/style3.css" rel="stylesheet" type="text/css">
+
   </head>
 <body>
     <div id="app" style="max-width: 1260px;margin: auto;" v-cloak>
@@ -171,201 +172,105 @@
         
       </header>
       
-         
-      <template v-for="item,index in ranks">
         
-        <section class="pb-6 pt-5 ptop trending" v-if="index == 0">
-          <div class="container">
-            <div class="section-title mb-4 pb-1 w-50">
-              <h2 class="m-0" lang="en">
-                Trending &
-                <span>
-                  48 hours
-                </span>
-              </h2>
-            </div>
-            <div class="about-image-box" style="border-radius: 8px;">
-              <div class="row d-flex align-items-center justify-content-between box-shadow p-4 mb-4">
-                <div :class="imgShow ?  'col-lg-7 col-sm-12 mb-4' : 'col-lg-12 col-sm-12' ">
-                  <div class="about-content">
-                    <h3 class="border-b mb-2 pb-2 whitechange">
-                      <a :href="item.link" @click="watch(item.id)" target="_blank" :dataid="item.id">
-                        {[ item.title ]}
-                      </a>
-                    </h3>
-                    
-                    <h4 class="theme small-font tags-nowrap">
-                      <span v-if="item.tags!= undefined && item.tags.length != 0">
-                        <template v-for="tag,index in item.tags">
-                          <span v-if="index < 10">
-                            &nbsp;#{[tag]}
-                          </span>
-                        </template>
-                      </span>
-                      <span v-else>
-                        #综合
-                      </span>
-                    </h4>
-                    <p class="border-b mb-2 pb-2 break summary-h-line-banner" v-html="item.summary">
-                    </p>
-                    <div class="entry-meta d-flex align-items-center justify-content-between">
-                      
-                        <div class="entry-author">
-                          <a :href="handle(item)" target="_blank" class="author-link small-font-color">
-                            <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
-                            alt="" class="avatar-round rounded-circle me-1">
-                            &nbsp;
-                            <span class="small-font-color">
-                              {[ item.user_name ]}
-                            </span>
-                           </a>
-                          &nbsp; &nbsp;
-                          <span class="small-font-color">
-                            <i class="fa fa-eye small-font-color-i">
-                            </i>
-                            {[ item.watch ]}
-                            <a  @click="like(item)" class="author-link small-font-color">
-                               &nbsp;<i class="fa fa-heart small-font-color-i">
-                                    </i>
-                                {[ item.like ]}
-                            </a>
-                          </span>
-                        </div>
-                      
-                    </div>
-                    <div class="small-font-color">
-                      {[item.pub_date_show]}
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-5 col-sm-12 mb-4" v-show="imgShow">
-                  
-                  <div class="about-image p-3  position-relative">
-                    <div v-if="item.cover != '' && item.cover != undefined && item.cover !=null && item.cover.indexOf('gravatar.com') == -1 && item.cover.indexOf('cravatar.cn') == -1 ">
-                      <img :src=" item.cover " alt="image" onerror="this.style.display='none';this.nextSibling.style.display='block'"
-                      class="img-cover-h153 w-100" style="object-fit: cover;max-height: 250px;border-radius: 5px;height: 250px;">
-                      <div class="image-text-cus img-cover-h153 w-100" style="display: none;object-fit: cover;max-height: 250px;height: 250px;border-radius: 5px;">
-                        <span class="image-text-cus-span " style="width:95%;overflow: hidden;text-overflow: ellipsis;">
-                          {[ item.title ]}
-                        </span>
-                      </div>
-                    </div>
-                    <div v-else class="image-text-cus img-cover-h153 w-100" style="object-fit: cover;max-height: 250px;height: 250px;border-radius: 5px;">
-                      <span class="image-text-cus-span">
-                        {[ item.title ]}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </template>
-      
-      
-      <section class="trending more-top pb-6 pt-5 ptop" v-if="ranks.length > 1">
-        <div class="container">
-          <div class="section-title mb-4 pb-1 w-100">
+<div class="container-2">
+
+       <div class="section-title mb-4 pb-1 w-50" v-show="ranks.length > 1">
             <h2 class="m-0" lang="en">
-              Trending More &
+                Posts &
               <span>
-                48 hours
+                Recent
               </span>
             </h2>
+            
           </div>
-          <div class="trend-box">
-            <template v-for="item,index in ranks">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="trend-item box-shadow p-4 mb-4" v-if="index != 0">
-                    <div :class=" index%2 == 1 ? (isMobile ? 'row-cus' :'row' ) : (isMobile ? 'row-cus' : 'row flex-row-reverse' ) ">
-                      <div class="col-lg-4 pe-0" v-if="item.cover != undefined &&  item.cover != ''"
-                      v-show="imgShow">
-                        <div class="trend-image1" v-if="item.cover != '' && item.cover != undefined && item.cover != null  && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-                          <img :src="item.cover" alt="image" onerror="this.style.display='none';this.nextSibling.style.display='block'"
-                          class="img-cover-h190">
-                          <div class="image-text-cus" style="display: none">
-                            <span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">
-                              {[ item.title ]}
-                            </span>
-                          </div>
-                        </div>
-                        <div class="trend-image1 image-text-cus" v-else>
-                          <span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">
-                            {[ item.title ]}
-                          </span>
-                        </div>
-                      </div>
-                      <div :class="imgShow ?  (item.cover != undefined &&  item.cover != '' ? 'col-lg-8':'col-lg-12 widthmax' ) : 'col-lg-12 widthmax' ">
-                        <div class="trend-content-main">
-                          <div :class="'trend-content '+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">
-                            <h4>
-                              <a :href="item.link" target="_blank" @click="watch(item.id)" :dataid="item.id"
-                              style="overflow: hidden;width: 100%;white-space: nowrap;text-overflow: ellipsis;" >
-                                {[ item.title ]}
-                              </a>
-                            </h4>
-                            <h5 class="theme small-font tags-nowrap">
-                              <span v-if="item.tags!= undefined && item.tags.length != 0">
-                                <template v-for="tag,index in item.tags">
-                                  <span v-if="index < 10">
-                                    &nbsp;&nbsp;#{[tag]}
-                                  </span>
-                                </template>
-                              </span>
-                              <span v-else>
-                                #综合
-                              </span>
-                            </h5>
-                            <div class="summary-h60 break summary-h-line" v-html="item.summary">
-                              <p>
-                            </div>
-                            <div class="entry-meta d-flex align-items-center justify-content-between entry-meta-cus-mobi">
-                             
-                                <div class="entry-author">
-                                   <a :href="handle(item)" target="_blank">
-                                    <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
-                                    alt="" class="avatar-round rounded-circle me-1">
-                                    &nbsp;
-                                    <span class="small-font-color">
-                                      {[ item.user_name ]}
-                                    </span>
-                                    </a>
-                                    &nbsp;&nbsp;
-                                    <span class="small-font-color">
-                                      {[ isMobile ? item.pub_date_show.substr(0,10) : item.pub_date_show ]}
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="small-font-color">
-                                      <i class="fa fa-eye small-font-color-i">
-                                      </i>
-                                      {[ item.watch ]}
-                                     <a  @click="like(item)" class="author-link small-font-color">
-                                       &nbsp;<i class="fa fa-heart small-font-color-i">
-                                            </i>
-                                           {[ item.like ]}
-                                    </a>
-                                     </span>
-                                </div>
-                              
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <main class="list-banner">
+        <section class="article-list" v-for="item,index in ranks" v-show="index == 0">
+          
+          <h1 class="title">
+            <a :href="item.link" @click="watch(item.id)" target="_blank">{[ item.title ]}</a>
+          </h1>
+           <div class="categories">
+            <a class="theme" ><template v-for="tag in item.tags" v-if=" item.tags != undefined  || item.tags != null ">#{[ tag ]}&nbsp;&nbsp;</template><template v-else>#综合</template></a>
+          </div>
+       
+     
+          <div class="summary-banner">
+            <div class="thumbnail" v-show="imgShow"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
+              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'">
+            </div>
+            <div class="summary-text" v-html="item.summary.replace('...','').replace('[','').replace(']','')+ '...'"></div>
+          </div>
+
+                <div class="inline-time">
+            <div class="date-time">
+              <span class="time">
+                <i class="fa fa-eye"></i>&nbsp;{[ item.watch ]}
+                <a class="time"  @click="like(item)" >&nbsp;
+                  <i class="fa fa-heart"></i>&nbsp;{[ item.like ]}</a>  
+              </span>
+
+             <span class="date time">&nbsp; &nbsp; / &nbsp; {[ item.pub_date_show ]}</span>
+           </div>
+               <div class="date-author">
+                <a :href="handle(item)" target="_blank">
+                  <img :src="item.avatar" onerror="this.src='assets/images/default_avatar.webp' " class="avatar-round rounded-circle me-1">&nbsp;
+                  <span class="author time">{[ item.user_name ]}</span>
+                </a>
               </div>
-            </template>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
+
+       <div class="section-title mb-4 pb-1 w-50" v-show="ranks.length > 2">
+            <h2 class="m-0" lang="en">
+              Posts &
+              <span>
+                Recent
+              </span>
+            </h2>
+          
+          </div>
+      <main class="list-banner-more">
+        <section class="article-list" v-for="item,index in ranks" v-show="index != 0">
+          
+          <h1 class="title">
+              <a :href="item.link" @click="watch(item.id)" target="_blank" >{[ item.title ]}</a>
+          </h1>
+           <div class="categories">
+            <a class="theme" ><template v-for="tag in item.tags" v-if=" item.tags != undefined  || item.tags != null ">#{[ tag ]}&nbsp;&nbsp;</template><template v-else>#综合</template></a>
+          </div>
+       
+     
+          <div class="summary-more">
+            <div class="thumbnail" v-show="imgShow"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
+              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'">
+            </div>
+            <div class="summary-text" v-html="item.summary.replace('...','').replace('[','').replace(']','')+ '...'"></div>
+          </div>
+
+                <div class="inline-time">
+            <div class="date-time">
+              <span class="time">
+                <i class="fa fa-eye"></i>&nbsp;{[ item.watch ]}
+               <a class="time"  @click="like(item)" >&nbsp;
+                  <i class="fa fa-heart"></i>&nbsp;{[ item.like ]}</a>  
+              </span>
+
+             <span class="date time">&nbsp; &nbsp; / &nbsp; {[ item.pub_date_show ]}</span>
+           </div>
+               <div class="date-author">
+               <a :href="handle(item)" target="_blank">
+                  <img :src="item.avatar" onerror="this.src='assets/images/default_avatar.webp' " class="avatar-round rounded-circle me-1">&nbsp;
+                  <span class="author time">{[ item.user_name ]}</span>
+                </a>
+              </div>
+          </div>
+        </section>
+      </main>
       
       
-      <section class="trending recent-articles pb-6 pt-5 ptop">
-        <div class="container">
-          <div class="section-title mb-4 pb-1 w-50">
+      <div class="section-title mb-4 pb-1 w-50">
             <h2 class="m-0" lang="en">
               Posts &
               <span>
@@ -377,91 +282,53 @@
               {[sortBtn]}
             </h4>
           </div>
-          <div class="recent-articles-inner">
-            <div class="row">
-              <div class="col-lg-4 mb-4" v-for="item in datas">
-                <div class="trend-item box-shadow bg-white p-4 mb-2 trend-item-cus">
-                  <div class="trend-content-main" style="height: 100%;">
-                    <div v-show="imgShow" class="trend-image trend-image-cus " v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-                      <img :src="item.cover == '' || item.cover == undefined || item.cover == null ? generateRandomImgFunc() : item.cover "
-                      alt="image" onerror="this.style.display='none';this.nextSibling.style.display='block'"
-                      class="img-cover-h153">
-                      <div class="image-text-cus" style="display: none">
-                        <span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">
-                          {[ item.title ]}
-                        </span>
-                      </div>
-                    </div>
-                    <div v-show="imgShow" class="image-text-out-cus" v-else>
-                      <span class="image-text-cus-span" style="width:95%;overflow: hidden;text-overflow: ellipsis;">
-                        {[ item.title ]}
-                      </span>
-                    </div>
-                    <div :class="(!imgShow && isMobile ? 'trend-content-clean-nav ' : 'trend-content ' )+ ((item.cover != '' && item.cover != undefined && item.cover != null) ? 'trend-content-cus-a':'trend-content-cus-b')">
-                      <h4 class="summary-nowrap" style="max-height:25.2px;">
-                        <a :href="item.link" target="_blank" :dataid="item.id" @click="watch(item.id)" :class="(item.watch >= 15 ? 'rainbow-text' : '')">
-                          {[ item.title ]}
-                        </a>
-                      </h4>
-                      <h5 class="theme small-font tags-nowrap" style="max-height:16.8px;">
-                        <span v-if="item.tags!= undefined && item.tags.length != 0">
-                          <template v-for="tag,index in item.tags">
-                            <span v-if="index < 10">
-                              &nbsp;&nbsp;#{[tag.trim()]}
-                            </span>
-                          </template>
-                        </span>
-                        <span v-else>
-                          &nbsp;&nbsp;#综合
-                        </span>
-                      </h5>
-                      <div class="mb-3 break summary-h summary-h-line" v-html=" (item.cover != '' && item.cover != undefined && item.cover != null) ? item.summary.slice(0, 100) : item.summary.slice(0, 200)">
-                      </div>
-                      <div class="trend-meta-cus">
-                        <div class="entry-meta d-flex align-items-center justify-content-between">
-                            <a style="text-align: right;"  class="author-link">
-                            <div class="small-font-color">
-                              <a :href="handle(item)" target="_blank" >
-                                <img :src="item.avatar == '' || item.avatar == undefined || item.avatar == null ? 'assets/images/default_avatar.webp' : item.avatar  "
-                                alt="" class="avatar-round rounded-circle me-1">
-                                <span class="small-font-color">
-                                  {[ item.user_name ]}
-                                </span>
-                               </a>
-                              &nbsp;&nbsp;
-                              <span class="small-font-color">
-                                {[ isMobile ? item.pub_date_show.substr(0,10) : item.pub_date_show ]}
-                              </span>
-                              &nbsp;&nbsp;
-                              <span class="small-font-color">
-                                <i class="fa fa-eye small-font-color-i">
-                                </i>
-                                {[ item.watch ]}
-                                <a  @click="like(item)" class="author-link small-font-color">
-                                       &nbsp;<i class="fa fa-heart small-font-color-i">
-                                            </i>
-                                 {[ item.like ]}
-                                </a>
-                              </span>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <main class="list">
+        <section class="article-list" v-for="item in datas">
+          
+          <h1 class="title">
+            <a :href="item.link" @click="watch(item.id)" target="_blank" :class="(item.watch >= 15 ? 'rainbow-text' : '')">{[ item.title ]}</a>
+          </h1>
+           <div class="categories">
+            <a class="theme" ><template v-for="tag in item.tags" v-if=" item.tags != undefined  || item.tags != null ">#{[ tag ]}&nbsp;&nbsp;</template><template v-else>#综合</template></a>
           </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="trend-btn text-center">
+       
+     
+          <div class="summary">
+            <div class="thumbnail" v-show="imgShow"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
+              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'">
+            </div>
+            <div class="summary-text" v-html="item.summary.replace('...','').replace('[','').replace(']','')+ '...'"></div>
+          </div>
+
+                <div class="inline-time">
+            <div class="date-time">
+              <span class="time">
+                <i class="fa fa-eye" ></i>&nbsp;{[ item.watch ]}
+                <a class="time"  @click="like(item)" >&nbsp;
+                  <i class="fa fa-heart" ></i>&nbsp;{[ item.like ]}</a>  
+              </span>
+
+             <span class="date time">&nbsp; &nbsp; / &nbsp; {[ item.pub_date_show ]}</span>
+           </div>
+               <div class="date-author">
+                <a :href="handle(item)" target="_blank">
+                  <img :src="item.avatar" onerror="this.src='assets/images/default_avatar.webp' " class="avatar-round rounded-circle me-1">&nbsp;
+                  <span class="author time">{[ item.user_name ]}</span>
+                </a>
+              </div>
+          </div>
+        </section>
+      </main>
+          <div class="trend-btn text-center" style="height: 60px;">
             <a @click="next" class="nir-btn" style="border-radius: 5px;cursor: pointer;">
               {[ moreBtn ]}
             </a>
           </div>
-        </div>
-      </section>
+    </div>
+
+
+
+ 
          
       <footer class="pt-10 footermain">
         <div class="footer-upper pb-4">
