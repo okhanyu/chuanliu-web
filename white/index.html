@@ -6,6 +6,9 @@
 		<title>
 			川流
 		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://chuanliu.org/assets/images/favicon.png">
 		<style type="text/css">
 			 body{
 			     line-height: 24px;
@@ -14,7 +17,7 @@
 			}
 			 .container{
 			     position: relative;
-			     margin-top:50px;
+			     margin-top:10px;
 			     height: 100%;
 			     display: flex;
 			     flex-wrap: nowrap;
@@ -222,6 +225,10 @@
 
 			[v-cloak] { display:none !important; }
 
+			.logo{
+				width: 25px;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -230,7 +237,7 @@
 
 		<div class="container" id="app" v-cloak>
 			<div class="nav">
-				<div><a href="https://chuanliu.org" class="rainbow-text" > Normal Home</a></div>
+				<div><img src="https://chuanliu.org/assets/images/logo.png" class="logo"><a href="https://chuanliu.org" class="rainbow-text" > Normal Home</a></div>
 			</div>
 			<div class="list">
 				<div v-for="item in datas" class="item">
