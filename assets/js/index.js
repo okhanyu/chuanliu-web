@@ -61,7 +61,7 @@ const app = createApp({
         },
         imgShowSwitch(){
              this.imgShow = !this.imgShow;
-             // this.cleanBtn = (this.cleanBtn == "去图已关闭") ? "去图已开启":"去图已关闭";
+             this.cleanBtn = (this.cleanBtn == "无图模式") ? "有图模式":"无图模式";
              localStorage.setItem("cleanMode",!this.imgShow);
 
         },
@@ -174,10 +174,10 @@ const app = createApp({
         });
 
         if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
-              // this.cleanBtn  = "去图模式开启";
+              this.cleanBtn  = "有图模式";
               this.imgShow  = false;
         }else{
-              // this.cleanBtn  = "去图模式关闭";
+              this.cleanBtn  = "无图模式";
               this.imgShow  = true;
         }
 
