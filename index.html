@@ -196,8 +196,8 @@
        
      
           <div class="summary-banner">
-            <div class="thumbnail" v-show="imgShow"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'">
+            <div class="thumbnail" v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
+              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'"  v-show="imgShow" >
             </div>
             <div class="summary-text" v-html="item.summary.replace('...','').replace('[','').replace(']','')+ '...'"></div>
           </div>
@@ -243,8 +243,8 @@
        
      
           <div class="summary-more">
-            <div class="thumbnail" v-show="imgShow"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'">
+            <div class="thumbnail"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
+              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'" v-show="imgShow" >
             </div>
             <div class="summary-text" v-html="item.summary.replace('...','').replace('[','').replace(']','')+ '...'"></div>
           </div>
@@ -294,8 +294,8 @@
        
      
           <div class="summary">
-            <div class="thumbnail" v-show="imgShow"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'">
+            <div class="thumbnail"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
+              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'" v-show="imgShow" >
             </div>
             <div class="summary-text" v-html="item.summary.replace('...','').replace('[','').replace(']','')+ '...'"></div>
           </div>
