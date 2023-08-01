@@ -286,7 +286,7 @@
         <section class="article-list" v-for="item in datas">
           
           <h1 class="title">
-            <a :href="item.link" @click="watch(item.id)" target="_blank" :class="(item.watch >= 15 ? 'rainbow-text' : '')">{[ item.title ]}</a>
+            <a :href="item.link" @click="watch(item.id)" target="_blank" :class="(item.watch >= 15 && item.like >= 10 ? 'rainbow-text' : '')">{[ item.title ]}</a>
           </h1>
            <div class="categories">
             <a class="theme" ><template v-for="tag in item.tags" v-if=" item.tags != undefined  || item.tags != null ">#{[ tag ]}&nbsp;&nbsp;</template><template v-else>#综合</template></a>
