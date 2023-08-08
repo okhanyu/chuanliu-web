@@ -48,11 +48,21 @@ const app = createApp({
             }
             return backImg;
         }
+        // replacedHtmlContent(html) {
+        //   return this.htmlContent.replace(/<blockquote/g, '<div').replace(/<\/blockquote>/g, '</div>');
+        // }
     },
     methods: {
         // isMobile() {  alert(1);
         //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
         // },
+        replaceBlockquoteWithDiv(html) {
+             if (html != undefined && html != null && html != ""){
+                 html = html.replace(/<blockquote/g, '<div').replace(/<\/blockquote>/g, '</div>');
+                 html = html.replace(/<img/g, '<img style="display: none;"');
+             }
+          return html
+        },
         changeColor() {
           // 在这里可以对颜色进行处理或执行其他操作
           console.log('Selected Color:', this.selectedColor);
