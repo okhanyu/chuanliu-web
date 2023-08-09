@@ -59,9 +59,19 @@ const app = createApp({
         replaceBlockquoteWithDiv(html) {
              if (html != undefined && html != null && html != ""){
                  html = html.replace(/<blockquote/g, '<div').replace(/<\/blockquote>/g, '</div>');
+                 // 设置统一的字号大小
+                  //let fontSize = '16px'; // 可根据需要调整字号大小
+                 html = html.replace(/<[^>]+>/g, (match) => {
+                    //return match.replace(/style="[^"]*"/g, '') + ` style="font-size: ${fontSize};"`;
+                    return match.replace(/style="[^"]*"/g, '');
+                  });
                  html = html.replace(/<img/g, '<img style="display: none;"');
+                  
+                  // 使用正则表达式将除了img标签以外的所有标签替换为div标签
+                html = html.replace(/<(?!img)[^>]+>/g, "<div></div>");
+             
              }
-          return html
+          return html;
         },
         changeColor() {
           // 在这里可以对颜色进行处理或执行其他操作
