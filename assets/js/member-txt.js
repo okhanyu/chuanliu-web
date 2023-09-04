@@ -135,7 +135,7 @@ function getUsers(callback) {
         var limitTemp = 1000;
         $.ajax({
             type: "GET",
-            url: server + "user/list/group?page_num="+ offset + "&page_size="+limitTemp,
+            url: server + "user/list/group?page_num="+ offset + "&page_size="+limitTemp+"&order=4",,
             beforeSend: function() {
             },
             success: function(response) {
