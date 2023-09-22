@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://chuanliu.org/txt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>服务</title>
-      <link>https://chuanliu.org/txt/service-bak/</link>
+      <link>https://chuanliu.org/txt/service/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://chuanliu.org/txt/service-bak/</guid>
+      <guid>https://chuanliu.org/txt/service/</guid>
       <description>川流公益服务实验 看到很多博主，在选择自己的博客架构方向时，是迷茫无助的。 所以我们准备一步一步推出各类公益服务，尽可能的帮助一些博主减少部署和使用博客相关产品的门槛。 我们率先实验性的推出公益评论托管服务，以下可能是你关心的问题：
   使用什么评论系统部署？ 我们采用artalk进行部署。
   是否需要自己拥有服务器？ 不，你无需自己拥有服务器。
