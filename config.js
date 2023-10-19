@@ -1,6 +1,6 @@
 
 
-var server = "https://api.hahaha.cc/api/rss-hub/";
+var server = "https://s.hahaha.cc/api/rss-hub/";
 // var server = "http://127.0.0.1:8899/api/rss-hub/";
 
 
