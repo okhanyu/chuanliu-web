@@ -57,7 +57,7 @@
 						</span>
 					</div>
 					<div class="item-user">
-						{[format(item.createdTs)]}
+						{[format(item.createdTs).substr(0,10)]}
 					</div>
 				</div>
 				<div class="item" @click="next" v-show="moreBtnShow">
