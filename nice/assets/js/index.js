@@ -87,6 +87,7 @@ const app = createApp({
                         ss += s[i].trim() + "\n";
                     }
                 }
+                ss = ss.trim() == "" ?  "无推荐理由" : ss;
                 return ss;
             }
             return "无推荐理由"
