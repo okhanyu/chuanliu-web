@@ -89,7 +89,7 @@ const app = createApp({
                 }
                 return ss;
             }
-            return "无摘要"
+            return "无推荐理由"
         },
         handle(param) {
             if (param != undefined && param != "" && param.link != undefined && param.link != "") {
