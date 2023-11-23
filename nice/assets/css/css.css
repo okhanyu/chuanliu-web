@@ -165,12 +165,12 @@ a {
 	max-height:300px;
 }
 .more-btn {
-	/*				    width:90%;
-	*/
+	border-radius: 5px;
+    box-shadow: rgba(242, 242, 242, 0.5) 4px 4px 6px;
+    border: 1px dotted rgb(213, 213, 213);
 				    height:30px;
 	cursor:pointer;
-	border:1px solid gray;
-	border-radius:5px;
+	    background: 0px 0px;
 }
 [v-cloak] {
 	display:none !important;
