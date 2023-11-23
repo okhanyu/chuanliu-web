@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8" />
+    <meta name="referrer" content="strict-origin" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
+		<title>
+			川流
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://chuanliu.org/assets/images/favicon.png">
+		<style type="text/css">
+			 body{
+			     line-height: 24px;
+			     padding: 0px;
+			     margin: 0px;
+			}
+			 .container{
+			     position: relative;
+			     margin-top:10px;
+			     height: 100%;
+			     display: flex;
+			     flex-wrap: nowrap;
+			     justify-content: center;
+			}
+			 .list{
+			     text-align: left;
+			     width: 60%;
+			     display: flex;
+			     flex-wrap: wrap;
+			     justify-content: space-evenly;
+			     flex-direction: column;
+			     border-left: 1px solid black;
+			     padding: 10px 10px 10px 8%;
+			     margin-bottom: 15px;
+			}
+			 .item{
+			     margin: 10px 0px 10px 0px;
+			     width: calc(100% - 20px);
+			}
+			 .item-title {
+
+/*			 	 transition: all ease-in-out 0.5s;*/
+			     width: 100%;
+			     margin: 2px 0px 2px 0px;
+			     display: flex;
+			     flex-wrap: nowrap;
+			     justify-content: space-between;
+			     align-items: center;
+			     position: relative;
+			}
+			 .item .item-link-span{
+			     width: 69%;
+			     max-width: 69%;
+			     white-space: nowrap;
+			     text-overflow: ellipsis;
+			     overflow: hidden;
+			    /*display: -webkit-box;
+			     -webkit-box-orient: vertical;
+			     line-height: 24px;
+			     text-overflow: ellipsis;
+			     overflow: hidden;
+			     word-break: break-word;
+			     -webkit-line-clamp: 1;
+			    */
+			}
+			 .item .item-link-span .item-link-a{
+			     white-space: nowrap;
+			     text-overflow: ellipsis;
+			     overflow: hidden;
+			}
+			 .item .item-time {
+			     width: 28%;
+			     white-space: nowrap;
+			     text-overflow: ellipsis;
+			     overflow: hidden;
+			     font-size: 13px;
+			}
+			 .item-user {
+			     width: 100%;
+			     white-space: nowrap;
+			     text-overflow: ellipsis;
+			     overflow: hidden;
+			     font-size: 13px;
+			}
+			 .nav{
+			     width:300px;
+			     height: 40px;
+			     background-color: rgba(255, 255, 255, 0.5);
+			     backdrop-filter: blur(10px);
+			     position:sticky;
+			     top:0;
+			     display: flex;
+			     align-items: center;
+			     justify-content: flex-start;
+			     flex-direction: column;
+			     text-align: center;
+			     padding: 10px 10px 10px 10px;
+			     width: calc(40% - 10% - 12px);
+			     z-index: 1000;
+			}
+			 a{
+			     text-decoration: none;
+			     color: black;
+			     border-bottom:1px dashed gray ;
+			}
+			.item-time a{
+				 text-decoration: none;
+			     color: black;
+			     border-bottom:0px dashed gray ;
+			}
+			.item-time a:hover{
+				 text-decoration: none;
+			     color: gray;
+			     border-bottom:1px dashed gray ;
+			}
+						 .rainbow-text {
+			    /* background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff);
+			     background-clip: text;
+			     -webkit-background-clip: text;
+			     color: transparent;
+			     animation: blink 2.5s infinite;
+			    */
+			     background: linear-gradient(to right, #ff0000, #0000ff);
+			     background-clip: text;
+			     -webkit-background-clip: text;
+			     -webkit-text-fill-color: transparent;
+			    /* animation: blink 2.5s infinite;
+			    */
+			}
+			 @keyframes blink {
+			     0% {
+			         color: red;
+			         opacity: 1;
+			    }
+			     50% {
+			         color: blue;
+			         opacity: 0;
+			    }
+			     100% {
+			         color: red;
+			         opacity: 1;
+			    }
+			}
+			 .summary-tip {
+			 	opacity: 0;
+			 	 height:0;
+  				transition: opacity 0.5s ease;
+			 	 max-width: 500px;
+/*			     display: none;*/
+			     position: absolute;
+			     top: 100%;
+			     left: 0;
+			     padding: 10px;
+			     background-color: white;
+			     border: 1px solid #ccc;
+			     text-overflow: ellipsis;
+			     overflow:hidden;
+			     white-space: pre-wrap;
+			     border-radius: 2px;
+/*			     transition: all ease-in-out 0.5s;*/
+/*				 z-index: -1;*/
+			}
+			
+			 .item-link-span:hover .summary-tip {
+			
+/*			 	 transition: all ease-in-out 0.5s;*/
+/*			     display: block;*/
+				 z-index: 999;
+			     opacity: 1;
+			     height:auto;
+			     max-height: 300px;
+			     
+			}
+
+			.more-btn {
+/*				    width: 90%;*/
+				    height:30px;
+				    cursor: pointer;
+				    border: 1px solid gray;
+				    border-radius: 5px;
+			}
+
+			[v-cloak] { display:none !important; }
+
+			.logo{
+				width: 25px;
+			}
+
+			 @media screen and (max-width: 600px) {
+			     .container{
+			         flex-wrap: wrap;
+			    }
+			     .list{
+			         width: calc(100% - 32px);
+			         margin: 15px 15px 15px 15px;
+			         border-left: 0;
+			         border-top: 1px solid black;
+			         padding: 10px 0px 10px 0px;
+			    }
+			     .nav{
+			         width: 100%;
+			         padding: 10px 15px 10px 10px;
+			         text-align: left;
+			         display: flex;
+			         flex-direction: row;
+			         flex-wrap: wrap;
+			         justify-content: flex-end;
+			         align-items: center;
+			        /* border-bottom: 1px solid #efefef;
+			        */
+			    }
+			     .item .item-link-span{
+			         width: 69%;
+			         max-width: 69%;
+			         white-space: nowrap;
+			         text-overflow: ellipsis;
+			         overflow: hidden;
+			    }
+			     .item .item-time {
+			         width: 28%;
+			         max-width: 28%;
+			         white-space: nowrap;
+			         text-overflow: ellipsis;
+			         overflow: hidden;
+			         text-align: right;
+			    }
+			     .summary-tip {
+			 		 max-width: 300px;
+				}
+			}
+
+
+		</style>
+	</head>
+	<body>
+
+
+
+		<div class="container" id="app" v-cloak>
+			<div class="nav">
+				<div><img src="https://chuanliu.org/assets/images/logo.png" class="logo"><a href="https://chuanliu.org" class="rainbow-text" > Normal Home</a></div>
+			</div>
+			<div class="list">
+				<div v-for="item in datas" class="item">
+					<div class="item-title">
+						<div class="item-link-span"> 
+							<a :href="item.link" target="_blank" :class="(item.watch >= 20 && item.like >= 1 ? 'rainbow-text ':'') + ' item-link-a'" @click="watch(item.id)">{[ item.title ]}
+							</a>
+							 <span class="summary-tip" v-html="item.summary"></span>
+						</div>
+						<span class="item-time"><a :href="handle(item)">@{[ item.user_name ]}</a></span>
+					</div>
+					<div class="item-user">{[ item.pub_date_show.substr(0,10)  ]}</div>
+				</div>
+				<div class="item"  @click="next"><button class="more-btn">加载更多</button></div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/pkg/jquery-3.6.4.min.js"></script>
+		<script type="text/javascript" src="assets/js/pkg/vue.global.js"></script>
+		<script type="text/javascript" src="config.js"></script>
+		<script type="text/javascript" src="assets/js/index.js"></script>
+		
+		
+	</body>
+
+</html>

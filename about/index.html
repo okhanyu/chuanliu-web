@@ -104,13 +104,19 @@
                   </a>
                 </div>
                 <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+
+                   <div style="background: rgb(248 248 248);;border-radius: 5px;padding: 8px;margin-right: 5px;">  
+                       <a href="https://chuanliu.org//nice/" style="color: red;background: linear-gradient(to right,#ff0000,#0000ff);background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color: transparent;animation:blink 1.9s infinite;font-weight: bold;border-bottom: 1px dashed;">
+                        川流严选 
+                      </a>👈🏻
+                     </div>
                   <ul class="nav navbar-nav" id="responsive-menu">
 
                    
                       <li>
                     
-                      <a href="/" >
-                        川流广场
+                      <a href="https://chuanliu.org/" >
+                        广场
                       </a>
                     </li>
                     
@@ -121,31 +127,24 @@
                       </a>
                     </li>
                     
+                    
+                     <li>
+                      <a href="https://chuanliu.org/rank/" >
+                        数据
+                      </a>
+                    </li>
+                 
+                    <li>
+                      <a href="https://chuanliu.org/txt/index.html">
+                        txt
+                      </a>
+                    </li>
+                    
+                    
                     <li class="active">
                     
                       <a href="https://chuanliu.org/about/">
                         关于
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/memos/" target="_blank">
-                        友圈
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/rank/" target="_blank">
-                        数据
-                      </a>
-                    </li>
-                   
-                    <li>
-                      <a href="https://chuanliu.org/white/index.html">
-                        禅定模式
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://chuanliu.org/txt/index.html">
-                        txt模式
                       </a>
                     </li>
                   
@@ -168,10 +167,15 @@
                         </a>
                       </div>
                     </li>
+                    
                   </ul>
                     
+                 
+                <div style="display: flex;margin: 0px 12px 0px 6px;"> <input type="color" v-model="selectedColor" @change="changeColor" style="width: 12px;height: 12px;" /> </div>
+
+                    
                   
-                   <div style="display: flex;margin: 0px 6px 0px 6px;"> <input type="color" v-model="selectedColor" @change="changeColor" /> </div>
+                  
                 </div>
                 <div id="slicknav-mobile">
                 </div>
