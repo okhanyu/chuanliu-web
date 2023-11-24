@@ -1,6 +1,6 @@
 
 // 服务器地址
-var server = "https://nicememos.chuanliu.org/";
+var server = "https://nice.chuanliu.org/";
 var timelineServer = "https://s.chuanliu.org/api/rss-hub/";
 
 // 每次加载多少条
