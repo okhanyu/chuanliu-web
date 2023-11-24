@@ -18,8 +18,28 @@ const app = createApp({
 
     },
     methods: {
-        handletitle(item) {
+
+         handletag(item) {
             // item.content.split("\n")[0].substr(1,item.content.length-1)
+            var sPre = item.content.split("\n");
+
+            if (sPre != undefined) {
+                s = [];
+
+                for (var i = 0; i < sPre.length; i++) {
+                    if (sPre[i].trim() != "") {
+                        s.push(sPre[i]);
+                    }
+                }
+                if (s != undefined && s.length > 0) {
+                    //return s[0].trim().substr(1, item.content.length - 1)
+                    return s[0].trim().replaceAll("#", "");
+                }
+            }
+            return ""
+        },
+
+        handletitle(item) {
             var sPre = item.content.split("\n");
 
             if (sPre != undefined) {
