@@ -49,7 +49,7 @@
 							<a :href="handlelink(item)" target="_blank" :class="(handlestar(item) ? 'rainbow-text ':'') + ' item-link-a'">
 								{[handletitle(item)]}
 								<span v-if="handlestar(item)"  class="rainbow-text" style="font-size: 0.2em">☆</span>
-								<span style="font-size: 0.2em;" v-if="(new Date().getTime() / 1000 - item.createdTs) < 24*60*60*15 && !handlestar(item)" class="rainbow-text">
+								<span style="font-size: 0.2em;" v-if="(new Date().getTime() / 1000 - item.createdTs) < 24*60*60*7 && !handlestar(item)" class="rainbow-text">
 									NEW
 								</span>
 								</a>
