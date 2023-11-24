@@ -31,7 +31,8 @@ const app = createApp({
                     }
                 }
                 if (s != undefined && s.length > 0) {
-                    return s[0].trim().substr(1, item.content.length - 1)
+                    //return s[0].trim().substr(1, item.content.length - 1)
+                    return s[1].trim();
                 }
             }
             return "未知"
@@ -49,7 +50,7 @@ const app = createApp({
                     }
                 }
                 if (s != undefined && s.length > 1) {
-                    return s[1].trim()
+                    return s[2].trim()
                 }
             }
             return "#"
@@ -66,7 +67,7 @@ const app = createApp({
                     }
                 }
                 if (s != undefined && s.length > 2) {
-                    return s[2].trim()
+                    return s[3].trim()
                 }
             }
             return "未知"
@@ -83,7 +84,7 @@ const app = createApp({
                     }
                 }
                 if (s != undefined && s.length > 3) {
-                    return s[3].trim()
+                    return s[4].trim()
                 }
             }
             return "#"
@@ -99,7 +100,7 @@ const app = createApp({
                         s.push(sPre[i]);
                     }
                 }
-                if (s != undefined && s.length > 4 && s[4].trim() == "star") {
+                if (s != undefined && s.length > 5 && s[5].trim() == "star") {
                     return true;
                 }
             }
@@ -117,10 +118,10 @@ const app = createApp({
                     }
                 }
 
-                if (s != undefined && s.length > 4) {
+                if (s != undefined && s.length > 5) {
                     //return s[5].trim() + "\n...\n" + s[s.length - 1].trim()
                     var ss = "";
-                    for (var i = (s[4].trim() != "star" ? 4 : 5); i < s.length; i++) {
+                    for (var i = (s[5].trim() != "star" ? 5 : 6); i < s.length; i++) {
                         if (s[i].trim() != "") {
                             ss += s[i].trim() + "\n";
                         }
