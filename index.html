@@ -46,10 +46,10 @@
 				<div v-for="item in datas" class="item">
 					<div class="item-title">
 						<div class="item-link-span">
-							<a :href="handlelink(item)" target="_blank" :class="(handlestar(item) ? 'rainbow-text ':'') + ' item-link-a'">
+							<a :href="handlelink(item)" target="_blank" :class="(handlestar(item) ? 'rainbow-text ':'') + ' item-link-a'" style="font-size:16px">
 								{[handletitle(item)]}
-								<span v-if="handlestar(item)"  class="rainbow-text" style="font-size: 0.2em">☆</span>
-								<span style="font-size: 0.2em;" v-if="(new Date().getTime() / 1000 - item.createdTs) < 24*60*60*7 && !handlestar(item)" class="rainbow-text">
+								<span v-if="handlestar(item)"  class="rainbow-text" style="font-size: 0.5em">☆</span>
+								<span style="font-size: 0.5em;" v-if="(new Date().getTime() / 1000 - item.createdTs) < 24*60*60*7 && !handlestar(item)" class="rainbow-text">
 									NEW
 								</span>
 								</a>

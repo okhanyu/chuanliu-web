@@ -51,9 +51,9 @@
 				<div v-for="item in datas" class="item">
 					<div class="item-title">
 						<div class="item-link-span">
-							<a :href="item.link" target="_blank" class="item-link-a" @click="watch(item.id)">
+							<a :href="item.link" target="_blank" class="item-link-a" @click="watch(item.id)" style="font-size:16px">
 								{[ item.title ]}
-								<span style="font-size: 0.2em;" v-if="(new Date().getTime() /1000 - new Date(item.pub_date).getTime()/1000) < 24*60*60*7 " class="rainbow-text">
+								<span style="font-size: 0.5em;" v-if="(new Date().getTime() /1000 - new Date(item.pub_date).getTime()/1000) < 24*60*60*7 " class="rainbow-text">
 									NEW
 								</span>
 								</a>
