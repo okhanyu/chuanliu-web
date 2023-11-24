@@ -1,467 +1,85 @@
-  
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  
-  <head>
-	<meta name="generator" content="Hugo 0.82.0" />
-    <meta charset="utf-8" />
-    <meta name="referrer" content="strict-origin" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
-    <meta name="author" content="" />
-    
-	
-	
-	<title>川流</title>
-	
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="referrer" content="strict-origin" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
+		<title>
+			川流严选
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+		<link rel="icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+		<link rel="apple-touch-icon" href="https://chuanliu.org/assets/images/favicon.png">
+		<link rel="stylesheet" type="text/css" href="./assets/css/css.css">
+	</head>
+	<body>
+		<div class="container" id="app" v-cloak>
+			<div class="menu">
+				<button class="menu-button" onclick="shows()">
+					<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+				</button>
+				<div class="menu-list" >
+					<div class="menu-item">
+						<img src="https://chuanliu.org/assets/images/logo.png" class="logo">
+					</div>
+					<div class="menu-item" v-for="navItem in nav">
+						<a :href="navItem.link">
+							<span  :class="navItem.title.trim() == '川流严选' ? 'rainbow-text' : ''">
+								{[ navItem.title ]}
+							</span>
+							<span class="rainbow-text" style="font-size:12px" v-if="navItem.title.trim() == '川流严选'">
+								（内测）
+							</span>
+							<span style="font-size:12px" v-if="navItem.title.trim() == '川流作者'">
+								（随机）
+							</span>
+							<span style="font-size:12px" v-if="navItem.title.trim() == '川流广场'">
+								（时序）
+							</span>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+			<div class="list">
+				<div v-for="item in datas" class="item">
+					<div class="item-title">
+						<div class="item-link-span">
+							<a :href="handlelink(item)" target="_blank" :class="(handlestar(item) ? 'rainbow-text ':'') + ' item-link-a'">
+								{[handletitle(item)]}
+								<span v-if="handlestar(item)"  class="rainbow-text" style="font-size: 0.2em">☆</span>
+								<span style="font-size: 0.2em;" v-if="(new Date().getTime() / 1000 - item.createdTs) < 24*60*60*30 && !handlestar(item)" class="rainbow-text">
+									NEW
+								</span>
+								</a>
+								<span class="summary-tip" v-html="handlesummary(item)">
+								</span>
+						</div>
+						<span class="item-time">
+							<a :href="handleweb(item)" target="_blank">
+								@{[handleuser(item)]}
+								</a>
+						</span>
+					</div>
+					<div class="item-user">
+						{[format(item.createdTs).substr(0,10)]}
+					</div>
+				</div>
+				<div class="item" @click="next" >
+					<button class="more-btn">
+						{[moreBtnShow]}
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"
+		type="application/javascript">
+		</script>
+		<script type="text/javascript" src="config.js">
+		</script>
+		<script type="text/javascript" src="assets/js/index.js">
+		</script>
+	</body>
 
-	 
-    
-
-    
-
-    <script type="text/javascript">
-      if (location.href.indexOf("pyq.cool") != -1) {
-        window.location.href = "https://chuanliu.org/memos/";
-      }
-    </script>
-    <style type="text/css">
-      [v-cloak] { display:none !important; }
-    </style>
-
-    
-    <link rel="shortcut icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="https://chuanliu.org/assets/images/favicon.png">
-  
-    
-    <link href="https://chuanliu.org/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    
-    <link href="https://chuanliu.org/assets/css/plugin.css" rel="stylesheet" type="text/css">
-     
-    <link href="https://chuanliu.org/assets/fonts/flaticon.css" rel="stylesheet" type="text/css">
-    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css"
-    type="text/css" rel="stylesheet" />
-    <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.2.0/css/all.min.css"
-    type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://chuanliu.org/assets/fonts/line-icons.css" type="text/css">
-    
-    <link href="https://chuanliu.org/assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="https://chuanliu.org/assets/css/style2.css" rel="stylesheet" type="text/css">
-        <link href="https://chuanliu.org/assets/css/style3.css" rel="stylesheet" type="text/css">
-
-  </head>
-<body>
-    <div id="app" style="max-width: 1260px;margin: auto;" v-cloak>
-                 
-          <div id="preloader">
-            <div id="status" :style="(mode == 'dark' ?  'background: url(assets/images/loader-black.gif);' :'') +  'background-size: cover;background-position: center;opacity: 1;transform: translate(-50%, -50%);visibility: visible;transition: all ease-in-out 0.5s;z-index: 9999999999; '">
-            </div>
-          </div>
-          
-              
-      <header class="main_header_area">
-       
-        
-        <div class="header_menu" id="header_menu">
-            <nav class="navbar navbar-default">
-            <div class="container">
-              <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-2 pt-2">
-                <div class="navbar-header">
-                  <a class="navbar-brand" href="/">
-                    <img src="https://chuanliu.org/assets/images/logo.png" alt="image" >
-                    <img src="https://chuanliu.org/assets/images/logo-white.png" alt="image" >
-                  </a>
-                </div>
-                <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
-
-                   <div style="background: rgb(248 248 248);;border-radius: 5px;padding: 8px;margin-right: 5px;">  
-                       <a href="https://chuanliu.org//nice/" style="color: red;background: linear-gradient(to right,#ff0000,#0000ff);background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color: transparent;animation:blink 1.9s infinite;font-weight: bold;border-bottom: 1px dashed;">
-                        川流严选 
-                      </a>👈🏻
-                     </div>
-                  <ul class="nav navbar-nav" id="responsive-menu">
-
-                   
-                    <li class="active">
-                    
-                      <a href="https://chuanliu.org/" >
-                        广场
-                      </a>
-                    </li>
-                    
-                      <li>
-                    
-                      <a href="https://chuanliu.org/member/" class="bold">
-                        伙伴
-                      </a>
-                    </li>
-                    
-                    
-                     <li>
-                      <a href="https://chuanliu.org/rank/" >
-                        数据
-                      </a>
-                    </li>
-                 
-                    <li>
-                      <a href="https://chuanliu.org/txt/index.html">
-                        txt
-                      </a>
-                    </li>
-                    
-                    
-                      <li>
-                    
-                      <a href="https://chuanliu.org/about/">
-                        关于
-                      </a>
-                    </li>
-                  
-          
-                    
-                    <li class="dark-mode-li">
-                      <div  class="dark-mode" @click="modeSave('dark')"
-                      onclick="setModeProto('dark')">
-                        <a>
-                          <i class="fa fa-moon">
-                          </i>
-                        </a>
-                      </div>
-                    </li>
-                    <li class="light-mode-li">
-                      <div class="light-mode" @click="modeSave('light')"  onclick="setModeProto('light')">
-                        <a>
-                          <i class="fa fa-sun" >
-                          </i>
-                        </a>
-                      </div>
-                    </li>
-                    
-                     
-                     
-                  </ul>
-                    
-                 
-                <div style="display: flex;margin: 0px 12px 0px 6px;"> <input type="color" v-model="selectedColor" @change="changeColor" style="width: 12px;height: 12px;" /> </div>
-
-                    
-                  
-                  
-                </div>
-                <div id="slicknav-mobile">
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-        
-      </header>
-      
-        
-<div class="container-2">
-
-       <div class="section-title mb-4 pb-1 w-50" v-show="ranks.length > 1">
-            <h2 class="m-0" lang="en"  style="font-size: 20px;">
-                Trending
-              
-            </h2>
-            
-          </div>
-      <main class="list-banner">
-        <section class="article-list" v-for="item,index in ranks" v-show="index == 0">
-          
-          <h1 class="title">
-            <a :href="item.link" @click="watch(item.id)" target="_blank">{[ item.title ]}</a>
-          </h1>
-           <div class="categories">
-            <a class="theme" ><template v-for="tag in item.tags" v-if=" item.tags != undefined  || item.tags != null ">#{[ tag ]}&nbsp;&nbsp;</template><template v-else>#综合</template></a>
-          </div>
-       
-     
-          <div class="summary-banner">
-            <div class="thumbnail" v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'"  v-show="imgShow" >
-            </div>
-            <div class="summary-text" v-html="replaceBlockquoteWithDiv(item.summary).replace('...','').replace('[','').replace(']','')+ '...'"></div>
-          </div>
-
-                <div class="inline-time">
-            <div class="date-time">
-              <span class="time">
-                <i class="fa fa-eye"></i>&nbsp;{[ item.watch ]}
-                <a class="time"  @click="like(item)" >&nbsp;
-                  <i class="fa fa-heart"></i>&nbsp;{[ item.like ]}</a>  
-              </span>
-
-             <span class="date time">&nbsp; &nbsp; / &nbsp; {[ item.pub_date_show ]}</span>
-           </div>
-               <div class="date-author">
-                <a :href="handle(item)" target="_blank">
-                  <img :src="item.avatar" onerror="this.src='assets/images/default_avatar.webp' " class="avatar-round rounded-circle me-1">&nbsp;
-                  <span class="author time">{[ item.user_name ]}</span>
-                </a>
-              </div>
-          </div>
-        </section>
-      </main>
-
-       <div class="section-title mb-4 pb-1 w-50" v-show="ranks.length > 2">
-            <h2 class="m-0" lang="en"  style="font-size: 20px;">
-              Trending More
-               
-            </h2>
-          
-          </div>
-      <main class="list-banner-more">
-        <section class="article-list" v-for="item,index in ranks" v-show="index != 0">
-          
-          <h1 class="title">
-              <a :href="item.link" @click="watch(item.id)" target="_blank" >{[ item.title ]}</a>
-          </h1>
-           <div class="categories">
-            <a class="theme" ><template v-for="tag in item.tags" v-if=" item.tags != undefined  || item.tags != null ">#{[ tag ]}&nbsp;&nbsp;</template><template v-else>#综合</template></a>
-          </div>
-       
-     
-          <div class="summary-more">
-            <div class="thumbnail"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'" v-show="imgShow" >
-            </div>
-            <div class="summary-text" v-html="replaceBlockquoteWithDiv(item.summary).replace('...','').replace('[','').replace(']','')+ '...'"></div>
-          </div>
-
-                <div class="inline-time">
-            <div class="date-time">
-              <span class="time">
-                <i class="fa fa-eye"></i>&nbsp;{[ item.watch ]}
-               <a class="time"  @click="like(item)" >&nbsp;
-                  <i class="fa fa-heart"></i>&nbsp;{[ item.like ]}</a>  
-              </span>
-
-             <span class="date time">&nbsp; &nbsp; / &nbsp; {[ item.pub_date_show ]}</span>
-           </div>
-               <div class="date-author">
-               <a :href="handle(item)" target="_blank">
-                  <img :src="item.avatar" onerror="this.src='assets/images/default_avatar.webp' " class="avatar-round rounded-circle me-1">&nbsp;
-                  <span class="author time">{[ item.user_name ]}</span>
-                </a>
-              </div>
-          </div>
-        </section>
-      </main>
-      
-      
-      <div class="section-title mb-4 pb-1 w-50">
-            <h2 class="m-0" lang="en" style="font-size: 20px;">
-              Recent
-              
-            </h2>
-            <h4 style="border-radius: 4px;cursor: pointer;height: 46px;line-height:30px;color: white !important;"
-            @click="sortChange" class="bg-theme px-4 py-1 d-inline-block small-font tags-nowrap">
-              {[sortBtn]}
-            </h4>
-          </div>
-      <main class="list">
-        <section class="article-list" v-for="item in datas">
-          
-          <h1 class="title">
-            <a :href="item.link" @click="watch(item.id)" target="_blank" :class="(item.watch >= 20 && item.like >= 1  && sort == true ? 'rainbow-text' : '')">{[ item.title ]}</a>
-          </h1>
-           <div class="categories">
-            <a class="theme" ><template v-for="tag in item.tags" v-if=" item.tags != undefined  || item.tags != null ">#{[ tag ]}&nbsp;&nbsp;</template><template v-else>#综合</template></a>
-          </div>
-       
-     
-          <div class="summary">
-            <div class="thumbnail"  v-if="item.cover != '' && item.cover != undefined && item.cover != null && item.cover.indexOf('gravatar.com') == -1  && item.cover.indexOf('cravatar.cn') == -1 ">
-              <img :src="item.cover" class="image"  onerror="this.parentNode.style.display='none'" v-show="imgShow" >
-            </div>
-            <div class="summary-text" v-html="replaceBlockquoteWithDiv(item.summary).replace('...','').replace('[','').replace(']','')+ '...'"></div>
-          </div>
-
-                <div class="inline-time">
-            <div class="date-time">
-              <span class="time">
-                <i class="fa fa-eye" ></i>&nbsp;{[ item.watch ]}
-                <a class="time"  @click="like(item)" >&nbsp;
-                  <i class="fa fa-heart" ></i>&nbsp;{[ item.like ]}</a>  
-              </span>
-
-             <span class="date time">&nbsp; &nbsp; / &nbsp; {[ item.pub_date_show ]}</span>
-           </div>
-               <div class="date-author">
-                <a :href="handle(item)" target="_blank">
-                  <img :src="item.avatar" onerror="this.src='assets/images/default_avatar.webp' " class="avatar-round rounded-circle me-1">&nbsp;
-                  <span class="author time">{[ item.user_name ]}</span>
-                </a>
-              </div>
-          </div>
-        </section>
-      </main>
-          <div class="trend-btn text-center" style="height: 60px;">
-            <a @click="next" class="nir-btn" style="border-radius: 5px;cursor: pointer;">
-              {[ moreBtn ]}
-            </a>
-          </div>
-    </div>
-
-
-
- 
-         
-      <footer class="pt-10 footermain">
-        <div class="footer-upper pb-4">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 col-md-4 col-sm-12 mb-4">
-                <div class="footer-about">
-                  <img src="https://chuanliu.org/assets/images/logo.png" alt="image">
-                  <img src="https://chuanliu.org/assets/images/logo-white.png" alt="image" >
-                  <p class="mt-3 mb-3 white">
-                    <strong>
-                      我们已停下脚步，等待下一次更迭。
-                    </strong>
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4 col-sm-12 mb-4 align-items-right">
-                <div class="footer-links">
-                  <h3 class="white">
-                    快捷
-                  </h3>
-                  <ul>
-                    <li>
-                      <a href="https://chuanliu.org/about/">
-                        About
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/memos/">
-                        Friends
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/rank/">
-                        Rank
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
-                <div class="footer-links">
-                  <h3 class="white">
-                    推荐
-                  </h3>
-                  <div class="trend-main">
-                    <div class="trend-item d-flex align-items-center mb-2">
-                      <div class="trend-image w-25 me-4">
-                        <img src="https://storeweb.cn/static/favicon.ico" alt="个站商店" style="max-width: 40px;">
-                      </div>
-                      <div class="trend-content-main me-3 w-75">
-                        <div class="trend-content">
-                          <h4 class="mb-1">
-                            <a href="https://storeweb.cn/" target="_blank">
-                              个站商店
-                            </a>
-                          </h4>
-                          <div class="entry-meta">
-                            <div class="entry-metalist d-flex align-items-center">
-                              <small>
-                                <a href="https://storeweb.cn/" target="_blank" class="white">
-                                  <i class="fa fa-calendar">
-                                  </i>
-                                  精致的博客导航
-                                </a>
-                              </small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="trend-item d-flex align-items-center mb-2">
-                      <div class="trend-image w-25 me-4">
-                        <img src="https://bf.zzxworld.com/images/favicon.png" alt="BlogFinder"
-                        style="max-width: 40px;">
-                      </div>
-                      <div class="trend-content-main me-3 w-75">
-                        <div class="trend-content">
-                          <h4 class="mb-1">
-                            <a href="https://bf.zzxworld.com" target="_blank">
-                              BlogFinder
-                            </a>
-                          </h4>
-                          <div class="entry-meta">
-                            <div class="entry-metalist d-flex align-items-center">
-                              <small>
-                                <a href="https://bf.zzxworld.com" target="_blank" class="white">
-                                  <i class="fa fa-calendar">
-                                  </i>
-                                  可爱的博客导航
-                                </a>
-                              </small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copyright pt-2 pb-2">
-          <div class="container">
-            <div class="copyright-inner d-md-flex align-items-center justify-content-between">
-              <div class="copyright-text">
-                <p class="m-0 white">
-                  ©2023 Chuanliu.org
-                  </a>
-                  .
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-      
-      
-      <div id="back-to-top">
-        <a href="#" style="border-radius: 5px;cursor: pointer;">
-        </a>
-      </div>
-      
-    </div>
-     
-   
-    <script src="https://chuanliu.org/assets/js/pkg/jquery-3.5.1.min.js">
-    </script>
-    <script src="https://chuanliu.org/assets/js/pkg/bootstrap.min.js">
-    </script>
-    <script src="https://chuanliu.org/assets/js/pkg/plugin.js">
-    </script>
-    <script src="https://chuanliu.org/assets/js/pkg/main.js">
-    </script>
-    <script src="https://chuanliu.org/assets/js/pkg/custom-swiper.js">
-    </script>
-    <script src="https://chuanliu.org/assets/js/pkg/custom-nav.js">
-    </script>
-    <script type="text/javascript" src="https://chuanliu.org/assets/js/pkg/fancybox.js" id="fancybox-js">
-    </script>
-    <script type="text/javascript" src="https://chuanliu.org/assets/js/pkg/vue.global.js">
-    </script>
-    <script type="text/javascript" src="https://js.cybozu.com/markedjs/v0.3.5/marked.min.js">
-    </script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js">
-    </script>
-    <script type="text/javascript" src="https://chuanliu.org/config.js">
-    </script>
-    <script type="text/javascript" src="https://chuanliu.org/assets/js/global.js">
-    </script>
- 
-    <script type="text/javascript" src="https://chuanliu.org/assets/js/index.js">
-    </script>
-</body>
 </html>

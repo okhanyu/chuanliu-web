@@ -1,26 +1,64 @@
 
+// 服务器地址
+var server = "https://nicememos.chuanliu.org/";
+var timelineServer = "https://s.chuanliu.org/api/rss-hub/";
 
-var server = "https://s.chuanliu.org/api/rss-hub/";
-// var server = "http://127.0.0.1:8899/api/rss-hub/";
+// 每次加载多少条
+const limit = 30;
+var offset = 0;
+
+// 导航条配置
+const navConfig = [
+	{title:"川流严选",link:"/"},
+    {title:"川流作者",link:"/user/"},
+	{title:"川流广场",link:"/timeline/"},
+    {title:"关于川流",link:"/about/"},
+    {title:"加入川流",link:"/contact/"}
+    
+];
 
 
-// 每次加载每个人多少条
-const limit = 15;
+// 菜单
+var menuShow = false;
+function shows() {
+    var elements = document.querySelectorAll('.menu-list');
+    elements.forEach(function(element) {
+        if (menuShow) {
+            element.style.display = 'none'
+        } else {
+            element.style.display = 'block'
+        }
+        menuShow = !menuShow
+    });
+}
+var elements = document.querySelectorAll('.menu-list');
+elements.forEach(function(element) {
+    element.addEventListener('blur', () =>{
+        element.style.display = 'none'
+    })
+});
 
-const backImg = "assets/images/back.jpg";
-// const imgRandDomain = "https://bu.dusays.com/";
-// const imgRand = [
-// 	"2023/07/21/64ba2bfa48487.jpg",
-// 	"2023/07/21/64ba2bf982bcb.jpg",
-// 	"2023/07/21/64ba2bf8110d8.jpg",
-// 	"2023/07/21/64ba2bf036dbc.jpg",
-// 	"2023/07/21/64ba2bf03c811.jpg",
-// 	"2023/07/21/64ba2bf034654.jpg",
-// 	"2023/07/21/64ba2bf047858.jpg",
-// 	"2023/07/21/64ba2bf03bb11.jpg",
-// 	"2023/07/21/64ba2bf027e73.jpg",
-// 	"2023/07/21/64ba2bf0229b2.jpg",
-// 	"2023/07/21/64ba2bf03f2b3.jpg",
-// 	"2023/07/21/64ba2bf01664c.jpg"
-// ];
+// 时间格式化
+function format(timestamp) {
+    // 创建 Date 对象
+    var date = new Date(timestamp * 1000);
+
+    // 获取各种时间组件
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1; // 月份从 0 开始，所以需要加 1
+    var day = date.getDate();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+
+    // 格式化时间
+    var formattedTime = year + '-' + addLeadingZero(month) + '-' + addLeadingZero(day) + ' ' + addLeadingZero(hours) + ':' + addLeadingZero(minutes) + ':' + addLeadingZero(seconds);
+
+    return formattedTime;
+}
+
+// 在个位数前添加前导零
+function addLeadingZero(number) {
+    return number < 10 ? '0' + number: number;
+}
 

@@ -1,23 +1,3 @@
-/*** 初始化 vue begin***/
-
-
- document.body.className = (localStorage.getItem("mode") == "dark") ?  "night-mode" : "";
-
-function setModeProto(mode){
-      localStorage.setItem("mode",mode);
-      vm.$data.mode = mode;
-
-      if(window.innerWidth <= 768){
-        if (mode == "dark"){
-             $(".dark-mode").hide();
-              $(".light-mode").show();
-        }else{
-            $(".light-mode").hide();
-             $(".dark-mode").show();
-        }
-      }
-}
-
 const {
     createApp
 } = Vue;
@@ -27,193 +7,159 @@ const app = createApp({
     data() {
         return {
             datas: [],
-            ranks: [],
-            server:server,
-            moreBtn:"加载更多",
-            sortBtn:"点击观看量降序 ↓",
-            cleanBtn:"无图模式",
-            sort:true,
-            imgShow:true,
-            mode:localStorage.getItem("mode"),
-            selectedColor: localStorage.getItem("color") == undefined || localStorage.getItem("color") == null || localStorage.getItem("color") == '' ? '#4659a0' : localStorage.getItem("color")
+            moreBtnShow: "More",
+            nav: navConfig
         }
     },
     computed: {
         isMobile() {
-            return window.innerWidth <= 768; // 根据实际需求调整阈值
+            return window.innerWidth <= 768;
         },
-        generateRandomImg() {
-            if (imgRand != undefined && imgRand != null) {
-                return imgRandDomain+imgRand[Math.floor(Math.random() * 100)%imgRand.length];
-            }
-            return backImg;
-        }
-        // replacedHtmlContent(html) {
-        //   return this.htmlContent.replace(/<blockquote/g, '<div').replace(/<\/blockquote>/g, '</div>');
-        // }
+
     },
     methods: {
-        // isMobile() {  alert(1);
-        //   return window.innerWidth <= 768; // 根据实际需求调整阈值 
-        // },
-        replaceBlockquoteWithDiv(html) {
-             if (html != undefined && html != null && html != ""){
-                 html = html.replace(/<blockquote/g, '<div').replace(/<\/blockquote>/g, '</div>');
-                 // 设置统一的字号大小
-                  //let fontSize = '16px'; // 可根据需要调整字号大小
-                 html = html.replace(/<[^>]+>/g, (match) => {
-                    //return match.replace(/style="[^"]*"/g, '') + ` style="font-size: ${fontSize};"`;
-                    return match.replace(/style="[^"]*"/g, '');
-                  });
-                 html = html.replace(/<img/g, '<img style="display: none;"');
-                  
-                  // 使用正则表达式将除了img标签以外的所有标签替换为div标签
-                html = html.replace(/<(?!img)[^>]+>/g, "<div></div>");
-             
-             }
-          return html;
-        },
-        changeColor() {
-          // 在这里可以对颜色进行处理或执行其他操作
-          console.log('Selected Color:', this.selectedColor);
-           document.documentElement.style.setProperty('--primary-color', this.selectedColor);
-           localStorage.setItem("color",this.selectedColor) 
-        },
-        imgShowSwitch(){
-             this.imgShow = !this.imgShow;
-             this.cleanBtn = (this.cleanBtn == "无图模式") ? "有图模式":"无图模式";
-             localStorage.setItem("cleanMode",!this.imgShow);
+        handletitle(item) {
+            // item.content.split("\n")[0].substr(1,item.content.length-1)
+            var sPre = item.content.split("\n");
 
-        },
-        modeSave(mode){
-             localStorage.setItem("mode",mode);
-        },
-         generateRandomImgFunc() {
-            if (imgRand != undefined && imgRand != null) {
-                return imgRandDomain+imgRand[Math.floor(Math.random() * 100)%imgRand.length];
+            if (sPre != undefined) {
+                s = [];
+
+                for (var i = 0; i < sPre.length; i++) {
+                    if (sPre[i].trim() != "") {
+                        s.push(sPre[i]);
+                    }
+                }
+                if (s != undefined && s.length > 0) {
+                    return s[0].trim().substr(1, item.content.length - 1)
+                }
             }
-            return backImg;
+            return "未知"
         },
-        watch(id) {
-            $.ajax({
-              url: server +"rss/watch",
-              type: "POST",
-              data: JSON.stringify({
-                //"id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
-                "id": id
-              }),
-              success: function(response) {
-                console.log(response)
-              },
-              error: function(xhr, status, error) {
-                console.log(e);
-              }
-            });
-        },
-        like(item) {
-            if (localStorage.getItem("like"+item.id)){
-                alert("您已点过赞");
-                return
+
+        handlelink(item) {
+            var sPre = item.content.split("\n");
+
+            if (sPre != undefined) {
+                s = [];
+
+                for (var i = 0; i < sPre.length; i++) {
+                    if (sPre[i].trim() != "") {
+                        s.push(sPre[i]);
+                    }
+                }
+                if (s != undefined && s.length > 1) {
+                    return s[1].trim()
+                }
             }
-            $.ajax({
-              url: server +"rss/like",
-              type: "POST",
-              data: JSON.stringify({
-                //"id": parseInt(event.currentTarget.attributes["dataid"]["nodeValue"])
-                "id": item.id
-              }),
-              success: function(response) {
-                alert("点赞成功");
-                item.like +=1;
-                localStorage.setItem("like"+item.id,true)
-                console.log(response)
-              },
-              error: function(xhr, status, error) {
-                console.log(e);
-              }
-            });
+            return "#"
         },
-         handle(param){
-            if (param != undefined && param != "" && param.link != undefined && param.link != ""){
-                s = param.link.split('://')
-                return s[0]+"://"+s[1].split("/")[0]
+        handleuser(item) {
+            var sPre = item.content.split("\n");
+
+            if (sPre != undefined) {
+                s = [];
+
+                for (var i = 0; i < sPre.length; i++) {
+                    if (sPre[i].trim() != "") {
+                        s.push(sPre[i]);
+                    }
+                }
+                if (s != undefined && s.length > 2) {
+                    return s[2].trim()
+                }
+            }
+            return "未知"
+        },
+        handleweb(item) {
+            var sPre = item.content.split("\n");
+
+            if (sPre != undefined) {
+                s = [];
+
+                for (var i = 0; i < sPre.length; i++) {
+                    if (sPre[i].trim() != "") {
+                        s.push(sPre[i]);
+                    }
+                }
+                if (s != undefined && s.length > 3) {
+                    return s[3].trim()
+                }
+            }
+            return "#"
+        },
+        handlestar(item) {
+            var sPre = item.content.split("\n");
+
+            if (sPre != undefined) {
+                s = [];
+
+                for (var i = 0; i < sPre.length; i++) {
+                    if (sPre[i].trim() != "") {
+                        s.push(sPre[i]);
+                    }
+                }
+                if (s != undefined && s.length > 4 && s[4].trim() == "star") {
+                    return true;
+                }
+            }
+            return false;
+        },
+        handlesummary(item) {
+            var sPre = item.content.split("\n");
+
+            if (sPre != undefined) {
+                s = [];
+
+                for (var i = 0; i < sPre.length; i++) {
+                    if (sPre[i].trim() != "") {
+                        s.push(sPre[i]);
+                    }
+                }
+
+                if (s != undefined && s.length > 4) {
+                    //return s[5].trim() + "\n...\n" + s[s.length - 1].trim()
+                    var ss = "";
+                    for (var i = (s[4].trim() != "star" ? 4 : 5); i < s.length; i++) {
+                        if (s[i].trim() != "") {
+                            ss += s[i].trim() + "\n";
+                        }
+                    }
+                    ss = ss.trim() == "" ? "暂时无详细推荐理由": ss;
+                    return ss;
+                }
+
+            }
+
+            return "暂时无详细推荐理由"
+        },
+        handle(param) {
+            if (param != undefined && param != "" && param.link != undefined && param.link != "") {
+                s = param.link.split('://');
+                return s[0] + "://" + s[1].split("/")[0]
             }
         },
         next(event) {
-            offset++;
+            offset += limit;
             const that = this;
-            if (this.sort){
-                getDatas(function(data) {
-                     that.datas.push(...data.data);
-                });
-            } else {
-                 getSorts(function(data) {
-                  that.datas.push(...data.data);
-                    //data.push(...that.datas);
-                    //that.datas = sort(data);
-                });
-            }
-          
-        },
-        sortChange(event) {
-            
-            offset = 0;
-            this.sort= !this.sort
-            this.sortBtn = (this.sortBtn == "点击时间倒序 ↓") ? "点击观看量降序 ↓" : "点击时间倒序 ↓"
-            // if (this.sortBtn == "点击按时间倒序 ↓"){
-            //     this.sortBtn = "点击按观看量降序 ↓"
-            // }else{
-            //     this.sortBtn = "点击按时间倒序 ↓"
-            // }
-            const that = this;
-             if (this.sort){
-                 getDatas(function(data) {
-                    // data.push(...that.datas);
-                    that.datas = data.data
-                });
-             }else{
-                getSorts(function(data) {
-                 that.datas = data.data
-                //data.push(...that.datas);
-                //that.datas = sort(data);
+            gets(that,
+            function(data) {
+                that.datas.push(...data);
             });
-             }
-            
-        }
+
+        },
+        format(times) {
+            return format(times);
+        },
     },
     mounted: function() {
 
         const that = this;
-        this.changeColor();
-        getDatas(function(data) {
-            // data.push(...that.datas);
-            that.datas = data.data
+        gets(that,
+        function(data) {
+            that.datas.push(...data);
+            that.moreBtnShow = "More";
         });
-        getRanks(function(data) {
-            that.ranks = data.data
-        });
-
-        if (localStorage.getItem("cleanMode") == true || localStorage.getItem("cleanMode") == "true") {
-              this.cleanBtn  = "有图模式";
-              this.imgShow  = false;
-        }else{
-              this.cleanBtn  = "无图模式";
-              this.imgShow  = true;
-        }
-
-        //getUsers(function(data) {
-            // var map = {};
-            // for (var i = 0; i < data.data.length; i++) {
-            //    map[data.data[i].id] = data.data[i];
-            // }
-            // that.userMap = map;
-            // for (var i = 0; i < that.datas.length; i++) {
-            //     that.set(that.datas[i], 'avatar', that.userMap[that.datas[i].user_id].avatar);
-            //     // that.datas[i].avatar =  that.userMap[that.datas[i].user_id].avatar;
-            //     // that.$forceUpdate()
-            // }
-        //});
-     
     }
 });
 
@@ -221,106 +167,34 @@ const vm = app.mount('#app');
 
 /*** 初始化 vue end***/
 
-
-
-function generateRandomImgFuncForError(node) {
-            if (imgRand != undefined && imgRand != null) {
-                node.src= imgRandDomain+imgRand[Math.floor(Math.random() * 100)%imgRand.length];
-                return 
-            }
-            node.src='assets/images/back.jpg'
+function gets(that, callback) {
+    if (that.moreBtnShow == "No More") {
+        return;
+    }
+    // that = this;
+    var url = server + "api/v1/memo?creatorId=1&offset=" + offset + "&limit=" + limit;
+    var promise = fetch(url).then(function(response) {
+        if (response.status === 200) {
+            return response.json();
+        } else {
+            return {}
         }
+    });
 
-function getSorts(callback) {
-    // $.ajaxSetup({ async: false });
+    promise = promise.then(function(data) {
+        if (data == undefined || data.length == 0) {
+            vm.$data.moreBtnShow = "No More";
+            return;
+        }
+        getDataSuccess(data, callback);
 
-        $.ajax({
-            type: "GET",
-            url: server + "rss/list?order=1&where=1&page_num="+ offset + "&page_size="+limit,
-            beforeSend: function() {
-            },
-            success: function(response) {
-                
-                getDataSuccess(response, callback);
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    //getDataSuccess(sort(allData), callback);
-
-};
-
-
-function getRanks(callback) {
-    // $.ajaxSetup({ async: false });
-
-        $.ajax({
-            type: "GET",
-            url: server + "rss/list?order=1&where=2&page_num="+ offset + "&page_size=3",
-            beforeSend: function() {
-            },
-            success: function(response) {
-                getDataSuccess(response, callback);
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    //getDataSuccess(sort(allData), callback);
-
-};
-
-
-function getDatas(callback) {
-    // $.ajaxSetup({ async: false });
-
-        $.ajax({
-            type: "GET",
-            url: server + "rss/list?where=1&page_num="+ offset + "&page_size="+limit,
-            beforeSend: function() {
-            },
-            success: function(response) {
-                if (response.code == 0 && response.data != null  && response.data != undefined ){
-                    getDataSuccess(response, callback);
-                } else {
-                    vm.$data.moreBtn = "无"
-                }
-                
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    // getDataSuccess(sort(allData), callback);
-
-};
-
-function getUsers(callback) {
-    // $.ajaxSetup({ async: false });
-
-        $.ajax({
-            type: "GET",
-            url: server + "user/list",
-            beforeSend: function() {
-            },
-            success: function(response) {
-                getDataSuccess(response, callback);
-                console.log(response);
-            },
-            error: function(e) {
-                console.log(e);
-            }
-        });
-    // $.ajaxSetup({ async: true });
-    // getDataSuccess(sort(allData), callback);
-
-};
+    }).
+    catch(function(err) {
+        console.log(err);
+    });
+}
 
 function getDataSuccess(data, callback) {
-    console.log(data)
+    // console.log(data);
     callback(data);
 };

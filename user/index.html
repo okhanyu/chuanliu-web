@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
 		<title>
-			关于川流
+			川流作者
 		</title>
 		<link rel="shortcut icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
 		<link rel="icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
@@ -42,26 +42,55 @@
 					
 				</div>
 			</div>
-			<div class="list" style="min-height:350px;justify-content: normal !important;"  >
-				<div style="max-width: 420px;">
-					<br>
-					<br>
-					<br>
-					<div style="text-align: left;width: 100%;">真的，很高兴，遇见你。
+			<div class="list">
+				<!-- <div class="item"  @click="sortChange" v-show="moreBtnShow">
+					<button class="more-btn">
+						Sort
+					</button>
+				</div> -->
+				<div v-for="item in datas" class="item">
+					<div class="item-title">
+						<div class="item-link-span">
+							<a :href="handleUserLink(item)" target="_blank" class="item-link-a" @click="watch(item.id)">
+								@{[ item.user_name ]}
+								</a>
+								<!-- <span class="summary-tip" >
+									<div v-if="item.recent != undefined" v-for="re in item.recent" @click="watch(re.id)" style="margin:auto;width:90%;height: 23px;">
+				                      <a style="font-size:12px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: 100%;"
+				                      :href="re.link" target="_blank">
+				                        《{[re.title]}》
+				                      </a>
+				                    </div>
+								</span> -->
+						</div>
+						<span class="item-time">
+							{[ item.create_time.substring(0, 10) ]} <span style="font-size: 0.5em">加入</span>
+						</span>
 					</div>
-					<br>
-					<div style="text-align: left;width: 100%;">
-					没有AI、没有大数据、没有排行、没有点赞，<br>
-					很抱歉，这里，什么都没有。
+					<div class="item-user">
+						 <span style="font-size: 0.9em;" >文章 [{[ item.total ]}]</span> 
+						 <br>
+						 <template v-if="item.recent != undefined && item.recent.length != 0" v-for="re in item.recent" ><span   @click="watch(re.id)">
+						 	 <a style="font-size:12px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: 100%;" :href="re.link" target="_blank">
+		                        <template v-if="re.title.substr(0,1) == '《' && re.title.substr(0,re.title.length - 1) == '》'">{[re.title]}
+		                        </template>
+		                        <template v-else>
+		                        《{[re.title]}》
+		                    	</template>
+		                        <span style="font-size: 0.5em;" v-if="(new Date().getTime() /1000 - new Date(re.pub_date).getTime()/1000) < 24*60*60*7 " class="rainbow-text">
+									NEW
+								</span>
+				             </a>
+						 </span><br></template>
+						 
+						<!-- / {[ item.watch ]} |  观看 {[ item.watch ]} -->
 					</div>
-					<br>
-					<div>There's nothing here.</div>
-					<br>
-					<div style="text-align: right;width: 100%;">- 小韩</div>
-					<br>
-					<br>
-					<br>
 				</div>
+				<!-- <div class="item" @click="next" >
+					<button class="more-btn">
+						{[moreBtnShow]}
+					</button>
+				</div> -->
 			</div>
 		</div>
 		<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"
@@ -69,7 +98,7 @@
 		</script>
 		<script type="text/javascript" src="../config.js">
 		</script>
-		<script type="text/javascript" src="../assets/js/about.js">
+		<script type="text/javascript" src="../assets/js/user.js">
 		</script>
 	</body>
 
