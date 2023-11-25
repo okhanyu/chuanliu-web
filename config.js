@@ -1,6 +1,6 @@
 
 // 服务器地址
-var server = "https://s.chuanliu.org/api/discover/";
+var server = "https://s.chuanliu.org/api/dis/";
 var timelineServer = "https://s.chuanliu.org/api/rss-hub/";
 
 // 每次加载多少条
