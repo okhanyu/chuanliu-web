@@ -39,20 +39,10 @@
 			<div class="list">
 				<div v-if="datas == undefined || datas == null || datas.length == 0">悠闲加载中...</div>
 				<div v-for="item in datas" class="item">
-
 					<div class="item-title">
 						<div class="item-link-span">
-							<a :href="handlelink(item)" target="_blank" class="item-link-a" style="font-size:16px">
-								<!-- <template v-if="item.resourceList.length != 0">  -->
-									<div  class="item-link-a">
-									<template v-for="img in item.resourceList">
-										<img :src="img.externalLink" style="width:50px;height: 50px;object-fit: cover;border-radius: 5px;margin: 2px;border: 1px solid black;">
-									</template>
-								</div>
-								<!-- </template> -->
-								<!-- <template v-else> -->
-									<span :class="(handlestar(item) ? 'rainbow-text ':'') + ' item-link-a'">{[handletitle(item)]}</span>
-								<!-- </template> -->
+							<a :href="handlelink(item)" target="_blank" :class="(handlestar(item) ? 'rainbow-text ':'') + ' item-link-a'" style="font-size:16px">
+								{[handletitle(item)]}
 								<span v-if="handlestar(item)"  class="rainbow-text" style="font-size: 0.5em">☆</span>
 								<span style="font-size: 0.5em;" v-if="(new Date().getTime() / 1000 - item.createdTs) < 24*60*60*7 && !handlestar(item)" class="rainbow-text">
 									NEW
