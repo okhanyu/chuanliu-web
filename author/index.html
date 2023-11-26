@@ -25,17 +25,11 @@
 					</div>
 					<div class="menu-item" v-for="navItem in nav">
 						<a :href="navItem.link">
-							<span  :class="navItem.title.trim() == '川流严选' ? 'rainbow-text' : ''">
+							<span  :class="navItem.title.trim().indexOf('严选') != -1 ? 'rainbow-text' : ''">
 								{[ navItem.title ]}
 							</span>
-							<span class="rainbow-text" style="font-size:12px" v-if="navItem.title.trim() == '川流严选'">
-								（内测）
-							</span>
-							<span style="font-size:12px" v-if="navItem.title.trim() == '川流作者'">
-								（随机）
-							</span>
-							<span style="font-size:12px" v-if="navItem.title.trim() == '川流广场'">
-								（时序）
+							<span :class="navItem.title.trim().indexOf('严选') != -1 ? 'rainbow-text' : ''" style="font-size:12px">
+								{[ navItem.subTitle ]}
 							</span>
 						</a>
 					</div>
