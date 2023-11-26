@@ -43,6 +43,7 @@
 				</div>
 			</div>
 			<div class="list">
+				<div v-if="datas == undefined || datas == null || datas.length == 0">拼命加载中...</div>
 				<div v-for="item in datas" class="item">
 					<div class="item-title">
 						<div class="item-link-span">
