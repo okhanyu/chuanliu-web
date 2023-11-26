@@ -12,6 +12,34 @@
 		<link rel="icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
 		<link rel="apple-touch-icon" href="https://chuanliu.org/assets/images/favicon.png">
 		<link rel="stylesheet" type="text/css" href="../assets/css/css.css">
+		<link href="https://cdn.bootcdn.net/ajax/libs/artalk/2.6.4/Artalk.css" rel="stylesheet">
+		<style type="text/css">
+			.artalk, .atk-layer-wrap {
+			    --at-color-font: #2a2e2e;
+			    --at-color-deep: #2a2e2e;
+			    --at-color-sub: #757575;
+			    --at-color-grey: #747474;
+			    --at-color-meta: #697182;
+			    --at-color-border: #eceff2;
+			    --at-color-light: #4285f4;
+			    --at-color-bg: #FFF;
+			    --at-color-bg-transl: rgba(255, 255, 255, .94);
+			    --at-color-bg-grey: #f3f4f5;
+			    --at-color-bg-grey-transl: rgba(244, 244, 244, .75);
+			    --at-color-bg-light: rgba(29, 161, 242, .1);
+/*			    --at-color-main: #34356f;*/
+				--at-color-main: #000;
+			    --at-color-red: #ff5652;
+			    --at-color-pink: #fa5a57;
+			    --at-color-yellow: #ff7c37;
+			    --at-color-green: #4caf50;
+			    --at-color-gradient: linear-gradient(180deg, transparent, rgba(255, 255, 255));
+			}
+
+			.artalk * {
+				font-size:14px !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container" id="app" v-cloak>
@@ -25,17 +53,11 @@
 					</div>
 					<div class="menu-item" v-for="navItem in nav">
 						<a :href="navItem.link">
-							<span  :class="navItem.title.trim() == '川流严选' ? 'rainbow-text' : ''">
+							<span  :class="navItem.title.trim().indexOf('严选') != -1 ? 'rainbow-text' : ''">
 								{[ navItem.title ]}
 							</span>
-							<span class="rainbow-text" style="font-size:12px" v-if="navItem.title.trim() == '川流严选'">
-								（内测）
-							</span>
-							<span style="font-size:12px" v-if="navItem.title.trim() == '川流作者'">
-								（随机）
-							</span>
-							<span style="font-size:12px" v-if="navItem.title.trim() == '川流广场'">
-								（时序）
+							<span :class="navItem.title.trim().indexOf('严选') != -1 ? 'rainbow-text' : ''" style="font-size:12px">
+								{[ navItem.subTitle ]}
 							</span>
 						</a>
 					</div>
@@ -43,27 +65,31 @@
 				</div>
 			</div>
 			<div class="list" style="min-height:350px;justify-content: normal !important;"  >
-				<div style="max-width: 420px;">
+				<div style="max-width: 720px;">
 					<br>
 					<br>
+					<div>
+						<span class="rainbow-text" style="border-bottom:1px dashed #0000ff">
+							<a href="https://chuanliu.org">ChuanLiu.org</a>
+						</span> 
+					</div>
+					<div><span class="rainbow-text">川流，取川之意，流水之情。</span></div>
 					<br>
 					<div style="text-align: left;width: 100%;">真的，很高兴，遇见你。
 					</div>
 					<br>
 					<div style="text-align: left;width: 100%;">
-					没有AI、没有数据、没有排行、没有点赞、没有大号字体，很抱歉，这里，什么都没有。
+					没有AI、没有数据、没有统计、没有排行、没有点赞、没有大号字体，很抱歉，这里，什么都没有。
 					</div>
 					<div>There's nothing here.</div>
 					<br>
-					<div><span class="rainbow-text">取川之意，流水之情。</span></div>
-					<div>
-						<span class="rainbow-text" style="border-bottom:1px solid #0000ff"><a href="https://chuanliu.org">chuanliu.org</a></span> 
-					</div>
+					<div style="text-align: right;width: 100%;">- 无知小韩</div>
 					<br>
-					<div style="text-align: right;width: 100%;">- 小韩</div>
+					<hr style="height:1px;border:none;border-top:1px dashed #000;"/>
 					<br>
-					<br>
-					<br>
+					<div style="text-align: left;width: 100%;"> * 如有意愿加入，请Email将网站信息发送至:  hi#chuanliu.org &nbsp; (将#替换为@)</div>
+					<br><br>
+					<div id="Comments"></div>
 				</div>
 			</div>
 		</div>
@@ -73,6 +99,22 @@
 		<script type="text/javascript" src="../config.js">
 		</script>
 		<script type="text/javascript" src="../assets/js/about.js">
+		</script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/artalk/2.6.4/Artalk.js"></script>
+		<script>
+			Artalk.init({
+			  el:        '#Comments',                
+			  pageKey:   '',                  
+			  pageTitle: '',   
+			  server:    'https://s.chuanliu.org/api/comment/',   
+			  site:      'chuanliu',            
+			})
+			var element = document.querySelector(".atk-list-footer");
+			if (element) {
+			  element.parentNode.removeChild(element);
+			} else {
+			  console.log("未找到指定的DOM节点");
+			};
 		</script>
 	</body>
 

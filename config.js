@@ -9,11 +9,10 @@ var offset = 0;
 
 // 导航条配置
 const navConfig = [
-	{title:"川流严选",link:"/"},
-    {title:"川流作者",link:"/author/"},
-	{title:"川流广场",link:"/timeline/"},
-    {title:"加入川流",link:"/contact/"},
-    {title:"关于川流",link:"/about/"}
+	{title:"严选",link:"/",subTitle:"（内测）"},
+    {title:"作者",link:"/author/",subTitle:"（随机）"},
+	{title:"广场",link:"/timeline/",subTitle:"（时序）"},
+    {title:"关于",link:"/about/",subTitle:"（留言）"}
     
 ];
 
