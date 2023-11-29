@@ -117,10 +117,14 @@ a {
 	color:transparent;
 	animation:blink 2.5s infinite;
 	*/
-			     background:linear-gradient(to right,#ff0000,#0000ff);
+
+/*	background:linear-gradient(to right,#ff0000,#0000ff);*/
+/*background: linear-gradient(45deg,#ef00ff,#001fff);border: 1px solid #920f9b;color: #fafafa;*/
+  background:linear-gradient(to right,#0d0cbc,#a4a3e7);
 	background-clip:text;
 	-webkit-background-clip:text;
 	-webkit-text-fill-color:transparent;
+
 	/* animation:blink 2.5s infinite;
 	*/
 }
