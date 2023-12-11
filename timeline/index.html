@@ -102,7 +102,7 @@
                     {[ item.pub_date_show.substr(0,10)  ]} 
                   </td>
                  <td style="text-align: left; "  >
-                    <a :href="item.link" target="_blank"  style="font-size: 1.2em">
+                    <a :href="item.link" target="_blank"  style="font-size: 1.2em" @click="watch(item.id)">
                    {[ item.title ]}
                     <span style="font-size: 0.5em;" v-if="(new Date().getTime() /1000 - new Date(item.pub_date).getTime()/1000) < 24*60*60*7 " class="rainbow-text">
                       NEW
