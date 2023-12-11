@@ -74,15 +74,17 @@
         <div class="blog" v-for="item in datas">
           <h2>
             <a :href="handleUserLink(item)" target="_blank" >
-              {[ handleUserLink(item).split("://")[1] ]}
+            @{[ item.user_name ]}   
               <wbr>
               <!-- .com -->
             </a>
           </h2>
           <p>
+            <a :href="handleUserLink(item)" target="_blank" style="color: #6e6d6d;" >
             <strong style="font-size:14px">
-              @{[ item.user_name ]}
+             {[ handleUserLink(item).split("://")[1] ]}
             </strong>
+           </a>
           </p>
           <p class="small">
             <em>
