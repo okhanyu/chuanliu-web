@@ -10,10 +10,9 @@ var offset = 0;
 // 导航条配置
 const navConfig = [
     {title:"作者",link:"/",subTitle:"（随机）"},
+    {title:"广场",link:"/timeline/",subTitle:"（时序）"},
 	{title:"严选",link:"/nice/",subTitle:"（手动）"},
-	{title:"广场",link:"/timeline/",subTitle:"（时序）"},
     {title:"关于",link:"/about/",subTitle:"（留言）"}
-    
 ];
 
 
