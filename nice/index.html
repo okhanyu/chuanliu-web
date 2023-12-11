@@ -54,8 +54,8 @@
     </style>
   </head>
   <body>
-    <div id="app"  v-cloak >
-      <header  style=" display: flex; width: 100%; flex-wrap: wrap; justify-content: space-between;">
+    <div id="app">
+       <header  style=" display: flex; width: 100%; flex-wrap: wrap; justify-content: space-between;">
         <div style="text-align:left">
           <a href="https://chuanliu.org">
             <strong>
@@ -82,45 +82,58 @@
       </header>
       <main id="index_index" v-cloak >
         <div class="blog">
-              <div v-if="datas == undefined || datas == null || datas.length == 0" style="font-size:0.8rem;margin-left: -5px;">悠闲加载中...  <br> </div>
-              <div style="margin-left: -5px;"><span  class="rainbow-text" style="font-size:0.8rem"><strong>时间线广场 </strong></span> <br></div>
+              <div v-if="datas == undefined || datas == null || datas.length == 0" style="font-size:0.8rem;margin-left: -5px;">悠闲加载中...  <br></div>
              
+              <div style="margin-left: -5px;"><span  class="rainbow-text" style="font-size:0.8rem"><strong>手工严选，愿你不浪费生命 </strong></span><br></div>
+              
             <table>
               <tbody>
                  <template  v-for="item in datas">
 
                 <tr>
+                  <td style="text-align: left;width: 90px;">
+                    {[format(item.createdTs).substr(0,10)]}
+                  </td>
+                   <td style="text-align: left; "> 
+                     <a :href="handleweb(item)" target="_blank" style=" color: gray;font-weight: normal;font-size: 0.9em; line-height:22.5px;">
+                     <span style=" line-height:22.5px;"> @{[handleuser(item)]}  </span>
+                </a>
+                · 
+                <span style="font-size:0.8em; line-height:22.5px;text-align: left; "> #{[ handletag(item) ]} </span>
+                   
+              </td>
+               
 
-                   <td style="text-align:left;" colspan=2 >
-                    <a :href="handleUserLink(item)" target="_blank" style="width:100%;color: gray;font-weight: normal;font-size: 0.9em;">
-                     <span> @{[ item.user_name ]} </span>
-                </a></td>
-                  
                 </tr>
                 <tr>
-                   <td style="text-align: left;width: 90px;">
-                    {[ item.pub_date_show.substr(0,10)  ]} 
-                  </td>
-                 <td style="text-align: left; "  >
-                    <a :href="item.link" target="_blank"  style="font-size: 1.2em">
-                   {[ item.title ]}
-                    <span style="font-size: 0.5em;" v-if="(new Date().getTime() /1000 - new Date(item.pub_date).getTime()/1000) < 24*60*60*7 " class="rainbow-text">
-                      NEW
-                    </span>
+                   
+                 <td style="text-align: left; "  colspan=2 >
+                    <a :href="handlelink(item)" target="_blank"  target="_blank">
+                      <span :class="(handlestar(item) ? 'rainbow-text ':'') + ' item-link-a'" style="border-bottom:solid 0px #d0dee5;font-size: 1.2em">{[handletitle(item)]}</span>
+                      <span style="font-size: 0.5em;" v-if="(new Date().getTime() / 1000 - item.createdTs) < 24*60*60*7 && !handlestar(item)" class="rainbow-text">
+                        NEW
+                      </span>
+
+                       <template v-if="item.resourceList != undefined &&  item.resourceList.length != 0" >
+                           <br>
+                          <template v-for="img in item.resourceList">
+                            <img :src="img.externalLink+'?q=10'" style="width:50px;height: 50px;object-fit: cover;border-radius: 5px;margin: 2px;border: 1px solid black;">
+                          </template>
+                       </template>
+
                     </a>
                   </td>
-                </tr>
+              </tr>
                <br>
                 </template>
               </tbody>
             </table>
-        <div class="item" @click="next" v-show="moreBtnShow">
+          <div class="item" @click="next" >
           <button class="more-btn" style="cursor: pointer;">
-            More
+            {[moreBtnShow]}
           </button>
         </div>
         </div>
-
       </main>
     </div>
     <a id="back_to_top" href="#" class="back_to_top">
@@ -136,7 +149,7 @@
     </script>
     <script type="text/javascript" src="../config.js">
     </script>
-    <script type="text/javascript" src="../assets/js/timeline.js">
+    <script type="text/javascript" src="../assets/js/index.js">
     </script>
     <script>
       // function shuffle() {

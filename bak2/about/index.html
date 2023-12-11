@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="referrer" content="strict-origin" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,viewport-fit=cover,shrink-to-fit=no">
+		<title>
+			关于川流
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+		<link rel="icon" type="image/x-icon" href="https://chuanliu.org/assets/images/favicon.ico">
+		<link rel="apple-touch-icon" href="https://chuanliu.org/assets/images/favicon.png">
+		<link rel="stylesheet" type="text/css" href="../assets/css/css.css">
+		<link href="https://cdn.bootcdn.net/ajax/libs/artalk/2.6.4/Artalk.css" rel="stylesheet">
+		<style type="text/css">
+			.artalk, .atk-layer-wrap {
+			    --at-color-font: #2a2e2e;
+			    --at-color-deep: #2a2e2e;
+			    --at-color-sub: #757575;
+			    --at-color-grey: #747474;
+			    --at-color-meta: #697182;
+			    --at-color-border: #eceff2;
+			    --at-color-light: #4285f4;
+			    --at-color-bg: #FFF;
+			    --at-color-bg-transl: rgba(255, 255, 255, .94);
+			    --at-color-bg-grey: #f3f4f5;
+			    --at-color-bg-grey-transl: rgba(244, 244, 244, .75);
+			    --at-color-bg-light: rgba(29, 161, 242, .1);
+/*			    --at-color-main: #34356f;*/
+				--at-color-main: #000;
+			    --at-color-red: #ff5652;
+			    --at-color-pink: #fa5a57;
+			    --at-color-yellow: #ff7c37;
+			    --at-color-green: #4caf50;
+			    --at-color-gradient: linear-gradient(180deg, transparent, rgba(255, 255, 255));
+			}
+
+			.artalk * {
+				font-size:14px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" id="app" v-cloak>
+			<div class="menu">
+				<button class="menu-button" onclick="shows()">
+					<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+				</button>
+				<div class="menu-list" >
+					<div class="menu-item">
+						<img src="https://chuanliu.org/assets/images/logo.png" class="logo">
+					</div>
+					<div class="menu-item" v-for="navItem in nav">
+						<a :href="navItem.link">
+							<span  :class="navItem.title.trim().indexOf('严选') != -1 ? 'rainbow-text' : ''">
+								{[ navItem.title ]}
+							</span>
+							<span :class="navItem.title.trim().indexOf('严选') != -1 ? 'rainbow-text' : ''" style="font-size:12px">
+								{[ navItem.subTitle ]}
+							</span>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+			<div class="list" style="min-height:350px;justify-content: normal !important;"  >
+				<div style="max-width: 720px;">
+					<br>
+					<br>
+					<div>
+						<span class="rainbow-text" style="border-bottom:1px dashed #0000ff">
+							<a href="https://chuanliu.org">ChuanLiu.org</a>
+						</span> 
+					</div>
+					<div><span class="rainbow-text">川流，取川之意，流水之情。</span></div>
+					<br>
+					<div style="text-align: left;width: 100%;">真的，很高兴，遇见你。
+					</div>
+					<br>
+					<div style="text-align: left;width: 100%;">
+					没有AI、没有数据、没有统计、没有排行、没有点赞、没有大号字体，很抱歉，这里，什么都没有。
+					</div>
+					<div>There's nothing here.</div>
+					<br>
+					<div style="text-align: right;width: 100%;">- 无知小韩</div>
+					<br>
+					<hr style="height:1px;border:none;border-top:1px dashed #000;"/>
+					<br>
+					<div style="text-align: left;width: 100%;"> * 如有意愿加入，请将网站信息发送至Email:  hi#chuanliu.org &nbsp; (将#替换为@)</div>
+					<br><br>
+					<div id="Comments"></div>
+				</div>
+			</div>
+		</div>
+		<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"
+		type="application/javascript">
+		</script>
+		<script type="text/javascript" src="../config.js">
+		</script>
+		<script type="text/javascript" src="../assets/js/about.js">
+		</script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/artalk/2.6.4/Artalk.js"></script>
+		<script>
+			Artalk.init({
+			  el:        '#Comments',                
+			  pageKey:   '',                  
+			  pageTitle: '',   
+			  server:    'https://s.chuanliu.org/api/comment/',   
+			  site:      'chuanliu',            
+			})
+			var element = document.querySelector(".atk-list-footer");
+			if (element) {
+			  element.parentNode.removeChild(element);
+			} else {
+			  console.log("未找到指定的DOM节点");
+			};
+		</script>
+	</body>
+
+</html>
