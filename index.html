@@ -77,6 +77,7 @@
       </header>
       <main id="index" v-cloak>
         <div v-if="datas == undefined || datas == null || datas.length == 0"  style="font-size:0.8rem;margin-left: -5px;">悠闲加载中...</div>
+        <div>当前共「{[ datas.length ]}」位博主，每次刷新将随机排序</div>
         <div class="blog" v-for="item in datas">
           <h2>
             <a :href="handleUserLink(item)" target="_blank" >
@@ -152,7 +153,7 @@
     </script>
     <script type="text/javascript" src="config.js">
     </script>
-    <script type="text/javascript" src="assets/js/author.js">
+    <script type="text/javascript" src="assets/js/index.js">
     </script>
     <script>
       // function shuffle() {

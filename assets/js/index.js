@@ -1,3 +1,5 @@
+
+
 const {
     createApp
 } = Vue;
@@ -7,8 +9,14 @@ const app = createApp({
     data() {
         return {
             datas: [],
+            ranks: [],
+            aTotal: 0,
+            aWatch: 0,
+            aLike: 0,
             moreBtnShow: "More",
-            nav: navConfig
+            nav:navConfig,
+            sortBtn:"↓",
+            sort:true
         }
     },
     computed: {
@@ -18,150 +26,14 @@ const app = createApp({
 
     },
     methods: {
-
-         handletag(item) {
-            // item.content.split("\n")[0].substr(1,item.content.length-1)
-            var sPre = item.content.split("\n");
-
-            if (sPre != undefined) {
-                s = [];
-
-                for (var i = 0; i < sPre.length; i++) {
-                    if (sPre[i].trim() != "") {
-                        s.push(sPre[i]);
-                    }
-                }
-                if (s != undefined && s.length > 0) {
-                    //return s[0].trim().substr(1, item.content.length - 1)
-                    return s[0].trim().replaceAll("#", "");
-                }
-            }
-            return ""
-        },
-
-        handletitle(item) {
-            var sPre = item.content.split("\n");
-
-            if (sPre != undefined) {
-                s = [];
-
-                for (var i = 0; i < sPre.length; i++) {
-                    if (sPre[i].trim() != "") {
-                        s.push(sPre[i]);
-                    }
-                }
-                if (s != undefined && s.length > 0) {
-                    //return s[0].trim().substr(1, item.content.length - 1)
-                    return s[1].trim();
-                }
-            }
-            return "未知"
-        },
-
-        handlelink(item) {
-            var sPre = item.content.split("\n");
-
-            if (sPre != undefined) {
-                s = [];
-
-                for (var i = 0; i < sPre.length; i++) {
-                    if (sPre[i].trim() != "") {
-                        s.push(sPre[i]);
-                    }
-                }
-                if (s != undefined && s.length > 1) {
-                    return s[2].trim()
-                }
-            }
-            return "#"
-        },
-        handleuser(item) {
-            var sPre = item.content.split("\n");
-
-            if (sPre != undefined) {
-                s = [];
-
-                for (var i = 0; i < sPre.length; i++) {
-                    if (sPre[i].trim() != "") {
-                        s.push(sPre[i]);
-                    }
-                }
-                if (s != undefined && s.length > 2) {
-                    return s[3].trim()
-                }
-            }
-            return "未知"
-        },
-        handleweb(item) {
-            var sPre = item.content.split("\n");
-
-            if (sPre != undefined) {
-                s = [];
-
-                for (var i = 0; i < sPre.length; i++) {
-                    if (sPre[i].trim() != "") {
-                        s.push(sPre[i]);
-                    }
-                }
-                if (s != undefined && s.length > 3) {
-                    return s[4].trim()
-                }
-            }
-            return "#"
-        },
-        handlestar(item) {
-            var sPre = item.content.split("\n");
-
-            if (sPre != undefined) {
-                s = [];
-
-                for (var i = 0; i < sPre.length; i++) {
-                    if (sPre[i].trim() != "") {
-                        s.push(sPre[i]);
-                    }
-                }
-                if (s != undefined && s.length > 5 && s[5].trim() == "star") {
-                    return true;
-                }
-            }
-            return false;
-        },
-        handlesummary(item) {
-            var sPre = item.content.split("\n");
-
-            if (sPre != undefined) {
-                s = [];
-
-                for (var i = 0; i < sPre.length; i++) {
-                    if (sPre[i].trim() != "") {
-                        s.push(sPre[i]);
-                    }
-                }
-
-                if (s != undefined && s.length > 5) {
-                    //return s[5].trim() + "\n...\n" + s[s.length - 1].trim()
-                    var ss = "";
-                    for (var i = (s[5].trim() != "star" ? 5 : 6); i < s.length; i++) {
-                        if (s[i].trim() != "") {
-                            ss += s[i].trim() + "\n";
-                        }
-                    }
-                    ss = ss.trim() == "" ? "暂时无详细推荐理由": ss;
-                    return ss;
-                }
-
-            }
-
-            return "暂时无详细推荐理由"
-        },
-        handle(param) {
-            if (param != undefined && param != "" && param.link != undefined && param.link != "") {
-                s = param.link.split('://');
-                return s[0] + "://" + s[1].split("/")[0]
+         handleUserLink(param){
+           if (param != undefined && param != "" && param.rss_link != undefined && param.rss_link != ""){
+                s = param.rss_link.split('://')
+                return s[0]+"://"+s[1].split("/")[0]
             }
         },
         next(event) {
-            offset += limit;
+            offset++;
             const that = this;
             gets(that,
             function(data) {
@@ -172,14 +44,22 @@ const app = createApp({
         format(times) {
             return format(times);
         },
+         watch(id) {
+            watch(id);
+        },
     },
     mounted: function() {
 
         const that = this;
         gets(that,
         function(data) {
-            that.datas.push(...data);
-            that.moreBtnShow = "More";
+              for (var i = data.length - 1; i >= 0; i--) {
+                that.aTotal +=  data[i].total;
+                that.aWatch +=  data[i].watch;
+                that.aLike +=   data[i].like;
+                that.datas.push(data[i]);
+            };
+            getsRecent(that);
         });
     }
 });
@@ -188,12 +68,37 @@ const vm = app.mount('#app');
 
 /*** 初始化 vue end***/
 
+function watch(id){
+     var url = timelineServer + "rss/watch";
+    var promise = fetch(url,
+        {
+            method: 'post',
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
+            body: JSON.stringify({
+                "id": id
+            })
+        }).then(function(response) {
+        if (response.status === 200) {
+            return response.json();
+        } else {
+            return {}
+        }
+    });
+
+    promise = promise.then(function(data) {
+
+    }).
+    catch(function(err) {
+        console.log(err);
+    });
+}
+
 function gets(that, callback) {
-    if (that.moreBtnShow == "No More") {
-        return;
-    }
     // that = this;
-    var url = server + "api/v1/memo?creatorId=1&offset=" + offset + "&limit=" + limit;
+    var limitTemp = 1000;
+    var url = timelineServer + "user/list/group?page_num="+ offset + "&page_size="+limitTemp+"&order=4";
     var promise = fetch(url).then(function(response) {
         if (response.status === 200) {
             return response.json();
@@ -203,11 +108,46 @@ function gets(that, callback) {
     });
 
     promise = promise.then(function(data) {
-        if (data == undefined || data.length == 0) {
+        if (data == undefined || data.code != 0 || data.data == null) {
             vm.$data.moreBtnShow = "No More";
             return;
         }
-        getDataSuccess(data, callback);
+        getDataSuccess(data.data, callback);
+
+    }).
+    catch(function(err) {
+        console.log(err);
+    });
+}
+
+function getsRecent(that, callback) {
+    var url = timelineServer + "rss/user/list/recent";
+    var promise = fetch(url).then(function(response) {
+        if (response.status === 200) {
+            return response.json();
+        } else {
+            return {}
+        }
+    });
+
+    promise = promise.then(function(response) {
+        if (response == undefined || response.code != 0 || response.data == null) {
+            vm.response.moreBtnShow = "No More";
+            return;
+        }
+       // console.log(response);
+       var map = {};
+       for (var i = 0; i < response.data.length; i++) {
+            if (map[response.data[i].user_id] == undefined){
+                map[response.data[i].user_id] = [];
+            }
+            map[response.data[i].user_id].push(response.data[i]);
+       }
+       // console.log(map);
+       for (var i = 0; i < vm.$data.datas.length; i++) {
+           vm.$data.datas[i]["recent"] = map[vm.$data.datas[i].id];
+       }
+        // console.log(vm.$data.datas);
 
     }).
     catch(function(err) {
@@ -219,3 +159,4 @@ function getDataSuccess(data, callback) {
     // console.log(data);
     callback(data);
 };
+
